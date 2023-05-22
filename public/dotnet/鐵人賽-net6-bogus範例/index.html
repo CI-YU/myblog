@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2022ITHelp dotnet6 Bogus範例 | CI-YU Blog</title>
+<meta name="keywords" content="2022鐵人賽">
+<meta name="description" content="目的 快速且簡單的製造假資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
+Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&#34;Test&#34;)] public List&lt;User&gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order&gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds&#43;&#43;) //從自訂陣列隨機取值 .RuleFor(o =&gt; o.Item, f =&gt; f.">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="2022ITHelp dotnet6 Bogus範例" />
+<meta property="og:description" content="目的 快速且簡單的製造假資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
+Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&#34;Test&#34;)] public List&lt;User&gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order&gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds&#43;&#43;) //從自訂陣列隨機取值 .RuleFor(o =&gt; o.Item, f =&gt; f." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
+<meta property="article:published_time" content="2022-09-23T09:00:13+08:00" />
+<meta property="article:modified_time" content="2022-09-23T09:00:13+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022ITHelp dotnet6 Bogus範例"/>
+<meta name="twitter:description" content="目的 快速且簡單的製造假資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
+Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&#34;Test&#34;)] public List&lt;User&gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order&gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds&#43;&#43;) //從自訂陣列隨機取值 .RuleFor(o =&gt; o.Item, f =&gt; f."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dotnets",
+      "item": "https://ci-yu.top/dotnet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2022ITHelp dotnet6 Bogus範例",
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2022ITHelp dotnet6 Bogus範例",
+  "name": "2022ITHelp dotnet6 Bogus範例",
+  "description": "目的 快速且簡單的製造假資料\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝\nBogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(\u0026#34;Test\u0026#34;)] public List\u0026lt;User\u0026gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { \u0026#34;apple\u0026#34;, \u0026#34;banana\u0026#34;, \u0026#34;orange\u0026#34;, \u0026#34;strawberry\u0026#34;, \u0026#34;kiwi\u0026#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker\u0026lt;Order\u0026gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =\u0026gt; o.OrderId, f =\u0026gt; orderIds++) //從自訂陣列隨機取值 .RuleFor(o =\u0026gt; o.Item, f =\u0026gt; f.",
+  "keywords": [
+    "2022鐵人賽"
+  ],
+  "articleBody": "目的 快速且簡單的製造假資料\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝\nBogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(\"Test\")] public List Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { \"apple\", \"banana\", \"orange\", \"strawberry\", \"kiwi\" }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =\u003e o.OrderId, f =\u003e orderIds++) //從自訂陣列隨機取值 .RuleFor(o =\u003e o.Item, f =\u003e f.PickRandom(fruit)) //從1-10隨機取值 .RuleFor(o =\u003e o.Quantity, f =\u003e f.Random.Number(1, 10)) //從1-100隨機取值，並有20%機會為NULL .RuleFor(o =\u003e o.LotNumber, f =\u003e f.Random.Int(0, 100).OrNull(f, .2f)); //預設使用者編號為0 var userIds = 0; var testUsers = new Faker() //使用需要初始化的類別 .CustomInstantiator(f =\u003e new User(userIds++, f.Random.Replace(\"(##)###-####\"))) //從列舉中隨機取值(Gender為Bogus內建) .RuleFor(u =\u003e u.Gender, f =\u003e f.PickRandom()) //使用內建的生成器 .RuleFor(u =\u003e u.FirstName, (f, u) =\u003e f.Name.FirstName(u.Gender)) .RuleFor(u =\u003e u.LastName, (f, u) =\u003e f.Name.LastName(u.Gender)) .RuleFor(u =\u003e u.Avatar, f =\u003e f.Internet.Avatar()) .RuleFor(u =\u003e u.UserName, (f, u) =\u003e f.Internet.UserName(u.FirstName, u.LastName)) .RuleFor(u =\u003e u.Email, (f, u) =\u003e f.Internet.Email(u.FirstName, u.LastName)) .RuleFor(u =\u003e u.SomethingUnique, f =\u003e $\"Value {f.UniqueIndex}\") //可使用非Bogus的方法，建立一個新的GUID .RuleFor(u =\u003e u.CartId, f =\u003e Guid.NewGuid()) //可使用複合屬性 .RuleFor(u =\u003e u.FullName, (f, u) =\u003e $\"{u.FirstName} {u.LastName}\") //複雜的集合也可以使用，並重複產生5個訂單的陣列 .RuleFor(u =\u003e u.Orders, f =\u003e testOrders.Generate(5).ToList()) //最後結束後可以執行特定動作 .FinishWith((f, u) =\u003e { Console.WriteLine(\"User Created! Id={0}\", u.Id); }); //產生3個使用者 var user = testUsers.Generate(3); return user; } public class User { public User(int v1, string v2) { Id = v1; SSN = v2; } public int Id { get; set; } public Gender Gender { get; set; } public string SSN { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Avatar { get; set; } public string UserName { get; set; } public string Email { get; set; } public string SomethingUnique { get; set; } public Guid CartId { get; set; } public string FullName { get; set; } public List Orders { get; set; } } public class Order { public int OrderId { get; set; } public string Item { get; set; } public int Quantity { get; set; } public int? LotNumber { get; set; } } 執行結果 F5執行後，依照下列步驟操作，並確認結果 參考 kinanson的技術回憶 參考\n範例檔 GitHub\n",
+  "wordCount" : "340",
+  "inLanguage": "en",
+  "datePublished": "2022-09-23T09:00:13+08:00",
+  "dateModified": "2022-09-23T09:00:13+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
+    <h1 class="post-title">
+      2022ITHelp dotnet6 Bogus範例
+    </h1>
+    <div class="post-meta"><span title='2022-09-23 09:00:13 +0800 CST'>September 23, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+<p>快速且簡單的製造假資料</p>
+<h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
+<p>選擇ASP.NET Core Web API專案範本，並執行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟1"  />
+</p>
+<h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/183701560-5fe61436-28ec-4148-bec5-a44e328ce89a.png" alt="範例2"  />
+</p>
+<h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
+<p>直接進行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟3"  />
+</p>
+<h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
+<p>透過NuGet安裝</p>
+<ol>
+<li>Bogus</li>
+</ol>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/183705381-0650c8e8-dae2-4fd2-944d-a2dd8b2603c0.png" alt="範例4"  />
+</p>
+<h3 id="編輯weatherforecastcontroller檔案">編輯WeatherForecastController檔案<a hidden class="anchor" aria-hidden="true" href="#編輯weatherforecastcontroller檔案">#</a></h3>
+<p>將預設的API註解
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/154978191-e218edc4-5df3-49ad-9b7b-c4ddfa9fcdb1.png" alt="步驟5-1"  />
+</p>
+<pre tabindex="0"><code>//除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender
+using static Bogus.DataSets.Name;
+    [HttpGet(&#34;Test&#34;)]
+    public List&lt;User&gt; Test() {
+      //可限制隨機值為定值
+      //Randomizer.Seed = new Random(8675307);
+      //建立一個假的貨品陣列
+      var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; };
+      //預設訂單編號為0
+      var orderIds = 0;
+      //預設取得英文資料
+      var testOrders = new Faker&lt;Order&gt;()
+        //強制所有屬性都要有規則存在，預設為false
+        .StrictMode(true)
+        //OrderId is deterministic
+        .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds++)
+        //從自訂陣列隨機取值
+        .RuleFor(o =&gt; o.Item, f =&gt; f.PickRandom(fruit))
+        //從1-10隨機取值
+        .RuleFor(o =&gt; o.Quantity, f =&gt; f.Random.Number(1, 10))
+        //從1-100隨機取值，並有20%機會為NULL
+        .RuleFor(o =&gt; o.LotNumber, f =&gt; f.Random.Int(0, 100).OrNull(f, .2f));
+      //預設使用者編號為0
+      var userIds = 0;
+      var testUsers = new Faker&lt;User&gt;()
+        //使用需要初始化的類別
+        .CustomInstantiator(f =&gt; new User(userIds++, f.Random.Replace(&#34;(##)###-####&#34;)))
+
+        //從列舉中隨機取值(Gender為Bogus內建)
+        .RuleFor(u =&gt; u.Gender, f =&gt; f.PickRandom&lt;Gender&gt;())
+
+        //使用內建的生成器
+        .RuleFor(u =&gt; u.FirstName, (f, u) =&gt; f.Name.FirstName(u.Gender))
+        .RuleFor(u =&gt; u.LastName, (f, u) =&gt; f.Name.LastName(u.Gender))
+        .RuleFor(u =&gt; u.Avatar, f =&gt; f.Internet.Avatar())
+        .RuleFor(u =&gt; u.UserName, (f, u) =&gt; f.Internet.UserName(u.FirstName, u.LastName))
+        .RuleFor(u =&gt; u.Email, (f, u) =&gt; f.Internet.Email(u.FirstName, u.LastName))
+        .RuleFor(u =&gt; u.SomethingUnique, f =&gt; $&#34;Value {f.UniqueIndex}&#34;)
+
+        //可使用非Bogus的方法，建立一個新的GUID
+        .RuleFor(u =&gt; u.CartId, f =&gt; Guid.NewGuid())
+        //可使用複合屬性
+        .RuleFor(u =&gt; u.FullName, (f, u) =&gt; $&#34;{u.FirstName} {u.LastName}&#34;)
+        //複雜的集合也可以使用，並重複產生5個訂單的陣列
+        .RuleFor(u =&gt; u.Orders, f =&gt; testOrders.Generate(5).ToList())
+        //最後結束後可以執行特定動作
+        .FinishWith((f, u) =&gt;
+        {
+          Console.WriteLine(&#34;User Created! Id={0}&#34;, u.Id);
+        });
+      //產生3個使用者
+      var user = testUsers.Generate(3);
+      return user;
+    }
+    public class User {
+      public User(int v1, string v2) {
+        Id = v1;
+        SSN = v2;
+      }
+      public int Id { get; set; }
+      public Gender Gender { get; set; }
+      public string SSN { get; set; }
+      public string FirstName { get; set; }
+      public string LastName { get; set; }
+      public string Avatar { get; set; }
+      public string UserName { get; set; }
+      public string Email { get; set; }
+      public string SomethingUnique { get; set; }
+      public Guid CartId { get; set; }
+      public string FullName { get; set; }
+      public List&lt;Order&gt; Orders { get; set; }
+    }
+
+    public class Order {
+      public int OrderId { get; set; }
+      public string Item { get; set; }
+      public int Quantity { get; set; }
+      public int? LotNumber { get; set; }
+    }
+</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/184668463-caa6878c-7f61-4d58-ba10-83e6dd5f04a7.png" alt="步驟5-2"  />
+</p>
+<h3 id="執行結果">執行結果<a hidden class="anchor" aria-hidden="true" href="#執行結果">#</a></h3>
+<p>F5執行後，依照下列步驟操作，並確認結果
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/154981306-58a41739-acac-448d-851f-b7d3666999b1.png" alt="步驟6-1"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/154981450-28bd0211-3653-4b03-9ab3-877b060deb97.png" alt="步驟6-2"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/184669103-5e06bf22-cd80-4ccc-9a1c-173f903566bf.png" alt="步驟6-3"  />
+</p>
+<h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
+<p><a href="https://dotblogs.com.tw/kinanson/2017/04/27/083741">kinanson的技術回憶</a>
+<a href="https://blog.myctw.cc/post/a1fe.html">參考</a></p>
+<h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
+<p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/BogusExample">GitHub</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

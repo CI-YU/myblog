@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2022ITHelp dotnet6 MailKit範例 | CI-YU Blog</title>
+<meta name="keywords" content="2022鐵人賽">
+<meta name="description" content="目的 使用gmail寄信
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&#34;SendEmail&#34;)] public async Task&lt;IActionResult&gt; Get() { #region OAuth驗證 const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;; var clientSecrets = new ClientSecrets { ClientId = &#34;前置作業文章最後給的用戶ID&#34;, ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false), Scopes = new[] { &#34;https://mail.google.com/&#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="2022ITHelp dotnet6 MailKit範例" />
+<meta property="og:description" content="目的 使用gmail寄信
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&#34;SendEmail&#34;)] public async Task&lt;IActionResult&gt; Get() { #region OAuth驗證 const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;; var clientSecrets = new ClientSecrets { ClientId = &#34;前置作業文章最後給的用戶ID&#34;, ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false), Scopes = new[] { &#34;https://mail.google.com/&#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
+<meta property="article:published_time" content="2022-09-19T15:38:35+08:00" />
+<meta property="article:modified_time" content="2022-09-19T15:38:35+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022ITHelp dotnet6 MailKit範例"/>
+<meta name="twitter:description" content="目的 使用gmail寄信
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&#34;SendEmail&#34;)] public async Task&lt;IActionResult&gt; Get() { #region OAuth驗證 const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;; var clientSecrets = new ClientSecrets { ClientId = &#34;前置作業文章最後給的用戶ID&#34;, ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false), Scopes = new[] { &#34;https://mail.google.com/&#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dotnets",
+      "item": "https://ci-yu.top/dotnet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2022ITHelp dotnet6 MailKit範例",
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2022ITHelp dotnet6 MailKit範例",
+  "name": "2022ITHelp dotnet6 MailKit範例",
+  "description": "目的 使用gmail寄信\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(\u0026#34;SendEmail\u0026#34;)] public async Task\u0026lt;IActionResult\u0026gt; Get() { #region OAuth驗證 const string GMailAccount = \u0026#34;前置作業文章打上去的測試帳號\u0026#34;; var clientSecrets = new ClientSecrets { ClientId = \u0026#34;前置作業文章最後給的用戶ID\u0026#34;, ClientSecret = \u0026#34;前置作業文章最後給的用戶端密碼\u0026#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(\u0026#34;CredentialCacheFolder\u0026#34;, false), Scopes = new[] { \u0026#34;https://mail.google.com/\u0026#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.",
+  "keywords": [
+    "2022鐵人賽"
+  ],
+  "articleBody": "目的 使用gmail寄信\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(\"SendEmail\")] public async Task Get() { #region OAuth驗證 const string GMailAccount = \"前置作業文章打上去的測試帳號\"; var clientSecrets = new ClientSecrets { ClientId = \"前置作業文章最後給的用戶ID\", ClientSecret = \"前置作業文章最後給的用戶端密碼\" }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(\"CredentialCacheFolder\", false), Scopes = new[] { \"https://mail.google.com/\" }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.AuthorizeAsync(GMailAccount, CancellationToken.None); if (credential.Token.IsExpired(SystemClock.Default)) await credential.RefreshTokenAsync(CancellationToken.None); var oauth2 = new SaslMechanismOAuth2(credential.UserId, credential.Token.AccessToken); #endregion #region 信件內容 var message = new MimeMessage(); //寄件者名稱及信箱(信箱是測試帳號) message.From.Add(new MailboxAddress(\"bill\", \"xxxx@gmail.com\")); //收件者名稱，收件者信箱 message.To.Add(new MailboxAddress(\"billhuang\", \"xxxx@gmail.com\")); //信件標題 message.Subject = \"How you doing'?\"; //信件內容 message.Body = new TextPart(\"plain\") { Text = @\"This is test\" }; using (var client = new SmtpClient()) { await client.ConnectAsync(\"smtp.gmail.com\", 587); await client.AuthenticateAsync(oauth2); await client.SendAsync(message); await client.DisconnectAsync(true); } #endregion return Ok(\"OK\"); } 執行結果 F5執行後，依照下列步驟操作，最後看到OK後，就可以去信箱確認有沒有收到信了。 MailKit為基於MimeKit解析器的客戶端函式庫 MimeKit為解析器，用於解析電子郵件格式\n參考 官方網站 官方GmailOauth2範例 Gmail教學\n範例檔 GitHub\n",
+  "wordCount" : "156",
+  "inLanguage": "en",
+  "datePublished": "2022-09-19T15:38:35+08:00",
+  "dateModified": "2022-09-19T15:38:35+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
+    <h1 class="post-title">
+      2022ITHelp dotnet6 MailKit範例
+    </h1>
+    <div class="post-meta"><span title='2022-09-19 15:38:35 +0800 CST'>September 19, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+<p>使用gmail寄信</p>
+<h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
+<p>選擇ASP.NET Core Web API專案範本，並執行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟1"  />
+</p>
+<h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
+<p>命名你的專案名稱，並選擇專案要存放的位置。
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/163670709-0989cdef-de26-44d5-b2f8-1e68d70767d6.png" alt="步驟2"  />
+</p>
+<h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
+<p>直接進行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟3"  />
+</p>
+<h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
+<ul>
+<li>Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用)</li>
+<li>MailKit(寄信)</li>
+</ul>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/167292013-1a27880d-da28-4124-abf6-105c67e4144c.png" alt="步驟4"  />
+</p>
+<h3 id="編輯weatherforecastcontroller檔案">編輯WeatherForecastController檔案<a hidden class="anchor" aria-hidden="true" href="#編輯weatherforecastcontroller檔案">#</a></h3>
+<p>將預設的API註解
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/154978191-e218edc4-5df3-49ad-9b7b-c4ddfa9fcdb1.png" alt="步驟5-1"  />
+</p>
+<pre tabindex="0"><code>[HttpGet(&#34;SendEmail&#34;)]
+    public async Task&lt;IActionResult&gt; Get() {
+      #region OAuth驗證
+      const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;;
+
+      var clientSecrets = new ClientSecrets {
+        ClientId = &#34;前置作業文章最後給的用戶ID&#34;,
+        ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34;
+      };
+
+      var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer  {
+        DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false),
+        Scopes = new[] { &#34;https://mail.google.com/&#34; },
+        ClientSecrets = clientSecrets
+      });
+
+      var codeReceiver = new LocalServerCodeReceiver();
+      var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver);
+
+      var credential = await authCode.AuthorizeAsync(GMailAccount, CancellationToken.None);
+
+      if (credential.Token.IsExpired(SystemClock.Default))
+        await credential.RefreshTokenAsync(CancellationToken.None);
+
+      var oauth2 = new SaslMechanismOAuth2(credential.UserId, credential.Token.AccessToken);
+      #endregion
+
+      #region 信件內容
+      var message = new MimeMessage();
+      //寄件者名稱及信箱(信箱是測試帳號)
+      message.From.Add(new MailboxAddress(&#34;bill&#34;, &#34;xxxx@gmail.com&#34;));
+      //收件者名稱，收件者信箱
+      message.To.Add(new MailboxAddress(&#34;billhuang&#34;, &#34;xxxx@gmail.com&#34;));
+      //信件標題
+      message.Subject = &#34;How you doing&#39;?&#34;;
+      //信件內容
+      message.Body = new TextPart(&#34;plain&#34;) {
+        Text = @&#34;This is test&#34;
+      };
+      using (var client = new SmtpClient()) {
+        await client.ConnectAsync(&#34;smtp.gmail.com&#34;, 587);
+        await client.AuthenticateAsync(oauth2);
+        await client.SendAsync(message);
+        await client.DisconnectAsync(true);
+      } 
+      #endregion
+
+      return Ok(&#34;OK&#34;);
+    }
+</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/167293076-92e833cd-c1a3-44fa-bb14-ae24ee3a3923.png" alt="步驟5-2"  />
+</p>
+<h3 id="執行結果">執行結果<a hidden class="anchor" aria-hidden="true" href="#執行結果">#</a></h3>
+<p>F5執行後，依照下列步驟操作，最後看到OK後，就可以去信箱確認有沒有收到信了。
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/167293129-4e335003-0428-4795-af8d-fc7f17d7d0cf.png" alt="步驟6-1"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/167293158-388d7e9a-980d-4a56-95c8-9bb2cf9d8e5a.png" alt="步驟6-2"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/167293189-e1c4a5b6-130c-4126-925a-cc2c348e5119.png" alt="步驟6-3"  />
+
+MailKit為基於MimeKit解析器的客戶端函式庫
+MimeKit為解析器，用於解析電子郵件格式</p>
+<h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
+<p><a href="https://github.com/jstedfast/MailKit">官方網站</a>
+<a href="https://github.com/jstedfast/MailKit/blob/master/GMailOAuth2.md">官方GmailOauth2範例</a>
+<a href="https://www.796t.com/post/MWg2NWc=.html">Gmail教學</a></p>
+<h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
+<p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/MailKitExample">GitHub</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

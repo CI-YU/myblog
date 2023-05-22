@@ -1,0 +1,58 @@
+baseURL : 'https://CI-YU.github.io/myblog'
+languageCode : 'en-us'
+title : 'CI-YU Blog'
+paginate : 10
+theme : "PaperMod"
+buildDrafts: false
+UseHugoToc: true
+menu:
+  main:
+    - identifier: Dotnet
+      name: Dotnet
+      url: /dotnet/
+      weight: 10
+    - identifier: Flutter
+      name: Flutter
+      url: /flutter/
+      weight: 15
+    - identifier: SoftPower
+      name: SoftPower
+      url: /softpower/
+      weight: 30
+    - identifier: Search
+      name: Search
+      url: /search/
+      weight: 40
+    - identifier: Tags
+      name: Tags
+      url: /tags/
+      weight: 50
+    - identifier: Archives
+      name: Archives
+      url: /archives/
+      weight: 60
+
+outputs:
+    home:
+        - HTML
+        - RSS
+        - JSON
+params:
+  homeInfoParams:
+    Title: "Hi there \U0001F44B"
+    Content: Welcome to my blog
+  socialIcons:
+    - name: github
+      url: "https://github.com/CI-YU"
+    - name: linkedin
+      url: "https://www.linkedin.com/in/ci-yu-huang-8a75a21b0/"
+  ShowBreadCrumbs: true
+  # 顯示文章大綱
+  # showtoc: true
+  hidefooter: true
+  ShowCodeCopyButtons: true
+  mainSections:
+    - flutter
+    - drafts
+    - softpower
+    - dotnet

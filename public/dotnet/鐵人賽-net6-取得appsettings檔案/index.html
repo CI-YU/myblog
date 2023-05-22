@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2022ITHelp dotnet6 取得appsettings檔案內容 | CI-YU Blog</title>
+<meta name="keywords" content="2022鐵人賽">
+<meta name="description" content="目的 透過強行別的模式使用appsetting設定檔資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料
+&#34;PersonalInformation&#34;: { &#34;Name&#34;: &#34;Bill&#34;, &#34;Age&#34;: 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上
+builder.Services.Configure&lt;PersonalInformation&gt;( builder.Configuration.GetSection(&#34;PersonalInformation&#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。
+private readonly PersonalInformation _options; public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger, IOptionsMonitor&lt;PersonalInformation&gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="2022ITHelp dotnet6 取得appsettings檔案內容" />
+<meta property="og:description" content="目的 透過強行別的模式使用appsetting設定檔資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料
+&#34;PersonalInformation&#34;: { &#34;Name&#34;: &#34;Bill&#34;, &#34;Age&#34;: 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上
+builder.Services.Configure&lt;PersonalInformation&gt;( builder.Configuration.GetSection(&#34;PersonalInformation&#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。
+private readonly PersonalInformation _options; public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger, IOptionsMonitor&lt;PersonalInformation&gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/" /><meta property="article:section" content="dotnet" />
+<meta property="article:published_time" content="2022-09-17T15:00:14+08:00" />
+<meta property="article:modified_time" content="2022-09-17T15:00:14+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022ITHelp dotnet6 取得appsettings檔案內容"/>
+<meta name="twitter:description" content="目的 透過強行別的模式使用appsetting設定檔資料
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料
+&#34;PersonalInformation&#34;: { &#34;Name&#34;: &#34;Bill&#34;, &#34;Age&#34;: 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上
+builder.Services.Configure&lt;PersonalInformation&gt;( builder.Configuration.GetSection(&#34;PersonalInformation&#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。
+private readonly PersonalInformation _options; public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger, IOptionsMonitor&lt;PersonalInformation&gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dotnets",
+      "item": "https://ci-yu.top/dotnet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2022ITHelp dotnet6 取得appsettings檔案內容",
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2022ITHelp dotnet6 取得appsettings檔案內容",
+  "name": "2022ITHelp dotnet6 取得appsettings檔案內容",
+  "description": "目的 透過強行別的模式使用appsetting設定檔資料\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料\n\u0026#34;PersonalInformation\u0026#34;: { \u0026#34;Name\u0026#34;: \u0026#34;Bill\u0026#34;, \u0026#34;Age\u0026#34;: 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上\nbuilder.Services.Configure\u0026lt;PersonalInformation\u0026gt;( builder.Configuration.GetSection(\u0026#34;PersonalInformation\u0026#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。\nprivate readonly PersonalInformation _options; public WeatherForecastController(ILogger\u0026lt;WeatherForecastController\u0026gt; logger, IOptionsMonitor\u0026lt;PersonalInformation\u0026gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor",
+  "keywords": [
+    "2022鐵人賽"
+  ],
+  "articleBody": "目的 透過強行別的模式使用appsetting設定檔資料\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料\n\"PersonalInformation\": { \"Name\": \"Bill\", \"Age\": 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上\nbuilder.Services.Configure( builder.Configuration.GetSection(\"PersonalInformation\")); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。\nprivate readonly PersonalInformation _options; public WeatherForecastController(ILogger logger, IOptionsMonitor options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor\n選項模式 可使用singleton 重載 具名選項 IOptions V X X IOptionsSnapshot X V V IOptionsMonitor V V V 參考 選項模式 IOptions與IOptionsSnaphot與IOptionsMonitor 程式範例參考 options差別\n範例檔 GitHub\n",
+  "wordCount" : "95",
+  "inLanguage": "en",
+  "datePublished": "2022-09-17T15:00:14+08:00",
+  "dateModified": "2022-09-17T15:00:14+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
+    <h1 class="post-title">
+      2022ITHelp dotnet6 取得appsettings檔案內容
+    </h1>
+    <div class="post-meta"><span title='2022-09-17 15:00:14 +0800 CST'>September 17, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+<p>透過強行別的模式使用appsetting設定檔資料</p>
+<h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
+<p>選擇ASP.NET Core Web API專案範本，並執行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟1"  />
+</p>
+<h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
+<p>命名你的專案名稱，並選擇專案要存放的位置。
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162605693-91b5c04f-008e-49bb-bda3-c063bba0da4f.png" alt="步驟2"  />
+</p>
+<h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
+<p>直接進行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟3"  />
+</p>
+<h3 id="設定appsetting檔案">設定appsetting檔案<a hidden class="anchor" aria-hidden="true" href="#設定appsetting檔案">#</a></h3>
+<p>在appsetting新增一筆json資料</p>
+<pre tabindex="0"><code>  &#34;PersonalInformation&#34;: {
+    &#34;Name&#34;: &#34;Bill&#34;,
+    &#34;Age&#34;: 20
+  }
+</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162606196-fe29d713-664d-4d7c-a42a-89faa7c14c61.png" alt="步驟4"  />
+</p>
+<h3 id="新增model資料夾並在裡面新增appsettingconfig類別檔">新增model資料夾，並在裡面新增AppsettingConfig類別檔<a hidden class="anchor" aria-hidden="true" href="#新增model資料夾並在裡面新增appsettingconfig類別檔">#</a></h3>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162606275-9360ae88-fec5-4efa-9eb4-6b56ef0f9100.png" alt="步驟5"  />
+</p>
+<h3 id="編輯appsettingconfig類別檔案">編輯AppsettingConfig類別檔案<a hidden class="anchor" aria-hidden="true" href="#編輯appsettingconfig類別檔案">#</a></h3>
+<pre tabindex="0"><code>  public class PersonalInformation {
+    public PersonalInformation() {
+      Name = string.Empty;
+    }
+    public string Name { get; set; }
+    public int Age { get; set; }
+  }
+</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162606799-69973fe9-d465-4aaa-b8c1-d2cd2e3ba6b2.png" alt="步驟6"  />
+</p>
+<h3 id="編輯programcs檔案">編輯Program.cs檔案<a hidden class="anchor" aria-hidden="true" href="#編輯programcs檔案">#</a></h3>
+<p>在program.cs中把appsetting的來源綁定在PersonalInformation這個class上</p>
+<pre tabindex="0"><code>builder.Services.Configure&lt;PersonalInformation&gt;(
+    builder.Configuration.GetSection(&#34;PersonalInformation&#34;));
+</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162624188-359f3b96-c656-4985-9208-2b496f604dad.png" alt="步驟7"  />
+</p>
+<h3 id="注入所需要的地方">注入所需要的地方<a hidden class="anchor" aria-hidden="true" href="#注入所需要的地方">#</a></h3>
+<p>注入到預設的WeatherForecastController中，就可以使用。</p>
+<pre tabindex="0"><code>    private readonly PersonalInformation _options;
+
+    public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger, IOptionsMonitor&lt;PersonalInformation&gt; options) {
+      _logger = logger;
+      _options = options.CurrentValue;
+    }
+</code></pre><blockquote>
+<p>此範例使用的是IOptionsMonitor</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">選項模式</th>
+<th style="text-align:center">可使用singleton</th>
+<th style="text-align:center">重載</th>
+<th style="text-align:center">具名選項</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">IOptions</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">X</td>
+</tr>
+<tr>
+<td style="text-align:center">IOptionsSnapshot</td>
+<td style="text-align:center">X</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+<tr>
+<td style="text-align:center">IOptionsMonitor</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+<td style="text-align:center">V</td>
+</tr>
+</tbody>
+</table>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/162624433-baa5b9c1-00d3-4664-8ebe-d293e4fb519b.png" alt="步驟8"  />
+</p>
+<h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
+<p><a href="https://docs.microsoft.com/zh-tw/aspnet/core/fundamentals/configuration/options?view=aspnetcore-6.0">選項模式</a>
+<a href="https://stackoverflow.com/questions/50788988/difference-between-ioptionsmonitor-vs-ioptionssnapshot">IOptions與IOptionsSnaphot與IOptionsMonitor</a>
+<a href="https://andrewlock.net/how-to-use-the-ioptions-pattern-for-configuration-in-asp-net-core-rc2/">程式範例參考</a>
+<a href="https://www.youtube.com/watch?v=Doj9W5Rv7vs">options差別</a></p>
+<h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
+<p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/ConfigurationExample">GitHub</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

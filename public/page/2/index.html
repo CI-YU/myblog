@@ -1,0 +1,374 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head>
+	<meta name="generator" content="Hugo 0.111.3"><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>CI-YU Blog</title>
+
+<meta name="description" content="">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://ci-yu.top/index.xml">
+<link rel="alternate" type="application/json" href="https://ci-yu.top/index.json">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="CI-YU Blog" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ci-yu.top/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="CI-YU Blog"/>
+<meta name="twitter:description" content=""/>
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "CI-YU Blog",
+  "url": "https://ci-yu.top/",
+  "description": "",
+  "thumbnailUrl": "https://ci-yu.top/favicon.ico",
+  "sameAs": [
+      "https://github.com/CI-YU", "https://www.linkedin.com/in/ci-yu-huang-8a75a21b0/"
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 Dapper語法說明
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 說明Dapper基本語法
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite 編輯WeatherForecastController檔案 將預設的API註解 基本設定 /// &lt;summary&gt; /// 初始化SQLite /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; private static async Task InitSqliteAsync() { //建立SQLite連線 using var conn = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //判斷是否有Student.sqlite檔案 if (!System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //新增一張表，就會建立.sqlite檔案 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await conn.ExecuteAsync(SQL.ToString()); } //Task不建議使用void，當不需要回傳值時會改用Task....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-03 03:39:15 +0800 CST'>October 3, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Dapper語法說明" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 Dapper範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-02 01:39:15 +0800 CST'>October 2, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Dapper範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 EPPlus圖表範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 使用epplus製作長條圖
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1]....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-02 00:00:15 +0800 CST'>October 2, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 EPPlus圖表範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 EPPlus範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 將資料匯出成excel
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(Name = &#34;Import&#34;)]public ActionResult ImportExcel() {//建立excel所有操作的實例using ExcelPackage excelPackage = new();//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊excelPackage.Workbook.Properties.Author = &#34;Bill Huang&#34;;excelPackage.Workbook.Properties.Title = &#34;範例檔案&#34;;excelPackage.Workbook.Properties.Created = DateTime.Now;//建立第一頁工作表(下方所顯示的頁簽)ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;);int i = 1;foreach (var c in Summaries) {//選擇指定欄位將資料放入worksheet....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-10-01 00:39:15 +0800 CST'>October 1, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 EPPlus範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 更改回傳Json時為大駝峰命名
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 將預設回傳的Camel-Case(temperatureCelsius)改為Pascal Case(TemperatureCelsius)
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var options = new JsonSerializerOptions {PropertyNamingPolicy = null,};var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18,&#34;&#34;TemperatureCelsius&#34;&#34;:52}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString,options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }public int TemperatureCelsius { get; set; }} Program寫入程式 builder....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-30 09:00:14 +0800 CST'>September 30, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 更改回傳Json時為大駝峰命名" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E6%9B%B4%E6%94%B9%E5%9B%9E%E5%82%B3json%E6%99%82%E7%82%BA%E5%A4%A7%E9%A7%9D%E5%B3%B0%E5%91%BD%E5%90%8D/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 序列化時不自動將非ASCII轉為Unicode
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using [HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var options = new JsonSerializerOptions {//美化輸出，會有空白字元WriteIndented = true,//將所有語言都不進行轉換Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)};var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18,};var Result = JsonSerializer.Serialize(Test, options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 中文就不會是unicode了 參考 How to serialize and deserialize...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-29 00:02:35 +0800 CST'>September 29, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E8%A7%A3%E6%B1%BAsystem.text.json%E5%BA%8F%E5%88%97%E5%8C%96%E5%BE%8C%E6%9C%83%E5%B0%87%E6%89%80%E6%9C%89%E9%9D%9Eascii%E8%BD%89%E7%82%BAunicode/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 Text.Json範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-28 00:02:35 +0800 CST'>September 28, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Text.Json範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 swagger授權
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 在swagger內使用jwt token測試API
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
+&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解
+builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 NuGet加入套件 透過NuGet安裝
+JWT Microsoft.AspNetCore.Authentication.JwtBearer Microsoft.IdentityModel.Tokens System.IdentityModel.Tokens.Jwt 新增Helpers資料夾並在裡面新增JwtHelpers.cs類別檔案 jwt範例使用保哥範例來做修改，目的只是為了取得jwt token
+public class JwtHelper { private readonly JwtSettingsOptions _settings; public JwtHelper(IOptionsMonitor&lt;JwtSettingsOptions&gt; settings) { //注入appsetting的json _settings = settings.CurrentValue; } public string GenerateToken(string userName, int expireMinutes = 120) { //發行人 var issuer = _settings....</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-27 00:51:18 +0800 CST'>September 27, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 swagger授權" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 swagger範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
+&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
+builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 編輯WeatherForecastController檔案 這裡有個重點，如果要增加下一個action時候，預設的範例檔案，需要調整route的設定，才能讀取到，不然會跳錯誤訊息
+加入前 加入後 加入第二個方法 執行結果 就可以成功讀取到兩個方法了 參考 微軟官方
+範例檔 GitHub</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-26 00:10:22 +0800 CST'>September 26, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 swagger範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>2022ITHelp dotnet6 Telegram.Bot範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 使用telegram做聊天機器人
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(&#34;Test&#34;)]public async Task&lt;string&gt; Test() {var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &#34;前置作業給的頻道ID&#34;,text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);//回傳取得的機器人基本資訊return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog...</p>
+  </div>
+  <footer class="entry-footer"><span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span></footer>
+  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Telegram.Bot範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"></a>
+</article>
+<footer class="page-footer">
+  <nav class="pagination">
+    <a class="prev" href="https://ci-yu.top/">
+      «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://ci-yu.top/page/3/">Next&nbsp;&nbsp;»
+    </a>
+  </nav>
+</footer>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

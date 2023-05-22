@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2022ITHelp dotnet6 xUnit範例 | CI-YU Blog</title>
+<meta name="keywords" content="2022鐵人賽">
+<meta name="description" content="目的 單元測試
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
+xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式
+public static class Calculator { public static double Add(int a, int b) { return a &#43; b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段
+Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert.">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="2022ITHelp dotnet6 xUnit範例" />
+<meta property="og:description" content="目的 單元測試
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
+xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式
+public static class Calculator { public static double Add(int a, int b) { return a &#43; b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段
+Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
+<meta property="article:published_time" content="2022-10-08T02:39:15+08:00" />
+<meta property="article:modified_time" content="2022-10-08T02:39:15+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022ITHelp dotnet6 xUnit範例"/>
+<meta name="twitter:description" content="目的 單元測試
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
+xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式
+public static class Calculator { public static double Add(int a, int b) { return a &#43; b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段
+Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert."/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dotnets",
+      "item": "https://ci-yu.top/dotnet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2022ITHelp dotnet6 xUnit範例",
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2022ITHelp dotnet6 xUnit範例",
+  "name": "2022ITHelp dotnet6 xUnit範例",
+  "description": "目的 單元測試\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件\nxunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式\npublic static class Calculator { public static double Add(int a, int b) { return a + b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段\nArrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert.",
+  "keywords": [
+    "2022鐵人賽"
+  ],
+  "articleBody": "目的 單元測試\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件\nxunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式\npublic static class Calculator { public static double Add(int a, int b) { return a + b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段\nArrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert.Equal(Expected, Actual); } } 執行結果 點選測試\u003e執行所有測試\n下方視窗就會顯示成功或失敗 後記 單元測試有另外兩種NUnit與mstest，基本上大同小異，並無太大的區別。\n參考 xUnit官網 該用什麼Packages\n範例檔 GitHub\n",
+  "wordCount" : "86",
+  "inLanguage": "en",
+  "datePublished": "2022-10-08T02:39:15+08:00",
+  "dateModified": "2022-10-08T02:39:15+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
+    <h1 class="post-title">
+      2022ITHelp dotnet6 xUnit範例
+    </h1>
+    <div class="post-meta"><span title='2022-10-08 02:39:15 +0800 CST'>October 8, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+<p>單元測試</p>
+<h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
+<p>選擇ASP.NET Core Web API專案範本，並執行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟1"  />
+</p>
+<h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
+<p>命名你的專案名稱，並選擇專案要存放的位置。
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194479249-f9f9b167-e231-48d9-bfc8-993592523bcf.png" alt="範例2-1"  />
+</p>
+<h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
+<p>直接進行下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟3"  />
+</p>
+<h3 id="建立新的類別庫">建立新的類別庫<a hidden class="anchor" aria-hidden="true" href="#建立新的類別庫">#</a></h3>
+<p>進行命名時通常會與要測試的專案同名並加上結尾<code>.Tests</code>，以此範例就會變成<code>xUnitExample.Tests</code>
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194478957-a37a0632-dfdf-4d41-b91c-f5ebc2ba5d0a.png" alt="範例4-1"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194479052-2b9d9783-e457-4327-b6f1-d140440f96e8.png" alt="範例4-2"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194479385-eb09c8a2-7503-4bbc-884c-418a17e3fe26.png" alt="範例4-3"  />
+</p>
+<h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
+<p>針對xUnitExample.Tests加入相關套件</p>
+<ul>
+<li>xunit</li>
+<li>xunit.runner.visualstudio</li>
+<li>Microsoft.NET.Test.Sdk</li>
+<li>coverlet.collector</li>
+</ul>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194501068-d315650e-77b3-4a87-8e34-e8d07c060f86.png" alt="範例5-1"  />
+</p>
+<h3 id="新增calculatorcs類別檔">新增Calculator.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#新增calculatorcs類別檔">#</a></h3>
+<p>在xUnitExample專案新增Calculator.cs類別檔
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194501945-44193e5e-fb17-43f8-b5c1-73a3e53790ed.png" alt="範例6-1"  />
+
+新增一個簡單的加法函式</p>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Calculator</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">double</span> Add(<span style="color:#66d9ef">int</span> a, <span style="color:#66d9ef">int</span> b) {
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> a + b;
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194502632-95b3e9d3-f218-4363-b443-19f476d96988.png" alt="範例6-2"  />
+</p>
+<h3 id="針對xunitexampletests類別庫加入參考">針對xUnitExample.Tests類別庫加入參考<a hidden class="anchor" aria-hidden="true" href="#針對xunitexampletests類別庫加入參考">#</a></h3>
+<p>引用要測試的專案，才能將測試與實際專案切分開來
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194481272-736b7183-f967-4f0e-a495-d29d4fabeab5.jpg" alt="範例7-1"  />
+
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194481822-cbfb741c-e564-4397-aca8-cf8545cc3714.png" alt="範例7-2"  />
+</p>
+<h3 id="新增calculatortestscs類別檔">新增CalculatorTests.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#新增calculatortestscs類別檔">#</a></h3>
+<p>刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上<code>Tests</code>
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194503023-1341df65-6d99-416d-be3b-a50fd50ef1bb.png" alt="範例8-1"  />
+</p>
+<h3 id="編輯calculatortestscs類別檔">編輯CalculatorTests.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#編輯calculatortestscs類別檔">#</a></h3>
+<p>測試都會分三個階段</p>
+<ul>
+<li>Arrange：準備階段，包含初始化相關資料</li>
+<li>Act：執行測試方法後所取得的結果</li>
+<li>Assert：驗證Act取得的結果是否符合預期結果</li>
+</ul>
+<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">CalculatorTests</span> {
+</span></span><span style="display:flex;"><span>    <span style="color:#75715e">//告訴編譯器要執行的測試方法</span>
+</span></span><span style="display:flex;"><span><span style="color:#a6e22e">    [Fact]</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> Add_() {
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//Arrange</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">double</span> Expected = <span style="color:#ae81ff">20</span>;
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//Act</span>
+</span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> Actual = Calculator.Add(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">15</span>);
+</span></span><span style="display:flex;"><span>      <span style="color:#75715e">//Assert</span>
+</span></span><span style="display:flex;"><span>      Assert.Equal(Expected, Actual);
+</span></span><span style="display:flex;"><span>    }
+</span></span><span style="display:flex;"><span>  }
+</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194506362-888e2cb6-5ecf-4e65-8b76-088bbcda9b21.png" alt="範例9-1"  />
+</p>
+<h3 id="執行結果">執行結果<a hidden class="anchor" aria-hidden="true" href="#執行結果">#</a></h3>
+<blockquote>
+<p>點選測試&gt;執行所有測試</p>
+</blockquote>
+<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194508692-d06ef526-8aed-4bc8-a987-f1578e0beabf.jpg" alt="範例10-1"  />
+
+下方視窗就會顯示成功或失敗
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/194510672-0c1998a6-2c3c-4a32-9dba-abe8d1af1b70.png" alt="範例10-2"  />
+</p>
+<h3 id="後記">後記<a hidden class="anchor" aria-hidden="true" href="#後記">#</a></h3>
+<p>單元測試有另外兩種NUnit與mstest，基本上大同小異，並無太大的區別。</p>
+<h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
+<p><a href="https://xunit.net/docs/getting-started/netcore/cmdline">xUnit官網</a>
+<a href="https://xunit.net/docs/nuget-packages">該用什麼Packages</a></p>
+<h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
+<p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/xUnitExample">GitHub</a></p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

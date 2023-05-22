@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>2022ITHelp dotnet6 MailKit前置作業 | CI-YU Blog</title>
+<meta name="keywords" content="2022鐵人賽">
+<meta name="description" content="目的 前往google帳號設定OAuth，才能使用google帳號寄信
+點擊連結 到 google帳號管理
+新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><meta property="og:title" content="2022ITHelp dotnet6 MailKit前置作業" />
+<meta property="og:description" content="目的 前往google帳號設定OAuth，才能使用google帳號寄信
+點擊連結 到 google帳號管理
+新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/" /><meta property="article:section" content="dotnet" />
+<meta property="article:published_time" content="2022-09-18T15:39:15+08:00" />
+<meta property="article:modified_time" content="2022-09-18T15:39:15+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="2022ITHelp dotnet6 MailKit前置作業"/>
+<meta name="twitter:description" content="目的 前往google帳號設定OAuth，才能使用google帳號寄信
+點擊連結 到 google帳號管理
+新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Dotnets",
+      "item": "https://ci-yu.top/dotnet/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "2022ITHelp dotnet6 MailKit前置作業",
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "2022ITHelp dotnet6 MailKit前置作業",
+  "name": "2022ITHelp dotnet6 MailKit前置作業",
+  "description": "目的 前往google帳號設定OAuth，才能使用google帳號寄信\n點擊連結 到 google帳號管理\n新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit",
+  "keywords": [
+    "2022鐵人賽"
+  ],
+  "articleBody": "目的 前往google帳號設定OAuth，才能使用google帳號寄信\n點擊連結 到 google帳號管理\n新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit\n",
+  "wordCount" : "24",
+  "inLanguage": "en",
+  "datePublished": "2022-09-18T15:39:15+08:00",
+  "dateModified": "2022-09-18T15:39:15+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                    <span>SoftPower</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
+    <h1 class="post-title">
+      2022ITHelp dotnet6 MailKit前置作業
+    </h1>
+    <div class="post-meta"><span title='2022-09-18 15:39:15 +0800 CST'>September 18, 2022</span>
+
+</div>
+  </header> 
+  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+<p>前往google帳號設定OAuth，才能使用google帳號寄信</p>
+<h3 id="點擊連結">點擊連結<a hidden class="anchor" aria-hidden="true" href="#點擊連結">#</a></h3>
+<p>到 <a href="https://console.cloud.google.com/cloud-resource-manager?organizationId=0&amp;supportedpurview=project">google帳號管理</a></p>
+<h3 id="新增專案">新增專案<a hidden class="anchor" aria-hidden="true" href="#新增專案">#</a></h3>
+<p>點擊如圖按鈕建立新專案
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166645232-6a453bbe-f093-4df6-9128-629b0f3cbd3d.png" alt="建立專案"  />
+
+命名你的專案名稱，並點擊建立
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166645841-6e7eb854-e443-4589-a698-3cd44d1c4f59.png" alt="專案命名"  />
+</p>
+<h3 id="設定oauth">設定OAuth<a hidden class="anchor" aria-hidden="true" href="#設定oauth">#</a></h3>
+<p>跟著紅框處點擊到OAuth同意畫面
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166651058-7047b678-5cab-4ca7-9a7b-f80bcb461eca.png" alt="OAuth同意畫面"  />
+
+點擊剛剛建立的專案
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166651647-9b246135-5d93-4305-bacf-5046487831de.png" alt="點擊專案"  />
+
+選擇外部，並點擊建立
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166651858-7483c970-bb75-45a7-896f-c0bbbcdd8682.png" alt="點擊外部"  />
+</p>
+<h3 id="編輯應用程式註冊申請畫面">編輯應用程式註冊申請畫面<a hidden class="anchor" aria-hidden="true" href="#編輯應用程式註冊申請畫面">#</a></h3>
+<p>將所有必填欄位填完
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166652165-9d91feea-ccac-44c5-ba72-b750633cf1e9.png" alt="OAuth同意畫面"  />
+
+第二步直接下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166652632-ee75a4fb-0343-40bf-bda2-3416cacb7f3a.png" alt="範圍"  />
+
+新增使用者，要建立你要使用的帳號
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166652883-a546181d-c8aa-4bc2-a395-2ad1b43708d1.png" alt="測試使用者"  />
+
+摘要直接下一步
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166654331-76ba7e10-d766-4f7f-b741-0ae21a5c7847.png" alt="摘要"  />
+</p>
+<h3 id="憑證">憑證<a hidden class="anchor" aria-hidden="true" href="#憑證">#</a></h3>
+<p>點建立憑證
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166655558-2ceb57eb-ac5f-49cc-a37a-3e7881cdd8b6.png" alt="建立憑證"  />
+
+點擊OAuth用戶端ID
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166655969-a09a8d3b-e63e-426b-8395-26dff49dac1e.png" alt="OAuth用戶端ID"  />
+
+應用程式類型選擇電腦版應用程式，填入名稱後點擊建立
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166656521-dd177cb0-bfbe-4a02-af92-1694479f39c6.png" alt="選擇電腦版應用程式"  />
+
+最後會取得用戶端ID與用戶端密碼
+<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/166656884-36807911-acc0-4405-9232-a92e6b13a85b.png" alt="結論"  />
+</p>
+<h3 id="結論">結論<a hidden class="anchor" aria-hidden="true" href="#結論">#</a></h3>
+<p>最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>
