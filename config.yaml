@@ -39,6 +39,7 @@ outputs:
         - RSS
         - JSON
 params:
+  env: production
   homeInfoParams:
     Title: "Hi there \U0001F44B"
     Content: Welcome to my blog
