@@ -5,7 +5,7 @@ paginate : 10
 theme : "PaperMod"
 buildDrafts: false
 UseHugoToc: true
-googleAnalytics: 5285103970
+googleAnalytics: G-S4X5YV8EB6
 menu:
   main:
     - identifier: Dotnet
