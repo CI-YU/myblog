@@ -5,12 +5,13 @@ paginate : 10
 theme : "PaperMod"
 buildDrafts: false
 UseHugoToc: true
+googleAnalytics: 5285103970
 menu:
   main:
     - identifier: Dotnet
       name: Dotnet
       url: /dotnet/
-      weight: 10
+      weight: 10  
     - identifier: Flutter
       name: Flutter
       url: /flutter/
