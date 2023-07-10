@@ -9,8 +9,10 @@ draft: true
 由上至下的排序
 ### Row
 由左至右的排序
-### Expened
-只能使用在繼承Flex以下的Widget
+### Expanded
+只能使用在繼承Flex以下的Widget，常使用在``Cloumn``或``row``的子項
+
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
 
 ### ListView
 使用ListView是可以有滾動效果
