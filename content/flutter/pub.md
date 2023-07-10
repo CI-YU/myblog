@@ -1,7 +1,8 @@
 ---
 title: "Pub"
 date: 2023-05-28T14:30:29+08:00
-draft: true
+draft: false
+tags: ["flutter"]
 ---
 # 快速介紹flutter安裝的函式庫
 
