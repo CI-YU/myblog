@@ -7,7 +7,7 @@ tags: ["flutter"]
 # 三棵樹
 flutter共有三個核心
 ## widget tree
-在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree
+在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
 ## element tree
 會將資料儲存在記憶體，並決定要不要重新繪製UI
 ## render tree
