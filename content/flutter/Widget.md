@@ -1,7 +1,8 @@
 ---
 title: "Widget"
 date: 2023-05-28T13:26:51+08:00
-draft: true
+draft: false
+tags: ["flutter"]
 ---
 
 ## 佈局的屬性
@@ -47,3 +48,4 @@ key參數必要，才能確定要滑動刪除哪筆資料
       ),
     );
 ```
+後續慢慢補上
