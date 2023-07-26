@@ -48,4 +48,9 @@ key參數必要，才能確定要滑動刪除哪筆資料
       ),
     );
 ```
+### InkWell
+可以讓沒有事件的元件增加點擊事件之類的功能
+與GestureDetector的差別在於
+`GestureDetector`提供更多的點擊事件，`InkWell`提供點擊特效
+[兩者差異出處](https://stackoverflow.com/questions/56725308/flutter-inkwell-vs-gesturedetector-what-is-the-difference)
 後續慢慢補上
