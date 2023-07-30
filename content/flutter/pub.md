@@ -14,3 +14,7 @@ tags: ["flutter"]
 建立guid
 > flutter pub add uuid
 
+### transparent_image
+當圖還沒有載入時可以有透明背景圖使用
+> flutter pub add transparent_image
+
