@@ -50,5 +50,5 @@ StatefulWidget改成ConsumerStatefulWidget
 //在要使用資料的地方使用下列
 //當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到
 final demo = ref.watch(demoProvider);
-接下來即可使用demo來做後續事情
+//接下來即可使用demo來做後續事情
 ```
