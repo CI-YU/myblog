@@ -20,7 +20,9 @@ tags: ["flutter"]
 
 ### riverpod
 是一個狀態管理的工具，當開始寫flutter就會遇到跟現在流行的框架vue/react一樣的問題，當我要傳遞資料時要一直往子層傳參數，才能將資料傳進去，這時`riverpod`就是來解決這個問題的
-另一個社群討論度高的是[Getx](https://pub.dev/packages/get)
+另一個社群討論度高的是[Getx](https://pub.dev/packages/get)。
+> flutter pub add riverpod
+
 1. 要在需要的區塊上加上`ProviderScope`，下列範例就是所有區塊都要可以使用
 ```dart
 void main() {
