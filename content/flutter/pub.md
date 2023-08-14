@@ -52,3 +52,6 @@ StatefulWidget改成ConsumerStatefulWidget
 final demo = ref.watch(demoProvider);
 //接下來即可使用demo來做後續事情
 ```
+### http
+進行restful api，透過這個套件可以發送請求到api並接收回傳
+> flutter pub add http
