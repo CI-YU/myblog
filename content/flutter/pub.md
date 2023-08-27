@@ -69,4 +69,4 @@ final demo = ref.watch(demoProvider);
 ### location
 取得使用者當下位置座標
 
-> flutter location
+> flutter pub add location
