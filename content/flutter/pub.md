@@ -70,3 +70,7 @@ final demo = ref.watch(demoProvider);
 取得使用者當下位置座標
 
 > flutter pub add location
+
+### Google Maps for Flutter
+根據官方文件，安著需要設定`minSdkVersion`與`key`，設定完成後要記得重啟模擬器，才不會遇到錯誤
+> flutter pub add google_maps_flutter
