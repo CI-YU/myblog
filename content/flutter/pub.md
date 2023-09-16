@@ -74,3 +74,19 @@ final demo = ref.watch(demoProvider);
 ### Google Maps for Flutter
 根據官方文件，安著需要設定`minSdkVersion`與`key`，設定完成後要記得重啟模擬器，才不會遇到錯誤
 > flutter pub add google_maps_flutter
+
+### path_provider
+
+可以快速的找到平常文件常用得路徑
+
+> flutter pub add path_provider
+### path
+
+簡化路徑處理
+
+> flutter pub add path
+
+### sqflite
+可以使用sqlite
+
+> flutter pub add sqflite
