@@ -15,7 +15,7 @@ await dapper.QueryAsync(strSQL,parameters);
 ```
 > 42601: syntax error at or near "$1"\r\n\r\nPOSITION: 81
 # 解法
-改語法為就可以解決這個問題。
+改語法為any就可以解決這個問題。
 ```C#
 DynamicParameters parameters = new();
 parameters.Add("Ids", Ids);
