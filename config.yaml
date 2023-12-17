@@ -42,7 +42,7 @@ params:
   env: production
   homeInfoParams:
     Title: "Hi there \U0001F44B"
-    Content: Welcome to my blog
+    Content: Welcome to my blog \n funday訂閱推薦碼K7W7M5W3S6
   socialIcons:
     - name: github
       url: "https://github.com/CI-YU"

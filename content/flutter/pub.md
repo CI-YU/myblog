@@ -43,7 +43,7 @@ final demoProvider = Provider((ref) {
   return false;
 });
 ```
-3. ConsumerStatefulWidget & ConsumerWidget
+3. = & ConsumerWidget
 
 StatelessWidget改成ConsumerWidget
 
