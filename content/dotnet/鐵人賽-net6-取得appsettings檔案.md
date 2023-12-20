@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 取得appsettings檔案內容
+title: dotnet6 取得appsettings檔案內容
 date: 2022-09-17T15:00:14+08:00
 draft: false
 tags: ["2022鐵人賽"]

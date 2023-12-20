@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 更改回傳Json時為大駝峰命名
+title: dotnet6 更改回傳Json時為大駝峰命名
 date: 2022-09-30T09:00:14+08:00
 draft: false
 tags: ["2022鐵人賽"]

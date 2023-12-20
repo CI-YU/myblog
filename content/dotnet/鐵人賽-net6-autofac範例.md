@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 Autofac範例
+title: dotnet6 Autofac範例
 date: 2022-09-22T00:48:20+08:00
 draft: false
 tags: ["2022鐵人賽"]

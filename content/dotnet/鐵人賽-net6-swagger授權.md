@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 swagger授權
+title: dotnet6 swagger授權
 date: 2022-09-27T00:51:18+08:00
 draft: false
 tags: ["2022鐵人賽"]

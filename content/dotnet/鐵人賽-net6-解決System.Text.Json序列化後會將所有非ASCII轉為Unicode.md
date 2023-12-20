@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode
+title: dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode
 date: 2022-09-29T00:02:35+08:00
 draft: false
 tags: ["2022鐵人賽"]

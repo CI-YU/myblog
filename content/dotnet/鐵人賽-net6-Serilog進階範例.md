@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 Serilog進階範例
+title: dotnet6 Serilog進階範例
 date: 2022-10-07T05:39:15+08:00
 draft: false
 tags: ["2022鐵人賽"]

@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 Automapper範例
+title: dotnet6 Automapper範例
 date: 2022-09-20T00:39:29+08:00
 draft: false
 tags: ["2022鐵人賽"]

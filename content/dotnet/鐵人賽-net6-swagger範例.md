@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 swagger範例
+title: dotnet6 swagger範例
 date: 2022-09-26T00:10:22+08:00
 draft: false
 tags: ["2022鐵人賽"]

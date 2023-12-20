@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 MailKit範例
+title: dotnet6 MailKit範例
 date: 2022-09-19T15:38:35+08:00
 draft: false
 tags: ["2022鐵人賽"]

@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 MailKit前置作業
+title: dotnet6 MailKit前置作業
 date: 2022-09-18T15:39:15+08:00
 draft: false
 tags: ["2022鐵人賽"]

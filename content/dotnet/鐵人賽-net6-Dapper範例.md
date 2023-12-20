@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 Dapper範例
+title: dotnet6 Dapper範例
 date: 2022-10-02T01:39:15+08:00
 draft: false
 tags: ["2022鐵人賽"]

@@ -1,5 +1,5 @@
 ---
-title: 2022ITHelp dotnet6 Telegram.Bot前置作業
+title: dotnet6 Telegram.Bot前置作業
 date: 2022-09-24T09:38:35+08:00
 draft: false
 tags: ["2022鐵人賽"]
