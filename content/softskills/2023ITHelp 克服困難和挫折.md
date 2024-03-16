@@ -2,7 +2,7 @@
 title: "2023ITHelp 克服困難和挫折"
 date: 2023-09-29T01:01:42+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 **前言**
 

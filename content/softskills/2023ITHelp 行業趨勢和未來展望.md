@@ -2,7 +2,7 @@
 title: "2023ITHelp 行業趨勢和未來展望"
 date: 2023-10-05T23:35:07+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

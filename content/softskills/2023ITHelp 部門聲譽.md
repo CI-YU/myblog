@@ -2,7 +2,7 @@
 title: "2023ITHelp 部門聲譽"
 date: 2023-09-29T00:35:05+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

@@ -2,7 +2,7 @@
 title: "2023ITHelp 向下管理"
 date: 2023-09-20T21:17:13+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 前言

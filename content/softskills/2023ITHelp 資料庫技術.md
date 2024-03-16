@@ -2,7 +2,7 @@
 title: "2023ITHelp 資料庫技術"
 date: 2023-10-05T23:33:37+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

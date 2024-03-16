@@ -2,7 +2,7 @@
 title: "2023ITHelp 了解公司戰略和願景"
 date: 2023-09-27T00:19:57+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

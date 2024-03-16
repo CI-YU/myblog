@@ -2,7 +2,7 @@
 title: "2023ITHelp 建立個人品牌和影響力"
 date: 2023-09-29T01:25:29+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

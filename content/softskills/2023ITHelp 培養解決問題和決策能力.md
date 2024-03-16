@@ -2,7 +2,7 @@
 title: "2023ITHelp 培養解決問題和決策能力"
 date: 2023-09-21T23:57:42+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 前言
 

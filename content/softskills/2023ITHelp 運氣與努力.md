@@ -2,7 +2,7 @@
 title: "2023ITHelp 運氣與努力"
 date: 2023-09-29T01:29:56+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

@@ -132,7 +132,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                <a href="https://ci-yu.top/softpower/" title="軟實力">
                     <span>SoftPower</span>
                 </a>
             </li>
@@ -184,8 +184,19 @@
     <p>目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
+readonly IHttpClientFactory _httpClientFactory;
+public CallAPIServices(IHttpClientFactory httpClientFactory) {
+_httpClientFactory = httpClientFactory;
+} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
+public async Task&lt;string&gt; Get() {
+var client = _httpClientFactory.CreateClient();
+var response = await client.GetAsync(&#34;https://example.com&#34;);
+if (response.IsSuccessStatusCode) {
+var responseString = await response.Content.ReadAsStringAsync();
+return responseString;
+}
+return &#34;&#34;;
+} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
 設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案...</p>
   </div>
   <footer class="entry-footer"><span title='2022-10-10 02:39:15 +0800 CST'>October 10, 2022</span></footer>
@@ -245,7 +256,22 @@ Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後
     <p>目的 在webapi專案下使用NLog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 NLog NLog.Web.AspNetCore 新增nlog.config檔案 在根目錄新增nlog.config檔案 nlog.config寫入程式 在nlog.config寫入官方範例
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;&lt;nlog xmlns=&#34;http://www.nlog-project.org/schemas/NLog.xsd&#34;xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;autoReload=&#34;true&#34;internalLogLevel=&#34;Info&#34;internalLogFile=&#34;c:\temp\internal-nlog-AspNetCore.txt&#34;&gt;&lt;!-- enable asp.net core layout renderers --&gt;&lt;extensions&gt;&lt;add assembly=&#34;NLog.Web.AspNetCore&#34;/&gt;&lt;/extensions&gt;&lt;!-- the targets to write to --&gt;&lt;targets&gt;&lt;!-- File Target for all log messages with basic details --&gt;&lt;target xsi:type=&#34;File&#34; name=&#34;allfile&#34; fileName=&#34;c:\temp\nlog-AspNetCore-all-${shortdate}.log&#34;layout=&#34;${longdate}|${event-properties:item=EventId_Id:whenEmpty=0}|${level:uppercase=true}|${logger}|${message} ${exception:format=tostring}&#34; /&gt;&lt;!-- File Target for own log messages with extra web details using some ASP....</p>
+&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;
+&lt;nlog xmlns=&#34;http://www.nlog-project.org/schemas/NLog.xsd&#34;
+xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
+autoReload=&#34;true&#34;
+internalLogLevel=&#34;Info&#34;
+internalLogFile=&#34;c:\temp\internal-nlog-AspNetCore.txt&#34;&gt;
+&lt;!-- enable asp.net core layout renderers --&gt;
+&lt;extensions&gt;
+&lt;add assembly=&#34;NLog.Web.AspNetCore&#34;/&gt;
+&lt;/extensions&gt;
+&lt;!-- the targets to write to --&gt;
+&lt;targets&gt;
+&lt;!-- File Target for all log messages with basic details --&gt;
+&lt;target xsi:type=&#34;File&#34; name=&#34;allfile&#34; fileName=&#34;c:\temp\nlog-AspNetCore-all-${shortdate}.log&#34;
+layout=&#34;${longdate}|${event-properties:item=EventId_Id:whenEmpty=0}|${level:uppercase=true}|${logger}|${message} ${exception:format=tostring}&#34; /&gt;
+&lt;!-- File Target for own log messages with extra web details using some ASP....</p>
   </div>
   <footer class="entry-footer"><span title='2022-10-08 01:39:15 +0800 CST'>October 8, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 NLog範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E7%AF%84%E4%BE%8B/"></a>

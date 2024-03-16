@@ -16,9 +16,9 @@ menu:
       name: Flutter
       url: /flutter/
       weight: 15
-    - identifier: SoftPower
-      name: SoftPower
-      url: /softpower/
+    - identifier: 軟實力
+      name: SoftSkills
+      url: /softskills/
       weight: 30
     - identifier: Search
       name: Search

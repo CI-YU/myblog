@@ -2,7 +2,7 @@
 title: "2023ITHelp 建立高效的工作團隊"
 date: 2023-09-22T00:14:31+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 前言
 

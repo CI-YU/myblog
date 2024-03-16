@@ -132,7 +132,7 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="SoftPower">
+                <a href="https://ci-yu.top/softpower/" title="軟實力">
                     <span>SoftPower</span>
                 </a>
             </li>
@@ -195,7 +195,11 @@
   <div class="entry-content">
     <p>目的 使用epplus製作長條圖
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
-&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+&#34;EPPlus&#34;: {
+&#34;ExcelPackage&#34;: {
+&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used
+}
+} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1]....</p>
   </div>
   <footer class="entry-footer"><span title='2022-10-02 00:00:15 +0800 CST'>October 2, 2022</span></footer>
@@ -210,8 +214,25 @@
   <div class="entry-content">
     <p>目的 將資料匯出成excel
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
-&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
-[HttpGet(Name = &#34;Import&#34;)]public ActionResult ImportExcel() {//建立excel所有操作的實例using ExcelPackage excelPackage = new();//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊excelPackage.Workbook.Properties.Author = &#34;Bill Huang&#34;;excelPackage.Workbook.Properties.Title = &#34;範例檔案&#34;;excelPackage.Workbook.Properties.Created = DateTime.Now;//建立第一頁工作表(下方所顯示的頁簽)ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;);int i = 1;foreach (var c in Summaries) {//選擇指定欄位將資料放入worksheet....</p>
+&#34;EPPlus&#34;: {
+&#34;ExcelPackage&#34;: {
+&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used
+}
+} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(Name = &#34;Import&#34;)]
+public ActionResult ImportExcel() {
+//建立excel所有操作的實例
+using ExcelPackage excelPackage = new();
+//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊
+excelPackage.Workbook.Properties.Author = &#34;Bill Huang&#34;;
+excelPackage.Workbook.Properties.Title = &#34;範例檔案&#34;;
+excelPackage.Workbook.Properties.Created = DateTime.Now;
+//建立第一頁工作表(下方所顯示的頁簽)
+ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;);
+int i = 1;
+foreach (var c in Summaries) {
+//選擇指定欄位將資料放入
+worksheet....</p>
   </div>
   <footer class="entry-footer"><span title='2022-10-01 00:39:15 +0800 CST'>October 1, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 EPPlus範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/"></a>
@@ -224,7 +245,24 @@
   </header>
   <div class="entry-content">
     <p>目的 將預設回傳的Camel-Case(temperatureCelsius)改為Pascal Case(TemperatureCelsius)
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var options = new JsonSerializerOptions {PropertyNamingPolicy = null,};var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18,&#34;&#34;TemperatureCelsius&#34;&#34;:52}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString,options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }public int TemperatureCelsius { get; set; }} Program寫入程式 builder....</p>
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;
+/// 反序列化
+/// &lt;/summary&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+[HttpGet(&#34;JsonDeserialize&#34;)]
+public ActionResult JsonDeserialize() {
+var options = new JsonSerializerOptions {
+PropertyNamingPolicy = null,
+};
+var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18,&#34;&#34;TemperatureCelsius&#34;&#34;:52}&#34;;
+var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString,options);
+return Ok(Result);
+}
+public class TestClass {
+public string Name { get; set; }
+public int Age { get; set; }
+public int TemperatureCelsius { get; set; }
+} Program寫入程式 builder....</p>
   </div>
   <footer class="entry-footer"><span title='2022-09-30 09:00:14 +0800 CST'>September 30, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 更改回傳Json時為大駝峰命名" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E6%9B%B4%E6%94%B9%E5%9B%9E%E5%82%B3json%E6%99%82%E7%82%BA%E5%A4%A7%E9%A7%9D%E5%B3%B0%E5%91%BD%E5%90%8D/"></a>
@@ -237,7 +275,25 @@
   </header>
   <div class="entry-content">
     <p>目的 序列化時不自動將非ASCII轉為Unicode
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using [HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var options = new JsonSerializerOptions {//美化輸出，會有空白字元WriteIndented = true,//將所有語言都不進行轉換Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)};var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18,};var Result = JsonSerializer.Serialize(Test, options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 中文就不會是unicode了 參考 How to serialize and deserialize...</p>
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using [HttpGet(&#34;JsonSerialize&#34;)]
+public ActionResult JsonSerialize() {
+var options = new JsonSerializerOptions {
+//美化輸出，會有空白字元
+WriteIndented = true,
+//將所有語言都不進行轉換
+Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)
+};
+var Test = new TestClass() {
+Name = &#34;中文名&#34;,
+Age = 18,
+};
+var Result = JsonSerializer.Serialize(Test, options);
+return Ok(Result);
+}
+public class TestClass {
+public string Name { get; set; }
+public int Age { get; set; }
+} 執行結果 中文就不會是unicode了 參考 How to serialize and deserialize...</p>
   </div>
   <footer class="entry-footer"><span title='2022-09-29 00:02:35 +0800 CST'>September 29, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E8%A7%A3%E6%B1%BAsystem.text.json%E5%BA%8F%E5%88%97%E5%8C%96%E5%BE%8C%E6%9C%83%E5%B0%87%E6%89%80%E6%9C%89%E9%9D%9Eascii%E8%BD%89%E7%82%BAunicode/"></a>
@@ -250,7 +306,33 @@
   </header>
   <div class="entry-content">
     <p>目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異...</p>
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;
+/// 序列化
+/// &lt;/summary&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+[HttpGet(&#34;JsonSerialize&#34;)]
+public ActionResult JsonSerialize() {
+var Test = new TestClass() {
+Name = &#34;中文名&#34;,
+Age = 18
+};
+var Result = JsonSerializer.Serialize(Test);
+return Ok(Result);
+}
+/// &lt;summary&gt;
+/// 反序列化
+/// &lt;/summary&gt;
+/// &lt;returns&gt;&lt;/returns&gt;
+[HttpGet(&#34;JsonDeserialize&#34;)]
+public ActionResult JsonDeserialize() {
+var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;
+var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);
+return Ok(Result);
+}
+public class TestClass {
+public string Name { get; set; }
+public int Age { get; set; }
+} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異...</p>
   </div>
   <footer class="entry-footer"><span title='2022-09-28 00:02:35 +0800 CST'>September 28, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Text.Json範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/"></a>
@@ -298,7 +380,18 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
   <div class="entry-content">
     <p>目的 使用telegram做聊天機器人
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
-[HttpGet(&#34;Test&#34;)]public async Task&lt;string&gt; Test() {var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &#34;前置作業給的頻道ID&#34;,text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);//回傳取得的機器人基本資訊return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog...</p>
+[HttpGet(&#34;Test&#34;)]
+public async Task&lt;string&gt; Test() {
+var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);
+//取得機器人基本資訊
+var me = await botClient.GetMeAsync();
+//發送訊息到指定頻道
+Message message = await botClient.SendTextMessageAsync(
+chatId: &#34;前置作業給的頻道ID&#34;,
+text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);
+//回傳取得的機器人基本資訊
+return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;
+} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog...</p>
   </div>
   <footer class="entry-footer"><span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span></footer>
   <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Telegram.Bot範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"></a>

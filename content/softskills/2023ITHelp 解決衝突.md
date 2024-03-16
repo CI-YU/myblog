@@ -2,7 +2,7 @@
 title: "2023ITHelp 解決衝突"
 date: 2023-09-20T21:35:47+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 前言
 

@@ -2,7 +2,7 @@
 title: "2023ITHelp 激勵和鼓勵工程師"
 date: 2023-09-22T00:15:19+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 前言
 

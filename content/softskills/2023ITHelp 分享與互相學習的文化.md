@@ -2,7 +2,7 @@
 title: "2023ITHelp 分享與互相學習的文化"
 date: 2023-09-25T23:04:18+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 
 **前言**

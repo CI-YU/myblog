@@ -2,7 +2,7 @@
 title: "2023ITHelp 時間管理和優先事項設定"
 date: 2023-09-22T00:12:56+08:00
 draft: false
-tags: ["2023鐵人賽","softpower"]
+tags: ["2023鐵人賽","軟實力"]
 ---
 前言
 
