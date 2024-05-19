@@ -41,7 +41,7 @@ public static class OpenCCHelper
 
     public static string OpenCC(this string text, string config)
     {
-        var configFile = @"C:\Tools\OpenCC\share\opencc\" + config + ".json";
+        var configFile = $"C:\\Tools\\OpenCC\\share\\opencc\\{config}.json";
         if (!File.Exists(configFile))
         {
             throw new FileNotFoundException("設定檔找不到", configFile);
@@ -125,7 +125,7 @@ public static class OpenCCHelper
 
     public static string OpenCC(this string text, string config)
     {
-        var configFile = @"opencc\\" + config + ".json";
+        var configFile = $"C:\\Tools\\OpenCC\\share\\opencc\\{config}.json";
         if (!File.Exists(configFile))
         {
             throw new FileNotFoundException("設定檔找不到", configFile);
