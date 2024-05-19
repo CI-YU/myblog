@@ -172,16 +172,11 @@ public static class OpenCCHelper
 
 ## 相關連結
 
-OpenCC
++ OpenCC
+  + [GitHub Repo](https://github.com/BYVoid/OpenCC)
 
-[GitHub Repo](https://github.com/BYVoid/OpenCC)
-
-黑暗執行緒
-
-[OpenCC 中文繁簡體轉換工具](https://blog.darkthread.net/blog/opencc-notes-1/)
-
-[使用 C# 整合 OpenCC 執行中文繁簡轉換](https://blog.darkthread.net/blog/call-opencc-with-csharp/)
-
-Will保哥
-
-[如何在 Windows 打造 OpenCC 中文繁簡轉換工具](https://blog.miniasp.com/post/2024/04/07/Useful-tool-OpenCC)
++ 黑暗執行緒
+  + [OpenCC 中文繁簡體轉換工具](https://blog.darkthread.net/blog/opencc-notes-1/)
+  + [使用 C# 整合 OpenCC 執行中文繁簡轉換](https://blog.darkthread.net/blog/call-opencc-with-csharp/)
++ Will保哥
+  + [如何在 Windows 打造 OpenCC 中文繁簡轉換工具](https://blog.miniasp.com/post/2024/04/07/Useful-tool-OpenCC)
