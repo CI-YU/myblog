@@ -7,7 +7,7 @@ tags: ["dotnet","記憶體洩漏","memoryleak"]
 近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做**防止記憶體洩漏**的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
 
 ## 調整前
-```c#
+```C#
 using System.Runtime.InteropServices;
 using System.Text;
 
