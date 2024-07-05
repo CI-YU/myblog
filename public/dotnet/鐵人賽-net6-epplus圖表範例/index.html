@@ -5,15 +5,11 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 EPPlus圖表範例 | CI-YU Blog</title>
+<title>dotnet6 EPPlus圖表範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 使用epplus製作長條圖
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
-&#34;EPPlus&#34;: {
-&#34;ExcelPackage&#34;: {
-&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used
-}
-} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1].">
 <meta name="author" content="">
 <link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/">
@@ -27,6 +23,7 @@
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -63,14 +60,30 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 EPPlus圖表範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 EPPlus圖表範例" />
 <meta property="og:description" content="目的 使用epplus製作長條圖
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
-&#34;EPPlus&#34;: {
-&#34;ExcelPackage&#34;: {
-&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used
-}
-} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1]." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
@@ -78,14 +91,10 @@
 <meta property="article:modified_time" content="2022-10-02T00:00:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 EPPlus圖表範例"/>
+<meta name="twitter:title" content="dotnet6 EPPlus圖表範例"/>
 <meta name="twitter:description" content="目的 使用epplus製作長條圖
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
-&#34;EPPlus&#34;: {
-&#34;ExcelPackage&#34;: {
-&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used
-}
-} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1]."/>
 
 
@@ -103,7 +112,7 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 EPPlus圖表範例",
+      "name": "dotnet6 EPPlus圖表範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -113,8 +122,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 EPPlus圖表範例",
-  "name": "2022ITHelp dotnet6 EPPlus圖表範例",
+  "headline": "dotnet6 EPPlus圖表範例",
+  "name": "dotnet6 EPPlus圖表範例",
   "description": "目的 使用epplus製作長條圖\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字\n\u0026#34;EPPlus\u0026#34;: {\r\u0026#34;ExcelPackage\u0026#34;: {\r\u0026#34;LicenseContext\u0026#34;: \u0026#34;Commercial\u0026#34; //The license context used\r}\r} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API\n[HttpGet(Name = \u0026#34;Import\u0026#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(\u0026#34;第一頁\u0026#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = \u0026#34;第一季\u0026#34;; ws.Cells[1, 3].Value = \u0026#34;第二季\u0026#34;; ws.Cells[1, 4].Value = \u0026#34;第三季\u0026#34;; ws.Cells[1, 5].Value = \u0026#34;第四季\u0026#34;; ws.Cells[2, 1].",
   "keywords": [
     "2022鐵人賽"
@@ -177,9 +186,11 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
-        <ul id="menu">"軟實力"
+        <ul id="menu">
             <li>
                 <a href="https://ci-yu.top/dotnet/" title="Dotnet">
                     <span>Dotnet</span>
@@ -191,8 +202,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="SoftPower">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -219,9 +230,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 EPPlus圖表範例
+      dotnet6 EPPlus圖表範例
     </h1>
-    <div class="post-meta"><span title='2022-10-02 00:00:15 +0800 CST'>October 2, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-02 00:00:15 &#43;0800 CST&#39;&gt;October 2, 2022&lt;/span&gt;
 
 </div>
   </header> 

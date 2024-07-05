@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.111.3"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.128.2"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -21,6 +21,7 @@
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://ci-yu.top/index.xml">
 <link rel="alternate" type="application/json" href="https://ci-yu.top/index.json">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +58,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="CI-YU Blog" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="CI-YU Blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ci-yu.top/" />
@@ -118,6 +139,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -132,8 +155,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -160,7 +183,7 @@
         <h1>Hi there 👋</h1>
     </header>
     <div class="entry-content">
-        Welcome to my blog
+        funday訂閱優惠推薦碼K7W7M5W3S6
     </div>
     <footer class="entry-footer">
         <div class="social-icons">
@@ -187,170 +210,170 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Hangfire範例
+    <h2>Opencc Memory Leak
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 在windows系統上想執行排程有兩個選擇
-使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Hangfire Hangfire.InMemory 編輯Program.cs檔 using Hangfire; var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //註冊hangfire並且使用記憶體保存排程， //預設所下載的HangFire套件可以使用sqlserver，可透過config.UseSqlServerStorage();，但需要設定 builder.Services.AddHangfire(config =&gt; { config.UseInMemoryStorage(); }); //註冊hangfire要使用的伺服器，伺服器就是上面所寫的使用記憶體當伺服器 builder.Services.AddHangfireServer(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); //使用hangfire內建的儀表板 app.UseHangfireDashboard(); app....</p>
+    <p>近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做防止記憶體洩漏的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
+調整前 using System.Runtime.InteropServices; using System.Text; public static class OpenCCHelper { [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_open&#34;)] private static extern IntPtr opencc_open(string configFileName); [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_convert_utf8&#34;)] private static extern IntPtr opencc_convert_utf8(IntPtr opencc, IntPtr input, long length); public static string ConvertFromSimplifiedToTraditional(this string text, string config = &#34;s2t&#34;) { return OpenCC(text, config: config); } public static string ConvertFromSimplifiedToTraditionalTaiwan(this string text, string config = &#34;s2twp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalTaiwanToSimplified(this string text, string config = &#34;tw2sp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalToSimplified(this string text, string config = &#34;t2s&#34;) { return OpenCC(text, config: config); } public static string OpenCC(this string text, string config) { var configFile = $&#34;C:\\Tools\\OpenCC\\share\\opencc\\{config}....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-11 02:39:15 +0800 CST'>October 11, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Hangfire範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-hangfire%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2024-05-19 14:54:23 &#43;0800 CST&#39;&gt;May 19, 2024&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Opencc Memory Leak" href="https://ci-yu.top/dotnet/opencc-memory-leak/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 HttpClient單元測試範例
+    <h2>Dockerslow
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
-builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;
-public CallAPIServices(IHttpClientFactory httpClientFactory) {
-_httpClientFactory = httpClientFactory;
-} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {
-var client = _httpClientFactory.CreateClient();
-var response = await client.GetAsync(&#34;https://example.com&#34;);
-if (response.IsSuccessStatusCode) {
-var responseString = await response.Content.ReadAsStringAsync();
-return responseString;
-}
-return &#34;&#34;;
-} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
-設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案...</p>
+    <p>dotnet 6 部署到docker忽然變很慢 最近在公司將dotnet 6 用docker-compose部署到測試機時忽然要等3-5分鐘，最後查證是因為我們在linux環境上有做mount遠端磁碟造成部署時間過長
+掛載的磁碟機沒有做資料夾分類所有檔案都在一個資料夾底下，在根目錄就有破百萬的檔案，導致container透過volume連到實體路徑時會讀取過久</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-10 02:39:15 +0800 CST'>October 10, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 HttpClient單元測試範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2024-05-05 01:24:52 &#43;0800 CST&#39;&gt;May 5, 2024&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Dockerslow" href="https://ci-yu.top/posts/dockerslow/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Moq範例
+    <h2>安裝到手機
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 進行單元測試時，可以隔絕依賴的項目。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成MoqExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
-xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector Moq 針對MoqExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增WeatherForecastControllerTests.cs類別檔 刪除預設的類別檔(Class1.cs)，並在MoqExample.Tests專案新增對應資料夾，與類別檔並加結尾Tests。 編輯WeatherForecastControllerTests.cs類別檔 測試都會分三個階段
-Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 這次要測試的是controller，有注入Ilogger，如何將Ilogger隔開的關鍵就是使用Moq這個套件 using Microsoft.Extensions.Logging; using Moq; using MoqExample.Controllers; using Xunit; namespace MoqExample.Tests.Controllers { public class WeatherForecastControllerTests { [Fact] public void Get() { //Arrange //透過mock將外界的介面包起來 var MockLogger = new Mock&lt;ILogger&lt;WeatherForecastController&gt;&gt;(); //當成物件傳入controller，代替實際的介面 var Controllers = new WeatherForecastController(MockLogger.Object); //Act //執行要測試的函式 var Results = Controllers.Get(); //Assert //確認結果不為null Assert....</p>
+    <p>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-09 02:39:15 +0800 CST'>October 9, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Moq範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-moq%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2024-01-27 01:40:26 &#43;0800 CST&#39;&gt;January 27, 2024&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 安裝到手機" href="https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 NLog進階範例
+    <h2>2024年度目標
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(&#34;init main&#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含
-throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { &#34;NLog&#34;: { &#34;throwConfigExceptions&#34;: true, &#34;targets&#34;: { &#34;async&#34;: true, &#34;logfile&#34;: { &#34;type&#34;: &#34;File&#34;, &#34;fileName&#34;: &#34;c:/temp/nlog-${shortdate}....</p>
+    <p>2024年度目標 學會使用copilot,增加coding效率 3月前使用flutter開發記帳軟體並且上架 7月前TOEIC金色證書 開始錄製廣播 </p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-08 02:39:15 +0800 CST'>October 8, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 NLog進階範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2024-01-09 00:10:13 &#43;0800 CST&#39;&gt;January 9, 2024&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 2024年度目標" href="https://ci-yu.top/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 xUnit範例
+    <h2>Dapper PostgreSQL Error
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 單元測試
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
-xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增Calculator.cs類別檔 在xUnitExample專案新增Calculator.cs類別檔 新增一個簡單的加法函式
-public static class Calculator { public static double Add(int a, int b) { return a &#43; b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段
-Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert....</p>
+    <p>問題 當使用dapper呼叫postgresql時後,需要在in裡面查詢一批陣列會遇到下方的錯誤訊息
+var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&#34;Ids&#34;, Ids); var strSQL = &#34;&#34;; strSQL &#43;=&#34;select * from Users where id in @Ids;&#34; await dapper.QueryAsync(strSQL,parameters); 42601: syntax error at or near “$1”\r\n\r\nPOSITION: 81
+解法 改語法為any就可以解決這個問題。
+var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&#34;Ids&#34;, Ids); var strSQL = &#34;&#34;; strSQL &#43;=&#34;select * from Users where id = any(@Ids);&#34; await dapper.QueryAsync(strSQL,parameters); </p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-08 02:39:15 +0800 CST'>October 8, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 xUnit範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-11-24 22:09:49 &#43;0800 CST&#39;&gt;November 24, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Dapper PostgreSQL Error" href="https://ci-yu.top/dotnet/dapper-postgresql-error/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 NLog範例
+    <h2>Three Tree
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 在webapi專案下使用NLog套件
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
-NuGet加入套件 NLog NLog.Web.AspNetCore 新增nlog.config檔案 在根目錄新增nlog.config檔案 nlog.config寫入程式 在nlog.config寫入官方範例
-&lt;?xml version=&#34;1.0&#34; encoding=&#34;utf-8&#34; ?&gt;
-&lt;nlog xmlns=&#34;http://www.nlog-project.org/schemas/NLog.xsd&#34;
-xmlns:xsi=&#34;http://www.w3.org/2001/XMLSchema-instance&#34;
-autoReload=&#34;true&#34;
-internalLogLevel=&#34;Info&#34;
-internalLogFile=&#34;c:\temp\internal-nlog-AspNetCore.txt&#34;&gt;
-&lt;!-- enable asp.net core layout renderers --&gt;
-&lt;extensions&gt;
-&lt;add assembly=&#34;NLog.Web.AspNetCore&#34;/&gt;
-&lt;/extensions&gt;
-&lt;!-- the targets to write to --&gt;
-&lt;targets&gt;
-&lt;!-- File Target for all log messages with basic details --&gt;
-&lt;target xsi:type=&#34;File&#34; name=&#34;allfile&#34; fileName=&#34;c:\temp\nlog-AspNetCore-all-${shortdate}.log&#34;
-layout=&#34;${longdate}|${event-properties:item=EventId_Id:whenEmpty=0}|${level:uppercase=true}|${logger}|${message} ${exception:format=tostring}&#34; /&gt;
-&lt;!-- File Target for own log messages with extra web details using some ASP....</p>
+    <p>三棵樹 flutter共有三個核心
+widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
+element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
+render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-08 01:39:15 +0800 CST'>October 8, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 NLog範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-07-20 23:22:34 &#43;0800 CST&#39;&gt;July 20, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Three Tree" href="https://ci-yu.top/flutter/three-tree/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Serilog進階範例
+    <h2>如何固定設備方向
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder....</p>
+    <p>如何鎖定裝置的方向 先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行
+WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import ‘package:flutter/services.dart’;
+void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-07 05:39:15 +0800 CST'>October 7, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Serilog進階範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-06-04 20:28:02 &#43;0800 CST&#39;&gt;June 4, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 如何固定設備方向" href="https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Serilog範例
+    <h2>資料庫分表
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 在webapi專案下使用serilog套件
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
-using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&#34;Microsoft.AspNetCore&#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&#34;./Logs/log.txt&#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&#34;Starting web host&#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log....</p>
+    <p>資料庫架構設計 架構演變 讀寫分離 當遇到資料庫瓶頸時，最簡單的做法是將資料庫做主從架構 主資料庫只有做寫入並同步資料到其他從資料庫，被同步的資料庫可以是n個只做讀取 垂直分庫 資料還是持續增長後，就到了要做垂直分庫的架構了，垂直分庫的意思可以想像成將同一個資料表內的資料欄位做整理，分成多個資料庫，也就可以將不同資料庫放在不同機器上。 資料庫分成使用者資料庫、訂單資料庫、商品資料庫
+水平分庫 資料量再更大量，最後的解決方案就是水平分庫，會將相同的資料表分成多個表 table01、table02、table03
+Sharding中介軟體 要做到水平分庫會建議使用已經發展成熟的Sharding中介軟體
+Sharding架構 有區分成兩種
+Porxy架構 應用集成架構 </p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-07 02:39:15 +0800 CST'>October 7, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Serilog範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-06-04 13:12:42 &#43;0800 CST&#39;&gt;June 4, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 資料庫分表" href="https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 EFCore語法說明
+    <h2>Pub
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options....</p>
+    <p>快速介紹flutter安裝的函式庫 intl 轉成指定地區的日期格式
+flutter pub add intl
+uuid 建立guid
+flutter pub add uuid
+transparent_image 當圖還沒有載入時可以有透明背景圖使用
+flutter pub add transparent_image
+riverpod 是一個狀態管理的工具，當開始寫flutter就會遇到跟現在流行的框架vue/react一樣的問題，當我要傳遞資料時要一直往子層傳參數，才能將資料傳進去，這時riverpod就是來解決這個問題的 另一個社群討論度高的是Getx。
+flutter pub add riverpod
+要在需要的區塊上加上ProviderScope，下列範例就是所有區塊都要可以使用 void main() { runApp(const ProviderScope( child: MyApp(), )); } 新增一個檔案並建立供應方 import &#39;package:flutter_riverpod/flutter_riverpod.dart&#39;; final demoProvider = Provider((ref) { return false; }); = &amp; ConsumerWidget StatelessWidget改成ConsumerWidget
+StatefulWidget改成ConsumerStatefulWidget
+建立接收方 //在要使用資料的地方使用下列 //當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到 final demo = ref.watch(demoProvider); //接下來即可使用demo來做後續事情 http 進行restful api，透過這個套件可以發送請求到api並接收回傳
+flutter pub add http
+image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
+flutter pub add image_picker...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-05 01:39:15 +0800 CST'>October 5, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 EFCore語法說明" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 14:30:29 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Pub" href="https://ci-yu.top/flutter/pub/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 EFCore範例
+    <h2>Widget
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 透過EFCore對db做查詢，為了降低門檻採用SQLite當範例資料庫。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample.Models; namespace EFCoreExample.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options....</p>
+    <p>佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&#39;Expense deleted&#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上</p>
   </div>
-  <footer class="entry-footer"><span title='2022-10-04 02:39:15 +0800 CST'>October 4, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 EFCore範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 13:26:51 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Widget" href="https://ci-yu.top/flutter/widget/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">

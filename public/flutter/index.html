@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Flutters | CI-YU Blog</title>
+<meta name="keywords" content="">
+<meta name="description" content="Flutters - CI-YU Blog">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/flutter/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" type="application/rss+xml" href="https://ci-yu.top/flutter/index.xml">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/flutter/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Flutters" />
+<meta property="og:description" content="" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://ci-yu.top/flutter/" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Flutters"/>
+<meta name="twitter:description" content=""/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Flutters",
+      "item": "https://ci-yu.top/flutter/"
+    }
+  ]
+}
+</script>
+</head>
+
+<body class="list" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span class="active">Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main"> 
+<header class="page-header"><div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a></div>
+  <h1>
+    Flutters
+  </h1>
+</header>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>安裝到手機
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2024-01-27 01:40:26 &#43;0800 CST&#39;&gt;January 27, 2024&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 安裝到手機" href="https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Three Tree
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>三棵樹 flutter共有三個核心
+widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
+element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
+render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2023-07-20 23:22:34 &#43;0800 CST&#39;&gt;July 20, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Three Tree" href="https://ci-yu.top/flutter/three-tree/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>如何固定設備方向
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>如何鎖定裝置的方向 先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行
+WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import ‘package:flutter/services.dart’;
+void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2023-06-04 20:28:02 &#43;0800 CST&#39;&gt;June 4, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to 如何固定設備方向" href="https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Pub
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>快速介紹flutter安裝的函式庫 intl 轉成指定地區的日期格式
+flutter pub add intl
+uuid 建立guid
+flutter pub add uuid
+transparent_image 當圖還沒有載入時可以有透明背景圖使用
+flutter pub add transparent_image
+riverpod 是一個狀態管理的工具，當開始寫flutter就會遇到跟現在流行的框架vue/react一樣的問題，當我要傳遞資料時要一直往子層傳參數，才能將資料傳進去，這時riverpod就是來解決這個問題的 另一個社群討論度高的是Getx。
+flutter pub add riverpod
+要在需要的區塊上加上ProviderScope，下列範例就是所有區塊都要可以使用 void main() { runApp(const ProviderScope( child: MyApp(), )); } 新增一個檔案並建立供應方 import &#39;package:flutter_riverpod/flutter_riverpod.dart&#39;; final demoProvider = Provider((ref) { return false; }); = &amp; ConsumerWidget StatelessWidget改成ConsumerWidget
+StatefulWidget改成ConsumerStatefulWidget
+建立接收方 //在要使用資料的地方使用下列 //當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到 final demo = ref.watch(demoProvider); //接下來即可使用demo來做後續事情 http 進行restful api，透過這個套件可以發送請求到api並接收回傳
+flutter pub add http
+image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
+flutter pub add image_picker...</p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 14:30:29 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Pub" href="https://ci-yu.top/flutter/pub/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>Widget
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&#39;Expense deleted&#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上</p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 13:26:51 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to Widget" href="https://ci-yu.top/flutter/widget/"></a>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+</body>
+
+</html>

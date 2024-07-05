@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>Flutter on CI-YU Blog</title>
+    <link>https://ci-yu.top/tags/flutter/</link>
+    <description>Recent content in Flutter on CI-YU Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 27 Jan 2024 01:40:26 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>安裝到手機</title>
+      <link>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</link>
+      <pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</guid>
+      <description>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </description>
+    </item>
+    
+    <item>
+      <title>Three Tree</title>
+      <link>https://ci-yu.top/flutter/three-tree/</link>
+      <pubDate>Thu, 20 Jul 2023 23:22:34 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/flutter/three-tree/</guid>
+      <description>三棵樹 flutter共有三個核心
+widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
+element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
+render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</description>
+    </item>
+    
+    <item>
+      <title>如何固定設備方向</title>
+      <link>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</link>
+      <pubDate>Sun, 04 Jun 2023 20:28:02 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</guid>
+      <description>如何鎖定裝置的方向 先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行
+WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import &amp;lsquo;package:flutter/services.dart&amp;rsquo;;
+void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&amp;gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </description>
+    </item>
+    
+    <item>
+      <title>Pub</title>
+      <link>https://ci-yu.top/flutter/pub/</link>
+      <pubDate>Sun, 28 May 2023 14:30:29 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/flutter/pub/</guid>
+      <description>快速介紹flutter安裝的函式庫 intl 轉成指定地區的日期格式
+flutter pub add intl
+uuid 建立guid
+flutter pub add uuid
+transparent_image 當圖還沒有載入時可以有透明背景圖使用
+flutter pub add transparent_image
+riverpod 是一個狀態管理的工具，當開始寫flutter就會遇到跟現在流行的框架vue/react一樣的問題，當我要傳遞資料時要一直往子層傳參數，才能將資料傳進去，這時riverpod就是來解決這個問題的 另一個社群討論度高的是Getx。
+flutter pub add riverpod
+要在需要的區塊上加上ProviderScope，下列範例就是所有區塊都要可以使用 void main() { runApp(const ProviderScope( child: MyApp(), )); } 新增一個檔案並建立供應方 import &amp;#39;package:flutter_riverpod/flutter_riverpod.dart&amp;#39;; final demoProvider = Provider((ref) { return false; }); = &amp;amp; ConsumerWidget StatelessWidget改成ConsumerWidget
+StatefulWidget改成ConsumerStatefulWidget
+建立接收方 //在要使用資料的地方使用下列 //當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到 final demo = ref.watch(demoProvider); //接下來即可使用demo來做後續事情 http 進行restful api，透過這個套件可以發送請求到api並接收回傳
+flutter pub add http
+image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
+flutter pub add image_picker</description>
+    </item>
+    
+    <item>
+      <title>Widget</title>
+      <link>https://ci-yu.top/flutter/widget/</link>
+      <pubDate>Sun, 28 May 2023 13:26:51 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/flutter/widget/</guid>
+      <description>佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&amp;#39;Expense deleted&amp;#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上</description>
+    </item>
+    
+  </channel>
+</rss>

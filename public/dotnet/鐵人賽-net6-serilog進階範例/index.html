@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Serilog進階範例 | CI-YU Blog</title>
+<title>dotnet6 Serilog進階範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder.">
 <meta name="author" content="">
@@ -20,6 +20,7 @@
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -56,7 +57,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Serilog進階範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Serilog進階範例" />
 <meta property="og:description" content="目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
@@ -64,7 +85,7 @@
 <meta property="article:modified_time" content="2022-10-07T05:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Serilog進階範例"/>
+<meta name="twitter:title" content="dotnet6 Serilog進階範例"/>
 <meta name="twitter:description" content="目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder."/>
 
 
@@ -82,7 +103,7 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Serilog進階範例",
+      "name": "dotnet6 Serilog進階範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -92,8 +113,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Serilog進階範例",
-  "name": "2022ITHelp dotnet6 Serilog進階範例",
+  "headline": "dotnet6 Serilog進階範例",
+  "name": "dotnet6 Serilog進階範例",
   "description": "目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =\u0026gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder.",
   "keywords": [
     "2022鐵人賽"
@@ -156,6 +177,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -170,8 +193,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -198,9 +221,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Serilog進階範例
+      dotnet6 Serilog進階範例
     </h1>
-    <div class="post-meta"><span title='2022-10-07 05:39:15 +0800 CST'>October 7, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-07 05:39:15 &#43;0800 CST&#39;&gt;October 7, 2022&lt;/span&gt;
 
 </div>
   </header> 

@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en" dir="auto">
+
+<head><meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="robots" content="index, follow">
+<title>Widget | CI-YU Blog</title>
+<meta name="keywords" content="flutter">
+<meta name="description" content="佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&#39;Expense deleted&#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上">
+<meta name="author" content="">
+<link rel="canonical" href="https://ci-yu.top/flutter/widget/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
+<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
+    onload="hljs.initHighlightingOnLoad();"></script>
+<link rel="icon" href="https://ci-yu.top/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
+<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<meta name="theme-color" content="#2e2e33">
+<meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/flutter/widget/">
+<noscript>
+    <style>
+        #theme-toggle,
+        .top-link {
+            display: none;
+        }
+
+    </style>
+    <style>
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --theme: rgb(29, 30, 32);
+                --entry: rgb(46, 46, 51);
+                --primary: rgb(218, 218, 219);
+                --secondary: rgb(155, 156, 157);
+                --tertiary: rgb(65, 66, 68);
+                --content: rgb(196, 196, 197);
+                --hljs-bg: rgb(46, 46, 51);
+                --code-bg: rgb(55, 56, 62);
+                --border: rgb(51, 51, 51);
+            }
+
+            .list {
+                background: var(--theme);
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-track {
+                background: 0 0;
+            }
+
+            .list:not(.dark)::-webkit-scrollbar-thumb {
+                border-color: var(--theme);
+            }
+        }
+
+    </style>
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="Widget" />
+<meta property="og:description" content="佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&#39;Expense deleted&#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://ci-yu.top/flutter/widget/" /><meta property="article:section" content="flutter" />
+<meta property="article:published_time" content="2023-05-28T13:26:51+08:00" />
+<meta property="article:modified_time" content="2023-05-28T13:26:51+08:00" />
+
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Widget"/>
+<meta name="twitter:description" content="佈局的屬性 Column 由上至下的排序
+Row 由左至右的排序
+Expanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項
+因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內
+ListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為
+ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思
+TextField 輸入框
+要記得關閉
+DropdownButton 下拉式選單
+Dismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果
+Snackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用
+ScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(&#39;Expense deleted&#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效
+兩者差異出處
+Stack 類似Column與Row，但是可以讓所有子元件重疊在一起
+SwitchListTile 有大標題與子標題的開關
+Drawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單
+WillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回
+Form 有額外的驗證功能，並顯示在畫面
+在form裡面要輸入框時要用TextFormField取代TextField
+只要在Form裏面，要使用的組件基本上都會有form關鍵字
+Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
+後續慢慢補上"/>
+
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position":  1 ,
+      "name": "Flutters",
+      "item": "https://ci-yu.top/flutter/"
+    }, 
+    {
+      "@type": "ListItem",
+      "position":  2 ,
+      "name": "Widget",
+      "item": "https://ci-yu.top/flutter/widget/"
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BlogPosting",
+  "headline": "Widget",
+  "name": "Widget",
+  "description": "佈局的屬性 Column 由上至下的排序\nRow 由左至右的排序\nExpanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項\n因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內\nListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為\nListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思\nTextField 輸入框\n要記得關閉\nDropdownButton 下拉式選單\nDismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果\nSnackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用\nScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text(\u0026#39;Expense deleted\u0026#39;), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效\n兩者差異出處\nStack 類似Column與Row，但是可以讓所有子元件重疊在一起\nSwitchListTile 有大標題與子標題的開關\nDrawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單\nWillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回\nForm 有額外的驗證功能，並顯示在畫面\n在form裡面要輸入框時要用TextFormField取代TextField\n只要在Form裏面，要使用的組件基本上都會有form關鍵字\nDismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目\n後續慢慢補上",
+  "keywords": [
+    "flutter"
+  ],
+  "articleBody": "佈局的屬性 Column 由上至下的排序\nRow 由左至右的排序\nExpanded 只能使用在繼承Flex以下的Widget，常使用在Cloumn或row的子項\n因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內\nListView 使用ListView是可以有滾動效果 可以透過builder提升效能 使用方法為\nListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title}) Spacer 可以在任何row,colume使用 佔用剩餘所有空間的意思\nTextField 輸入框\n要記得關閉\nDropdownButton 下拉式選單\nDismissable key參數必要，才能確定要滑動刪除哪筆資料 也可以分為向左滑動與向右滑動，執行不同功能 滑動刪除效果\nSnackbar 會在螢幕下面調出一個訊息框 在Scaffold階層底下可以使用\nScaffoldMessenger.of(context).showSnackBar( const SnackBar( duration: Duration(seconds: 3), content: Text('Expense deleted'), ), ); InkWell 可以讓沒有事件的元件增加點擊事件之類的功能 與GestureDetector的差別在於 GestureDetector提供更多的點擊事件，InkWell提供點擊特效\n兩者差異出處\nStack 類似Column與Row，但是可以讓所有子元件重疊在一起\nSwitchListTile 有大標題與子標題的開關\nDrawer 側邊欄，可以在裡面放Column就可以實現側邊欄的菜單\nWillPopScope 當用戶離開用任何方式離開當下頁面就會觸發，不管是實體按鈕或是虛擬按鈕 onWillPop:true 允許返回false不允許返回\nForm 有額外的驗證功能，並顯示在畫面\n在form裡面要輸入框時要用TextFormField取代TextField\n只要在Form裏面，要使用的組件基本上都會有form關鍵字\nDismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目\n後續慢慢補上\n",
+  "wordCount" : "64",
+  "inLanguage": "en",
+  "datePublished": "2023-05-28T13:26:51+08:00",
+  "dateModified": "2023-05-28T13:26:51+08:00",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://ci-yu.top/flutter/widget/"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "CI-YU Blog",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://ci-yu.top/favicon.ico"
+    }
+  }
+}
+</script>
+</head>
+
+<body class="" id="top">
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.body.classList.add('dark');
+    } else if (localStorage.getItem("pref-theme") === "light") {
+        document.body.classList.remove('dark')
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.body.classList.add('dark');
+    }
+
+</script>
+
+<header class="header">
+    <nav class="nav">
+        <div class="logo">
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <div class="logo-switches">
+                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+                    </svg>
+                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                        stroke-linejoin="round">
+                        <circle cx="12" cy="12" r="5"></circle>
+                        <line x1="12" y1="1" x2="12" y2="3"></line>
+                        <line x1="12" y1="21" x2="12" y2="23"></line>
+                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                        <line x1="1" y1="12" x2="3" y2="12"></line>
+                        <line x1="21" y1="12" x2="23" y2="12"></line>
+                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+                    </svg>
+                </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
+            </div>
+        </div>
+        <ul id="menu">
+            <li>
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                    <span>Dotnet</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                    <span>Flutter</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                    <span>Search</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/tags/" title="Tags">
+                    <span>Tags</span>
+                </a>
+            </li>
+            <li>
+                <a href="https://ci-yu.top/archives/" title="Archives">
+                    <span>Archives</span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<main class="main">
+
+<article class="post-single">
+  <header class="post-header">
+    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/flutter/">Flutters</a></div>
+    <h1 class="post-title">
+      Widget
+    </h1>
+    <div class="post-meta">&lt;span title=&#39;2023-05-28 13:26:51 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;
+
+</div>
+  </header> 
+  <div class="post-content"><h2 id="佈局的屬性">佈局的屬性<a hidden class="anchor" aria-hidden="true" href="#佈局的屬性">#</a></h2>
+<h3 id="column">Column<a hidden class="anchor" aria-hidden="true" href="#column">#</a></h3>
+<p>由上至下的排序</p>
+<h3 id="row">Row<a hidden class="anchor" aria-hidden="true" href="#row">#</a></h3>
+<p>由左至右的排序</p>
+<h3 id="expanded">Expanded<a hidden class="anchor" aria-hidden="true" href="#expanded">#</a></h3>
+<p>只能使用在繼承Flex以下的Widget，常使用在<code>Cloumn</code>或<code>row</code>的子項</p>
+<p>因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內</p>
+<h3 id="listview">ListView<a hidden class="anchor" aria-hidden="true" href="#listview">#</a></h3>
+<p>使用ListView是可以有滾動效果
+可以透過builder提升效能
+使用方法為</p>
+<pre tabindex="0"><code class="language-flutter" data-lang="flutter">ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title})
+</code></pre><h3 id="spacer">Spacer<a hidden class="anchor" aria-hidden="true" href="#spacer">#</a></h3>
+<p>可以在任何row,colume使用
+佔用剩餘所有空間的意思</p>
+<h3 id="textfield">TextField<a hidden class="anchor" aria-hidden="true" href="#textfield">#</a></h3>
+<p>輸入框</p>
+<p>要記得關閉</p>
+<h3 id="dropdownbutton">DropdownButton<a hidden class="anchor" aria-hidden="true" href="#dropdownbutton">#</a></h3>
+<p>下拉式選單</p>
+<h3 id="dismissable">Dismissable<a hidden class="anchor" aria-hidden="true" href="#dismissable">#</a></h3>
+<p>key參數必要，才能確定要滑動刪除哪筆資料
+也可以分為向左滑動與向右滑動，執行不同功能
+滑動刪除效果</p>
+<h3 id="snackbar">Snackbar<a hidden class="anchor" aria-hidden="true" href="#snackbar">#</a></h3>
+<p>會在螢幕下面調出一個訊息框
+在Scaffold階層底下可以使用</p>
+<pre tabindex="0"><code class="language-flutter" data-lang="flutter">    ScaffoldMessenger.of(context).showSnackBar(
+      const SnackBar(
+        duration: Duration(seconds: 3),
+        content: Text(&#39;Expense deleted&#39;),
+      ),
+    );
+</code></pre><h3 id="inkwell">InkWell<a hidden class="anchor" aria-hidden="true" href="#inkwell">#</a></h3>
+<p>可以讓沒有事件的元件增加點擊事件之類的功能
+與GestureDetector的差別在於
+<code>GestureDetector</code>提供更多的點擊事件，<code>InkWell</code>提供點擊特效</p>
+<p><a href="https://stackoverflow.com/questions/56725308/flutter-inkwell-vs-gesturedetector-what-is-the-difference">兩者差異出處</a></p>
+<h3 id="stack">Stack<a hidden class="anchor" aria-hidden="true" href="#stack">#</a></h3>
+<p>類似<code>Column</code>與<code>Row</code>，但是可以讓所有子元件重疊在一起</p>
+<h3 id="switchlisttile">SwitchListTile<a hidden class="anchor" aria-hidden="true" href="#switchlisttile">#</a></h3>
+<p>有大標題與子標題的開關</p>
+<h3 id="drawer">Drawer<a hidden class="anchor" aria-hidden="true" href="#drawer">#</a></h3>
+<p>側邊欄，可以在裡面放<code>Column</code>就可以實現側邊欄的菜單</p>
+<h3 id="willpopscope">WillPopScope<a hidden class="anchor" aria-hidden="true" href="#willpopscope">#</a></h3>
+<p>當用戶離開用任何方式離開當下頁面就會觸發，不管是<code>實體按鈕</code>或是<code>虛擬按鈕</code>
+onWillPop:true 允許返回false不允許返回</p>
+<h3 id="form">Form<a hidden class="anchor" aria-hidden="true" href="#form">#</a></h3>
+<p>有額外的驗證功能，並顯示在畫面</p>
+<p>在form裡面要輸入框時要用<code>TextFormField</code>取代<code>TextField</code></p>
+<blockquote>
+<p>只要在Form裏面，要使用的組件基本上都會有form關鍵字</p>
+</blockquote>
+<h3 id="dismissible">Dismissible<a hidden class="anchor" aria-hidden="true" href="#dismissible">#</a></h3>
+<p>新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目</p>
+<p>後續慢慢補上</p>
+
+
+  </div>
+
+  <footer class="post-footer">
+    <ul class="post-tags">
+      <li><a href="https://ci-yu.top/tags/flutter/">Flutter</a></li>
+    </ul>
+  </footer>
+</article>
+    </main>
+    
+<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
+        <path d="M12 6H0l6-6z" />
+    </svg>
+</a>
+
+<script>
+    let menu = document.getElementById('menu')
+    if (menu) {
+        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        menu.onscroll = function () {
+            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
+        }
+    }
+
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            var id = this.getAttribute("href").substr(1);
+            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
+                    behavior: "smooth"
+                });
+            } else {
+                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
+            }
+            if (id === "top") {
+                history.replaceState(null, null, " ");
+            } else {
+                history.pushState(null, null, `#${id}`);
+            }
+        });
+    });
+
+</script>
+<script>
+    var mybutton = document.getElementById("top-link");
+    window.onscroll = function () {
+        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
+            mybutton.style.visibility = "visible";
+            mybutton.style.opacity = "1";
+        } else {
+            mybutton.style.visibility = "hidden";
+            mybutton.style.opacity = "0";
+        }
+    };
+
+</script>
+<script>
+    document.getElementById("theme-toggle").addEventListener("click", () => {
+        if (document.body.className.includes("dark")) {
+            document.body.classList.remove('dark');
+            localStorage.setItem("pref-theme", 'light');
+        } else {
+            document.body.classList.add('dark');
+            localStorage.setItem("pref-theme", 'dark');
+        }
+    })
+
+</script>
+<script>
+    document.querySelectorAll('pre > code').forEach((codeblock) => {
+        const container = codeblock.parentNode.parentNode;
+
+        const copybutton = document.createElement('button');
+        copybutton.classList.add('copy-code');
+        copybutton.innerHTML = 'copy';
+
+        function copyingDone() {
+            copybutton.innerHTML = 'copied!';
+            setTimeout(() => {
+                copybutton.innerHTML = 'copy';
+            }, 2000);
+        }
+
+        copybutton.addEventListener('click', (cb) => {
+            if ('clipboard' in navigator) {
+                navigator.clipboard.writeText(codeblock.textContent);
+                copyingDone();
+                return;
+            }
+
+            const range = document.createRange();
+            range.selectNodeContents(codeblock);
+            const selection = window.getSelection();
+            selection.removeAllRanges();
+            selection.addRange(range);
+            try {
+                document.execCommand('copy');
+                copyingDone();
+            } catch (e) { };
+            selection.removeRange(range);
+        });
+
+        if (container.classList.contains("highlight")) {
+            container.appendChild(copybutton);
+        } else if (container.parentNode.firstChild == container) {
+            
+        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
+            
+            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
+        } else {
+            
+            codeblock.parentNode.appendChild(copybutton);
+        }
+    });
+</script>
+</body>
+
+</html>

@@ -6,7 +6,39 @@
     <description>Recent content in Posts on CI-YU Blog</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 19 May 2023 23:12:47 +0800</lastBuildDate><atom:link href="https://ci-yu.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 01:24:52 +0800</lastBuildDate><atom:link href="https://ci-yu.top/posts/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dockerslow</title>
+      <link>https://ci-yu.top/posts/dockerslow/</link>
+      <pubDate>Sun, 05 May 2024 01:24:52 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/posts/dockerslow/</guid>
+      <description>dotnet 6 部署到docker忽然變很慢 最近在公司將dotnet 6 用docker-compose部署到測試機時忽然要等3-5分鐘，最後查證是因為我們在linux環境上有做mount遠端磁碟造成部署時間過長
+掛載的磁碟機沒有做資料夾分類所有檔案都在一個資料夾底下，在根目錄就有破百萬的檔案，導致container透過volume連到實體路徑時會讀取過久</description>
+    </item>
+    
+    <item>
+      <title>2024年度目標</title>
+      <link>https://ci-yu.top/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/</link>
+      <pubDate>Tue, 09 Jan 2024 00:10:13 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/</guid>
+      <description>2024年度目標 學會使用copilot,增加coding效率 3月前使用flutter開發記帳軟體並且上架 7月前TOEIC金色證書 開始錄製廣播 </description>
+    </item>
+    
+    <item>
+      <title>資料庫分表</title>
+      <link>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link>
+      <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid>
+      <description>資料庫架構設計 架構演變 讀寫分離 當遇到資料庫瓶頸時，最簡單的做法是將資料庫做主從架構 主資料庫只有做寫入並同步資料到其他從資料庫，被同步的資料庫可以是n個只做讀取 垂直分庫 資料還是持續增長後，就到了要做垂直分庫的架構了，垂直分庫的意思可以想像成將同一個資料表內的資料欄位做整理，分成多個資料庫，也就可以將不同資料庫放在不同機器上。 資料庫分成使用者資料庫、訂單資料庫、商品資料庫
+水平分庫 資料量再更大量，最後的解決方案就是水平分庫，會將相同的資料表分成多個表 table01、table02、table03
+Sharding中介軟體 要做到水平分庫會建議使用已經發展成熟的Sharding中介軟體
+Sharding架構 有區分成兩種
+Porxy架構 應用集成架構 </description>
+    </item>
+    
     <item>
       <title>First</title>
       <link>https://ci-yu.top/posts/first/</link>

@@ -5,24 +5,13 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 HttpClient單元測試範例 | CI-YU Blog</title>
+<title>dotnet6 HttpClient單元測試範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;
-public CallAPIServices(IHttpClientFactory httpClientFactory) {
-_httpClientFactory = httpClientFactory;
-} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {
-var client = _httpClientFactory.CreateClient();
-var response = await client.GetAsync(&#34;https://example.com&#34;);
-if (response.IsSuccessStatusCode) {
-var responseString = await response.Content.ReadAsStringAsync();
-return responseString;
-}
-return &#34;&#34;;
-} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
+readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
+public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
 設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案">
 <meta name="author" content="">
 <link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
@@ -36,6 +25,7 @@ return &#34;&#34;;
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -72,23 +62,32 @@ return &#34;&#34;;
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 HttpClient單元測試範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 HttpClient單元測試範例" />
 <meta property="og:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;
-public CallAPIServices(IHttpClientFactory httpClientFactory) {
-_httpClientFactory = httpClientFactory;
-} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {
-var client = _httpClientFactory.CreateClient();
-var response = await client.GetAsync(&#34;https://example.com&#34;);
-if (response.IsSuccessStatusCode) {
-var responseString = await response.Content.ReadAsStringAsync();
-return responseString;
-}
-return &#34;&#34;;
-} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
+readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
+public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
 設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
@@ -96,23 +95,12 @@ return &#34;&#34;;
 <meta property="article:modified_time" content="2022-10-10T02:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 HttpClient單元測試範例"/>
+<meta name="twitter:title" content="dotnet6 HttpClient單元測試範例"/>
 <meta name="twitter:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;
-public CallAPIServices(IHttpClientFactory httpClientFactory) {
-_httpClientFactory = httpClientFactory;
-} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {
-var client = _httpClientFactory.CreateClient();
-var response = await client.GetAsync(&#34;https://example.com&#34;);
-if (response.IsSuccessStatusCode) {
-var responseString = await response.Content.ReadAsStringAsync();
-return responseString;
-}
-return &#34;&#34;;
-} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
+readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
+public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
 設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案"/>
 
 
@@ -130,7 +118,7 @@ return &#34;&#34;;
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 HttpClient單元測試範例",
+      "name": "dotnet6 HttpClient單元測試範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -140,8 +128,8 @@ return &#34;&#34;;
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 HttpClient單元測試範例",
-  "name": "2022ITHelp dotnet6 HttpClient單元測試範例",
+  "headline": "dotnet6 HttpClient單元測試範例",
+  "name": "dotnet6 HttpClient單元測試範例",
   "description": "目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。\nbuilder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入\nreadonly IHttpClientFactory _httpClientFactory;\rpublic CallAPIServices(IHttpClientFactory httpClientFactory) {\r_httpClientFactory = httpClientFactory;\r} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試\npublic async Task\u0026lt;string\u0026gt; Get() {\rvar client = _httpClientFactory.CreateClient();\rvar response = await client.GetAsync(\u0026#34;https://example.com\u0026#34;);\rif (response.IsSuccessStatusCode) {\rvar responseString = await response.Content.ReadAsStringAsync();\rreturn responseString;\r}\rreturn \u0026#34;\u0026#34;;\r} 新增測試專案 對方案點選右鍵\u0026gt;加入\u0026gt;新增專案\n設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案",
   "keywords": [
     "2022鐵人賽"
@@ -185,7 +173,7 @@ return &#34;&#34;;
             <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2"軟實力"dth="24" height="18" viewBox="0 0 24 24"
+                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
@@ -204,6 +192,8 @@ return &#34;&#34;;
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -218,8 +208,8 @@ return &#34;&#34;;
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="SoftPower">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -246,9 +236,9 @@ return &#34;&#34;;
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 HttpClient單元測試範例
+      dotnet6 HttpClient單元測試範例
     </h1>
-    <div class="post-meta"><span title='2022-10-10 02:39:15 +0800 CST'>October 10, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-10 02:39:15 &#43;0800 CST&#39;&gt;October 10, 2022&lt;/span&gt;
 
 </div>
   </header> 

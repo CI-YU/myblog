@@ -5,36 +5,10 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Text.Json範例 | CI-YU Blog</title>
+<title>dotnet6 Text.Json範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;
-/// 序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonSerialize&#34;)]
-public ActionResult JsonSerialize() {
-var Test = new TestClass() {
-Name = &#34;中文名&#34;,
-Age = 18
-};
-var Result = JsonSerializer.Serialize(Test);
-return Ok(Result);
-}
-/// &lt;summary&gt;
-/// 反序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonDeserialize&#34;)]
-public ActionResult JsonDeserialize() {
-var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;
-var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);
-return Ok(Result);
-}
-public class TestClass {
-public string Name { get; set; }
-public int Age { get; set; }
-} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異">
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異">
 <meta name="author" content="">
 <link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/">
 <link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
@@ -47,6 +21,7 @@ public int Age { get; set; }
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -83,70 +58,38 @@ public int Age { get; set; }
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Text.Json範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Text.Json範例" />
 <meta property="og:description" content="目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;
-/// 序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonSerialize&#34;)]
-public ActionResult JsonSerialize() {
-var Test = new TestClass() {
-Name = &#34;中文名&#34;,
-Age = 18
-};
-var Result = JsonSerializer.Serialize(Test);
-return Ok(Result);
-}
-/// &lt;summary&gt;
-/// 反序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonDeserialize&#34;)]
-public ActionResult JsonDeserialize() {
-var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;
-var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);
-return Ok(Result);
-}
-public class TestClass {
-public string Name { get; set; }
-public int Age { get; set; }
-} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異" />
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異" />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
 <meta property="article:published_time" content="2022-09-28T00:02:35+08:00" />
 <meta property="article:modified_time" content="2022-09-28T00:02:35+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Text.Json範例"/>
+<meta name="twitter:title" content="dotnet6 Text.Json範例"/>
 <meta name="twitter:description" content="目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;
-/// 序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonSerialize&#34;)]
-public ActionResult JsonSerialize() {
-var Test = new TestClass() {
-Name = &#34;中文名&#34;,
-Age = 18
-};
-var Result = JsonSerializer.Serialize(Test);
-return Ok(Result);
-}
-/// &lt;summary&gt;
-/// 反序列化
-/// &lt;/summary&gt;
-/// &lt;returns&gt;&lt;/returns&gt;
-[HttpGet(&#34;JsonDeserialize&#34;)]
-public ActionResult JsonDeserialize() {
-var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;
-var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);
-return Ok(Result);
-}
-public class TestClass {
-public string Name { get; set; }
-public int Age { get; set; }
-} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異"/>
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異"/>
 
 
 <script type="application/ld+json">
@@ -163,7 +106,7 @@ public int Age { get; set; }
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Text.Json範例",
+      "name": "dotnet6 Text.Json範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -173,8 +116,8 @@ public int Age { get; set; }
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Text.Json範例","軟實力"
-  "name": "2022ITHelp dotnet6 Text.Json範例",
+  "headline": "dotnet6 Text.Json範例",
+  "name": "dotnet6 Text.Json範例",
   "description": "目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// \u0026lt;summary\u0026gt;\r/// 序列化\r/// \u0026lt;/summary\u0026gt;\r/// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt;\r[HttpGet(\u0026#34;JsonSerialize\u0026#34;)]\rpublic ActionResult JsonSerialize() {\rvar Test = new TestClass() {\rName = \u0026#34;中文名\u0026#34;,\rAge = 18\r};\rvar Result = JsonSerializer.Serialize(Test);\rreturn Ok(Result);\r}\r/// \u0026lt;summary\u0026gt;\r/// 反序列化\r/// \u0026lt;/summary\u0026gt;\r/// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt;\r[HttpGet(\u0026#34;JsonDeserialize\u0026#34;)]\rpublic ActionResult JsonDeserialize() {\rvar jsonString = @\u0026#34;{\u0026#34;\u0026#34;Name\u0026#34;\u0026#34;:\u0026#34;\u0026#34;中文名\u0026#34;\u0026#34;,\u0026#34;\u0026#34;Age\u0026#34;\u0026#34;:18}\u0026#34;;\rvar Result = JsonSerializer.Deserialize\u0026lt;TestClass\u0026gt;(jsonString);\rreturn Ok(Result);\r}\rpublic class TestClass {\rpublic string Name { get; set; }\rpublic int Age { get; set; }\r} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異",
   "keywords": [
     "2022鐵人賽"
@@ -237,6 +180,8 @@ public int Age { get; set; }
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -251,8 +196,8 @@ public int Age { get; set; }
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="SoftPower">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -279,9 +224,9 @@ public int Age { get; set; }
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Text.Json範例
+      dotnet6 Text.Json範例
     </h1>
-    <div class="post-meta"><span title='2022-09-28 00:02:35 +0800 CST'>September 28, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-09-28 00:02:35 &#43;0800 CST&#39;&gt;September 28, 2022&lt;/span&gt;
 
 </div>
   </header> 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Automapper範例 | CI-YU Blog</title>
+<title>dotnet6 Automapper範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
@@ -23,6 +23,7 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +60,27 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Automapper範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Automapper範例" />
 <meta property="og:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
@@ -70,7 +91,7 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
 <meta property="article:modified_time" content="2022-09-20T00:39:29+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Automapper範例"/>
+<meta name="twitter:title" content="dotnet6 Automapper範例"/>
 <meta name="twitter:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
@@ -91,7 +112,7 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Automapper範例",
+      "name": "dotnet6 Automapper範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -101,8 +122,8 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Automapper範例",
-  "name": "2022ITHelp dotnet6 Automapper範例",
+  "headline": "dotnet6 Automapper範例",
+  "name": "dotnet6 Automapper範例",
   "description": "目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper\n//找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。\nViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。",
   "keywords": [
     "2022鐵人賽"
@@ -165,6 +186,8 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -179,8 +202,8 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -207,9 +230,9 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Automapper範例
+      dotnet6 Automapper範例
     </h1>
-    <div class="post-meta"><span title='2022-09-20 00:39:29 +0800 CST'>September 20, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-09-20 00:39:29 &#43;0800 CST&#39;&gt;September 20, 2022&lt;/span&gt;
 
 </div>
   </header> 

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 BenchmarkDotNet範例 | CI-YU Blog</title>
+<title>dotnet6 BenchmarkDotNet範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 快速測試不同寫法的效能差異。
 建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
@@ -23,6 +23,7 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -59,7 +60,27 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 BenchmarkDotNet範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 BenchmarkDotNet範例" />
 <meta property="og:description" content="目的 快速測試不同寫法的效能差異。
 建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異
@@ -70,7 +91,7 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
 <meta property="article:modified_time" content="2022-09-21T00:58:10+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 BenchmarkDotNet範例"/>
+<meta name="twitter:title" content="dotnet6 BenchmarkDotNet範例"/>
 <meta name="twitter:description" content="目的 快速測試不同寫法的效能差異。
 建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異
@@ -91,7 +112,7 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 BenchmarkDotNet範例",
+      "name": "dotnet6 BenchmarkDotNet範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -101,8 +122,8 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 BenchmarkDotNet範例",
-  "name": "2022ITHelp dotnet6 BenchmarkDotNet範例",
+  "headline": "dotnet6 BenchmarkDotNet範例",
+  "name": "dotnet6 BenchmarkDotNet範例",
   "description": "目的 快速測試不同寫法的效能差異。\n建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步\nNuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異\nusing AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Running; //指定要測試的class var summary = BenchmarkRunner.Run\u0026lt;BenchmarkSampleAuto\u0026gt;(); //加入記憶體使用量測試 [MemoryDiagnoser] public class BenchmarkSampleAuto { private readonly List\u0026lt;DbModel\u0026gt; _data = new List\u0026lt;DbModel\u0026gt;(); private readonly IMapper _mapper; public BenchmarkSampleAuto() { //automapper設定 var config = new MapperConfiguration(cfg =\u0026gt; { cfg.CreateMap\u0026lt;DbModel, ViewModel\u0026gt;(); }); _mapper = new Mapper(config); //準備一份List資料 PrepareTestObjects(); } private void PrepareTestObjects() { _data.Add(new DbModel() { Id = 1, Name = \u0026#34;Bill\u0026#34;, Age = 18, CreatedDate = DateTime.",
   "keywords": [
     "2022鐵人賽"
@@ -165,6 +186,8 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -179,8 +202,8 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -207,9 +230,9 @@ using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Runnin
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 BenchmarkDotNet範例
+      dotnet6 BenchmarkDotNet範例
     </h1>
-    <div class="post-meta"><span title='2022-09-21 00:58:10 +0800 CST'>September 21, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-09-21 00:58:10 &#43;0800 CST&#39;&gt;September 21, 2022&lt;/span&gt;
 
 </div>
   </header> 

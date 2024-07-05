@@ -2,7 +2,7 @@
 <html lang="en" dir="auto">
 
 <head>
-	<meta name="generator" content="Hugo 0.111.3"><meta charset="utf-8">
+	<meta name="generator" content="Hugo 0.128.2"><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -21,6 +21,7 @@
 <meta name="msapplication-TileColor" content="#2e2e33">
 <link rel="alternate" type="application/rss+xml" href="https://ci-yu.top/index.xml">
 <link rel="alternate" type="application/json" href="https://ci-yu.top/index.json">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +58,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="CI-YU Blog" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="CI-YU Blog" />
 <meta property="og:description" content="" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://ci-yu.top/" />
@@ -118,6 +139,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -132,8 +155,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -158,124 +181,151 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Telegram.Bot前置作業
+    <h2>dotnet6 EFCore範例
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 在使用telegram機器人時，需要先在telegram新增要使用的機器人。
-搜尋 搜尋@botfather 開始 點擊start 輸入/newbot指令 輸入/newbot指令後，對話欄會請你輸入你的名稱。 設定聊天機器人的顯示名稱 這邊所輸入的名稱，並沒有限制要Bot或_bot當結尾。 設定機器人帳號 其他人可以透過查詢帳號找到我們所建立的機器人。
-當要輸入機器人帳號時，會限制要Bot或_bot結尾，需要特別注意。
-取得token 如馬賽克處，是使用機器人時所要提供給api的token。 參考 官方文件</p>
+    <p>目的 透過EFCore對db做查詢，為了降低門檻採用SQLite當範例資料庫。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample.Models; namespace EFCoreExample.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-24 09:38:35 +0800 CST'>September 24, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Telegram.Bot前置作業" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-10-04 02:39:15 &#43;0800 CST&#39;&gt;October 4, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 EFCore範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E7%AF%84%E4%BE%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Bogus範例
+    <h2>dotnet6 Dapper語法說明
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 快速且簡單的製造假資料
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
-Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&#34;Test&#34;)] public List&lt;User&gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order&gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds&#43;&#43;) //從自訂陣列隨機取值 .RuleFor(o =&gt; o.Item, f =&gt; f....</p>
+    <p>目的 說明Dapper基本語法
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite 編輯WeatherForecastController檔案 將預設的API註解 基本設定 /// &lt;summary&gt; /// 初始化SQLite /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; private static async Task InitSqliteAsync() { //建立SQLite連線 using var conn = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //判斷是否有Student.sqlite檔案 if (!System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //新增一張表，就會建立.sqlite檔案 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await conn.ExecuteAsync(SQL.ToString()); } //Task不建議使用void，當不需要回傳值時會改用Task....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-23 09:00:13 +0800 CST'>September 23, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Bogus範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-10-03 03:39:15 &#43;0800 CST&#39;&gt;October 3, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 Dapper語法說明" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Autofac範例
+    <h2>dotnet6 Dapper範例
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 批次註冊
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 新增類別檔 新增之後需要來描述要批次注入的規則
-加入前 加入後 並且繼承autofac的類別Module 編輯Program.cs檔案 //初始化並建立一個實例 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); //註冊autofac這個容器 builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(builder =&gt; builder.RegisterModule(new AutofacModuleRegister())); 有繼承autofac的類別Module 新增資料夾 新增下圖兩個資料夾 新增類別檔 此次的目的是要可以進行批次注入，所以檔名結尾都需要包含Service，做批次注入時可以辨識
-在Services資料夾底下加入類別檔案，名稱為TestService 在Interface資料夾底下加入介面檔案，名稱為ITest ITest.cs寫入程式 namespace AutoFacExample.Services.Interface { public interface ITest { public string GetName(string id); } } TestService.cs寫入程式 繼承介面後寫上與介面相同的方法 using AutoFacExample.Services.Interface; namespace AutoFacExample.Services { public class TestService : ITest { public string GetName(string id) { return $&#34;{id}:Bill&#34;; } } } AutofacModuleRegister執行批次註冊 protected override void Load(ContainerBuilder builder) { //RegisterAssemblyTypes =&gt; 註冊所有集合 //Where(t =&gt; t....</p>
+    <p>目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-22 00:48:20 +0800 CST'>September 22, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Autofac範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-autofac%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-10-02 01:39:15 &#43;0800 CST&#39;&gt;October 2, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 Dapper範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 BenchmarkDotNet範例
+    <h2>dotnet6 EPPlus圖表範例
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 快速測試不同寫法的效能差異。
-建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
-NuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異
-using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Running; //指定要測試的class var summary = BenchmarkRunner.Run&lt;BenchmarkSampleAuto&gt;(); //加入記憶體使用量測試 [MemoryDiagnoser] public class BenchmarkSampleAuto { private readonly List&lt;DbModel&gt; _data = new List&lt;DbModel&gt;(); private readonly IMapper _mapper; public BenchmarkSampleAuto() { //automapper設定 var config = new MapperConfiguration(cfg =&gt; { cfg.CreateMap&lt;DbModel, ViewModel&gt;(); }); _mapper = new Mapper(config); //準備一份List資料 PrepareTestObjects(); } private void PrepareTestObjects() { _data.Add(new DbModel() { Id = 1, Name = &#34;Bill&#34;, Age = 18, CreatedDate = DateTime....</p>
+    <p>目的 使用epplus製作長條圖
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(Name = &#34;Import&#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &#34;第一季&#34;; ws.Cells[1, 3].Value = &#34;第二季&#34;; ws.Cells[1, 4].Value = &#34;第三季&#34;; ws.Cells[1, 5].Value = &#34;第四季&#34;; ws.Cells[2, 1]....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-21 00:58:10 +0800 CST'>September 21, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 BenchmarkDotNet範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-10-02 00:00:15 &#43;0800 CST&#39;&gt;October 2, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 EPPlus圖表範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 Automapper範例
+    <h2>dotnet6 EPPlus範例
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
-//找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
-ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。...</p>
+    <p>目的 將資料匯出成excel
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
+&#34;EPPlus&#34;: {&#34;ExcelPackage&#34;: {&#34;LicenseContext&#34;: &#34;Commercial&#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
+[HttpGet(Name = &#34;Import&#34;)]public ActionResult ImportExcel() {//建立excel所有操作的實例using ExcelPackage excelPackage = new();//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊excelPackage.Workbook.Properties.Author = &#34;Bill Huang&#34;;excelPackage.Workbook.Properties.Title = &#34;範例檔案&#34;;excelPackage.Workbook.Properties.Created = DateTime.Now;//建立第一頁工作表(下方所顯示的頁簽)ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;);int i = 1;foreach (var c in Summaries) {//選擇指定欄位將資料放入worksheet....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-20 00:39:29 +0800 CST'>September 20, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 Automapper範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-10-01 00:39:15 &#43;0800 CST&#39;&gt;October 1, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 EPPlus範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 MailKit範例
+    <h2>dotnet6 更改回傳Json時為大駝峰命名
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 使用gmail寄信
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&#34;SendEmail&#34;)] public async Task&lt;IActionResult&gt; Get() { #region OAuth驗證 const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;; var clientSecrets = new ClientSecrets { ClientId = &#34;前置作業文章最後給的用戶ID&#34;, ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false), Scopes = new[] { &#34;https://mail.google.com/&#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode....</p>
+    <p>目的 將預設回傳的Camel-Case(temperatureCelsius)改為Pascal Case(TemperatureCelsius)
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var options = new JsonSerializerOptions {PropertyNamingPolicy = null,};var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18,&#34;&#34;TemperatureCelsius&#34;&#34;:52}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString,options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }public int TemperatureCelsius { get; set; }} Program寫入程式 builder....</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-19 15:38:35 +0800 CST'>September 19, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 MailKit範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-09-30 09:00:14 &#43;0800 CST&#39;&gt;September 30, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 更改回傳Json時為大駝峰命名" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E6%9B%B4%E6%94%B9%E5%9B%9E%E5%82%B3json%E6%99%82%E7%82%BA%E5%A4%A7%E9%A7%9D%E5%B3%B0%E5%91%BD%E5%90%8D/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 MailKit前置作業
+    <h2>dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 前往google帳號設定OAuth，才能使用google帳號寄信
-點擊連結 到 google帳號管理
-新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit</p>
+    <p>目的 序列化時不自動將非ASCII轉為Unicode
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using [HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var options = new JsonSerializerOptions {//美化輸出，會有空白字元WriteIndented = true,//將所有語言都不進行轉換Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)};var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18,};var Result = JsonSerializer.Serialize(Test, options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 中文就不會是unicode了 參考 How to serialize and deserialize...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-18 15:39:15 +0800 CST'>September 18, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 MailKit前置作業" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-09-29 00:02:35 &#43;0800 CST&#39;&gt;September 29, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E8%A7%A3%E6%B1%BAsystem.text.json%E5%BA%8F%E5%88%97%E5%8C%96%E5%BE%8C%E6%9C%83%E5%B0%87%E6%89%80%E6%9C%89%E9%9D%9Eascii%E8%BD%89%E7%82%BAunicode/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2>2022ITHelp dotnet6 取得appsettings檔案內容
+    <h2>dotnet6 Text.Json範例
     </h2>
   </header>
   <div class="entry-content">
-    <p>目的 透過強行別的模式使用appsetting設定檔資料
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料
-&#34;PersonalInformation&#34;: { &#34;Name&#34;: &#34;Bill&#34;, &#34;Age&#34;: 20 } 新增model資料夾，並在裡面新增AppsettingConfig類別檔 編輯AppsettingConfig類別檔案 public class PersonalInformation { public PersonalInformation() { Name = string.Empty; } public string Name { get; set; } public int Age { get; set; } } 編輯Program.cs檔案 在program.cs中把appsetting的來源綁定在PersonalInformation這個class上
-builder.Services.Configure&lt;PersonalInformation&gt;( builder.Configuration.GetSection(&#34;PersonalInformation&#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。
-private readonly PersonalInformation _options; public WeatherForecastController(ILogger&lt;WeatherForecastController&gt; logger, IOptionsMonitor&lt;PersonalInformation&gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor...</p>
+    <p>目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &lt;summary&gt;/// 序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonSerialize&#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &#34;中文名&#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &lt;summary&gt;/// 反序列化/// &lt;/summary&gt;/// &lt;returns&gt;&lt;/returns&gt;[HttpGet(&#34;JsonDeserialize&#34;)]public ActionResult JsonDeserialize() {var jsonString = @&#34;{&#34;&#34;Name&#34;&#34;:&#34;&#34;中文名&#34;&#34;,&#34;&#34;Age&#34;&#34;:18}&#34;;var Result = JsonSerializer.Deserialize&lt;TestClass&gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異...</p>
   </div>
-  <footer class="entry-footer"><span title='2022-09-17 15:00:14 +0800 CST'>September 17, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to 2022ITHelp dotnet6 取得appsettings檔案內容" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/"></a>
+  <footer class="entry-footer">&lt;span title=&#39;2022-09-28 00:02:35 &#43;0800 CST&#39;&gt;September 28, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 Text.Json範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>dotnet6 swagger授權
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 在swagger內使用jwt token測試API
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
+&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解
+builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 NuGet加入套件 透過NuGet安裝
+JWT Microsoft.AspNetCore.Authentication.JwtBearer Microsoft.IdentityModel.Tokens System.IdentityModel.Tokens.Jwt 新增Helpers資料夾並在裡面新增JwtHelpers.cs類別檔案 jwt範例使用保哥範例來做修改，目的只是為了取得jwt token
+public class JwtHelper { private readonly JwtSettingsOptions _settings; public JwtHelper(IOptionsMonitor&lt;JwtSettingsOptions&gt; settings) { //注入appsetting的json _settings = settings.CurrentValue; } public string GenerateToken(string userName, int expireMinutes = 120) { //發行人 var issuer = _settings....</p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2022-09-27 00:51:18 &#43;0800 CST&#39;&gt;September 27, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 swagger授權" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/"></a>
+</article>
+
+<article class="post-entry"> 
+  <header class="entry-header">
+    <h2>dotnet6 swagger範例
+    </h2>
+  </header>
+  <div class="entry-content">
+    <p>目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
+&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
+builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 編輯WeatherForecastController檔案 這裡有個重點，如果要增加下一個action時候，預設的範例檔案，需要調整route的設定，才能讀取到，不然會跳錯誤訊息
+加入前 加入後 加入第二個方法 執行結果 就可以成功讀取到兩個方法了 參考 微軟官方
+範例檔 GitHub</p>
+  </div>
+  <footer class="entry-footer">&lt;span title=&#39;2022-09-26 00:10:22 &#43;0800 CST&#39;&gt;September 26, 2022&lt;/span&gt;</footer>
+  <a class="entry-link" aria-label="post link to dotnet6 swagger範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/"></a>
 </article>
 <footer class="page-footer">
   <nav class="pagination">
     <a class="prev" href="https://ci-yu.top/page/2/">
       «&nbsp;Prev&nbsp;
+    </a>
+    <a class="next" href="https://ci-yu.top/page/4/">Next&nbsp;&nbsp;»
     </a>
   </nav>
 </footer>

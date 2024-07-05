@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Hangfire範例 | CI-YU Blog</title>
+<title>dotnet6 Hangfire範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 在windows系統上想執行排程有兩個選擇
 使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程
@@ -22,6 +22,7 @@
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-hangfire%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,7 +59,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Hangfire範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Hangfire範例" />
 <meta property="og:description" content="目的 在windows系統上想執行排程有兩個選擇
 使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Hangfire Hangfire.InMemory 編輯Program.cs檔 using Hangfire; var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //註冊hangfire並且使用記憶體保存排程， //預設所下載的HangFire套件可以使用sqlserver，可透過config.UseSqlServerStorage();，但需要設定 builder.Services.AddHangfire(config =&gt; { config.UseInMemoryStorage(); }); //註冊hangfire要使用的伺服器，伺服器就是上面所寫的使用記憶體當伺服器 builder.Services.AddHangfireServer(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); //使用hangfire內建的儀表板 app.UseHangfireDashboard(); app." />
@@ -68,7 +89,7 @@
 <meta property="article:modified_time" content="2022-10-11T02:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Hangfire範例"/>
+<meta name="twitter:title" content="dotnet6 Hangfire範例"/>
 <meta name="twitter:description" content="目的 在windows系統上想執行排程有兩個選擇
 使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Hangfire Hangfire.InMemory 編輯Program.cs檔 using Hangfire; var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //註冊hangfire並且使用記憶體保存排程， //預設所下載的HangFire套件可以使用sqlserver，可透過config.UseSqlServerStorage();，但需要設定 builder.Services.AddHangfire(config =&gt; { config.UseInMemoryStorage(); }); //註冊hangfire要使用的伺服器，伺服器就是上面所寫的使用記憶體當伺服器 builder.Services.AddHangfireServer(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); //使用hangfire內建的儀表板 app.UseHangfireDashboard(); app."/>
@@ -88,7 +109,7 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Hangfire範例",
+      "name": "dotnet6 Hangfire範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-hangfire%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -98,8 +119,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Hangfire範例",
-  "name": "2022ITHelp dotnet6 Hangfire範例",
+  "headline": "dotnet6 Hangfire範例",
+  "name": "dotnet6 Hangfire範例",
   "description": "目的 在windows系統上想執行排程有兩個選擇\n使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Hangfire Hangfire.InMemory 編輯Program.cs檔 using Hangfire; var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //註冊hangfire並且使用記憶體保存排程， //預設所下載的HangFire套件可以使用sqlserver，可透過config.UseSqlServerStorage();，但需要設定 builder.Services.AddHangfire(config =\u0026gt; { config.UseInMemoryStorage(); }); //註冊hangfire要使用的伺服器，伺服器就是上面所寫的使用記憶體當伺服器 builder.Services.AddHangfireServer(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); //使用hangfire內建的儀表板 app.UseHangfireDashboard(); app.",
   "keywords": [
     "2022鐵人賽"
@@ -162,6 +183,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -176,8 +199,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -204,9 +227,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Hangfire範例
+      dotnet6 Hangfire範例
     </h1>
-    <div class="post-meta"><span title='2022-10-11 02:39:15 +0800 CST'>October 11, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-11 02:39:15 &#43;0800 CST&#39;&gt;October 11, 2022&lt;/span&gt;
 
 </div>
   </header> 

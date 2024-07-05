@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 NLog進階範例 | CI-YU Blog</title>
+<title>dotnet6 NLog進階範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(&#34;init main&#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含
 throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { &#34;NLog&#34;: { &#34;throwConfigExceptions&#34;: true, &#34;targets&#34;: { &#34;async&#34;: true, &#34;logfile&#34;: { &#34;type&#34;: &#34;File&#34;, &#34;fileName&#34;: &#34;c:/temp/nlog-${shortdate}.">
@@ -21,6 +21,7 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +58,27 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 NLog進階範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 NLog進階範例" />
 <meta property="og:description" content="目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(&#34;init main&#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含
 throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { &#34;NLog&#34;: { &#34;throwConfigExceptions&#34;: true, &#34;targets&#34;: { &#34;async&#34;: true, &#34;logfile&#34;: { &#34;type&#34;: &#34;File&#34;, &#34;fileName&#34;: &#34;c:/temp/nlog-${shortdate}." />
 <meta property="og:type" content="article" />
@@ -66,7 +87,7 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
 <meta property="article:modified_time" content="2022-10-08T02:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 NLog進階範例"/>
+<meta name="twitter:title" content="dotnet6 NLog進階範例"/>
 <meta name="twitter:description" content="目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(&#34;init main&#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含
 throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { &#34;NLog&#34;: { &#34;throwConfigExceptions&#34;: true, &#34;targets&#34;: { &#34;async&#34;: true, &#34;logfile&#34;: { &#34;type&#34;: &#34;File&#34;, &#34;fileName&#34;: &#34;c:/temp/nlog-${shortdate}."/>
 
@@ -85,7 +106,7 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 NLog進階範例",
+      "name": "dotnet6 NLog進階範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -95,8 +116,8 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 NLog進階範例",
-  "name": "2022ITHelp dotnet6 NLog進階範例",
+  "headline": "dotnet6 NLog進階範例",
+  "name": "dotnet6 NLog進階範例",
   "description": "目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(\u0026#34;init main\u0026#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含\nthrowConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { \u0026#34;NLog\u0026#34;: { \u0026#34;throwConfigExceptions\u0026#34;: true, \u0026#34;targets\u0026#34;: { \u0026#34;async\u0026#34;: true, \u0026#34;logfile\u0026#34;: { \u0026#34;type\u0026#34;: \u0026#34;File\u0026#34;, \u0026#34;fileName\u0026#34;: \u0026#34;c:/temp/nlog-${shortdate}.",
   "keywords": [
     "2022鐵人賽"
@@ -159,6 +180,8 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -173,8 +196,8 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -201,9 +224,9 @@ throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 NLog進階範例
+      dotnet6 NLog進階範例
     </h1>
-    <div class="post-meta"><span title='2022-10-08 02:39:15 +0800 CST'>October 8, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-08 02:39:15 &#43;0800 CST&#39;&gt;October 8, 2022&lt;/span&gt;
 
 </div>
   </header> 

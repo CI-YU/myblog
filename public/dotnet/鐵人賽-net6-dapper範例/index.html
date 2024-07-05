@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Dapper範例 | CI-YU Blog</title>
+<title>dotnet6 Dapper範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection.">
@@ -21,6 +21,7 @@
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -57,7 +58,27 @@
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Dapper範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Dapper範例" />
 <meta property="og:description" content="目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection." />
 <meta property="og:type" content="article" />
@@ -66,7 +87,7 @@
 <meta property="article:modified_time" content="2022-10-02T01:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Dapper範例"/>
+<meta name="twitter:title" content="dotnet6 Dapper範例"/>
 <meta name="twitter:description" content="目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection."/>
 
@@ -85,7 +106,7 @@
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Dapper範例",
+      "name": "dotnet6 Dapper範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -95,8 +116,8 @@
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Dapper範例",
-  "name": "2022ITHelp dotnet6 Dapper範例",
+  "headline": "dotnet6 Dapper範例",
+  "name": "dotnet6 Dapper範例",
   "description": "目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// \u0026lt;summary\u0026gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// \u0026lt;/summary\u0026gt; /// \u0026lt;returns\u0026gt;\u0026lt;/returns\u0026gt; [HttpGet(\u0026#34;InsertAsync\u0026#34;)] public async Task\u0026lt;IActionResult\u0026gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(\u0026#34;Data Source=Student.sqlite\u0026#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@\u0026#34;.\\Student.sqlite\u0026#34;)) { //組語法，新建名為Student的表 SQL.Append(\u0026#34;CREATE TABLE Student( \\n\u0026#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(\u0026#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \\n\u0026#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(\u0026#34;Name VARCHAR(32) NOT NULL, \\n\u0026#34;); //Age欄位設定為int SQL.Append(\u0026#34;Age INTEGER) \\n\u0026#34;); //執行sql語法 await connection.",
   "keywords": [
     "2022鐵人賽"
@@ -159,6 +180,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -173,8 +196,8 @@
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -201,9 +224,9 @@
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Dapper範例
+      dotnet6 Dapper範例
     </h1>
-    <div class="post-meta"><span title='2022-10-02 01:39:15 +0800 CST'>October 2, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-02 01:39:15 &#43;0800 CST&#39;&gt;October 2, 2022&lt;/span&gt;
 
 </div>
   </header> 

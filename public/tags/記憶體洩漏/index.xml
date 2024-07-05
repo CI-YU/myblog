@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>記憶體洩漏 on CI-YU Blog</title>
+    <link>https://ci-yu.top/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/</link>
+    <description>Recent content in 記憶體洩漏 on CI-YU Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 19 May 2024 14:54:23 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Opencc Memory Leak</title>
+      <link>https://ci-yu.top/dotnet/opencc-memory-leak/</link>
+      <pubDate>Sun, 19 May 2024 14:54:23 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/dotnet/opencc-memory-leak/</guid>
+      <description>近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做防止記憶體洩漏的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
+調整前 using System.Runtime.InteropServices; using System.Text; public static class OpenCCHelper { [DllImport(@&amp;#34;C:\Tools\opencc\bin\opencc.dll&amp;#34;, EntryPoint = &amp;#34;opencc_open&amp;#34;)] private static extern IntPtr opencc_open(string configFileName); [DllImport(@&amp;#34;C:\Tools\opencc\bin\opencc.dll&amp;#34;, EntryPoint = &amp;#34;opencc_convert_utf8&amp;#34;)] private static extern IntPtr opencc_convert_utf8(IntPtr opencc, IntPtr input, long length); public static string ConvertFromSimplifiedToTraditional(this string text, string config = &amp;#34;s2t&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromSimplifiedToTraditionalTaiwan(this string text, string config = &amp;#34;s2twp&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalTaiwanToSimplified(this string text, string config = &amp;#34;tw2sp&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalToSimplified(this string text, string config = &amp;#34;t2s&amp;#34;) { return OpenCC(text, config: config); } public static string OpenCC(this string text, string config) { var configFile = $&amp;#34;C:\\Tools\\OpenCC\\share\\opencc\\{config}.</description>
+    </item>
+    
+  </channel>
+</rss>

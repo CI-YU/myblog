@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 Serilog範例 | CI-YU Blog</title>
+<title>dotnet6 Serilog範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 在webapi專案下使用serilog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
@@ -22,6 +22,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -58,7 +59,27 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 Serilog範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 Serilog範例" />
 <meta property="og:description" content="目的 在webapi專案下使用serilog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
 using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&#34;Microsoft.AspNetCore&#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&#34;./Logs/log.txt&#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&#34;Starting web host&#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log." />
@@ -68,7 +89,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 <meta property="article:modified_time" content="2022-10-07T02:39:15+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 Serilog範例"/>
+<meta name="twitter:title" content="dotnet6 Serilog範例"/>
 <meta name="twitter:description" content="目的 在webapi專案下使用serilog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
 using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&#34;Microsoft.AspNetCore&#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&#34;./Logs/log.txt&#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&#34;Starting web host&#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log."/>
@@ -88,7 +109,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 Serilog範例",
+      "name": "dotnet6 Serilog範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -98,8 +119,8 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 Serilog範例",
-  "name": "2022ITHelp dotnet6 Serilog範例",
+  "headline": "dotnet6 Serilog範例",
+  "name": "dotnet6 Serilog範例",
   "description": "目的 在webapi專案下使用serilog套件\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤\nusing Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(\u0026#34;Microsoft.AspNetCore\u0026#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(\u0026#34;./Logs/log.txt\u0026#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(\u0026#34;Starting web host\u0026#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log.",
   "keywords": [
     "2022鐵人賽"
@@ -162,6 +183,8 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -176,8 +199,8 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -204,9 +227,9 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 Serilog範例
+      dotnet6 Serilog範例
     </h1>
-    <div class="post-meta"><span title='2022-10-07 02:39:15 +0800 CST'>October 7, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-07 02:39:15 &#43;0800 CST&#39;&gt;October 7, 2022&lt;/span&gt;
 
 </div>
   </header> 

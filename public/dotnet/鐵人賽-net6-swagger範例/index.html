@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
-<title>2022ITHelp dotnet6 swagger範例 | CI-YU Blog</title>
+<title>dotnet6 swagger範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
 <meta name="description" content="目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
@@ -25,6 +25,7 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
 <link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -61,7 +62,27 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
         }
 
     </style>
-</noscript><meta property="og:title" content="2022ITHelp dotnet6 swagger範例" />
+</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
+  
+    
+      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
+      <script>
+        var doNotTrack = false;
+        if ( false ) {
+          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
+          var doNotTrack = (dnt == "1" || dnt == "yes");
+        }
+        if (!doNotTrack) {
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', 'G-S4X5YV8EB6');
+        }
+      </script>
+    
+  
+
+<meta property="og:title" content="dotnet6 swagger範例" />
 <meta property="og:description" content="目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
 &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
@@ -74,7 +95,7 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
 <meta property="article:modified_time" content="2022-09-26T00:10:22+08:00" />
 
 <meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="2022ITHelp dotnet6 swagger範例"/>
+<meta name="twitter:title" content="dotnet6 swagger範例"/>
 <meta name="twitter:description" content="目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
 &lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
@@ -97,7 +118,7 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
     {
       "@type": "ListItem",
       "position":  2 ,
-      "name": "2022ITHelp dotnet6 swagger範例",
+      "name": "dotnet6 swagger範例",
       "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/"
     }
   ]
@@ -107,8 +128,8 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
 {
   "@context": "https://schema.org",
   "@type": "BlogPosting",
-  "headline": "2022ITHelp dotnet6 swagger範例",
-  "name": "2022ITHelp dotnet6 swagger範例",
+  "headline": "dotnet6 swagger範例",
+  "name": "dotnet6 swagger範例",
   "description": "目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案\n\u0026lt;GenerateDocumentationFile\u0026gt;true\u0026lt;/GenerateDocumentationFile\u0026gt; \u0026lt;NoWarn\u0026gt;$(NoWarn);1591\u0026lt;/NoWarn\u0026gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明\nbuilder.Services.AddSwaggerGen(options =\u0026gt; { // using System.Reflection; var xmlFilename = $\u0026#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml\u0026#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 編輯WeatherForecastController檔案 這裡有個重點，如果要增加下一個action時候，預設的範例檔案，需要調整route的設定，才能讀取到，不然會跳錯誤訊息\n加入前 加入後 加入第二個方法 執行結果 就可以成功讀取到兩個方法了 參考 微軟官方\n範例檔 GitHub",
   "keywords": [
     "2022鐵人賽"
@@ -171,6 +192,8 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -185,8 +208,8 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softpower/" title="軟實力">
-                    <span>SoftPower</span>
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                    <span>SoftSkills</span>
                 </a>
             </li>
             <li>
@@ -213,9 +236,9 @@ builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var x
   <header class="post-header">
     <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
     <h1 class="post-title">
-      2022ITHelp dotnet6 swagger範例
+      dotnet6 swagger範例
     </h1>
-    <div class="post-meta"><span title='2022-09-26 00:10:22 +0800 CST'>September 26, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-09-26 00:10:22 &#43;0800 CST&#39;&gt;September 26, 2022&lt;/span&gt;
 
 </div>
   </header> 

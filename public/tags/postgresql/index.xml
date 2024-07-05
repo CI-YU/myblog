@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
+  <channel>
+    <title>PostgreSQL on CI-YU Blog</title>
+    <link>https://ci-yu.top/tags/postgresql/</link>
+    <description>Recent content in PostgreSQL on CI-YU Blog</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 24 Nov 2023 22:09:49 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Dapper PostgreSQL Error</title>
+      <link>https://ci-yu.top/dotnet/dapper-postgresql-error/</link>
+      <pubDate>Fri, 24 Nov 2023 22:09:49 +0800</pubDate>
+      
+      <guid>https://ci-yu.top/dotnet/dapper-postgresql-error/</guid>
+      <description>問題 當使用dapper呼叫postgresql時後,需要在in裡面查詢一批陣列會遇到下方的錯誤訊息
+var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id in @Ids;&amp;#34; await dapper.QueryAsync(strSQL,parameters); 42601: syntax error at or near &amp;ldquo;$1&amp;rdquo;\r\n\r\nPOSITION: 81
+解法 改語法為any就可以解決這個問題。
+var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id = any(@Ids);&amp;#34; await dapper.QueryAsync(strSQL,parameters); </description>
+    </item>
+    
+  </channel>
+</rss>
