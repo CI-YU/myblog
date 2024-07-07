@@ -11,7 +11,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
@@ -39,7 +39,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -139,6 +139,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -184,9 +186,8 @@
         分享技術與有趣的事物
     </div>
     <footer class="entry-footer">
-        <div class="social-icons" >
-    <a href="https://github.com/CI-YU" target="_blank" rel="noopener noreferrer me"
-        title="Github">
+        <div class="social-icons">
+    <a href="https://github.com/CI-YU" target="_blank" rel="noopener noreferrer me" title="Github">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <path
@@ -194,8 +195,7 @@
     </path>
 </svg>
     </a>
-    <a href="https://www.linkedin.com/in/ci-yu-huang-8a75a21b0/" target="_blank" rel="noopener noreferrer me"
-        title="Linkedin">
+    <a href="https://www.linkedin.com/in/ci-yu-huang-8a75a21b0/" target="_blank" rel="noopener noreferrer me" title="Linkedin">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
     stroke-linecap="round" stroke-linejoin="round">
     <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
@@ -210,57 +210,57 @@
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Opencc Memory Leak
+    <h2>Opencc Memory Leak
     </h2>
   </header>
   <div class="entry-content">
     <p>近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做防止記憶體洩漏的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
 調整前 using System.Runtime.InteropServices; using System.Text; public static class OpenCCHelper { [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_open&#34;)] private static extern IntPtr opencc_open(string configFileName); [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_convert_utf8&#34;)] private static extern IntPtr opencc_convert_utf8(IntPtr opencc, IntPtr input, long length); public static string ConvertFromSimplifiedToTraditional(this string text, string config = &#34;s2t&#34;) { return OpenCC(text, config: config); } public static string ConvertFromSimplifiedToTraditionalTaiwan(this string text, string config = &#34;s2twp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalTaiwanToSimplified(this string text, string config = &#34;tw2sp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalToSimplified(this string text, string config = &#34;t2s&#34;) { return OpenCC(text, config: config); } public static string OpenCC(this string text, string config) { var configFile = $&#34;C:\\Tools\\OpenCC\\share\\opencc\\{config}....</p>
   </div>
-  <footer class="entry-footer"><span title='2024-05-19 14:54:23 +0800 CST'>May 19, 2024</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2024-05-19 14:54:23 &#43;0800 CST&#39;&gt;May 19, 2024&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Opencc Memory Leak" href="http://localhost:1313/dotnet/opencc-memory-leak/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Dockerslow
+    <h2>Dockerslow
     </h2>
   </header>
   <div class="entry-content">
     <p>dotnet 6 部署到docker忽然變很慢 最近在公司將dotnet 6 用docker-compose部署到測試機時忽然要等3-5分鐘，最後查證是因為我們在linux環境上有做mount遠端磁碟造成部署時間過長
 掛載的磁碟機沒有做資料夾分類所有檔案都在一個資料夾底下，在根目錄就有破百萬的檔案，導致container透過volume連到實體路徑時會讀取過久</p>
   </div>
-  <footer class="entry-footer"><span title='2024-05-05 01:24:52 +0800 CST'>May 5, 2024</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2024-05-05 01:24:52 &#43;0800 CST&#39;&gt;May 5, 2024&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Dockerslow" href="http://localhost:1313/posts/dockerslow/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">安裝到手機
+    <h2>安裝到手機
     </h2>
   </header>
   <div class="entry-content">
     <p>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </p>
   </div>
-  <footer class="entry-footer"><span title='2024-01-27 01:40:26 +0800 CST'>January 27, 2024</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2024-01-27 01:40:26 &#43;0800 CST&#39;&gt;January 27, 2024&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to 安裝到手機" href="http://localhost:1313/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">2024年度目標
+    <h2>2024年度目標
     </h2>
   </header>
   <div class="entry-content">
     <p>2024年度目標 學會使用copilot,增加coding效率 3月前使用flutter開發記帳軟體並且上架 7月前TOEIC金色證書 開始錄製廣播 </p>
   </div>
-  <footer class="entry-footer"><span title='2024-01-09 00:10:13 +0800 CST'>January 9, 2024</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2024-01-09 00:10:13 &#43;0800 CST&#39;&gt;January 9, 2024&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to 2024年度目標" href="http://localhost:1313/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Dapper PostgreSQL Error
+    <h2>Dapper PostgreSQL Error
     </h2>
   </header>
   <div class="entry-content">
@@ -269,13 +269,13 @@ var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&#34;I
 解法 改語法為any就可以解決這個問題。
 var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&#34;Ids&#34;, Ids); var strSQL = &#34;&#34;; strSQL &#43;=&#34;select * from Users where id = any(@Ids);&#34; await dapper.QueryAsync(strSQL,parameters); </p>
   </div>
-  <footer class="entry-footer"><span title='2023-11-24 22:09:49 +0800 CST'>November 24, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-11-24 22:09:49 &#43;0800 CST&#39;&gt;November 24, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Dapper PostgreSQL Error" href="http://localhost:1313/dotnet/dapper-postgresql-error/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Three Tree
+    <h2>Three Tree
     </h2>
   </header>
   <div class="entry-content">
@@ -284,13 +284,13 @@ widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類
 element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
 render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</p>
   </div>
-  <footer class="entry-footer"><span title='2023-07-20 23:22:34 +0800 CST'>July 20, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-07-20 23:22:34 &#43;0800 CST&#39;&gt;July 20, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Three Tree" href="http://localhost:1313/flutter/three-tree/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">如何固定設備方向
+    <h2>如何固定設備方向
     </h2>
   </header>
   <div class="entry-content">
@@ -298,13 +298,13 @@ render tree 是由element tree控制，當element tree決定有必要修改，�
 WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import ‘package:flutter/services.dart’;
 void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </p>
   </div>
-  <footer class="entry-footer"><span title='2023-06-04 20:28:02 +0800 CST'>June 4, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-06-04 20:28:02 &#43;0800 CST&#39;&gt;June 4, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to 如何固定設備方向" href="http://localhost:1313/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">資料庫分表
+    <h2>資料庫分表
     </h2>
   </header>
   <div class="entry-content">
@@ -314,13 +314,13 @@ Sharding中介軟體 要做到水平分庫會建議使用已經發展成熟的Sh
 Sharding架構 有區分成兩種
 Porxy架構 應用集成架構 </p>
   </div>
-  <footer class="entry-footer"><span title='2023-06-04 13:12:42 +0800 CST'>June 4, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-06-04 13:12:42 &#43;0800 CST&#39;&gt;June 4, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to 資料庫分表" href="http://localhost:1313/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Pub
+    <h2>Pub
     </h2>
   </header>
   <div class="entry-content">
@@ -339,13 +339,13 @@ flutter pub add http
 image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
 flutter pub add image_picker...</p>
   </div>
-  <footer class="entry-footer"><span title='2023-05-28 14:30:29 +0800 CST'>May 28, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 14:30:29 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Pub" href="http://localhost:1313/flutter/pub/"></a>
 </article>
 
 <article class="post-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Widget
+    <h2>Widget
     </h2>
   </header>
   <div class="entry-content">
@@ -372,7 +372,7 @@ Form 有額外的驗證功能，並顯示在畫面
 Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
 後續慢慢補上</p>
   </div>
-  <footer class="entry-footer"><span title='2023-05-28 13:26:51 +0800 CST'>May 28, 2023</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2023-05-28 13:26:51 &#43;0800 CST&#39;&gt;May 28, 2023&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Widget" href="http://localhost:1313/flutter/widget/"></a>
 </article>
 <footer class="page-footer">

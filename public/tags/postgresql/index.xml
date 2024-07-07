@@ -4,19 +4,20 @@
     <title>PostgreSQL on CI-YU Blog</title>
     <link>http://localhost:1313/tags/postgresql/</link>
     <description>Recent content in PostgreSQL on CI-YU Blog</description>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Fri, 24 Nov 2023 22:09:49 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Fri, 24 Nov 2023 22:09:49 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/postgresql/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dapper PostgreSQL Error</title>
       <link>http://localhost:1313/dotnet/dapper-postgresql-error/</link>
       <pubDate>Fri, 24 Nov 2023 22:09:49 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/dapper-postgresql-error/</guid>
       <description>問題 當使用dapper呼叫postgresql時後,需要在in裡面查詢一批陣列會遇到下方的錯誤訊息
 var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id in @Ids;&amp;#34; await dapper.QueryAsync(strSQL,parameters); 42601: syntax error at or near &amp;ldquo;$1&amp;rdquo;\r\n\r\nPOSITION: 81
 解法 改語法為any就可以解決這個問題。
 var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id = any(@Ids);&amp;#34; await dapper.QueryAsync(strSQL,parameters); </description>
     </item>
+    
   </channel>
 </rss>

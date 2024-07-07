@@ -13,7 +13,7 @@
 [HttpGet(Name = &#34;Import&#34;)]public ActionResult ImportExcel() {//建立excel所有操作的實例using ExcelPackage excelPackage = new();//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊excelPackage.Workbook.Properties.Author = &#34;Bill Huang&#34;;excelPackage.Workbook.Properties.Title = &#34;範例檔案&#34;;excelPackage.Workbook.Properties.Created = DateTime.Now;//建立第一頁工作表(下方所顯示的頁簽)ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&#34;第一頁&#34;);int i = 1;foreach (var c in Summaries) {//選擇指定欄位將資料放入worksheet.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
@@ -39,7 +39,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -184,6 +184,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -225,10 +227,10 @@
 <article class="post-single">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title entry-hint-parent">
+    <h1 class="post-title">
       dotnet6 EPPlus範例
     </h1>
-    <div class="post-meta"><span title='2022-10-01 00:39:15 +0800 CST'>October 1, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-01 00:39:15 &#43;0800 CST&#39;&gt;October 1, 2022&lt;/span&gt;
 
 </div>
   </header> 

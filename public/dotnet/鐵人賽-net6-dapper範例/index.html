@@ -11,7 +11,7 @@
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &lt;summary&gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &lt;/summary&gt; /// &lt;returns&gt;&lt;/returns&gt; [HttpGet(&#34;InsertAsync&#34;)] public async Task&lt;IActionResult&gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&#34;Data Source=Student.sqlite&#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&#34;.\Student.sqlite&#34;)) { //組語法，新建名為Student的表 SQL.Append(&#34;CREATE TABLE Student( \n&#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&#34;Name VARCHAR(32) NOT NULL, \n&#34;); //Age欄位設定為int SQL.Append(&#34;Age INTEGER) \n&#34;); //執行sql語法 await connection.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
@@ -37,7 +37,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -178,6 +178,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -219,10 +221,10 @@
 <article class="post-single">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title entry-hint-parent">
+    <h1 class="post-title">
       dotnet6 Dapper範例
     </h1>
-    <div class="post-meta"><span title='2022-10-02 01:39:15 +0800 CST'>October 2, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-02 01:39:15 &#43;0800 CST&#39;&gt;October 2, 2022&lt;/span&gt;
 
 </div>
   </header> 

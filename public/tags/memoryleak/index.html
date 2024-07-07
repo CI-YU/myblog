@@ -10,7 +10,7 @@
 <meta name="description" content="">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/tags/memoryleak/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
@@ -37,7 +37,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -124,6 +124,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -169,14 +171,14 @@
 
 <article class="post-entry tag-entry"> 
   <header class="entry-header">
-    <h2 class="entry-hint-parent">Opencc Memory Leak
+    <h2>Opencc Memory Leak
     </h2>
   </header>
   <div class="entry-content">
     <p>近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做防止記憶體洩漏的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
 調整前 using System.Runtime.InteropServices; using System.Text; public static class OpenCCHelper { [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_open&#34;)] private static extern IntPtr opencc_open(string configFileName); [DllImport(@&#34;C:\Tools\opencc\bin\opencc.dll&#34;, EntryPoint = &#34;opencc_convert_utf8&#34;)] private static extern IntPtr opencc_convert_utf8(IntPtr opencc, IntPtr input, long length); public static string ConvertFromSimplifiedToTraditional(this string text, string config = &#34;s2t&#34;) { return OpenCC(text, config: config); } public static string ConvertFromSimplifiedToTraditionalTaiwan(this string text, string config = &#34;s2twp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalTaiwanToSimplified(this string text, string config = &#34;tw2sp&#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalToSimplified(this string text, string config = &#34;t2s&#34;) { return OpenCC(text, config: config); } public static string OpenCC(this string text, string config) { var configFile = $&#34;C:\\Tools\\OpenCC\\share\\opencc\\{config}....</p>
   </div>
-  <footer class="entry-footer"><span title='2024-05-19 14:54:23 +0800 CST'>May 19, 2024</span></footer>
+  <footer class="entry-footer">&lt;span title=&#39;2024-05-19 14:54:23 &#43;0800 CST&#39;&gt;May 19, 2024&lt;/span&gt;</footer>
   <a class="entry-link" aria-label="post link to Opencc Memory Leak" href="http://localhost:1313/dotnet/opencc-memory-leak/"></a>
 </article>
     </main>

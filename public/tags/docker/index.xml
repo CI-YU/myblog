@@ -4,17 +4,18 @@
     <title>Docker on CI-YU Blog</title>
     <link>http://localhost:1313/tags/docker/</link>
     <description>Recent content in Docker on CI-YU Blog</description>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 05 May 2024 01:24:52 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 05 May 2024 01:24:52 +0800</lastBuildDate><atom:link href="http://localhost:1313/tags/docker/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dockerslow</title>
       <link>http://localhost:1313/posts/dockerslow/</link>
       <pubDate>Sun, 05 May 2024 01:24:52 +0800</pubDate>
+      
       <guid>http://localhost:1313/posts/dockerslow/</guid>
       <description>dotnet 6 部署到docker忽然變很慢 最近在公司將dotnet 6 用docker-compose部署到測試機時忽然要等3-5分鐘，最後查證是因為我們在linux環境上有做mount遠端磁碟造成部署時間過長
 掛載的磁碟機沒有做資料夾分類所有檔案都在一個資料夾底下，在根目錄就有破百萬的檔案，導致container透過volume連到實體路徑時會讀取過久</description>
     </item>
+    
   </channel>
 </rss>

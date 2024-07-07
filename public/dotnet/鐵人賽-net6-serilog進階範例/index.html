@@ -10,7 +10,7 @@
 <meta name="description" content="目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder.">
 <meta name="author" content="">
 <link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
 <link rel="icon" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
 <link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
@@ -36,7 +36,7 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
+                --hljs-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -175,6 +175,8 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
+                <ul class="lang-switch"><li>|</li>
+                </ul>
             </div>
         </div>
         <ul id="menu">
@@ -216,10 +218,10 @@
 <article class="post-single">
   <header class="post-header">
     <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title entry-hint-parent">
+    <h1 class="post-title">
       dotnet6 Serilog進階範例
     </h1>
-    <div class="post-meta"><span title='2022-10-07 05:39:15 +0800 CST'>October 7, 2022</span>
+    <div class="post-meta">&lt;span title=&#39;2022-10-07 05:39:15 &#43;0800 CST&#39;&gt;October 7, 2022&lt;/span&gt;
 
 </div>
   </header> 

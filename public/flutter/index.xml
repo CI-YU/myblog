@@ -4,40 +4,46 @@
     <title>Flutters on CI-YU Blog</title>
     <link>http://localhost:1313/flutter/</link>
     <description>Recent content in Flutters on CI-YU Blog</description>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jan 2024 01:40:26 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/flutter/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 27 Jan 2024 01:40:26 +0800</lastBuildDate><atom:link href="http://localhost:1313/flutter/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>安裝到手機</title>
       <link>http://localhost:1313/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</link>
       <pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</guid>
       <description>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </description>
     </item>
+    
     <item>
       <title>Three Tree</title>
       <link>http://localhost:1313/flutter/three-tree/</link>
       <pubDate>Thu, 20 Jul 2023 23:22:34 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/three-tree/</guid>
       <description>三棵樹 flutter共有三個核心
 widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
 element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
 render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</description>
     </item>
+    
     <item>
       <title>如何固定設備方向</title>
       <link>http://localhost:1313/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</link>
       <pubDate>Sun, 04 Jun 2023 20:28:02 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</guid>
       <description>如何鎖定裝置的方向 先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行
 WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import &amp;lsquo;package:flutter/services.dart&amp;rsquo;;
 void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&amp;gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </description>
     </item>
+    
     <item>
       <title>Pub</title>
       <link>http://localhost:1313/flutter/pub/</link>
       <pubDate>Sun, 28 May 2023 14:30:29 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/pub/</guid>
       <description>快速介紹flutter安裝的函式庫 intl 轉成指定地區的日期格式
 flutter pub add intl
@@ -54,10 +60,12 @@ flutter pub add http
 image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
 flutter pub add image_picker</description>
     </item>
+    
     <item>
       <title>Widget</title>
       <link>http://localhost:1313/flutter/widget/</link>
       <pubDate>Sun, 28 May 2023 13:26:51 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/widget/</guid>
       <description>佈局的屬性 Column 由上至下的排序
 Row 由左至右的排序
@@ -82,5 +90,6 @@ Form 有額外的驗證功能，並顯示在畫面
 Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
 後續慢慢補上</description>
     </item>
+    
   </channel>
 </rss>

@@ -4,30 +4,34 @@
     <title>CI-YU Blog</title>
     <link>http://localhost:1313/</link>
     <description>Recent content on CI-YU Blog</description>
-    <generator>Hugo -- 0.128.2</generator>
+    <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 May 2024 14:54:23 +0800</lastBuildDate>
-    <atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 May 2024 14:54:23 +0800</lastBuildDate><atom:link href="http://localhost:1313/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Opencc Memory Leak</title>
       <link>http://localhost:1313/dotnet/opencc-memory-leak/</link>
       <pubDate>Sun, 19 May 2024 14:54:23 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/opencc-memory-leak/</guid>
       <description>近期專案上有個需求,需要使用opencc來將接收到的資料將簡體轉繁體,參考了will保哥與黑暗執行緒的範例,其中保哥的文章指出有做防止記憶體洩漏的調整,但上線後發現一樣有記憶體洩漏的問題,最後找到的解決方案是,應該要使用opencc的函式做記憶體釋放,而非使用C#的函式。
 調整前 using System.Runtime.InteropServices; using System.Text; public static class OpenCCHelper { [DllImport(@&amp;#34;C:\Tools\opencc\bin\opencc.dll&amp;#34;, EntryPoint = &amp;#34;opencc_open&amp;#34;)] private static extern IntPtr opencc_open(string configFileName); [DllImport(@&amp;#34;C:\Tools\opencc\bin\opencc.dll&amp;#34;, EntryPoint = &amp;#34;opencc_convert_utf8&amp;#34;)] private static extern IntPtr opencc_convert_utf8(IntPtr opencc, IntPtr input, long length); public static string ConvertFromSimplifiedToTraditional(this string text, string config = &amp;#34;s2t&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromSimplifiedToTraditionalTaiwan(this string text, string config = &amp;#34;s2twp&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalTaiwanToSimplified(this string text, string config = &amp;#34;tw2sp&amp;#34;) { return OpenCC(text, config: config); } public static string ConvertFromTraditionalToSimplified(this string text, string config = &amp;#34;t2s&amp;#34;) { return OpenCC(text, config: config); } public static string OpenCC(this string text, string config) { var configFile = $&amp;#34;C:\\Tools\\OpenCC\\share\\opencc\\{config}.</description>
     </item>
+    
     <item>
       <title>Dockerslow</title>
       <link>http://localhost:1313/posts/dockerslow/</link>
       <pubDate>Sun, 05 May 2024 01:24:52 +0800</pubDate>
+      
       <guid>http://localhost:1313/posts/dockerslow/</guid>
       <description>dotnet 6 部署到docker忽然變很慢 最近在公司將dotnet 6 用docker-compose部署到測試機時忽然要等3-5分鐘，最後查證是因為我們在linux環境上有做mount遠端磁碟造成部署時間過長
 掛載的磁碟機沒有做資料夾分類所有檔案都在一個資料夾底下，在根目錄就有破百萬的檔案，導致container透過volume連到實體路徑時會讀取過久</description>
     </item>
+    
     <item>
       <title>時間與智慧象限</title>
       <link>http://localhost:1313/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</link>
       <pubDate>Sat, 16 Mar 2024 08:45:40 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</guid>
       <description>在一間公司中花費在公司的時間高低與一個人聰明或不聰明的象限圖中,對於我們來說哪種人是更被需要的？ 聰明又願意加班 這種人才可遇不可求,肯定是首選,不討論
 不聰明又不願意加班 這種人才也是可遇不可求,肯定不選,不討論
@@ -35,74 +39,90 @@
 因為聰明人的會想辦法優化工作,提升自己的工作產能,所以產能是會持續增加
 但如果是單純願意加班的人,工作產能就是固定的,沒有辦法有所期待</description>
     </item>
+    
     <item>
       <title>安裝到手機</title>
       <link>http://localhost:1313/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</link>
       <pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</guid>
       <description>如何直接安裝到ios裝置 flutter build ios flutter install 選擇要安裝到哪個裝置 </description>
     </item>
+    
     <item>
       <title>2024年度目標</title>
       <link>http://localhost:1313/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/</link>
       <pubDate>Tue, 09 Jan 2024 00:10:13 +0800</pubDate>
+      
       <guid>http://localhost:1313/posts/2024%E5%B9%B4%E5%BA%A6%E7%9B%AE%E6%A8%99/</guid>
       <description>2024年度目標 學會使用copilot,增加coding效率 3月前使用flutter開發記帳軟體並且上架 7月前TOEIC金色證書 開始錄製廣播 </description>
     </item>
+    
     <item>
       <title>Dapper PostgreSQL Error</title>
       <link>http://localhost:1313/dotnet/dapper-postgresql-error/</link>
       <pubDate>Fri, 24 Nov 2023 22:09:49 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/dapper-postgresql-error/</guid>
       <description>問題 當使用dapper呼叫postgresql時後,需要在in裡面查詢一批陣列會遇到下方的錯誤訊息
 var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id in @Ids;&amp;#34; await dapper.QueryAsync(strSQL,parameters); 42601: syntax error at or near &amp;ldquo;$1&amp;rdquo;\r\n\r\nPOSITION: 81
 解法 改語法為any就可以解決這個問題。
 var Ids = [1,2,3,4]; DynamicParameters parameters = new(); parameters.Add(&amp;#34;Ids&amp;#34;, Ids); var strSQL = &amp;#34;&amp;#34;; strSQL +=&amp;#34;select * from Users where id = any(@Ids);&amp;#34; await dapper.QueryAsync(strSQL,parameters); </description>
     </item>
+    
     <item>
       <title>2023ITHelp 總結</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E7%B8%BD%E7%B5%90/</link>
       <pubDate>Thu, 05 Oct 2023 23:36:17 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E7%B8%BD%E7%B5%90/</guid>
       <description>總算完成了三十天，有努力追完的一定都會發現很多的觀念想法都似曾相似，軟實力對於工程師是非常重要的技能，我們有做有努力的地方不要害怕讓老闆知道。，不要只埋頭苦幹，再來說老闆都沒有看到我們的努力。
 相信大家都聽過選擇比努力更重要，對我來說機會比薪資更重要，當機會來了要如何把握住，就算老闆不懂敏捷還是可以透過其他方式漸進式的導入。將每個專案都自己區分階段，頻繁與老闆核對需求，善用靈活的思考，換個方式但還是可以達成目標。
 學習新知識和技術，當踏上工程師的道路，永遠不要停止學習，不斷的遇到難題，不斷的解決難題，在失敗中成長，成功是每天不斷累積而來的。
 今年會參加鐵人賽也是因為老闆有提了自我提升計畫，希望主管可以自主提升。不斷的激勵自己，在撰寫文章期間也發現自己還有很多地方可以做得更好，希望大家都可以一起努力，不要浪費時間。謝謝大家。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 結論是否要做管理職？</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E7%B5%90%E8%AB%96%E6%98%AF%E5%90%A6%E8%A6%81%E5%81%9A%E7%AE%A1%E7%90%86%E8%81%B7/</link>
       <pubDate>Thu, 05 Oct 2023 23:35:48 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E7%B5%90%E8%AB%96%E6%98%AF%E5%90%A6%E8%A6%81%E5%81%9A%E7%AE%A1%E7%90%86%E8%81%B7/</guid>
       <description>說了這麼多到底要不要做管理職呢？相信讀者一定會希望作者提供建議，我的建議是只要沒有做過管理職都去做看看。擔任管理職可以為個人職業生涯帶來無限的可能性。首先，它擴展了我們的視野，讓我們更深入地了解業務運作的流程，從而使我們對整個組織的運作有更全面的理解。其次，擔任管理職將為我們打開多元的職業選擇，不再僅限於某一特定領域，這意味著我們可以在職業生涯中探索更多可能性。
 擔任管理職也是一個學習和成長的機會。在這個角色中，我們將面對各種挑戰，學習如何解決問題，有效地管理團隊，並在壓力下做出關鍵決策。同時，這也讓我們更深入地了解高層決策的內幕，理解為什麼某些決策被做出，是否存在未曾考慮的關鍵因素。
 擔任管理職還有助於擴展人脈。我們將有更多的機會與不同部門的人合作，這有助於在不同領域建立更廣泛的人脈，這在未來創業或尋找合作夥伴時將非常有益。最後，管理職也有助於爭取更高的薪資，因為管理經驗是增加薪資的有效途徑之一。
 總考慮擔任管理職是一個值得深思熟慮的選擇。它為個人和職業生涯的發展提供了無限可能，為您的職業生涯增添了豐富多彩的色彩。希望這些觀點能幫助您在做出決策時更有信心。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 行業趨勢和未來展望</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%A1%8C%E6%A5%AD%E8%B6%A8%E5%8B%A2%E5%92%8C%E6%9C%AA%E4%BE%86%E5%B1%95%E6%9C%9B/</link>
       <pubDate>Thu, 05 Oct 2023 23:35:07 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%A1%8C%E6%A5%AD%E8%B6%A8%E5%8B%A2%E5%92%8C%E6%9C%AA%E4%BE%86%E5%B1%95%E6%9C%9B/</guid>
       <description>前言
 軟體業一直以來都面臨著工程師短缺的問題。儘管現在擁有了許多強大的人工智慧（AI）工具，但它們仍無法完全取代軟體工程師，或者說無法完全取代任何職業。我的看法是，AI可能會先取代其他職業，然後才有可能取代工程師。因此，作為一名工程師，我認為這仍然是一個不錯的職業選擇。
 ai的興起讓很多資深工程師變得更厲害，效率變得更好，因為ai可以提供一個方向卻需要透過經驗的累積去辨識真偽，新人也不用擔心，可以透過ai更快的學習到有用的知識，也可以透過ai看到不同的coding風格，最後如果無法辨識真偽，再向資深前輩諮詢就好。就像以前會不會用網際網路的工程師會有一個落差，未來一定要知道如何使用ai來輔助我們工作，才可以在效率上不落後其他人，
 AI的崛起使資深工程師變得更加強大，因為AI能夠提供方向，但仍需要透過多年的經驗來判斷其真偽。對於新手來說，也不必擔心，因為可以通過AI更快的學習知識，並且可以參考AI展示的不同coding風格。最終，如果無法區分真偽，還可以向資深前輩詢問意見。這有點像以前不會使用網際網路的工程師在效率上就差人一截，未來，我們都需要知道如何運用AI來輔助我們的工作，以確保我們在效率方面不被其他人超越。</description>
     </item>
+    
     <item>
       <title>2023ITHelp App技術</title>
       <link>http://localhost:1313/softskills/2023ithelp-app%E6%8A%80%E8%A1%93/</link>
       <pubDate>Thu, 05 Oct 2023 23:34:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-app%E6%8A%80%E8%A1%93/</guid>
       <description>前言
 手機應用程式已經成為企業和個人生活不可或缺的一部分。然而，要在兩個主要平台，Android和iOS，上開發應用程式卻帶來了不少挑戰。其中一個最重要的挑戰之一是如何在節省公司營運成本的同時，確保應用程式的高效運行和市場影響力。
 技術選擇：當下主流跨平台技術有兩個選擇，flutter跟react native，我選擇的是flutter，原因有幾點
 效能接近原生，代表我們的技術在相同的情況下，相較於react native不需要擔心效能問題，直白點寫的扣爛一點沒關係。 已經內建Material Design、Cupertino兩種UI設計風格，讓我們在開發初期就可以不用煩惱很多的UI設計與規範，再來設計是主觀的太容易被干擾，透過已經決定好的設定規範加以限制可以有效的降低彼此觀點不同的問題。 例如：JS中有standardjs可以讓大家格式化風格都一致，大家都不用爭，visual studio預設也有C#的格式化風格，都可以有效解決大家寫法不同的問題。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 架構技術</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%9E%B6%E6%A7%8B%E6%8A%80%E8%A1%93/</link>
       <pubDate>Thu, 05 Oct 2023 23:34:05 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%9E%B6%E6%A7%8B%E6%8A%80%E8%A1%93/</guid>
       <description>前言
 隨著軟體領域的不斷演進，軟體架構技術也在不斷發展。傳統的單體式架構已經漸漸被微服務架構、容器化和無服務器運算等新興技術所取代。這些新技術不僅提供更高的靈活性，還能夠更好地滿足現代應用的需求。
@@ -110,28 +130,34 @@ AI的崛起使資深工程師變得更加強大，因為AI能夠提供方向，�
 KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今環境很常提到微服務，有沒有想過是否真的需要微服務呢？並不是大家都需要微服務才能撐起公司的業務，不是每個人流量都跟電商一樣，那如果流量沒那麼多，用單體式或許是更好的選擇。
 例如：曾經公司的工程師用微服務架構去開發一個新專案，當時建議工程師不要使用微服務，因為我們的流量沒有那麼大，用微服務只是砸自己的腳，最後專案使用人數不如預期，但因為採用微服務、架構複雜化導致維護起來的成本變很高。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 資料庫技術</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%B3%87%E6%96%99%E5%BA%AB%E6%8A%80%E8%A1%93/</link>
       <pubDate>Thu, 05 Oct 2023 23:33:37 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%B3%87%E6%96%99%E5%BA%AB%E6%8A%80%E8%A1%93/</guid>
       <description>前言
 在之前的文章中，提到了我是一名主要使用C#的工程師。由於我們採用微軟技術，因此不可避免地需要使用微軟的一整套產品，包括Windows Server和SQL Server。然而，最近我們的公司已經開始將資料庫轉移到PostgreSQL。主要原因是微軟的授權費用相當昂貴，尤其當業務量增長時，費用變得令人望而卻步。在資料庫選擇上建議可以直接選擇使用MySQL或PostgreSQL。儘管語法上存在些微的差異，但基本上選擇這兩種無需授權的資料庫性能上不會有太大的差異。如果碰到性能問題，通常是因為優化不足，例如缺少基本的索引優化。此外，我們可以考慮在系統前端引入Redis作為快取，以及實施讀寫分離等優化策略。值得強調的是，優化不必一次完成，可以逐步進行，因此不需要將太多時間浪費在一次性的優化上。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 後端技術</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%BE%8C%E7%AB%AF%E6%8A%80%E8%A1%93/</link>
       <pubDate>Thu, 05 Oct 2023 23:32:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%BE%8C%E7%AB%AF%E6%8A%80%E8%A1%93/</guid>
       <description>前言
 身為後端工程師要懂的東西非常的廣，從技術選擇我是選擇C#只是因為第一間錄取的公司是使用這個技術，在這門技術上也是有很多可以進步的空間，選擇上建議團隊中技術一致為主。
 版本選擇：當初剛進入公司時技術都還是停留在ASP、Webform這些比較久遠的技術，很幸運當時主管沒有限制我使用的技術，所以直接從dotnet6開始起步。通常在選擇版本時都建議選擇TLS(Long Term Support)的版本，在今年十一月dotnet8會發布，是新的長期支援版本，會建議明年下半年才開始使用，因為在使用dotnet6的時候有遇到很多套件無法支援的問題，或是遇到bug無法處理，所以為了可以讓自己準時下班，不要太早投入最新的技術。
 例如：有伺服器需要安裝Ubuntu選擇了最新版本22.04，結果在安裝nginx時發現無法安裝最新穩定版的nginx1.24，只能使用預設1.18版本，原因是新版本的nginx相依的套件還無法支援Ubuntu22.04</description>
     </item>
+    
     <item>
       <title>2023ITHelp 溝通技巧</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%BA%9D%E9%80%9A%E6%8A%80%E5%B7%A7/</link>
       <pubDate>Fri, 29 Sep 2023 01:32:18 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%BA%9D%E9%80%9A%E6%8A%80%E5%B7%A7/</guid>
       <description>前言
 溝通是成功不可或缺的技巧，不管是對主管、同事、客戶、還是商業合作夥伴，都可以有效提升在職場的表現，也能很好的改善辦公室氣氛，工程師最缺的就是溝通技巧，要成為優秀的技術經理，一定要在溝通技巧上多加琢磨，才能會得更大的成就。
@@ -140,19 +166,23 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 處理情緒：在溝通與討論的期間，一定會遇到觀點不合有火氣的時候，當下建議先深呼吸舒緩情緒，有情緒只會變成無謂的爭執，重點應該要放在這次討論要解決的問題，達成目的是目標。
 察言觀色：懂的察言觀色可以幫助理解對方的想法，透過臉部表情、身體語言等等細微的變化更容易了解對方。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 運氣與努力</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E9%81%8B%E6%B0%A3%E8%88%87%E5%8A%AA%E5%8A%9B/</link>
       <pubDate>Fri, 29 Sep 2023 01:29:56 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E9%81%8B%E6%B0%A3%E8%88%87%E5%8A%AA%E5%8A%9B/</guid>
       <description>前言
 一個人運氣好壞也是一個很重要的事情，在換工作的時候，剛好部門遇到大震盪，部門主管被裁，身邊的工程師、系統分析師、產品經理陸續離開，以年資來說我的確很難有機會在這個時間點做到管理職，但是當機會來的時候有沒有辦法好好把握，就是關鍵了，必續更加快速地進入狀態，準確地抓住老闆的痛點並加以解決，這也呼應了限制理論，造成瓶頸的只有一個點，每次都解決一個點，久了就可以把老闆的煩惱都解決，那自然的你又創造了下一次的機會。
 運氣可以提供一個好的開始，但最終的成功取決於我們的努力與毅力，我們需要做到的是相信自己的能力，不斷學習成長，積極的尋找機會，創造機會，越是努力會發現運氣越好，運氣是我們不能控制的，我們可以控制的是我們要不要努力，所以還是要把握時間多努力。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 自我反省與持續改善</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%87%AA%E6%88%91%E5%8F%8D%E7%9C%81%E8%88%87%E6%8C%81%E7%BA%8C%E6%94%B9%E5%96%84/</link>
       <pubDate>Fri, 29 Sep 2023 01:28:28 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%87%AA%E6%88%91%E5%8F%8D%E7%9C%81%E8%88%87%E6%8C%81%E7%BA%8C%E6%94%B9%E5%96%84/</guid>
       <description>前言
 在競爭激烈的職場中，不斷提升自己的能力至關重要，自我反省和持續改善是讓自己可以不斷的成長的關鍵元素，本文中將討論如何實現。
@@ -165,20 +195,24 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 堅持：持續改善需要堅韌不拔的毅力，不斷的改變。
 學習：持續學習周遭所有人的優點，每個人都有優點，一場會議，誰表現得好，為什麼好，學起來，誰表現得不好，為什麼不好，謹惕自己。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 生活平衡</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E7%94%9F%E6%B4%BB%E5%B9%B3%E8%A1%A1/</link>
       <pubDate>Fri, 29 Sep 2023 01:26:45 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E7%94%9F%E6%B4%BB%E5%B9%B3%E8%A1%A1/</guid>
       <description>前言
 在高壓的工作環境裡如何在生活中取得平衡是相當重要的事情，適度的休息可以增加我們的產能也能幫助我們進一步的突破自己的極限，職場是場耐力賽怎麼針對自己進行配速來贏得比賽，本文會提供一些方法。
 釋放壓力：剛上任管理職是難免會感到壓力的，許多時候我們會感覺自己被壓得透不過氣來。在這種情況下，多運動是最迅速且有效的方法。運動時，我們可以完全忘卻煩惱，專注於身體的運動和呼吸。此外，多與周遭的人聊聊天也能幫助釋放壓力，找個朋友或同事聊聊天，坦誠的表達一下自己對當天工作中的不滿或與討人厭的同事之間的衝突感受，這有助於情緒的宣洩和情感的舒緩。
 安排休假：週末放假建議找自己喜歡的事情做，不管是外出旅遊或是宅在家裡打電動都可以，也可以安排親子活動增加親子間的感情。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 建立個人品牌和影響力</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%BB%BA%E7%AB%8B%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C%E5%92%8C%E5%BD%B1%E9%9F%BF%E5%8A%9B/</link>
       <pubDate>Fri, 29 Sep 2023 01:25:29 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%BB%BA%E7%AB%8B%E5%80%8B%E4%BA%BA%E5%93%81%E7%89%8C%E5%92%8C%E5%BD%B1%E9%9F%BF%E5%8A%9B/</guid>
       <description>前言
 當上管理職後，會有除了寫程式以外的事情需要去努力，其中建立個人品牌和影響力是相當重要的事情，試想一件衣服如果有了品牌的光環，是不是它的價值就不一樣了，我們可以透過很多方法去執行
@@ -187,10 +221,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 分享：在公司多分享自己的技術多幫助各部門的同仁，把每一位同事都當做自己的人脈，營造出好口碑，或許有一天他就是你的機會。
 例如：曾經我們配合的廠商就有傳訊息來詢問有位應徵者在我們公司的業務單位任職想打聽這位應徵者的狀況。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 克服困難和挫折</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%85%8B%E6%9C%8D%E5%9B%B0%E9%9B%A3%E5%92%8C%E6%8C%AB%E6%8A%98/</link>
       <pubDate>Fri, 29 Sep 2023 01:01:42 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%85%8B%E6%9C%8D%E5%9B%B0%E9%9B%A3%E5%92%8C%E6%8C%AB%E6%8A%98/</guid>
       <description>前言
 當上主管後勢必會面臨許多的困難與挫折，要如何在每一次的失敗中吸取經驗，就是我們要學習的。
@@ -207,10 +243,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 持續的克服困難與挫折是我們展現價值的必經之路。
 三個步驟：冷靜，發現問題，解決問題。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 危機管理和風險控制</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%8D%B1%E6%A9%9F%E7%AE%A1%E7%90%86%E5%92%8C%E9%A2%A8%E9%9A%AA%E6%8E%A7%E5%88%B6/</link>
       <pubDate>Fri, 29 Sep 2023 00:59:58 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%8D%B1%E6%A9%9F%E7%AE%A1%E7%90%86%E5%92%8C%E9%A2%A8%E9%9A%AA%E6%8E%A7%E5%88%B6/</guid>
       <description>前言
 無論是大型企業或是小型企業，都需要具備危機管理和風險控制的能力，本章會討論如何建立團隊防護網，應對各種挑戰。
@@ -220,10 +258,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 標準作業流程：當遇到未知問題時要做到臨危不亂的關鍵是一套作業流程，
 例如：系統忽然故障，要先請mis排查，還是無法解決找到相關工程師協助，先以能恢復正常為主，再來檢查問題，在執行同時要回報主管。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 部門聲譽</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E9%83%A8%E9%96%80%E8%81%B2%E8%AD%BD/</link>
       <pubDate>Fri, 29 Sep 2023 00:35:05 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E9%83%A8%E9%96%80%E8%81%B2%E8%AD%BD/</guid>
       <description>前言
 當部門在公司內部不被信任時，做任何事情都會很困難，要如何改善這個情況就是本章節要說的。
@@ -234,10 +274,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 無法與非技術人員溝通：與非資訊部同仁溝通時，沒有調整說話內容會讓同事無法理解資訊部所做的事情。
 例如：我會善用譬喻法用舉例來說明，多利用生活的例子或是同仁的專業進行說明，可以讓非技術同仁更加容易的了解情況。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 培養對業務和市場的敏銳觸覺</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%9F%B9%E9%A4%8A%E5%B0%8D%E6%A5%AD%E5%8B%99%E5%92%8C%E5%B8%82%E5%A0%B4%E7%9A%84%E6%95%8F%E9%8A%B3%E8%A7%B8%E8%A6%BA/</link>
       <pubDate>Wed, 27 Sep 2023 00:20:24 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%9F%B9%E9%A4%8A%E5%B0%8D%E6%A5%AD%E5%8B%99%E5%92%8C%E5%B8%82%E5%A0%B4%E7%9A%84%E6%95%8F%E9%8A%B3%E8%A7%B8%E8%A6%BA/</guid>
       <description>前言
 在競爭激烈的商業環境中，對市場的敏銳觸覺扮演著關鍵的角色。它使我們能夠提前洞悉需求端的動向，這樣我們就可以提前進行分析和準備，避免了需求方和我們之間的誤解和時間浪費。由於我們是執行單位，能夠直接評估可執行性，這有助於加速公司的決策過程，使我們更快地響應市場變化，並實現更快的行動。这不僅提高了效率，也有助於公司在競爭激烈的環境中保持競爭優勢。
@@ -245,10 +287,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 例如：當openai剛開始盛行時，提早開始了解openai api服務，當老闆提出想要導入ai服務時，已經有解決方案可以與老闆直接討論。
 競爭優勢：要時時刻刻去觀察同業的產品，了解同業為什麼要做這類的改動，帶來的好處是什麼，我們可以添加什麼調整讓整個改動變得更優於對方。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 了解公司戰略和願景</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E4%BA%86%E8%A7%A3%E5%85%AC%E5%8F%B8%E6%88%B0%E7%95%A5%E5%92%8C%E9%A1%98%E6%99%AF/</link>
       <pubDate>Wed, 27 Sep 2023 00:19:57 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E4%BA%86%E8%A7%A3%E5%85%AC%E5%8F%B8%E6%88%B0%E7%95%A5%E5%92%8C%E9%A1%98%E6%99%AF/</guid>
       <description>前言
 競爭激烈的商業環境中，了解公司的戰略和願景是實現個人和職業成功的重要一步。公司的戰略和願景是企業的指南，它們影響著企業的每個層面，從營銷到運營，再到文化和價值觀。本文將深入探討為什麼了解公司的戰略和願景如此重要，以及如何將這一了解轉化為成功的機會。
@@ -256,20 +300,24 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 方向指南： 公司戰略確定了企業的長期目標和方向。了解這些目標有助於個人明確自己的工作如何貢獻到整體目標。 資源分配： 公司戰略決定了資源的分配方式。了解戰略可以幫助個人了解哪些項目或部門可能會受到更多的投資，從而影響到個人的工作。 競爭優勢： 公司戰略通常包括獲得競爭優勢的計劃。了解這些計劃可以幫助個人更好地理解市場動態，有助於個人的職業發展。 公司願景
 閱讀公司文件： 公司通常會在官方文件中公布其戰略計劃和願景。這些文件可以是年度報告、網站內容或內部通訊。 參與內部會議： 越高階的職位越有機會參加高層的會議，善用這個優勢了解公司願景。 與同事交流： 與同事交流可以瞭解他們對公司戰略和願景的看法。這種分享意見的機會可以拓寬個人的視野。 </description>
     </item>
+    
     <item>
       <title>2023ITHelp 分享與互相學習的文化</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%88%86%E4%BA%AB%E8%88%87%E4%BA%92%E7%9B%B8%E5%AD%B8%E7%BF%92%E7%9A%84%E6%96%87%E5%8C%96/</link>
       <pubDate>Mon, 25 Sep 2023 23:04:18 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%88%86%E4%BA%AB%E8%88%87%E4%BA%92%E7%9B%B8%E5%AD%B8%E7%BF%92%E7%9A%84%E6%96%87%E5%8C%96/</guid>
       <description>前言
 工程師沒有進步對公司部門與自身都是很嚴重的問題，不要讓工程師只有年資沒有實力，分享與互相學習的文化能夠提高團隊的創造力和競爭力。本文將說明如何建立這種文化。
 分享會：創造一個可以讓大家學習知識的時間，讓大家在工作期間可以稍做放鬆，只要有人願意分享他們的知識時，每個人都有機會學習到新的東西，也可以獲得放鬆的機會。建議增加主題的多樣性，讓前端與後端可以有更多的機會做交流，讓參與者可以獲得不同領域的專業知識。
 第一次由我開始，簡單的介紹資料庫效能優化，什麼是索引，索引可以來做什麼，第二次由另一位工程師負責，介紹Git以及如何使用，每一次的分享除了可以讓部門更有凝聚力，也可以透過引導式提問，讓部門開始學習如何問問題，大家各自擅長什麼，鼓勵有問題就立刻提出來，大家一起解決。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 良好的溝通管道和反饋機制</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%89%AF%E5%A5%BD%E7%9A%84%E6%BA%9D%E9%80%9A%E7%AE%A1%E9%81%93%E5%92%8C%E5%8F%8D%E9%A5%8B%E6%A9%9F%E5%88%B6/</link>
       <pubDate>Mon, 25 Sep 2023 23:03:28 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%89%AF%E5%A5%BD%E7%9A%84%E6%BA%9D%E9%80%9A%E7%AE%A1%E9%81%93%E5%92%8C%E5%8F%8D%E9%A5%8B%E6%A9%9F%E5%88%B6/</guid>
       <description>前言
 在組織內部，良好的溝通管道對於整個團隊的發展和協作至關重要，它們不僅有助於工程師將感受傳達給管理層，還能確保主管能有效的傳遞訊息給員工。
@@ -279,10 +327,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 開放的文化：鼓勵開放和坦承的對話，員工可以自由表達觀點，不必擔心後果。這種文化可以鼓勵員工創新和建設性的討論，讓員工感受到被重視，有助於提高團隊效率。
 讓員工認為主管只會解決提出問的人來減少問題，是不聰明的行為。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 成果導向的團隊文化</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%88%90%E6%9E%9C%E5%B0%8E%E5%90%91%E7%9A%84%E5%9C%98%E9%9A%8A%E6%96%87%E5%8C%96/</link>
       <pubDate>Mon, 25 Sep 2023 23:01:38 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%88%90%E6%9E%9C%E5%B0%8E%E5%90%91%E7%9A%84%E5%9C%98%E9%9A%8A%E6%96%87%E5%8C%96/</guid>
       <description>前言
 事實上老闆只看結果，上線失敗你說你多麼努力用多少新技術都是多餘的，建立成果導向的團隊文化是一個選項
@@ -291,10 +341,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 例如：在這次的專案我們不但要完成需求還要在這次的專案透過prometheus將監測內容繪製到Garfana，為了在下次專案進行中可以更精準的知道我們程式的效能。
 例如：在這次的專案我們完成專案是基本的，那要在這次用K6來做壓力測試，一樣把結果繪製到Garfana上。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 激勵和鼓勵工程師</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%BF%80%E5%8B%B5%E5%92%8C%E9%BC%93%E5%8B%B5%E5%B7%A5%E7%A8%8B%E5%B8%AB/</link>
       <pubDate>Fri, 22 Sep 2023 00:15:19 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%BF%80%E5%8B%B5%E5%92%8C%E9%BC%93%E5%8B%B5%E5%B7%A5%E7%A8%8B%E5%B8%AB/</guid>
       <description>前言
 要如何讓下屬發揮100%的能力甚至超過100%呢？很可惜我們沒有程式鼓勵員這個職位，只能自己下來鼓勵同仁來達到目標
@@ -306,10 +358,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 一對一交流：讓工程師有機會與主管進行一對一的交流，個人的關注可以讓工程師感受到被重視，而不只是公司的一個螺絲，用完就可以丟棄。
 稱讚：做得好的地方就值得被稱讚，尤其當老闆詢問專案做的很出色時，可以跟老闆強調是誰做的或誰想的，當然你的表揚要實際點，太多無謂的稱讚會讓工程師對於你的稱讚感到不屑。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 建立高效的工作團隊</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%BB%BA%E7%AB%8B%E9%AB%98%E6%95%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9C%98%E9%9A%8A/</link>
       <pubDate>Fri, 22 Sep 2023 00:14:31 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%BB%BA%E7%AB%8B%E9%AB%98%E6%95%88%E7%9A%84%E5%B7%A5%E4%BD%9C%E5%9C%98%E9%9A%8A/</guid>
       <description>前言
 一個高效的團隊可以加速工作流程，激發創意，提高生產力，並充分發揮每個成員的潛力。接下來將探討建立高效工作團隊的重要性以及一些關鍵策略。
@@ -321,10 +375,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 我需要是有流暢的溝通管道，會願意自主提升競爭力，互相學習，良性競爭，知道自己所需要的團隊後，第一步依然是從自己開始做起再來逐步的實現目標，了解自己需要什麼後就可以列出來
 良好的溝通管道 分享互相學習的文化 成果導向 接下來就可以依據這幾點階段性的進行調整，來達到目的。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 時間管理和優先事項設定</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86%E5%92%8C%E5%84%AA%E5%85%88%E4%BA%8B%E9%A0%85%E8%A8%AD%E5%AE%9A/</link>
       <pubDate>Fri, 22 Sep 2023 00:12:56 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%99%82%E9%96%93%E7%AE%A1%E7%90%86%E5%92%8C%E5%84%AA%E5%85%88%E4%BA%8B%E9%A0%85%E8%A8%AD%E5%AE%9A/</guid>
       <description>前言
 在現代快節奏的生活中，有效的時間管理和優先事項設定變得至關重要。不論是一位專業人士、學生還是企業家，精良的時間管理技巧可以幫助您充分發揮潛力，實現更多的目標，減少壓力並提高生活質量。本文將探討一些關鍵的策略和技巧，有助於個人效率的提升。
@@ -332,10 +388,12 @@ KISS：KISS的意思是盡量保持架構的簡潔性，越簡單越好。現今
 學會說不：說不是一項重要的技能，可以幫助我們節省自己的時間。當已經有滿滿的行程時，學會拒絕額外的承諾，確保有足夠的時間處理重要工作。每次都答應他人的請求只會變成濫好人，不是所有人都會珍惜和感謝你的幫忙，超過自己的負擔就勇敢拒絕。
 Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版，強力推薦！！</description>
     </item>
+    
     <item>
       <title>2023ITHelp 培養解決問題和決策能力</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%9F%B9%E9%A4%8A%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E5%92%8C%E6%B1%BA%E7%AD%96%E8%83%BD%E5%8A%9B/</link>
       <pubDate>Thu, 21 Sep 2023 23:57:42 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%9F%B9%E9%A4%8A%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%E5%92%8C%E6%B1%BA%E7%AD%96%E8%83%BD%E5%8A%9B/</guid>
       <description>前言
 每當遇到問題時，腦海裡就要立刻有兩三個方案，需求無時無刻都在變化，當變化的當下可以立刻找到最佳路徑去實現，你的價值就展現出來了，這是培養解決問題能力的關鍵之一。而現實生活中或職場上，決策每天都在發生，因為時程問題無法完成所有的項目，就需要下決策決定要捨棄哪些項目，必須在有限的資源中提高專案的完整度。因此培養這兩個能力也是很重要的。
@@ -345,10 +403,12 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 分析選擇：做決策時要分析各式的選擇中每個選項的好壞，不止要考慮短期的影響，也要考慮長期的影響。
 換工作時需要看的不只是薪水也要看到長期發展，會不會現在領到六萬的薪水，但因為工作內容無法學習新的技術，很容易被淘汰，長期下來其實會停滯在這個薪水甚至還沒辦法換工作</description>
     </item>
+    
     <item>
       <title>2023ITHelp 解決衝突</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%A7%A3%E6%B1%BA%E8%A1%9D%E7%AA%81/</link>
       <pubDate>Wed, 20 Sep 2023 21:35:47 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%A7%A3%E6%B1%BA%E8%A1%9D%E7%AA%81/</guid>
       <description>前言
 在職場中，衝突是不可避免的，不管在哪個組織或團隊，都會出現不同的意見、想法，當發生衝突時，要如何妥善處理是相當重要的，因為會直接影響到工作環境的和諧與團隊的效率，當你可以解決衝突避免衝突時，就是提升自身價值的時候。
@@ -357,10 +417,12 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 透過放低身段詢問的方式，來化解要準備爆發的衝突或已經爆發的衝突。
 例如：當下屬為了技術爭論不休的時候立刻請兩位當事者暫停討論，並介入了解狀況與雙方的立場後，進行個別的面談協助說明另一方的立場與原因，讓當事者可以理解另一方，當中需要注意的是嚴禁偏頗某一方。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 向下管理</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%90%91%E4%B8%8B%E7%AE%A1%E7%90%86/</link>
       <pubDate>Wed, 20 Sep 2023 21:17:13 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%90%91%E4%B8%8B%E7%AE%A1%E7%90%86/</guid>
       <description>前言
 設想一下你當下屬時，你希望遇到什麼樣的主管，就用這種方式去審思你自己的管理模式。有效的向下管理不僅僅涉及到指導和監督，還需要建立積極的工作環境，激勵下屬參與和貢獻，團隊的成長就是證明你能力的關鍵，只有自己強已經不是身為主管的重點，重要是如何影響團隊，讓團隊成員跟上成長的步伐，不輕易放棄任何人，幫所有人找出屬於團隊的位置。
@@ -370,10 +432,12 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 願意承擔責任：我會希望我的主管會當我的靠山，真的發生事情時，主管會願意協助我解決問題，而非一副事不關己的態度。
 反向思考就是好的向下管理的方法。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 水平管理</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E6%B0%B4%E5%B9%B3%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 18 Sep 2023 23:14:08 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E6%B0%B4%E5%B9%B3%E7%AE%A1%E7%90%86/</guid>
       <description>前言
 水平溝通的目的是讓自己與其他同階層的主管配合更加順暢，並讓合作更有效率，難易度上水平溝通會是最難的，向上管理：老闆就是叫你做你能不做嗎？最壞也不用溝通了，就是做。向下管理：部門的團隊文化掌握在自己，相對好掌握。
@@ -383,10 +447,12 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 尊重：雖然在哪裡都要尊重，但是在水平之間更容易有衝突，切記要寬以待人，嚴以律己，
 曾經開了一場會議，目的是希望部門配合上可以更加順暢的檢討會，但是會議內容卻讓對方認為是在批評對方做事，導致雙方吵了起來，沒有達到這場會議的目的。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 向上管理</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%90%91%E4%B8%8A%E7%AE%A1%E7%90%86/</link>
       <pubDate>Mon, 18 Sep 2023 23:00:01 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%90%91%E4%B8%8A%E7%AE%A1%E7%90%86/</guid>
       <description>前言
 向上管理的能力對於個人和團隊的成功都相當的重要，本文將討論如何如何做好向上管理。
@@ -397,10 +463,12 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 換位思考：思考一件事情，如果是老闆的角色，會關心什麼事情。
 例如：與第三方廠商簽約的金額增加了，以老闆的角度會想知道前一期的費用是多少，這次的費用是哪個部分增加，為什麼增加，不要只拿著這期的帳單就請老闆簽名，這個小動作就是加分的關鍵。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 職業目標與發展計劃</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E8%81%B7%E6%A5%AD%E7%9B%AE%E6%A8%99%E8%88%87%E7%99%BC%E5%B1%95%E8%A8%88%E5%8A%83/</link>
       <pubDate>Sat, 16 Sep 2023 23:35:20 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E8%81%B7%E6%A5%AD%E7%9B%AE%E6%A8%99%E8%88%87%E7%99%BC%E5%B1%95%E8%A8%88%E5%8A%83/</guid>
       <description>前言
 在我們討論如何由工程師升至經理的職業轉變時，首要的步驟之一是制定一個明確的規劃。讓我們想像一下，在未來兩年內，要成為怎樣的經理以及需要解決的主要項目。這個規劃將是我們達成目標的道路地圖。
@@ -409,39 +477,47 @@ Notion教育版 只要還有學校信箱進行驗證可以免費兌換教育版�
 第二個挑戰是處理部門聲譽的問題。當我們的部門在每次改版或專案上都遇到問題時，其他部門對我們的信任就會受損。因此，我們需要制定策略，提高部門的聲譽，確保我們的團隊能夠提供可靠的解決方案。
 第三個挑戰是在技術領域的持續成長。身為技術部門主管，我們需要保持對技術的敏感度，即使在增加管理工作的情況下。這意味著我們需要不斷學習和跟進最新的技術趨勢，同時將這些知識應用到我們的部門中。</description>
     </item>
+    
     <item>
       <title>2023ITHelp 從工程師到經理的職業轉變</title>
       <link>http://localhost:1313/softskills/2023ithelp-%E5%BE%9E%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%88%B0%E7%B6%93%E7%90%86%E7%9A%84%E8%81%B7%E6%A5%AD%E8%BD%89%E8%AE%8A/</link>
       <pubDate>Sat, 16 Sep 2023 21:06:07 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/2023ithelp-%E5%BE%9E%E5%B7%A5%E7%A8%8B%E5%B8%AB%E5%88%B0%E7%B6%93%E7%90%86%E7%9A%84%E8%81%B7%E6%A5%AD%E8%BD%89%E8%AE%8A/</guid>
       <description>從工程師到經理的職業轉變 從工程師到經理，這不僅僅是一個職位的變換，更是一個角色的轉變，需要不同的技能和思維方式。一名優秀的工程師通常以其專業知識和技能為基石，但當你進入經理角色時，您將需要更多的領導力，溝通能力和策略思維。這種轉變可能是挑戰性的，但同時也是一個充滿機會的階段，可以讓您在組織中發揮更大的影響力。
 在接下來的三十天中，我們將探討各種關鍵主題，包括如何發展領導力技能，建立有效的團隊，掌握時間管理，解決挑戰和衝突，並在不斷變化的業務環境中保持敏銳的觸覺。將提供實用的建議，分享個人經驗故事，以幫助您實現從工程師到經理的平滑過渡。
 無論您是已經在這個轉變過程中，還是正在考慮未來的職業發展，本系列將為您提供有價值的信息和啟示。接下來的三十天，將跟你分享我是如何在兩年內從工程師晉升副理又晉升到經理
 我們將深入探討如何確定您的職業目標並制定發展計劃，這是成功轉型的關鍵第一步。敬請期待！</description>
     </item>
+    
     <item>
       <title>Three Tree</title>
       <link>http://localhost:1313/flutter/three-tree/</link>
       <pubDate>Thu, 20 Jul 2023 23:22:34 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/three-tree/</guid>
       <description>三棵樹 flutter共有三個核心
 widget tree 在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。
 element tree 會將資料儲存在記憶體，並決定要不要重新繪製UI
 render tree 是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改</description>
     </item>
+    
     <item>
       <title>如何固定設備方向</title>
       <link>http://localhost:1313/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</link>
       <pubDate>Sun, 04 Jun 2023 20:28:02 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</guid>
       <description>如何鎖定裝置的方向 先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行
 WidgetsFlutterBinding.ensureInitialized(); 確定每次執行都要初始化 SystemChrome.setPreferredOrientations([DeviceOrientation.portraitUp,]) 選擇我們接受的方向 所在的函示庫記得引入 import &amp;lsquo;package:flutter/services.dart&amp;rsquo;;
 void main() { WidgetsFlutterBinding.ensureInitialized(); SystemChrome.setPreferredOrientations([ DeviceOrientation.portraitUp, ]).then((value) =&amp;gt; { runApp(MaterialApp( home: const Expenses(), )) }); } </description>
     </item>
+    
     <item>
       <title>資料庫分表</title>
       <link>http://localhost:1313/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
+      
       <guid>http://localhost:1313/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid>
       <description>資料庫架構設計 架構演變 讀寫分離 當遇到資料庫瓶頸時，最簡單的做法是將資料庫做主從架構 主資料庫只有做寫入並同步資料到其他從資料庫，被同步的資料庫可以是n個只做讀取 垂直分庫 資料還是持續增長後，就到了要做垂直分庫的架構了，垂直分庫的意思可以想像成將同一個資料表內的資料欄位做整理，分成多個資料庫，也就可以將不同資料庫放在不同機器上。 資料庫分成使用者資料庫、訂單資料庫、商品資料庫
 水平分庫 資料量再更大量，最後的解決方案就是水平分庫，會將相同的資料表分成多個表 table01、table02、table03
@@ -449,10 +525,12 @@ Sharding中介軟體 要做到水平分庫會建議使用已經發展成熟的Sh
 Sharding架構 有區分成兩種
 Porxy架構 應用集成架構 </description>
     </item>
+    
     <item>
       <title>Pub</title>
       <link>http://localhost:1313/flutter/pub/</link>
       <pubDate>Sun, 28 May 2023 14:30:29 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/pub/</guid>
       <description>快速介紹flutter安裝的函式庫 intl 轉成指定地區的日期格式
 flutter pub add intl
@@ -469,10 +547,12 @@ flutter pub add http
 image_picker 使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中
 flutter pub add image_picker</description>
     </item>
+    
     <item>
       <title>Widget</title>
       <link>http://localhost:1313/flutter/widget/</link>
       <pubDate>Sun, 28 May 2023 13:26:51 +0800</pubDate>
+      
       <guid>http://localhost:1313/flutter/widget/</guid>
       <description>佈局的屬性 Column 由上至下的排序
 Row 由左至右的排序
@@ -497,33 +577,41 @@ Form 有額外的驗證功能，並顯示在畫面
 Dismissible 新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目
 後續慢慢補上</description>
     </item>
+    
     <item>
       <title>Fire</title>
       <link>http://localhost:1313/softskills/fire/</link>
       <pubDate>Sun, 21 May 2023 21:19:29 +0800</pubDate>
+      
       <guid>http://localhost:1313/softskills/fire/</guid>
       <description>軟實力第一篇 </description>
     </item>
+    
     <item>
       <title>First</title>
       <link>http://localhost:1313/posts/first/</link>
       <pubDate>Fri, 19 May 2023 23:12:47 +0800</pubDate>
+      
       <guid>http://localhost:1313/posts/first/</guid>
       <description>Ha Today is a good day </description>
     </item>
+    
     <item>
       <title>dotnet6 Hangfire範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-hangfire%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Tue, 11 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-hangfire%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 在windows系統上想執行排程有兩個選擇
 使用windows工作排程器執行exe檔 透過Hangfire進行排程管理 此次教學說明如何使用Hangfire執行排程
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Hangfire Hangfire.InMemory 編輯Program.cs檔 using Hangfire; var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //註冊hangfire並且使用記憶體保存排程， //預設所下載的HangFire套件可以使用sqlserver，可透過config.UseSqlServerStorage();，但需要設定 builder.Services.AddHangfire(config =&amp;gt; { config.UseInMemoryStorage(); }); //註冊hangfire要使用的伺服器，伺服器就是上面所寫的使用記憶體當伺服器 builder.Services.AddHangfireServer(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); //使用hangfire內建的儀表板 app.UseHangfireDashboard(); app.</description>
     </item>
+    
     <item>
       <title>dotnet6 HttpClient單元測試範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Mon, 10 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
@@ -532,28 +620,34 @@ readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClie
 public async Task&amp;lt;string&amp;gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&amp;#34;https://example.com&amp;#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &amp;#34;&amp;#34;;} 新增測試專案 對方案點選右鍵&amp;gt;加入&amp;gt;新增專案
 設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案</description>
     </item>
+    
     <item>
       <title>dotnet6 Moq範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-moq%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sun, 09 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-moq%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 進行單元測試時，可以隔絕依賴的項目。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成MoqExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
 xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector Moq 針對MoqExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增WeatherForecastControllerTests.cs類別檔 刪除預設的類別檔(Class1.cs)，並在MoqExample.Tests專案新增對應資料夾，與類別檔並加結尾Tests。 編輯WeatherForecastControllerTests.cs類別檔 測試都會分三個階段
 Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 這次要測試的是controller，有注入Ilogger，如何將Ilogger隔開的關鍵就是使用Moq這個套件 using Microsoft.Extensions.Logging; using Moq; using MoqExample.Controllers; using Xunit; namespace MoqExample.Tests.Controllers { public class WeatherForecastControllerTests { [Fact] public void Get() { //Arrange //透過mock將外界的介面包起來 var MockLogger = new Mock&amp;lt;ILogger&amp;lt;WeatherForecastController&amp;gt;&amp;gt;(); //當成物件傳入controller，代替實際的介面 var Controllers = new WeatherForecastController(MockLogger.Object); //Act //執行要測試的函式 var Results = Controllers.Get(); //Assert //確認結果不為null Assert.</description>
     </item>
+    
     <item>
       <title>dotnet6 NLog進階範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sat, 08 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 在寫nlog.config檔案時覺得怎麼有點複雜，我只是需要簡單的設定檔就好了，最後決定透過appsetting來做設定 將log文件採用非同步寫入，可大幅提升效能 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 4.NuGet加入套件 NLog NLog.Web.AspNetCore 編輯Program.cs檔 using NLog; using NLog.Web; //初始化NLog var logger = LogManager.Setup() //載入Configuration並且讀取appsetting來使用 .LoadConfigurationFromAppSettings() .GetCurrentClassLogger(); try { logger.Debug(&amp;#34;init main&amp;#34;); var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Logging.ClearProviders(); builder.Host.UseNLog(); builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //以下省略 編輯appsetting.json 設定NLog，包含
 throwConfigExceptions:設定檔錯誤時會跳exception 使用非同步方式寫入檔案 targets:設定輸出的格式，例如txt檔案或是Console顯示 rules:什麼情況要做什麼動作，例如log名稱為Microsoft.AspNetCore最小等級是warn時寫到Console ILogger NLog Level 0 Trace Trace Level 1 Debug Debug Level 2 Information Info Level 3 Warning Warn Level 4 Error Error Level 5 Critical Fatal Level 6 None NLog沒有 { &amp;#34;NLog&amp;#34;: { &amp;#34;throwConfigExceptions&amp;#34;: true, &amp;#34;targets&amp;#34;: { &amp;#34;async&amp;#34;: true, &amp;#34;logfile&amp;#34;: { &amp;#34;type&amp;#34;: &amp;#34;File&amp;#34;, &amp;#34;fileName&amp;#34;: &amp;#34;c:/temp/nlog-${shortdate}.</description>
     </item>
+    
     <item>
       <title>dotnet6 xUnit範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sat, 08 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-xunit%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 單元測試
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立新的類別庫 進行命名時通常會與要測試的專案同名並加上結尾.Tests，以此範例就會變成xUnitExample.Tests NuGet加入套件 針對xUnitExample.Tests加入相關套件
@@ -561,112 +655,138 @@ xunit xunit.runner.visualstudio Microsoft.NET.Test.Sdk coverlet.collector 新增
 public static class Calculator { public static double Add(int a, int b) { return a + b; } } 針對xUnitExample.Tests類別庫加入參考 引用要測試的專案，才能將測試與實際專案切分開來 新增CalculatorTests.cs類別檔 刪除預設的類別檔(Class1.cs)，建立對應的資料夾以及類別檔案，並在結尾加上Tests 編輯CalculatorTests.cs類別檔 測試都會分三個階段
 Arrange：準備階段，包含初始化相關資料 Act：執行測試方法後所取得的結果 Assert：驗證Act取得的結果是否符合預期結果 public class CalculatorTests { //告訴編譯器要執行的測試方法 [Fact] public void Add_() { //Arrange double Expected = 20; //Act var Actual = Calculator.Add(5, 15); //Assert Assert.</description>
     </item>
+    
     <item>
       <title>dotnet6 NLog範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sat, 08 Oct 2022 01:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-nlog%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 在webapi專案下使用NLog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 NLog NLog.Web.AspNetCore 新增nlog.config檔案 在根目錄新增nlog.config檔案 nlog.config寫入程式 在nlog.config寫入官方範例
 &amp;lt;?xml version=&amp;#34;1.0&amp;#34; encoding=&amp;#34;utf-8&amp;#34; ?&amp;gt;&amp;lt;nlog xmlns=&amp;#34;http://www.nlog-project.org/schemas/NLog.xsd&amp;#34;xmlns:xsi=&amp;#34;http://www.w3.org/2001/XMLSchema-instance&amp;#34;autoReload=&amp;#34;true&amp;#34;internalLogLevel=&amp;#34;Info&amp;#34;internalLogFile=&amp;#34;c:\temp\internal-nlog-AspNetCore.txt&amp;#34;&amp;gt;&amp;lt;!-- enable asp.net core layout renderers --&amp;gt;&amp;lt;extensions&amp;gt;&amp;lt;add assembly=&amp;#34;NLog.Web.AspNetCore&amp;#34;/&amp;gt;&amp;lt;/extensions&amp;gt;&amp;lt;!-- the targets to write to --&amp;gt;&amp;lt;targets&amp;gt;&amp;lt;!-- File Target for all log messages with basic details --&amp;gt;&amp;lt;target xsi:type=&amp;#34;File&amp;#34; name=&amp;#34;allfile&amp;#34; fileName=&amp;#34;c:\temp\nlog-AspNetCore-all-${shortdate}.log&amp;#34;layout=&amp;#34;${longdate}|${event-properties:item=EventId_Id:whenEmpty=0}|${level:uppercase=true}|${logger}|${message} ${exception:format=tostring}&amp;#34; /&amp;gt;&amp;lt;!-- File Target for own log messages with extra web details using some ASP.</description>
     </item>
+    
     <item>
       <title>dotnet6 Serilog進階範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Fri, 07 Oct 2022 05:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E9%80%B2%E9%9A%8E%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 讀取appsetting設定檔 二階段初始化 為了簡單化故將Log存入SQLite 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore Serilog.Sinks.SQLite 編輯Program.cs檔 using Serilog; //第一階段初始化 // var builder = WebApplication.CreateBuilder(args);未使用二階段參數化，builder會跑到try外面 Log.Logger = new LoggerConfiguration() //.ReadFrom.Configuration(builder.Configuration) .CreateBootstrapLogger(); try { var builder = WebApplication.CreateBuilder(args); // Add services to the container. builder.Services.AddControllers(); // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //第二階段初始化可以取得appsetting的內容，如不使用第二階段初始化， //會需要將 var builder宣告式會移出try(如上方註解處)，就會有風險未捕獲builder的錯誤 builder.Host.UseSerilog( (hostingContext, services, loggerConfiguration) =&amp;gt; { //使用appsetting loggerConfiguration.ReadFrom.Configuration(builder.Configuration); }); var app = builder.</description>
     </item>
+    
     <item>
       <title>dotnet6 Serilog範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Fri, 07 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 在webapi專案下使用serilog套件
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
 using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&amp;#34;Microsoft.AspNetCore&amp;#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&amp;#34;./Logs/log.txt&amp;#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&amp;#34;Starting web host&amp;#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log.</description>
     </item>
+    
     <item>
       <title>dotnet6 EFCore語法說明</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/</link>
       <pubDate>Wed, 05 Oct 2022 01:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/</guid>
       <description>目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &amp;#34;BillHuang&amp;#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.</description>
     </item>
+    
     <item>
       <title>dotnet6 EFCore範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Tue, 04 Oct 2022 02:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 透過EFCore對db做查詢，為了降低門檻採用SQLite當範例資料庫。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &amp;#34;BillHuang&amp;#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample.Models; namespace EFCoreExample.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.</description>
     </item>
+    
     <item>
       <title>dotnet6 Dapper語法說明</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/</link>
       <pubDate>Mon, 03 Oct 2022 03:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/</guid>
       <description>目的 說明Dapper基本語法
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite 編輯WeatherForecastController檔案 將預設的API註解 基本設定 /// &amp;lt;summary&amp;gt; /// 初始化SQLite /// &amp;lt;/summary&amp;gt; /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt; private static async Task InitSqliteAsync() { //建立SQLite連線 using var conn = new SqliteConnection(&amp;#34;Data Source=Student.sqlite&amp;#34;); var SQL = new StringBuilder(); //判斷是否有Student.sqlite檔案 if (!System.IO.File.Exists(@&amp;#34;.\Student.sqlite&amp;#34;)) { //新增一張表，就會建立.sqlite檔案 SQL.Append(&amp;#34;CREATE TABLE Student( \n&amp;#34;); SQL.Append(&amp;#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&amp;#34;); SQL.Append(&amp;#34;Name VARCHAR(32) NOT NULL, \n&amp;#34;); SQL.Append(&amp;#34;Age INTEGER) \n&amp;#34;); //執行sql語法 await conn.ExecuteAsync(SQL.ToString()); } //Task不建議使用void，當不需要回傳值時會改用Task.</description>
     </item>
+    
     <item>
       <title>dotnet6 Dapper範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sun, 02 Oct 2022 01:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-dapper%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 透過dapper對db做查詢，為了降低門檻採用SQLite當範例資料庫。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Dapper Microsoft.Data.Sqlite(微軟官方還是SQLite官方?黑暗執行緒前輩有做說明，我的選擇比較單純有微軟用微軟) 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API /// &amp;lt;summary&amp;gt; /// 檢查有沒有sqlite檔案，沒有就新增，並增加一筆資料 /// &amp;lt;/summary&amp;gt; /// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt; [HttpGet(&amp;#34;InsertAsync&amp;#34;)] public async Task&amp;lt;IActionResult&amp;gt; InsertAsync() { //連接sqlite資料庫 using var connection = new SqliteConnection(&amp;#34;Data Source=Student.sqlite&amp;#34;); var SQL = new StringBuilder(); //當找不到sqlite檔案時，建立新表，新表創建後就會產生sqlite檔案了 if (System.IO.File.Exists(@&amp;#34;.\Student.sqlite&amp;#34;)) { //組語法，新建名為Student的表 SQL.Append(&amp;#34;CREATE TABLE Student( \n&amp;#34;); //Id欄位設定數字型別為PKey，並且自動遞增 SQL.Append(&amp;#34;Id INTEGER PRIMARY KEY AUTOINCREMENT, \n&amp;#34;); //Name欄位設定為VARCHAR(32)不允許是null SQL.Append(&amp;#34;Name VARCHAR(32) NOT NULL, \n&amp;#34;); //Age欄位設定為int SQL.Append(&amp;#34;Age INTEGER) \n&amp;#34;); //執行sql語法 await connection.</description>
     </item>
+    
     <item>
       <title>dotnet6 EPPlus圖表範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sun, 02 Oct 2022 00:00:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E5%9C%96%E8%A1%A8%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 使用epplus製作長條圖
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
 &amp;#34;EPPlus&amp;#34;: {&amp;#34;ExcelPackage&amp;#34;: {&amp;#34;LicenseContext&amp;#34;: &amp;#34;Commercial&amp;#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &amp;#34;Import&amp;#34;)] public ActionResult ImportExcel() { //建立excel所有操作的實例 using ExcelPackage excelPackage = new(); var ws = excelPackage.Workbook.Worksheets.Add(&amp;#34;第一頁&amp;#34;); Random Random = new Random(); //ws.Cells[上下(row),左右(col)] ws.Cells[1, 2].Value = &amp;#34;第一季&amp;#34;; ws.Cells[1, 3].Value = &amp;#34;第二季&amp;#34;; ws.Cells[1, 4].Value = &amp;#34;第三季&amp;#34;; ws.Cells[1, 5].Value = &amp;#34;第四季&amp;#34;; ws.Cells[2, 1].</description>
     </item>
+    
     <item>
       <title>dotnet6 EPPlus範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sat, 01 Oct 2022 00:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-epplus%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 將資料匯出成excel
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Epplus 設定appsetting檔案 為了避免LicenseException，故需要在appsetting加入下列文字
 &amp;#34;EPPlus&amp;#34;: {&amp;#34;ExcelPackage&amp;#34;: {&amp;#34;LicenseContext&amp;#34;: &amp;#34;Commercial&amp;#34; //The license context used}} 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(Name = &amp;#34;Import&amp;#34;)]public ActionResult ImportExcel() {//建立excel所有操作的實例using ExcelPackage excelPackage = new();//properties為excel的屬性，開啟excel後要特別去查看屬性才能看到的資訊excelPackage.Workbook.Properties.Author = &amp;#34;Bill Huang&amp;#34;;excelPackage.Workbook.Properties.Title = &amp;#34;範例檔案&amp;#34;;excelPackage.Workbook.Properties.Created = DateTime.Now;//建立第一頁工作表(下方所顯示的頁簽)ExcelWorksheet worksheet = excelPackage.Workbook.Worksheets.Add(&amp;#34;第一頁&amp;#34;);int i = 1;foreach (var c in Summaries) {//選擇指定欄位將資料放入worksheet.</description>
     </item>
+    
     <item>
       <title>dotnet6 更改回傳Json時為大駝峰命名</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E6%9B%B4%E6%94%B9%E5%9B%9E%E5%82%B3json%E6%99%82%E7%82%BA%E5%A4%A7%E9%A7%9D%E5%B3%B0%E5%91%BD%E5%90%8D/</link>
       <pubDate>Fri, 30 Sep 2022 09:00:14 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E6%9B%B4%E6%94%B9%E5%9B%9E%E5%82%B3json%E6%99%82%E7%82%BA%E5%A4%A7%E9%A7%9D%E5%B3%B0%E5%91%BD%E5%90%8D/</guid>
       <description>目的 將預設回傳的Camel-Case(temperatureCelsius)改為Pascal Case(TemperatureCelsius)
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &amp;lt;summary&amp;gt;/// 反序列化/// &amp;lt;/summary&amp;gt;/// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;[HttpGet(&amp;#34;JsonDeserialize&amp;#34;)]public ActionResult JsonDeserialize() {var options = new JsonSerializerOptions {PropertyNamingPolicy = null,};var jsonString = @&amp;#34;{&amp;#34;&amp;#34;Name&amp;#34;&amp;#34;:&amp;#34;&amp;#34;中文名&amp;#34;&amp;#34;,&amp;#34;&amp;#34;Age&amp;#34;&amp;#34;:18,&amp;#34;&amp;#34;TemperatureCelsius&amp;#34;&amp;#34;:52}&amp;#34;;var Result = JsonSerializer.Deserialize&amp;lt;TestClass&amp;gt;(jsonString,options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }public int TemperatureCelsius { get; set; }} Program寫入程式 builder.</description>
     </item>
+    
     <item>
       <title>dotnet6 解決System.Text.Json序列化後會將所有非ASCII轉為Unicode</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E8%A7%A3%E6%B1%BAsystem.text.json%E5%BA%8F%E5%88%97%E5%8C%96%E5%BE%8C%E6%9C%83%E5%B0%87%E6%89%80%E6%9C%89%E9%9D%9Eascii%E8%BD%89%E7%82%BAunicode/</link>
       <pubDate>Thu, 29 Sep 2022 00:02:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E8%A7%A3%E6%B1%BAsystem.text.json%E5%BA%8F%E5%88%97%E5%8C%96%E5%BE%8C%E6%9C%83%E5%B0%87%E6%89%80%E6%9C%89%E9%9D%9Eascii%E8%BD%89%E7%82%BAunicode/</guid>
       <description>目的 序列化時不自動將非ASCII轉為Unicode
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using [HttpGet(&amp;#34;JsonSerialize&amp;#34;)]public ActionResult JsonSerialize() {var options = new JsonSerializerOptions {//美化輸出，會有空白字元WriteIndented = true,//將所有語言都不進行轉換Encoder = JavaScriptEncoder.Create(UnicodeRanges.All)};var Test = new TestClass() {Name = &amp;#34;中文名&amp;#34;,Age = 18,};var Result = JsonSerializer.Serialize(Test, options);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 中文就不會是unicode了 參考 How to serialize and deserialize</description>
     </item>
+    
     <item>
       <title>dotnet6 Text.Json範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Wed, 28 Sep 2022 00:02:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-text.json%E5%BA%8F%E5%88%97%E5%8C%96%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 不使用Newtonsoft.Json，改採.net6內建的System.Text.Json System.Text.Json更著重在效能與安全性，大多數人應該都跟我一樣只會使用基本的序列化及反序列化。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 編輯WeatherForecastController檔案 將預設的API註解，寫入新的Action，預設不會引用System.Text.Json，記得在最上面using /// &amp;lt;summary&amp;gt;/// 序列化/// &amp;lt;/summary&amp;gt;/// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;[HttpGet(&amp;#34;JsonSerialize&amp;#34;)]public ActionResult JsonSerialize() {var Test = new TestClass() {Name = &amp;#34;中文名&amp;#34;,Age = 18};var Result = JsonSerializer.Serialize(Test);return Ok(Result);}/// &amp;lt;summary&amp;gt;/// 反序列化/// &amp;lt;/summary&amp;gt;/// &amp;lt;returns&amp;gt;&amp;lt;/returns&amp;gt;[HttpGet(&amp;#34;JsonDeserialize&amp;#34;)]public ActionResult JsonDeserialize() {var jsonString = @&amp;#34;{&amp;#34;&amp;#34;Name&amp;#34;&amp;#34;:&amp;#34;&amp;#34;中文名&amp;#34;&amp;#34;,&amp;#34;&amp;#34;Age&amp;#34;&amp;#34;:18}&amp;#34;;var Result = JsonSerializer.Deserialize&amp;lt;TestClass&amp;gt;(jsonString);return Ok(Result);}public class TestClass {public string Name { get; set; }public int Age { get; set; }} 執行結果 點選Try it out 點選Execute 查看執行結果1(序列化) 查看執行結果2(反序列化) 延伸問題 在不做任何設定的情況下，內建的序列化會有些微差異</description>
     </item>
+    
     <item>
       <title>dotnet6 swagger授權</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/</link>
       <pubDate>Tue, 27 Sep 2022 00:51:18 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/</guid>
       <description>目的 在swagger內使用jwt token測試API
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
@@ -675,10 +795,12 @@ builder.Services.AddSwaggerGen(options =&amp;gt; { // using System.Reflection; v
 JWT Microsoft.AspNetCore.Authentication.JwtBearer Microsoft.IdentityModel.Tokens System.IdentityModel.Tokens.Jwt 新增Helpers資料夾並在裡面新增JwtHelpers.cs類別檔案 jwt範例使用保哥範例來做修改，目的只是為了取得jwt token
 public class JwtHelper { private readonly JwtSettingsOptions _settings; public JwtHelper(IOptionsMonitor&amp;lt;JwtSettingsOptions&amp;gt; settings) { //注入appsetting的json _settings = settings.CurrentValue; } public string GenerateToken(string userName, int expireMinutes = 120) { //發行人 var issuer = _settings.</description>
     </item>
+    
     <item>
       <title>dotnet6 swagger範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Mon, 26 Sep 2022 00:10:22 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
@@ -687,85 +809,103 @@ builder.Services.AddSwaggerGen(options =&amp;gt; { // using System.Reflection; v
 加入前 加入後 加入第二個方法 執行結果 就可以成功讀取到兩個方法了 參考 微軟官方
 範例檔 GitHub</description>
     </item>
+    
     <item>
       <title>dotnet6 Telegram.Bot範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Sun, 25 Sep 2022 09:38:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 使用telegram做聊天機器人
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
 [HttpGet(&amp;#34;Test&amp;#34;)]public async Task&amp;lt;string&amp;gt; Test() {var botClient = new TelegramBotClient(&amp;#34;前置作業給的機器人ID&amp;#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &amp;#34;前置作業給的頻道ID&amp;#34;,text: &amp;#34;Trying *all the parameters* of `sendMessage` method&amp;#34;);//回傳取得的機器人基本資訊return $&amp;#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&amp;#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey&amp;rsquo;s Blog</description>
     </item>
+    
     <item>
       <title>dotnet6 Telegram.Bot前置作業</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/</link>
       <pubDate>Sat, 24 Sep 2022 09:38:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/</guid>
       <description>目的 在使用telegram機器人時，需要先在telegram新增要使用的機器人。
 搜尋 搜尋@botfather 開始 點擊start 輸入/newbot指令 輸入/newbot指令後，對話欄會請你輸入你的名稱。 設定聊天機器人的顯示名稱 這邊所輸入的名稱，並沒有限制要Bot或_bot當結尾。 設定機器人帳號 其他人可以透過查詢帳號找到我們所建立的機器人。
 當要輸入機器人帳號時，會限制要Bot或_bot結尾，需要特別注意。
 取得token 如馬賽克處，是使用機器人時所要提供給api的token。 參考 官方文件</description>
     </item>
+    
     <item>
       <title>dotnet6 Bogus範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Fri, 23 Sep 2022 09:00:13 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 快速且簡單的製造假資料
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
 Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&amp;#34;Test&amp;#34;)] public List&amp;lt;User&amp;gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &amp;#34;apple&amp;#34;, &amp;#34;banana&amp;#34;, &amp;#34;orange&amp;#34;, &amp;#34;strawberry&amp;#34;, &amp;#34;kiwi&amp;#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&amp;lt;Order&amp;gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&amp;gt; o.OrderId, f =&amp;gt; orderIds++) //從自訂陣列隨機取值 .RuleFor(o =&amp;gt; o.Item, f =&amp;gt; f.</description>
     </item>
+    
     <item>
       <title>dotnet6 Autofac範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-autofac%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Thu, 22 Sep 2022 00:48:20 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-autofac%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 批次註冊
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 新增類別檔 新增之後需要來描述要批次注入的規則
 加入前 加入後 並且繼承autofac的類別Module 編輯Program.cs檔案 //初始化並建立一個實例 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); //註冊autofac這個容器 builder.Host.ConfigureContainer&amp;lt;ContainerBuilder&amp;gt;(builder =&amp;gt; builder.RegisterModule(new AutofacModuleRegister())); 有繼承autofac的類別Module 新增資料夾 新增下圖兩個資料夾 新增類別檔 此次的目的是要可以進行批次注入，所以檔名結尾都需要包含Service，做批次注入時可以辨識
 在Services資料夾底下加入類別檔案，名稱為TestService 在Interface資料夾底下加入介面檔案，名稱為ITest ITest.cs寫入程式 namespace AutoFacExample.Services.Interface { public interface ITest { public string GetName(string id); } } TestService.cs寫入程式 繼承介面後寫上與介面相同的方法 using AutoFacExample.Services.Interface; namespace AutoFacExample.Services { public class TestService : ITest { public string GetName(string id) { return $&amp;#34;{id}:Bill&amp;#34;; } } } AutofacModuleRegister執行批次註冊 protected override void Load(ContainerBuilder builder) { //RegisterAssemblyTypes =&amp;gt; 註冊所有集合 //Where(t =&amp;gt; t.</description>
     </item>
+    
     <item>
       <title>dotnet6 BenchmarkDotNet範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Wed, 21 Sep 2022 00:58:10 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 快速測試不同寫法的效能差異。
 建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異
 using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Running; //指定要測試的class var summary = BenchmarkRunner.Run&amp;lt;BenchmarkSampleAuto&amp;gt;(); //加入記憶體使用量測試 [MemoryDiagnoser] public class BenchmarkSampleAuto { private readonly List&amp;lt;DbModel&amp;gt; _data = new List&amp;lt;DbModel&amp;gt;(); private readonly IMapper _mapper; public BenchmarkSampleAuto() { //automapper設定 var config = new MapperConfiguration(cfg =&amp;gt; { cfg.CreateMap&amp;lt;DbModel, ViewModel&amp;gt;(); }); _mapper = new Mapper(config); //準備一份List資料 PrepareTestObjects(); } private void PrepareTestObjects() { _data.Add(new DbModel() { Id = 1, Name = &amp;#34;Bill&amp;#34;, Age = 18, CreatedDate = DateTime.</description>
     </item>
+    
     <item>
       <title>dotnet6 Automapper範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Tue, 20 Sep 2022 00:39:29 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
 ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。</description>
     </item>
+    
     <item>
       <title>dotnet6 MailKit範例</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/</link>
       <pubDate>Mon, 19 Sep 2022 15:38:35 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/</guid>
       <description>目的 使用gmail寄信
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&amp;#34;SendEmail&amp;#34;)] public async Task&amp;lt;IActionResult&amp;gt; Get() { #region OAuth驗證 const string GMailAccount = &amp;#34;前置作業文章打上去的測試帳號&amp;#34;; var clientSecrets = new ClientSecrets { ClientId = &amp;#34;前置作業文章最後給的用戶ID&amp;#34;, ClientSecret = &amp;#34;前置作業文章最後給的用戶端密碼&amp;#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&amp;#34;CredentialCacheFolder&amp;#34;, false), Scopes = new[] { &amp;#34;https://mail.google.com/&amp;#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.</description>
     </item>
+    
     <item>
       <title>dotnet6 MailKit前置作業</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/</link>
       <pubDate>Sun, 18 Sep 2022 15:39:15 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/</guid>
       <description>目的 前往google帳號設定OAuth，才能使用google帳號寄信
 點擊連結 到 google帳號管理
 新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit</description>
     </item>
+    
     <item>
       <title>dotnet6 取得appsettings檔案內容</title>
       <link>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/</link>
       <pubDate>Sat, 17 Sep 2022 15:00:14 +0800</pubDate>
+      
       <guid>http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-%E5%8F%96%E5%BE%97appsettings%E6%AA%94%E6%A1%88/</guid>
       <description>目的 透過強行別的模式使用appsetting設定檔資料
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 設定appsetting檔案 在appsetting新增一筆json資料
@@ -773,5 +913,8 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
 builder.Services.Configure&amp;lt;PersonalInformation&amp;gt;( builder.Configuration.GetSection(&amp;#34;PersonalInformation&amp;#34;)); 注入所需要的地方 注入到預設的WeatherForecastController中，就可以使用。
 private readonly PersonalInformation _options; public WeatherForecastController(ILogger&amp;lt;WeatherForecastController&amp;gt; logger, IOptionsMonitor&amp;lt;PersonalInformation&amp;gt; options) { _logger = logger; _options = options.CurrentValue; } 此範例使用的是IOptionsMonitor</description>
     </item>
+    
+    
+    
   </channel>
 </rss>
