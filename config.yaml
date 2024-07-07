@@ -6,32 +6,41 @@ theme : "PaperMod"
 buildDrafts: false
 UseHugoToc: true
 googleAnalytics: G-S4X5YV8EB6
-menu:
-  main:
-    - identifier: Dotnet
-      name: Dotnet
-      url: /dotnet/
-      weight: 10  
-    - identifier: Flutter
-      name: Flutter
-      url: /flutter/
-      weight: 15
-    - identifier: 軟實力
-      name: SoftSkills
-      url: /softskills/
-      weight: 30
-    - identifier: Search
-      name: Search
-      url: /search/
-      weight: 40
-    - identifier: Tags
-      name: Tags
-      url: /tags/
-      weight: 50
-    - identifier: Archives
-      name: Archives
-      url: /archives/
-      weight: 60
+languages:
+    en:
+        languageName: "English"
+        weight: 1
+        # taxonomies:
+        #   category: categories
+        #   tag: tags
+        #   series: series
+        menu:
+          main:
+          - identifier: Dotnet
+          name: Dotnet
+          url: /dotnet/
+          weight: 10  
+        - identifier: Flutter
+          name: Flutter
+          url: /flutter/
+         weight: 15
+        - identifier: 軟實力
+          name: SoftSkills
+          url: /softskills/
+          weight: 30
+        - identifier: Search
+          name: Search
+          url: /search/
+          weight: 40
+        - identifier: Tags
+          name: Tags
+          url: /tags/
+          weight: 50
+        - identifier: Archives
+          name: Archives
+          url: /archives/
+          weight: 60
+
 
 outputs:
     home:
@@ -61,8 +70,8 @@ params:
     - posts
   assets: 
     disableHLJS: true 
-    favicon: "/assets/favicon.ico"
-    favicon16x16: "/assets/favicon.ico"
-    favicon32x32: "/assets/favicon.ico"
-    apple_touch_icon: "/assets/favicon.ico" 
-    safari_pinned_tab: "/assets/favicon.ico"
+    favicon: "/assets/favicon.png"
+    favicon16x16: "/assets/favicon.png"
+    favicon32x32: "/assets/favicon.png"
+    apple_touch_icon: "/assets/favicon.png" 
+    safari_pinned_tab: "/assets/favicon.png"
