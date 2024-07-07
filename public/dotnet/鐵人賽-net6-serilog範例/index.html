@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en" dir="auto">
 
-<head><meta charset="utf-8">
+<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
@@ -11,18 +11,16 @@
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
 using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&#34;Microsoft.AspNetCore&#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&#34;./Logs/log.txt&#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&#34;Starting web host&#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log.">
 <meta name="author" content="">
-<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.3613efbd0b1772781e8f49935e973cae632a7f61471c05b17be155505ccf87b5.css" integrity="sha256-NhPvvQsXcngej0mTXpc8rmMqf2FHHAWxe&#43;FVUFzPh7U=" rel="preload stylesheet" as="style">
-<script defer crossorigin="anonymous" src="/assets/js/highlight.f413e19d0714851f6474e7ee9632408e58ac146fbdbe62747134bea2fa3415e0.js" integrity="sha256-9BPhnQcUhR9kdOfuljJAjlisFG&#43;9vmJ0cTS&#43;ovo0FeA="
-    onload="hljs.initHighlightingOnLoad();"></script>
-<link rel="icon" href="https://ci-yu.top/favicon.ico">
-<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/favicon-16x16.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/favicon-32x32.png">
-<link rel="apple-touch-icon" href="https://ci-yu.top/apple-touch-icon.png">
-<link rel="mask-icon" href="https://ci-yu.top/safari-pinned-tab.svg">
+<link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.fc220c15db4aef0318bbf30adc45d33d4d7c88deff3238b23eb255afdc472ca6.css" integrity="sha256-/CIMFdtK7wMYu/MK3EXTPU18iN7/MjiyPrJVr9xHLKY=" rel="preload stylesheet" as="style">
+<link rel="icon" href="http://localhost:1313/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.ico">
+<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.ico">
+<link rel="apple-touch-icon" href="http://localhost:1313/assets/favicon.ico">
+<link rel="mask-icon" href="http://localhost:1313/assets/favicon.ico">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/">
+<link rel="alternate" hreflang="en" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -40,7 +38,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
             }
@@ -84,7 +82,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Serilog.AspNetCore 編輯Program.cs檔 在最外層包一個try catch目的是為了捕捉啟動階段的錯誤
 using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Serilog要寫入的最低等級為Information .MinimumLevel.Information() //Microsoft.AspNetCore開頭的類別等極為warning .MinimumLevel.Override(&#34;Microsoft.AspNetCore&#34;, LogEventLevel.Warning) //寫log到Logs資料夾的log.txt檔案中，並且以天為單位做檔案分割 .WriteTo.File(&#34;./Logs/log.txt&#34;, rollingInterval: RollingInterval.Day) .CreateLogger(); try { Log.Information(&#34;Starting web host&#34;); var builder = WebApplication.CreateBuilder(args); builder.Services.AddControllers(); builder.Services.AddEndpointsApiExplorer(); builder.Services.AddSwaggerGen(); //controller可以使用ILogger介面來寫入log紀錄 builder.Host.UseSerilog(); var app = builder.Build(); // Configure the HTTP request pipeline. if (app.Environment.IsDevelopment()) { app.UseSwagger(); app.UseSwaggerUI(); } app.UseHttpsRedirection(); app.UseAuthorization(); app.MapControllers(); app.Run(); return 0; } catch (Exception ex) { Log." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
+<meta property="og:url" content="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
 <meta property="article:published_time" content="2022-10-07T02:39:15+08:00" />
 <meta property="article:modified_time" content="2022-10-07T02:39:15+08:00" />
 
@@ -104,13 +102,13 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
       "@type": "ListItem",
       "position":  1 ,
       "name": "Dotnets",
-      "item": "https://ci-yu.top/dotnet/"
+      "item": "http://localhost:1313/dotnet/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "dotnet6 Serilog範例",
-      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"
+      "item": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"
     }
   ]
 }
@@ -132,14 +130,14 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
   "dateModified": "2022-10-07T02:39:15+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"
+    "@id": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-serilog%E7%AF%84%E4%BE%8B/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CI-YU Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://ci-yu.top/favicon.ico"
+      "url": "http://localhost:1313/assets/favicon.ico"
     }
   }
 }
@@ -161,7 +159,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 <header class="header">
     <nav class="nav">
         <div class="logo">
-            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <a href="http://localhost:1313/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
             <div class="logo-switches">
                 <button id="theme-toggle" accesskey="t" title="(Alt + T)">
                     <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
@@ -183,38 +181,36 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
         <ul id="menu">
             <li>
-                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
+                <a href="http://localhost:1313/dotnet/" title="Dotnet">
                     <span>Dotnet</span>
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/flutter/" title="Flutter">
+                <a href="http://localhost:1313/flutter/" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
+                <a href="http://localhost:1313/softskills/" title="SoftSkills">
                     <span>SoftSkills</span>
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/tags/" title="Tags">
+                <a href="http://localhost:1313/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="https://ci-yu.top/archives/" title="Archives">
+                <a href="http://localhost:1313/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
@@ -225,11 +221,11 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="https://ci-yu.top/">Home</a>&nbsp;»&nbsp;<a href="https://ci-yu.top/dotnet/">Dotnets</a></div>
-    <h1 class="post-title">
+    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
+    <h1 class="post-title entry-hint-parent">
       dotnet6 Serilog範例
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2022-10-07 02:39:15 &#43;0800 CST&#39;&gt;October 7, 2022&lt;/span&gt;
+    <div class="post-meta"><span title='2022-10-07 02:39:15 +0800 CST'>October 7, 2022</span>
 
 </div>
   </header> 
@@ -386,7 +382,7 @@ using Serilog; using Serilog.Events; Log.Logger = new LoggerConfiguration() //Se
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+      <li><a href="http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
     </ul>
   </footer>
 </article>

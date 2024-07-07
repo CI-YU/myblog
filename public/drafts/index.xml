@@ -2,10 +2,11 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Drafts on CI-YU Blog</title>
-    <link>https://ci-yu.top/drafts/</link>
+    <link>http://localhost:1313/drafts/</link>
     <description>Recent content in Drafts on CI-YU Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.128.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 21 May 2023 14:58:13 +0800</lastBuildDate><atom:link href="https://ci-yu.top/drafts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate></lastBuildDate>
+    <atom:link href="http://localhost:1313/drafts/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>

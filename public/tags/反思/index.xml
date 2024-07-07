@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>反思 on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/%E5%8F%8D%E6%80%9D/</link>
+    <link>http://localhost:1313/tags/%E5%8F%8D%E6%80%9D/</link>
     <description>Recent content in 反思 on CI-YU Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.128.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sat, 16 Mar 2024 08:45:40 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/%E5%8F%8D%E6%80%9D/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Mar 2024 08:45:40 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/%E5%8F%8D%E6%80%9D/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>時間與智慧象限</title>
-      <link>https://ci-yu.top/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</link>
+      <link>http://localhost:1313/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</link>
       <pubDate>Sat, 16 Mar 2024 08:45:40 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</guid>
+      <guid>http://localhost:1313/softskills/%E6%99%82%E9%96%93%E8%88%87%E6%99%BA%E6%85%A7%E8%B1%A1%E9%99%90/</guid>
       <description>在一間公司中花費在公司的時間高低與一個人聰明或不聰明的象限圖中,對於我們來說哪種人是更被需要的？ 聰明又願意加班 這種人才可遇不可求,肯定是首選,不討論
 不聰明又不願意加班 這種人才也是可遇不可求,肯定不選,不討論
 聰明與願意加班 通常情況下如果只能選擇一項,我會願意選擇聰明但不加班
 因為聰明人的會想辦法優化工作,提升自己的工作產能,所以產能是會持續增加
 但如果是單純願意加班的人,工作產能就是固定的,沒有辦法有所期待</description>
     </item>
-    
   </channel>
 </rss>

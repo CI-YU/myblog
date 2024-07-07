@@ -2,23 +2,22 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Draft on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/draft/</link>
+    <link>http://localhost:1313/tags/draft/</link>
     <description>Recent content in Draft on CI-YU Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.128.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 04 Jun 2023 13:12:42 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/draft/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 04 Jun 2023 13:12:42 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/draft/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>資料庫分表</title>
-      <link>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link>
+      <link>http://localhost:1313/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid>
+      <guid>http://localhost:1313/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid>
       <description>資料庫架構設計 架構演變 讀寫分離 當遇到資料庫瓶頸時，最簡單的做法是將資料庫做主從架構 主資料庫只有做寫入並同步資料到其他從資料庫，被同步的資料庫可以是n個只做讀取 垂直分庫 資料還是持續增長後，就到了要做垂直分庫的架構了，垂直分庫的意思可以想像成將同一個資料表內的資料欄位做整理，分成多個資料庫，也就可以將不同資料庫放在不同機器上。 資料庫分成使用者資料庫、訂單資料庫、商品資料庫
 水平分庫 資料量再更大量，最後的解決方案就是水平分庫，會將相同的資料表分成多個表 table01、table02、table03
 Sharding中介軟體 要做到水平分庫會建議使用已經發展成熟的Sharding中介軟體
 Sharding架構 有區分成兩種
 Porxy架構 應用集成架構 </description>
     </item>
-    
   </channel>
 </rss>

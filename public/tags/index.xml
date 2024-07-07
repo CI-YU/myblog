@@ -2,154 +2,123 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
   <channel>
     <title>Tags on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/</link>
+    <link>http://localhost:1313/tags/</link>
     <description>Recent content in Tags on CI-YU Blog</description>
-    <generator>Hugo -- gohugo.io</generator>
+    <generator>Hugo -- 0.128.2</generator>
     <language>en-us</language>
-    <lastBuildDate>Sun, 19 May 2024 14:54:23 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sun, 19 May 2024 14:54:23 +0800</lastBuildDate>
+    <atom:link href="http://localhost:1313/tags/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Dotnet</title>
-      <link>https://ci-yu.top/tags/dotnet/</link>
+      <link>http://localhost:1313/tags/dotnet/</link>
       <pubDate>Sun, 19 May 2024 14:54:23 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/dotnet/</guid>
+      <guid>http://localhost:1313/tags/dotnet/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Memoryleak</title>
-      <link>https://ci-yu.top/tags/memoryleak/</link>
+      <link>http://localhost:1313/tags/memoryleak/</link>
       <pubDate>Sun, 19 May 2024 14:54:23 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/memoryleak/</guid>
+      <guid>http://localhost:1313/tags/memoryleak/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>記憶體洩漏</title>
-      <link>https://ci-yu.top/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/</link>
+      <link>http://localhost:1313/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/</link>
       <pubDate>Sun, 19 May 2024 14:54:23 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/</guid>
+      <guid>http://localhost:1313/tags/%E8%A8%98%E6%86%B6%E9%AB%94%E6%B4%A9%E6%BC%8F/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Docker</title>
-      <link>https://ci-yu.top/tags/docker/</link>
+      <link>http://localhost:1313/tags/docker/</link>
       <pubDate>Sun, 05 May 2024 01:24:52 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/docker/</guid>
+      <guid>http://localhost:1313/tags/docker/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>反思</title>
-      <link>https://ci-yu.top/tags/%E5%8F%8D%E6%80%9D/</link>
+      <link>http://localhost:1313/tags/%E5%8F%8D%E6%80%9D/</link>
       <pubDate>Sat, 16 Mar 2024 08:45:40 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/%E5%8F%8D%E6%80%9D/</guid>
+      <guid>http://localhost:1313/tags/%E5%8F%8D%E6%80%9D/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>軟實力</title>
-      <link>https://ci-yu.top/tags/%E8%BB%9F%E5%AF%A6%E5%8A%9B/</link>
+      <link>http://localhost:1313/tags/%E8%BB%9F%E5%AF%A6%E5%8A%9B/</link>
       <pubDate>Sat, 16 Mar 2024 08:45:40 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/%E8%BB%9F%E5%AF%A6%E5%8A%9B/</guid>
+      <guid>http://localhost:1313/tags/%E8%BB%9F%E5%AF%A6%E5%8A%9B/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Flutter</title>
-      <link>https://ci-yu.top/tags/flutter/</link>
+      <link>http://localhost:1313/tags/flutter/</link>
       <pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/flutter/</guid>
+      <guid>http://localhost:1313/tags/flutter/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>2024</title>
-      <link>https://ci-yu.top/tags/2024/</link>
+      <link>http://localhost:1313/tags/2024/</link>
       <pubDate>Tue, 09 Jan 2024 00:10:13 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/2024/</guid>
+      <guid>http://localhost:1313/tags/2024/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Target</title>
-      <link>https://ci-yu.top/tags/target/</link>
+      <link>http://localhost:1313/tags/target/</link>
       <pubDate>Tue, 09 Jan 2024 00:10:13 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/target/</guid>
+      <guid>http://localhost:1313/tags/target/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Dotnet6</title>
-      <link>https://ci-yu.top/tags/dotnet6/</link>
+      <link>http://localhost:1313/tags/dotnet6/</link>
       <pubDate>Fri, 24 Nov 2023 22:09:49 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/dotnet6/</guid>
+      <guid>http://localhost:1313/tags/dotnet6/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>PostgreSQL</title>
-      <link>https://ci-yu.top/tags/postgresql/</link>
+      <link>http://localhost:1313/tags/postgresql/</link>
       <pubDate>Fri, 24 Nov 2023 22:09:49 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/postgresql/</guid>
+      <guid>http://localhost:1313/tags/postgresql/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>2023鐵人賽</title>
-      <link>https://ci-yu.top/tags/2023%E9%90%B5%E4%BA%BA%E8%B3%BD/</link>
+      <link>http://localhost:1313/tags/2023%E9%90%B5%E4%BA%BA%E8%B3%BD/</link>
       <pubDate>Thu, 05 Oct 2023 23:36:17 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/2023%E9%90%B5%E4%BA%BA%E8%B3%BD/</guid>
+      <guid>http://localhost:1313/tags/2023%E9%90%B5%E4%BA%BA%E8%B3%BD/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>Draft</title>
-      <link>https://ci-yu.top/tags/draft/</link>
+      <link>http://localhost:1313/tags/draft/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/draft/</guid>
+      <guid>http://localhost:1313/tags/draft/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>架構設計</title>
-      <link>https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</link>
+      <link>http://localhost:1313/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</guid>
+      <guid>http://localhost:1313/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>資料庫</title>
-      <link>https://ci-yu.top/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</link>
+      <link>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</link>
       <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</guid>
+      <guid>http://localhost:1313/tags/%E8%B3%87%E6%96%99%E5%BA%AB/</guid>
       <description></description>
     </item>
-    
     <item>
       <title>2022鐵人賽</title>
-      <link>https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/</link>
+      <link>http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/</link>
       <pubDate>Tue, 11 Oct 2022 02:39:15 +0800</pubDate>
-      
-      <guid>https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/</guid>
+      <guid>http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/</guid>
       <description></description>
     </item>
-    
   </channel>
 </rss>
