@@ -6,6 +6,13 @@ theme : "PaperMod"
 buildDrafts: false
 UseHugoToc: true
 googleAnalytics: G-S4X5YV8EB6
+assets: 
+  disableHLJS: true 
+  favicon: "/assets/favicon.ico"
+ #     favicon16x16: "<link / abs url>" 
+ #     favicon32x32: "<link / abs url>" 
+ #     apple_touch_icon: "<link / abs url>" 
+ #     safari_pinned_tab: "<link / abs url>" 
 menu:
   main:
     - identifier: Dotnet
