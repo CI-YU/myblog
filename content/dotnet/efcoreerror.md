@@ -1,5 +1,5 @@
 ---
-title: "Efcoreerror"
+title: "dotnet ef Error"
 date: 2024-09-06T23:23:56+08:00
 draft: false
 tags: ["dotnet8", "EFCore"]
