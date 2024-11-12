@@ -1,7 +1,7 @@
 ---
 title: "簡單介紹di注入"
 date: 2024-11-12T00:08:55+08:00
-draft: true
+draft: false
 tags: ["面試"]
 ---
 
