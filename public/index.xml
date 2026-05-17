@@ -1,4 +1,18 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>CI-YU Blog</title><link>https://ci-yu.top/</link><description>Recent content on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ci-yu.top/index.xml" rel="self" type="application/rss+xml"/><item><title>記帳手冊 隱私權政策</title><link>https://ci-yu.top/privacy-policy/my_ledger/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ci-yu.top/privacy-policy/my_ledger/</guid><description>&lt;p&gt;感謝您使用「記帳手冊」。本隱私權政策說明本應用程式如何處理您的資料。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>CI-YU Blog</title><link>https://ci-yu.top/</link><description>Recent content on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 17 May 2026 00:00:00 +0000</lastBuildDate><atom:link href="https://ci-yu.top/index.xml" rel="self" type="application/rss+xml"/><item><title>My Ledger - Privacy Policy</title><link>https://ci-yu.top/privacy-policy/my_ledger_en/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ci-yu.top/privacy-policy/my_ledger_en/</guid><description>&lt;p&gt;Thank you for using &amp;ldquo;My Ledger&amp;rdquo;. This Privacy Policy explains how this application handles your data.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="1-data-collection"&gt;1. Data Collection&lt;/h3&gt;
+&lt;p&gt;&amp;ldquo;My Ledger&amp;rdquo; &lt;strong&gt;does not collect any personal data&lt;/strong&gt;. This application does not ask for your name, email address, phone number, or any other personally identifiable information.&lt;/p&gt;
+&lt;hr&gt;
+&lt;h3 id="2-data-storage"&gt;2. Data Storage&lt;/h3&gt;
+&lt;p&gt;All accounting data you enter in the application is stored in a SQLite database on your local device.&lt;/p&gt;
+&lt;ul&gt;
+&lt;li&gt;Data is &lt;strong&gt;never uploaded to any server&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Data is &lt;strong&gt;never shared with third parties&lt;/strong&gt;&lt;/li&gt;
+&lt;li&gt;Your data is entirely under your control and exists only on your device&lt;/li&gt;
+&lt;/ul&gt;
+&lt;hr&gt;
+&lt;h3 id="3-file-import"&gt;3. File Import&lt;/h3&gt;
+&lt;p&gt;This application provides a file import feature that allows you to import external data into the app.&lt;/p&gt;</description></item><item><title>隱私權政策</title><link>https://ci-yu.top/privacy-policy/my_ledger/</link><pubDate>Sun, 17 May 2026 00:00:00 +0000</pubDate><guid>https://ci-yu.top/privacy-policy/my_ledger/</guid><description>&lt;p&gt;感謝您使用「記帳手冊」。本隱私權政策說明本應用程式如何處理您的資料。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id="一資料收集"&gt;一、資料收集&lt;/h3&gt;
 &lt;p&gt;「記帳手冊」&lt;strong&gt;不會收集任何個人資料&lt;/strong&gt;。本應用程式不會要求您提供姓名、電子郵件、電話號碼或任何其他個人識別資訊。&lt;/p&gt;
@@ -47,11 +61,7 @@
 &lt;p&gt;若本政策有所變更，將於本頁面更新內容及日期。建議您定期查閱本頁面。&lt;/p&gt;
 &lt;hr&gt;
 &lt;h3 id="十聯絡我們"&gt;十、聯絡我們&lt;/h3&gt;
-&lt;p&gt;如您對本隱私權政策有任何疑問，歡迎透過以下方式聯絡：&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Email：&lt;a href="mailto:a5678bill@gmail.com"&gt;a5678bill@gmail.com&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;GitHub：&lt;a href="https://github.com/CI-YU"&gt;CI-YU&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;</description></item><item><title>如何在windows建立k8s Dashboard登入帳號</title><link>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</link><pubDate>Sat, 14 Dec 2024 15:26:07 +0800</pubDate><guid>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
+&lt;p&gt;如您對本隱私權政策有任何疑問，歡迎透過 App Store 的評價或回報功能與我們聯絡。&lt;/p&gt;</description></item><item><title>如何在windows建立k8s Dashboard登入帳號</title><link>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</link><pubDate>Sat, 14 Dec 2024 15:26:07 +0800</pubDate><guid>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
 &lt;p&gt;練習時發現文章是使用 mac 的操作指令,windows 用 powershell 建立登入 dashboard 認證時會遇到困難,所以寫下來幫助大家&lt;/p&gt;
 &lt;h3 id="安裝-dashboard"&gt;安裝 dashboard&lt;/h3&gt;
 &lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
