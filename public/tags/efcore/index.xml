@@ -1,29 +1,12 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>EFCore on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/efcore/</link>
-    <description>Recent content in EFCore on CI-YU Blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Fri, 06 Sep 2024 23:23:56 +0800</lastBuildDate>
-    <atom:link href="https://ci-yu.top/tags/efcore/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>dotnet ef Error</title>
-      <link>https://ci-yu.top/dotnet/efcoreerror/</link>
-      <pubDate>Fri, 06 Sep 2024 23:23:56 +0800</pubDate>
-      <guid>https://ci-yu.top/dotnet/efcoreerror/</guid>
-      <description>&lt;p&gt;當使用者使用 dotnet cli 輸入 ef core 指令時會遇到下列錯誤訊息時，肯定會很納悶為什麼會錯誤。&lt;/p&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>EFCore on CI-YU Blog</title><link>https://ci-yu.top/tags/efcore/</link><description>Recent content in EFCore on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 06 Sep 2024 23:23:56 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/efcore/index.xml" rel="self" type="application/rss+xml"/><item><title>dotnet ef Error</title><link>https://ci-yu.top/dotnet/efcoreerror/</link><pubDate>Fri, 06 Sep 2024 23:23:56 +0800</pubDate><guid>https://ci-yu.top/dotnet/efcoreerror/</guid><description>&lt;p&gt;當使用者使用 dotnet cli 輸入 ef core 指令時會遇到下列錯誤訊息時，肯定會很納悶為什麼會錯誤。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;dotnet ef 指令需先透過&lt;!-- raw HTML omitted --&gt;dotnet tool install &amp;ndash;global dotnet-ef&lt;!-- raw HTML omitted --&gt;進行全域安裝。&lt;/p&gt;&lt;/blockquote&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code&gt;Your startup project &amp;#39;MicroRabbit.Banking.Api&amp;#39; doesn&amp;#39;t reference Microsoft.EntityFrameworkCore.Design. This package is required for the Entity Framework Core Tools to work. Ensure your startup project is correct, install the package, and try again.
+&lt;p&gt;dotnet ef 指令需先透過&lt;!-- raw HTML omitted --&gt;dotnet tool install &amp;ndash;global dotnet-ef&lt;!-- raw HTML omitted --&gt;進行全域安裝。&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;pre tabindex="0"&gt;&lt;code&gt;Your startup project &amp;#39;MicroRabbit.Banking.Api&amp;#39; doesn&amp;#39;t reference Microsoft.EntityFrameworkCore.Design. This package is required for the Entity Framework Core Tools to work. Ensure your startup project is correct, install the package, and try again.
 &lt;/code&gt;&lt;/pre&gt;&lt;p&gt;找到執行專案的 csproj 檔案，將 Microsoft.EntityFrameworkCore.Design 的 PrivateAssets 註解掉，再重新執行 dotnet ef migrations add 就可以執行了&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-c#&#34; data-lang=&#34;c#&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;PackageReference Include=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;Microsoft.EntityFrameworkCore.Design&amp;#34;&lt;/span&gt; Version=&lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#34;8.0.8&amp;#34;&lt;/span&gt;&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;IncludeAssets&amp;gt;runtime; build; native; contentfiles; analyzers; buildtransitive&amp;lt;/IncludeAssets&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      &amp;lt;!-- &amp;lt;PrivateAssets&amp;gt;all&amp;lt;/PrivateAssets&amp;gt; --&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &amp;lt;/PackageReference&amp;gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id=&#34;參考&#34;&gt;參考&lt;/h2&gt;
-&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/52536588/your-startup-project-doesnt-reference-microsoft-entityframeworkcore-design&#34;&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-c#" data-lang="c#"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;PackageReference Include=&lt;span style="color:#e6db74"&gt;&amp;#34;Microsoft.EntityFrameworkCore.Design&amp;#34;&lt;/span&gt; Version=&lt;span style="color:#e6db74"&gt;&amp;#34;8.0.8&amp;#34;&lt;/span&gt;&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;IncludeAssets&amp;gt;runtime; build; native; contentfiles; analyzers; buildtransitive&amp;lt;/IncludeAssets&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;!-- &amp;lt;PrivateAssets&amp;gt;all&amp;lt;/PrivateAssets&amp;gt; --&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &amp;lt;/PackageReference&amp;gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h2 id="參考"&gt;參考&lt;/h2&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/52536588/your-startup-project-doesnt-reference-microsoft-entityframeworkcore-design"&gt;stackoverflow&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

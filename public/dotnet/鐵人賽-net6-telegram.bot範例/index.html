@@ -1,13 +1,4 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>dotnet6 Telegram.Bot範例 | CI-YU Blog</title>
-<meta name="keywords" content="2022鐵人賽">
-<meta name="description" content="目的
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>dotnet6 Telegram.Bot範例 | CI-YU Blog</title><meta name=keywords content="2022鐵人賽"><meta name=description content='目的
 使用telegram做聊天機器人
 建立新專案
 選擇ASP.NET Core Web API專案範本，並執行下一步
@@ -33,17 +24,17 @@ Telegram.Bot
 寫新的對外API
 
 
-    [HttpGet(&#34;Test&#34;)]
-    public async Task&lt;string&gt; Test() {
-      var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);
+    [HttpGet("Test")]
+    public async Task<string> Test() {
+      var botClient = new TelegramBotClient("前置作業給的機器人ID");
       //取得機器人基本資訊
       var me = await botClient.GetMeAsync();
       //發送訊息到指定頻道
       Message message = await botClient.SendTextMessageAsync(
-            chatId: &#34;前置作業給的頻道ID&#34;,
-            text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);
+            chatId: "前置作業給的頻道ID",
+            text: "Trying *all the parameters* of `sendMessage` method");
       //回傳取得的機器人基本資訊
-      return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;
+      return $"Hello, World! I am user {me.Id} and my name is {me.FirstName}.";
     }
 
 執行結果
@@ -55,261 +46,21 @@ F5執行後，依照下列步驟操作，並確認結果
 
 參考
 官方文件
-holey&rsquo;s Blog">
-<meta name="author" content="">
-<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://ci-yu.top/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://ci-yu.top/assets/favicon.png">
-<link rel="mask-icon" href="https://ci-yu.top/assets/favicon.png">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-S4X5YV8EB6');
-        }
-      </script><meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/">
-  <meta property="og:site_name" content="CI-YU Blog">
-  <meta property="og:title" content="dotnet6 Telegram.Bot範例">
-  <meta property="og:description" content="目的 使用telegram做聊天機器人
+holey&rsquo;s Blog'><meta name=author content><link rel=canonical href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/><link crossorigin=anonymous href=/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as=style><link rel=icon href=https://ci-yu.top/assets/favicon.png><link rel=icon type=image/png sizes=16x16 href=https://ci-yu.top/assets/favicon.png><link rel=icon type=image/png sizes=32x32 href=https://ci-yu.top/assets/favicon.png><link rel=apple-touch-icon href=https://ci-yu.top/assets/favicon.png><link rel=mask-icon href=https://ci-yu.top/assets/favicon.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate hreflang=en href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-S4X5YV8EB6")}</script><meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"><meta property="og:site_name" content="CI-YU Blog"><meta property="og:title" content="dotnet6 Telegram.Bot範例"><meta property="og:description" content='目的 使用telegram做聊天機器人
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
-[HttpGet(&#34;Test&#34;)]public async Task&lt;string&gt; Test() {var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &#34;前置作業給的頻道ID&#34;,text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);//回傳取得的機器人基本資訊return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="article">
-    <meta property="article:section" content="dotnet">
-    <meta property="article:published_time" content="2022-09-25T09:38:35+08:00">
-    <meta property="article:modified_time" content="2022-09-25T09:38:35+08:00">
-    <meta property="article:tag" content="2022鐵人賽">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="dotnet6 Telegram.Bot範例">
-  <meta name="twitter:description" content="目的 使用telegram做聊天機器人
+[HttpGet("Test")]public async Task<string> Test() {var botClient = new TelegramBotClient("前置作業給的機器人ID");//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: "前置作業給的頻道ID",text: "Trying *all the parameters* of `sendMessage` method");//回傳取得的機器人基本資訊return $"Hello, World! I am user {me.Id} and my name is {me.FirstName}.";} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog'><meta property="og:locale" content="en_us"><meta property="og:type" content="article"><meta property="article:section" content="dotnet"><meta property="article:published_time" content="2022-09-25T09:38:35+08:00"><meta property="article:modified_time" content="2022-09-25T09:38:35+08:00"><meta property="article:tag" content="2022鐵人賽"><meta name=twitter:card content="summary"><meta name=twitter:title content="dotnet6 Telegram.Bot範例"><meta name=twitter:description content='目的 使用telegram做聊天機器人
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
-[HttpGet(&#34;Test&#34;)]public async Task&lt;string&gt; Test() {var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &#34;前置作業給的頻道ID&#34;,text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);//回傳取得的機器人基本資訊return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Dotnets",
-      "item": "https://ci-yu.top/dotnet/"
-    }, 
-    {
-      "@type": "ListItem",
-      "position":  2 ,
-      "name": "dotnet6 Telegram.Bot範例",
-      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"
-    }
-  ]
-}
-</script>
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BlogPosting",
-  "headline": "dotnet6 Telegram.Bot範例",
-  "name": "dotnet6 Telegram.Bot範例",
-  "description": "目的 使用telegram做聊天機器人\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API\n[HttpGet(\u0026#34;Test\u0026#34;)]\rpublic async Task\u0026lt;string\u0026gt; Test() {\rvar botClient = new TelegramBotClient(\u0026#34;前置作業給的機器人ID\u0026#34;);\r//取得機器人基本資訊\rvar me = await botClient.GetMeAsync();\r//發送訊息到指定頻道\rMessage message = await botClient.SendTextMessageAsync(\rchatId: \u0026#34;前置作業給的頻道ID\u0026#34;,\rtext: \u0026#34;Trying *all the parameters* of `sendMessage` method\u0026#34;);\r//回傳取得的機器人基本資訊\rreturn $\u0026#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.\u0026#34;;\r} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey\u0026rsquo;s Blog\n",
-  "keywords": [
-    "2022鐵人賽"
-  ],
-  "articleBody": "目的 使用telegram做聊天機器人\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API\n[HttpGet(\"Test\")]\rpublic async Task Test() {\rvar botClient = new TelegramBotClient(\"前置作業給的機器人ID\");\r//取得機器人基本資訊\rvar me = await botClient.GetMeAsync();\r//發送訊息到指定頻道\rMessage message = await botClient.SendTextMessageAsync(\rchatId: \"前置作業給的頻道ID\",\rtext: \"Trying *all the parameters* of `sendMessage` method\");\r//回傳取得的機器人基本資訊\rreturn $\"Hello, World! I am user {me.Id} and my name is {me.FirstName}.\";\r} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog\n範例檔 GitHub\n",
-  "wordCount" : "72",
-  "inLanguage": "en",
-  "datePublished": "2022-09-25T09:38:35+08:00",
-  "dateModified": "2022-09-25T09:38:35+08:00",
-  "mainEntityOfPage": {
-    "@type": "WebPage",
-    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"
-  },
-  "publisher": {
-    "@type": "Organization",
-    "name": "CI-YU Blog",
-    "logo": {
-      "@type": "ImageObject",
-      "url": "https://ci-yu.top/assets/favicon.png"
-    }
-  }
-}
-</script>
-</head>
-<body id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
-                    <span>Dotnet</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/flutter/" title="Flutter">
-                    <span>Flutter</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
-                    <span>SoftSkills</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main">
-
-<article class="post-single">
-  <header class="post-header">
-    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-                <polyline points="9 18 15 12 9 6"></polyline>
-            </svg>
-            <a href="/dotnet/">Dotnets</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-    <h1 class="post-title entry-hint-parent">
-      dotnet6 Telegram.Bot範例
-    </h1>
-    <div class="post-meta">
-
-<span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span>
-
-</div>
-  </header> 
-  <div class="post-content md-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
-<p>使用telegram做聊天機器人</p>
-<h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
-<p>選擇ASP.NET Core Web API專案範本，並執行下一步
-<img alt="步驟1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png"></p>
-<h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
-<p>命名你的專案名稱，並選擇專案要存放的位置。
-<img alt="步驟2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/185736387-f949c425-98e2-4da5-9074-44680824fdcb.png"></p>
-<h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
-<p>直接進行下一步
-<img alt="步驟3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png"></p>
-<h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
-<ul>
-<li>Telegram.Bot
-<img alt="步驟4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/185736688-0a078210-5460-44c1-8238-657811f83b20.png"></li>
-</ul>
-<h3 id="編輯weatherforecastcontroller檔案">編輯WeatherForecastController檔案<a hidden class="anchor" aria-hidden="true" href="#編輯weatherforecastcontroller檔案">#</a></h3>
-<ul>
-<li>
-<p>將預設的API註解
-<img alt="步驟5-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/154978191-e218edc4-5df3-49ad-9b7b-c4ddfa9fcdb1.png"></p>
-</li>
-<li>
-<p>寫新的對外API</p>
-</li>
-</ul>
-<pre tabindex="0"><code>    [HttpGet(&#34;Test&#34;)]
+[HttpGet("Test")]public async Task<string> Test() {var botClient = new TelegramBotClient("前置作業給的機器人ID");//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: "前置作業給的頻道ID",text: "Trying *all the parameters* of `sendMessage` method");//回傳取得的機器人基本資訊return $"Hello, World! I am user {me.Id} and my name is {me.FirstName}.";} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog'><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Dotnets","item":"https://ci-yu.top/dotnet/"},{"@type":"ListItem","position":2,"name":"dotnet6 Telegram.Bot範例","item":"https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"}]}</script><script type=application/ld+json>{"@context":"https://schema.org","@type":"BlogPosting","headline":"dotnet6 Telegram.Bot範例","name":"dotnet6 Telegram.Bot範例","description":"目的 使用telegram做聊天機器人\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API\n[HttpGet(\u0026#34;Test\u0026#34;)]\rpublic async Task\u0026lt;string\u0026gt; Test() {\rvar botClient = new TelegramBotClient(\u0026#34;前置作業給的機器人ID\u0026#34;);\r//取得機器人基本資訊\rvar me = await botClient.GetMeAsync();\r//發送訊息到指定頻道\rMessage message = await botClient.SendTextMessageAsync(\rchatId: \u0026#34;前置作業給的頻道ID\u0026#34;,\rtext: \u0026#34;Trying *all the parameters* of `sendMessage` method\u0026#34;);\r//回傳取得的機器人基本資訊\rreturn $\u0026#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.\u0026#34;;\r} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey\u0026rsquo;s Blog\n","keywords":["2022鐵人賽"],"articleBody":"目的 使用telegram做聊天機器人\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API\n[HttpGet(\"Test\")]\rpublic async Task Test() {\rvar botClient = new TelegramBotClient(\"前置作業給的機器人ID\");\r//取得機器人基本資訊\rvar me = await botClient.GetMeAsync();\r//發送訊息到指定頻道\rMessage message = await botClient.SendTextMessageAsync(\rchatId: \"前置作業給的頻道ID\",\rtext: \"Trying *all the parameters* of `sendMessage` method\");\r//回傳取得的機器人基本資訊\rreturn $\"Hello, World! I am user {me.Id} and my name is {me.FirstName}.\";\r} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog\n範例檔 GitHub\n","wordCount":"72","inLanguage":"en","datePublished":"2022-09-25T09:38:35+08:00","dateModified":"2022-09-25T09:38:35+08:00","mainEntityOfPage":{"@type":"WebPage","@id":"https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"},"publisher":{"@type":"Organization","name":"CI-YU Blog","logo":{"@type":"ImageObject","url":"https://ci-yu.top/assets/favicon.png"}}}</script></head><body id=top><header class=header><nav class=header-nav><div class=logo><a href=https://ci-yu.top/ accesskey=h title="CI-YU Blog (Alt + H)">CI-YU Blog</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=https://ci-yu.top/dotnet/ title=Dotnet><span>Dotnet</span></a></li><li><a href=https://ci-yu.top/flutter/ title=Flutter><span>Flutter</span></a></li><li><a href=https://ci-yu.top/softskills/ title=SoftSkills><span>SoftSkills</span></a></li><li><a href=https://ci-yu.top/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://ci-yu.top/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://ci-yu.top/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><article class=post-single><header class=post-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg>
+<a href=/dotnet/>Dotnets</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1 class="post-title entry-hint-parent">dotnet6 Telegram.Bot範例</h1><div class=post-meta><span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span></div></header><div class="post-content md-content"><h3 id=目的>目的<a hidden class=anchor aria-hidden=true href=#目的>#</a></h3><p>使用telegram做聊天機器人</p><h3 id=建立新專案>建立新專案<a hidden class=anchor aria-hidden=true href=#建立新專案>#</a></h3><p>選擇ASP.NET Core Web API專案範本，並執行下一步
+<img alt=步驟1 loading=lazy src=https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png></p><h3 id=設定新的專案>設定新的專案<a hidden class=anchor aria-hidden=true href=#設定新的專案>#</a></h3><p>命名你的專案名稱，並選擇專案要存放的位置。
+<img alt=步驟2 loading=lazy src=https://user-images.githubusercontent.com/19286751/185736387-f949c425-98e2-4da5-9074-44680824fdcb.png></p><h3 id=其他資訊>其他資訊<a hidden class=anchor aria-hidden=true href=#其他資訊>#</a></h3><p>直接進行下一步
+<img alt=步驟3 loading=lazy src=https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png></p><h3 id=nuget加入套件>NuGet加入套件<a hidden class=anchor aria-hidden=true href=#nuget加入套件>#</a></h3><ul><li>Telegram.Bot
+<img alt=步驟4 loading=lazy src=https://user-images.githubusercontent.com/19286751/185736688-0a078210-5460-44c1-8238-657811f83b20.png></li></ul><h3 id=編輯weatherforecastcontroller檔案>編輯WeatherForecastController檔案<a hidden class=anchor aria-hidden=true href=#編輯weatherforecastcontroller檔案>#</a></h3><ul><li><p>將預設的API註解
+<img alt=步驟5-1 loading=lazy src=https://user-images.githubusercontent.com/19286751/154978191-e218edc4-5df3-49ad-9b7b-c4ddfa9fcdb1.png></p></li><li><p>寫新的對外API</p></li></ul><pre tabindex=0><code>    [HttpGet(&#34;Test&#34;)]
     public async Task&lt;string&gt; Test() {
       var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);
       //取得機器人基本資訊
@@ -321,145 +72,11 @@ holey&rsquo;s Blog">
       //回傳取得的機器人基本資訊
       return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;
     }
-</code></pre><p><img alt="步驟5-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/185796426-63bc64b0-b5bb-4d3e-b838-867457a3e420.png"></p>
-<h3 id="執行結果">執行結果<a hidden class="anchor" aria-hidden="true" href="#執行結果">#</a></h3>
-<p>F5執行後，依照下列步驟操作，並確認結果
-<img alt="步驟6-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/154981306-58a41739-acac-448d-851f-b7d3666999b1.png">
-<img alt="步驟6-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/154981450-28bd0211-3653-4b03-9ab3-877b060deb97.png">
-<img alt="步驟6-3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/185796900-cc33c1bd-778f-46fb-9d23-d7f0bc91432d.png">
+</code></pre><p><img alt=步驟5-2 loading=lazy src=https://user-images.githubusercontent.com/19286751/185796426-63bc64b0-b5bb-4d3e-b838-867457a3e420.png></p><h3 id=執行結果>執行結果<a hidden class=anchor aria-hidden=true href=#執行結果>#</a></h3><p>F5執行後，依照下列步驟操作，並確認結果
+<img alt=步驟6-1 loading=lazy src=https://user-images.githubusercontent.com/19286751/154981306-58a41739-acac-448d-851f-b7d3666999b1.png>
+<img alt=步驟6-2 loading=lazy src=https://user-images.githubusercontent.com/19286751/154981450-28bd0211-3653-4b03-9ab3-877b060deb97.png>
+<img alt=步驟6-3 loading=lazy src=https://user-images.githubusercontent.com/19286751/185796900-cc33c1bd-778f-46fb-9d23-d7f0bc91432d.png>
 就可以看到telegram的機器人有發送一個訊息
-<img alt="步驟6-4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/185796931-3b654dcf-6aa2-4a89-8a2c-332fb0d52761.png"></p>
-<h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
-<p><a href="https://telegrambots.github.io/book/1/quickstart.html">官方文件</a>
-<a href="https://blog.holey.cc/2017/08/30/csharp-send-messages-by-telegram-bot/">holey&rsquo;s Blog</a></p>
-<h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
-<p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/TelegramBotExample">GitHub</a></p>
-
-
-  </div>
-
-  <footer class="post-footer">
-    <ul class="post-tags">
-      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
-    </ul>
-  </footer>
-</article>
-    </main>
-    
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-<script>
-    document.querySelectorAll('pre > code').forEach((codeblock) => {
-        const container = codeblock.parentNode.parentNode;
-
-        const copybutton = document.createElement('button');
-        copybutton.classList.add('copy-code');
-        copybutton.innerHTML = 'copy';
-
-        function copyingDone() {
-            copybutton.innerHTML = 'copied!';
-            setTimeout(() => {
-                copybutton.innerHTML = 'copy';
-            }, 2000);
-        }
-
-        copybutton.addEventListener('click', (cb) => {
-            if ('clipboard' in navigator) {
-                navigator.clipboard.writeText(codeblock.textContent);
-                copyingDone();
-                return;
-            }
-
-            const range = document.createRange();
-            range.selectNodeContents(codeblock);
-            const selection = window.getSelection();
-            selection.removeAllRanges();
-            selection.addRange(range);
-            try {
-                document.execCommand('copy');
-                copyingDone();
-            } catch (e) { };
-            selection.removeRange(range);
-        });
-
-        if (container.classList.contains("highlight")) {
-            container.appendChild(copybutton);
-        } else if (container.parentNode.firstChild == container) {
-            
-        } else if (codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName == "TABLE") {
-            
-            codeblock.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(copybutton);
-        } else {
-            
-            codeblock.parentNode.appendChild(copybutton);
-        }
-    });
-</script>
-</body>
-
-</html>
+<img alt=步驟6-4 loading=lazy src=https://user-images.githubusercontent.com/19286751/185796931-3b654dcf-6aa2-4a89-8a2c-332fb0d52761.png></p><h3 id=參考>參考<a hidden class=anchor aria-hidden=true href=#參考>#</a></h3><p><a href=https://telegrambots.github.io/book/1/quickstart.html>官方文件</a>
+<a href=https://blog.holey.cc/2017/08/30/csharp-send-messages-by-telegram-bot/>holey&rsquo;s Blog</a></p><h3 id=範例檔>範例檔<a hidden class=anchor aria-hidden=true href=#範例檔>#</a></h3><p><a href=https://github.com/CI-YU/2022-ITHelp/tree/main/TelegramBotExample>GitHub</a></p></div><footer class=post-footer><ul class=post-tags><li><a href=https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/>2022鐵人賽</a></li></ul></footer></article></main><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script><script>document.querySelectorAll("pre > code").forEach(e=>{const n=e.parentNode.parentNode,t=document.createElement("button");t.classList.add("copy-code"),t.innerHTML="copy";function s(){t.innerHTML="copied!",setTimeout(()=>{t.innerHTML="copy"},2e3)}t.addEventListener("click",t=>{if("clipboard"in navigator){navigator.clipboard.writeText(e.textContent),s();return}const n=document.createRange();n.selectNodeContents(e);const o=window.getSelection();o.removeAllRanges(),o.addRange(n);try{document.execCommand("copy"),s()}catch{}o.removeRange(n)}),n.classList.contains("highlight")?n.appendChild(t):n.parentNode.firstChild==n||(e.parentNode.parentNode.parentNode.parentNode.parentNode.nodeName=="TABLE"?e.parentNode.parentNode.parentNode.parentNode.parentNode.appendChild(t):e.parentNode.appendChild(t))})</script></body></html>

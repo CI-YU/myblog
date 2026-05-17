@@ -1,43 +1,27 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Kubernetes on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/kubernetes/</link>
-    <description>Recent content in Kubernetes on CI-YU Blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 14 Dec 2024 15:26:07 +0800</lastBuildDate>
-    <atom:link href="https://ci-yu.top/tags/kubernetes/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>如何在windows建立k8s Dashboard登入帳號</title>
-      <link>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</link>
-      <pubDate>Sat, 14 Dec 2024 15:26:07 +0800</pubDate>
-      <guid>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</guid>
-      <description>&lt;h3 id=&#34;前言&#34;&gt;前言&lt;/h3&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Kubernetes on CI-YU Blog</title><link>https://ci-yu.top/tags/kubernetes/</link><description>Recent content in Kubernetes on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 14 Dec 2024 15:26:07 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/kubernetes/index.xml" rel="self" type="application/rss+xml"/><item><title>如何在windows建立k8s Dashboard登入帳號</title><link>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</link><pubDate>Sat, 14 Dec 2024 15:26:07 +0800</pubDate><guid>https://ci-yu.top/posts/%E5%A6%82%E4%BD%95%E5%9C%A8windows%E5%BB%BA%E7%AB%8Bk8s-dashboard%E7%99%BB%E5%85%A5%E5%B8%B3%E8%99%9F/</guid><description>&lt;h3 id="前言"&gt;前言&lt;/h3&gt;
 &lt;p&gt;練習時發現文章是使用 mac 的操作指令,windows 用 powershell 建立登入 dashboard 認證時會遇到困難,所以寫下來幫助大家&lt;/p&gt;
-&lt;h3 id=&#34;安裝-dashboard&#34;&gt;安裝 dashboard&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
+&lt;h3 id="安裝-dashboard"&gt;安裝 dashboard&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl apply -f https://raw.githubusercontent.com/kubernetes/dashboard/v2.5.0/aio/deploy/recommended.yaml
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&#34;https://github.com/kubernetes/dashboard&#34;&gt;https://github.com/kubernetes/dashboard&lt;/a&gt; 可以自行查看當下最新版本&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;檢查是否有成功安裝如果成功會顯示-kubernetes-dashboard-的名稱&#34;&gt;檢查是否有成功安裝,如果成功會顯示 kubernetes-dashboard 的名稱&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#檢查是否有成功安裝&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl get pod -n kubernetes-dashboard
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;透過代理人讓網頁可以使用-dashboard接著點擊連結-確認是否有成功開啟畫面&#34;&gt;透過代理人讓網頁可以使用 dashboard,接著點擊&lt;a href=&#34;http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/&#34;&gt;連結&lt;/a&gt; 確認是否有成功開啟畫面&lt;/h3&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl proxy
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;接下來開啟新的-powershell-開始依序輸入下列指令&#34;&gt;接下來開啟新的 powershell 開始依序輸入下列指令&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://github.com/kubernetes/dashboard"&gt;https://github.com/kubernetes/dashboard&lt;/a&gt; 可以自行查看當下最新版本&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="檢查是否有成功安裝如果成功會顯示-kubernetes-dashboard-的名稱"&gt;檢查是否有成功安裝,如果成功會顯示 kubernetes-dashboard 的名稱&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#檢查是否有成功安裝&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl get pod -n kubernetes-dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="透過代理人讓網頁可以使用-dashboard接著點擊連結-確認是否有成功開啟畫面"&gt;透過代理人讓網頁可以使用 dashboard,接著點擊&lt;a href="http://localhost:8001/api/v1/namespaces/kubernetes-dashboard/services/https:kubernetes-dashboard:/proxy/"&gt;連結&lt;/a&gt; 確認是否有成功開啟畫面&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl proxy
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="接下來開啟新的-powershell-開始依序輸入下列指令"&gt;接下來開啟新的 powershell 開始依序輸入下列指令&lt;/h3&gt;
 &lt;blockquote&gt;
-&lt;p&gt;切記 kubectl proxy 畫面不要關閉&lt;/p&gt;&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-shell&#34; data-lang=&#34;shell&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#意思是我要在 kubernetes-dashboard 建立一組帳號名稱是admin-user&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl create serviceaccount admin-user -n kubernetes-dashboard
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#查看有沒有建立成功,如果有成功會顯示 admin-user的帳號&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl -n kubernetes-dashboard get serviceaccount
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#意思是我要在 kubernetes-dashboard 建立的帳號 admin-user 新增 admin 權限&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl create clusterrolebinding admin-user --clusterrole&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;cluster-admin --serviceaccount&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;kubernetes-dashboard:admin-user
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#取得 token 增加--duration=168h 就可以生效一周,預設的期限很短不方便練習&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;kubectl create token admin-user -n kubernetes-dashboard --duration&lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt;168h
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;#最後會有一串 token,將他複製到畫面中就可以使用&lt;/span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;參考&#34;&gt;參考&lt;/h3&gt;
-&lt;p&gt;&lt;a href=&#34;https://ithelp.ithome.com.tw/articles/10287935&#34;&gt;從異世界歸來發現只剩自己不會 Kubernetes&lt;/a&gt;&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;切記 kubectl proxy 畫面不要關閉&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-shell" data-lang="shell"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#意思是我要在 kubernetes-dashboard 建立一組帳號名稱是admin-user&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl create serviceaccount admin-user -n kubernetes-dashboard
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#查看有沒有建立成功,如果有成功會顯示 admin-user的帳號&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl -n kubernetes-dashboard get serviceaccount
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#意思是我要在 kubernetes-dashboard 建立的帳號 admin-user 新增 admin 權限&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl create clusterrolebinding admin-user --clusterrole&lt;span style="color:#f92672"&gt;=&lt;/span&gt;cluster-admin --serviceaccount&lt;span style="color:#f92672"&gt;=&lt;/span&gt;kubernetes-dashboard:admin-user
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#取得 token 增加--duration=168h 就可以生效一周,預設的期限很短不方便練習&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;kubectl create token admin-user -n kubernetes-dashboard --duration&lt;span style="color:#f92672"&gt;=&lt;/span&gt;168h
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;#最後會有一串 token,將他複製到畫面中就可以使用&lt;/span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="參考"&gt;參考&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://ithelp.ithome.com.tw/articles/10287935"&gt;從異世界歸來發現只剩自己不會 Kubernetes&lt;/a&gt;&lt;/p&gt;</description></item></channel></rss>

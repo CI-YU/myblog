@@ -1,20 +1,5 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>架構設計 on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</link>
-    <description>Recent content in 架構設計 on CI-YU Blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sun, 04 Jun 2023 13:12:42 +0800</lastBuildDate>
-    <atom:link href="https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>資料庫分表</title>
-      <link>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link>
-      <pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate>
-      <guid>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid>
-      <description>&lt;h1 id=&#34;資料庫架構設計&#34;&gt;資料庫架構設計&lt;/h1&gt;
-&lt;h2 id=&#34;架構演變&#34;&gt;架構演變&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>架構設計 on CI-YU Blog</title><link>https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/</link><description>Recent content in 架構設計 on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 04 Jun 2023 13:12:42 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/%E6%9E%B6%E6%A7%8B%E8%A8%AD%E8%A8%88/index.xml" rel="self" type="application/rss+xml"/><item><title>資料庫分表</title><link>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</link><pubDate>Sun, 04 Jun 2023 13:12:42 +0800</pubDate><guid>https://ci-yu.top/posts/%E8%B3%87%E6%96%99%E5%BA%AB%E5%88%86%E8%A1%A8/</guid><description>&lt;h1 id="資料庫架構設計"&gt;資料庫架構設計&lt;/h1&gt;
+&lt;h2 id="架構演變"&gt;架構演變&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;讀寫分離
 當遇到資料庫瓶頸時，最簡單的做法是將資料庫做主從架構
@@ -23,21 +8,20 @@
 資料還是持續增長後，就到了要做垂直分庫的架構了，垂直分庫的意思可以想像成將同一個資料表內的資料欄位做整理，分成多個資料庫，也就可以將不同資料庫放在不同機器上。&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;資料庫分成使用者資料庫、訂單資料庫、商品資料庫&lt;/p&gt;&lt;/blockquote&gt;
-&lt;ol start=&#34;3&#34;&gt;
+&lt;p&gt;資料庫分成使用者資料庫、訂單資料庫、商品資料庫&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;ol start="3"&gt;
 &lt;li&gt;水平分庫
 資料量再更大量，最後的解決方案就是水平分庫，會將相同的資料表分成多個表&lt;/li&gt;
 &lt;/ol&gt;
 &lt;blockquote&gt;
-&lt;p&gt;table01、table02、table03&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h2 id=&#34;sharding中介軟體&#34;&gt;Sharding中介軟體&lt;/h2&gt;
+&lt;p&gt;table01、table02、table03&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h2 id="sharding中介軟體"&gt;Sharding中介軟體&lt;/h2&gt;
 &lt;p&gt;要做到水平分庫會建議使用已經發展成熟的&lt;strong&gt;Sharding中介軟體&lt;/strong&gt;&lt;/p&gt;
-&lt;h3 id=&#34;sharding架構&#34;&gt;Sharding架構&lt;/h3&gt;
+&lt;h3 id="sharding架構"&gt;Sharding架構&lt;/h3&gt;
 &lt;p&gt;有區分成兩種&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;Porxy架構&lt;/li&gt;
 &lt;li&gt;應用集成架構&lt;/li&gt;
-&lt;/ul&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;/ul&gt;</description></item></channel></rss>

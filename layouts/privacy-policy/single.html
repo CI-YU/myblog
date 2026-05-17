@@ -1,0 +1,7 @@
+{{- define "main" }}
+<article>
+  <h1>{{ .Title }}</h1>
+  <p class="meta">最後更新：{{ .Date.Format "2006 年 1 月 2 日" }}</p>
+  <div>{{ .Content }}</div>
+</article>
+{{- end }}

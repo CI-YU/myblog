@@ -1,437 +1,50 @@
-<!DOCTYPE html>
-<html lang="en" dir="auto" data-theme="auto">
-
-<head><meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge">
-<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="robots" content="index, follow">
-<title>Dotnets | CI-YU Blog</title>
-<meta name="keywords" content="">
-<meta name="description" content="Dotnets - CI-YU Blog">
-<meta name="author" content="">
-<link rel="canonical" href="https://ci-yu.top/dotnet/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
-<link rel="icon" href="https://ci-yu.top/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/assets/favicon.png">
-<link rel="apple-touch-icon" href="https://ci-yu.top/assets/favicon.png">
-<link rel="mask-icon" href="https://ci-yu.top/assets/favicon.png">
-<meta name="theme-color" content="#2e2e33">
-<meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" type="application/rss+xml" href="https://ci-yu.top/dotnet/index.xml" title="rss">
-<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/">
-<noscript>
-    <style>
-        #theme-toggle,
-        .top-link {
-            display: none;
-        }
-
-    </style>
-    <style>
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --theme: rgb(29, 30, 32);
-                --entry: rgb(46, 46, 51);
-                --primary: rgb(218, 218, 219);
-                --secondary: rgb(155, 156, 157);
-                --tertiary: rgb(65, 66, 68);
-                --content: rgb(196, 196, 197);
-                --code-block-bg: rgb(46, 46, 51);
-                --code-bg: rgb(55, 56, 62);
-                --border: rgb(51, 51, 51);
-                color-scheme: dark;
-            }
-
-            .list {
-                background: var(--theme);
-            }
-
-            .toc {
-                background: var(--entry);
-            }
-        }
-
-    </style>
-</noscript>
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else if (localStorage.getItem("pref-theme") === "light") {
-       document.querySelector("html").dataset.theme = 'light';
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.querySelector("html").dataset.theme = 'dark';
-    } else {
-        document.querySelector("html").dataset.theme = 'light';
-    }
-
-</script><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
-      <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
-      <script>
-        var doNotTrack = false;
-        if ( false ) {
-          var dnt = (navigator.doNotTrack || window.doNotTrack || navigator.msDoNotTrack);
-          var doNotTrack = (dnt == "1" || dnt == "yes");
-        }
-        if (!doNotTrack) {
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 'G-S4X5YV8EB6');
-        }
-      </script><meta property="og:url" content="https://ci-yu.top/dotnet/">
-  <meta property="og:site_name" content="CI-YU Blog">
-  <meta property="og:title" content="Dotnets">
-  <meta property="og:locale" content="en_us">
-  <meta property="og:type" content="website">
-
-  <meta name="twitter:card" content="summary">
-  <meta name="twitter:title" content="Dotnets">
-
-
-<script type="application/ld+json">
-{
-  "@context": "https://schema.org",
-  "@type": "BreadcrumbList",
-  "itemListElement": [
-    {
-      "@type": "ListItem",
-      "position":  1 ,
-      "name": "Dotnets",
-      "item": "https://ci-yu.top/dotnet/"
-    }
-  ]
-}
-</script>
-</head>
-<body class="list" id="top">
-    <header class="header">
-    <nav class="header-nav">
-        <div class="logo">
-            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
-            <div class="logo-switches">
-                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
-                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-                    </svg>
-                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
-                        fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                        stroke-linejoin="round">
-                        <circle cx="12" cy="12" r="5"></circle>
-                        <line x1="12" y1="1" x2="12" y2="3"></line>
-                        <line x1="12" y1="21" x2="12" y2="23"></line>
-                        <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
-                        <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
-                        <line x1="1" y1="12" x2="3" y2="12"></line>
-                        <line x1="21" y1="12" x2="23" y2="12"></line>
-                        <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
-                        <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
-                    </svg>
-                </button>
-            </div>
-        </div>
-        <ul id="menu" class="menu">
-            <li>
-                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
-                    <span class="active">Dotnet</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/flutter/" title="Flutter">
-                    <span>Flutter</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
-                    <span>SoftSkills</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
-                    <span>Search</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/tags/" title="Tags">
-                    <span>Tags</span>
-                </a>
-            </li>
-            <li>
-                <a href="https://ci-yu.top/archives/" title="Archives">
-                    <span>Archives</span>
-                </a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<main class="main"> 
-<header class="page-header"><nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
-            <a href="/">Home</a>
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
-        <polyline points="9 18 15 12 9 6"></polyline>
-    </svg>
-</nav>
-  <h1>
-    Dotnets
-  </h1>
-</header>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 swagger授權
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 在swagger內使用jwt token測試API
+<!doctype html><html lang=en dir=auto data-theme=auto><head><meta charset=utf-8><meta http-equiv=X-UA-Compatible content="IE=edge"><meta name=viewport content="width=device-width,initial-scale=1,shrink-to-fit=no"><meta name=robots content="index, follow"><title>Dotnets | CI-YU Blog</title><meta name=keywords content><meta name=description content="Dotnets - CI-YU Blog"><meta name=author content><link rel=canonical href=https://ci-yu.top/dotnet/><link crossorigin=anonymous href=/assets/css/stylesheet.cd9298b33628769aa1bc1acebbbfd7aa11ce81dfe03484d479e1907760249a1d.css integrity="sha256-zZKYszYodpqhvBrOu7/XqhHOgd/gNITUeeGQd2Akmh0=" rel="preload stylesheet" as=style><link rel=icon href=https://ci-yu.top/assets/favicon.png><link rel=icon type=image/png sizes=16x16 href=https://ci-yu.top/assets/favicon.png><link rel=icon type=image/png sizes=32x32 href=https://ci-yu.top/assets/favicon.png><link rel=apple-touch-icon href=https://ci-yu.top/assets/favicon.png><link rel=mask-icon href=https://ci-yu.top/assets/favicon.png><meta name=theme-color content="#2e2e33"><meta name=msapplication-TileColor content="#2e2e33"><link rel=alternate type=application/rss+xml href=https://ci-yu.top/dotnet/index.xml title=rss><link rel=alternate hreflang=en href=https://ci-yu.top/dotnet/><noscript><style>#theme-toggle,.top-link{display:none}</style><style>@media(prefers-color-scheme:dark){:root{--theme:rgb(29, 30, 32);--entry:rgb(46, 46, 51);--primary:rgb(218, 218, 219);--secondary:rgb(155, 156, 157);--tertiary:rgb(65, 66, 68);--content:rgb(196, 196, 197);--code-block-bg:rgb(46, 46, 51);--code-bg:rgb(55, 56, 62);--border:rgb(51, 51, 51);color-scheme:dark}.list{background:var(--theme)}.toc{background:var(--entry)}}</style></noscript><script>localStorage.getItem("pref-theme")==="dark"?document.querySelector("html").dataset.theme="dark":localStorage.getItem("pref-theme")==="light"?document.querySelector("html").dataset.theme="light":window.matchMedia("(prefers-color-scheme: dark)").matches?document.querySelector("html").dataset.theme="dark":document.querySelector("html").dataset.theme="light"</script><script defer src=https://static.cloudflareinsights.com/beacon.min.js data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script><script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script><script>var doNotTrack=!1,dnt=navigator.doNotTrack||window.doNotTrack||navigator.msDoNotTrack,doNotTrack=dnt=="1"||dnt=="yes";if(!doNotTrack){window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag("js",new Date),gtag("config","G-S4X5YV8EB6")}</script><meta property="og:url" content="https://ci-yu.top/dotnet/"><meta property="og:site_name" content="CI-YU Blog"><meta property="og:title" content="Dotnets"><meta property="og:locale" content="en_us"><meta property="og:type" content="website"><meta name=twitter:card content="summary"><meta name=twitter:title content="Dotnets"><script type=application/ld+json>{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Dotnets","item":"https://ci-yu.top/dotnet/"}]}</script></head><body class=list id=top><header class=header><nav class=header-nav><div class=logo><a href=https://ci-yu.top/ accesskey=h title="CI-YU Blog (Alt + H)">CI-YU Blog</a><div class=logo-switches><button id=theme-toggle class=theme-toggle accesskey=t title="(Alt + T)" aria-label="Toggle theme">
+<svg class="moon" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+<svg class="sun" width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/><line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/></svg></button></div></div><ul id=menu class=menu><li><a href=https://ci-yu.top/dotnet/ title=Dotnet><span class=active>Dotnet</span></a></li><li><a href=https://ci-yu.top/flutter/ title=Flutter><span>Flutter</span></a></li><li><a href=https://ci-yu.top/softskills/ title=SoftSkills><span>SoftSkills</span></a></li><li><a href=https://ci-yu.top/search/ title="Search (Alt + /)" accesskey=/><span>Search</span></a></li><li><a href=https://ci-yu.top/tags/ title=Tags><span>Tags</span></a></li><li><a href=https://ci-yu.top/archives/ title=Archives><span>Archives</span></a></li></ul></nav></header><main class=main><header class=page-header><nav class=breadcrumbs role=navigation aria-label=Breadcrumb><a href=/>Home</a>
+<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right"><polyline points="9 18 15 12 9 6"/></svg></nav><h1>Dotnets</h1></header><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 swagger授權</h2></header><div class=entry-content><p>目的 在swagger內使用jwt token測試API
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
-&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解
-builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 NuGet加入套件 透過NuGet安裝
+&lt;GenerateDocumentationFile>true&lt;/GenerateDocumentationFile> &lt;NoWarn>$(NoWarn);1591&lt;/NoWarn> 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解
+builder.Services.AddSwaggerGen(options => { // using System.Reflection; var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 NuGet加入套件 透過NuGet安裝
 JWT Microsoft.AspNetCore.Authentication.JwtBearer Microsoft.IdentityModel.Tokens System.IdentityModel.Tokens.Jwt 新增Helpers資料夾並在裡面新增JwtHelpers.cs類別檔案 jwt範例使用保哥範例來做修改，目的只是為了取得jwt token
-public class JwtHelper { private readonly JwtSettingsOptions _settings; public JwtHelper(IOptionsMonitor&lt;JwtSettingsOptions&gt; settings) { //注入appsetting的json _settings = settings.CurrentValue; } public string GenerateToken(string userName, int expireMinutes = 120) { //發行人 var issuer = _settings.Issuer; //加密的key，拿來比對jwt-token沒有 var signKey = _settings.SignKey; 建立JWT-Token var token = JwtBuilder.Create() //所採用的雜湊演算法 .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric //加密key .WithSecret(signKey) //角色 .AddClaim(&#34;roles&#34;, &#34;admin&#34;) //JWT ID .AddClaim(&#34;jti&#34;, Guid.NewGuid().ToString()) //發行人 .AddClaim(&#34;iss&#34;, issuer) //使用對象名稱 .AddClaim(&#34;sub&#34;, userName) // User.Identity.Name //過期時間 .AddClaim(&#34;exp&#34;, DateTimeOffset.UtcNow.AddMinutes(expireMinutes).ToUnixTimeSeconds()) //此時間以前是不可以使用 .AddClaim(&#34;nbf&#34;, DateTimeOffset.UtcNow.ToUnixTimeSeconds()) //發行時間 .AddClaim(&#34;iat&#34;, DateTimeOffset.UtcNow.ToUnixTimeSeconds()) //使用者全名 .AddClaim(ClaimTypes.Name, userName) //進行編碼 .Encode(); return token; } } //將appsetting轉為強行別所使用 public class JwtSettingsOptions { public string Issuer { get; set; } = &#34;&#34;; public string SignKey { get; set; } = &#34;&#34;; } 因篇幅過長，只擷取JwtHelpers.cs部分內容，記得要using下列命名空間
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-27 00:51:18 +0800 CST'>September 27, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 swagger授權" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 swagger範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
+public class JwtHelper { private readonly JwtSettingsOptions _settings; public JwtHelper(IOptionsMonitor&lt;JwtSettingsOptions> settings) { //注入appsetting的json _settings = settings.CurrentValue; } public string GenerateToken(string userName, int expireMinutes = 120) { //發行人 var issuer = _settings.Issuer; //加密的key，拿來比對jwt-token沒有 var signKey = _settings.SignKey; 建立JWT-Token var token = JwtBuilder.Create() //所採用的雜湊演算法 .WithAlgorithm(new HMACSHA256Algorithm()) // symmetric //加密key .WithSecret(signKey) //角色 .AddClaim("roles", "admin") //JWT ID .AddClaim("jti", Guid.NewGuid().ToString()) //發行人 .AddClaim("iss", issuer) //使用對象名稱 .AddClaim("sub", userName) // User.Identity.Name //過期時間 .AddClaim("exp", DateTimeOffset.UtcNow.AddMinutes(expireMinutes).ToUnixTimeSeconds()) //此時間以前是不可以使用 .AddClaim("nbf", DateTimeOffset.UtcNow.ToUnixTimeSeconds()) //發行時間 .AddClaim("iat", DateTimeOffset.UtcNow.ToUnixTimeSeconds()) //使用者全名 .AddClaim(ClaimTypes.Name, userName) //進行編碼 .Encode(); return token; } } //將appsetting轉為強行別所使用 public class JwtSettingsOptions { public string Issuer { get; set; } = ""; public string SignKey { get; set; } = ""; } 因篇幅過長，只擷取JwtHelpers.cs部分內容，記得要using下列命名空間
+...</p></div><footer class=entry-footer><span title='2022-09-27 00:51:18 +0800 CST'>September 27, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 swagger授權" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E6%8E%88%E6%AC%8A/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 swagger範例</h2></header><div class=entry-content><p>目的 每次要使用swaggerUI時候範例總是各式各樣，千奇百怪，下列範例是使用官方預設的Swashbuckle套件來教學。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 選擇.net6版本，支援OpenAPI支援一定要勾選，此選項.net5以後才會有，.net core 3.1並沒有此選項，需要從NuGet安裝，並點建立 專案基本設定 右邊紅框處專案檔點兩下，會開啟專案的xml檔案，額外加入兩行xml資料，目的是要透過編譯器產生文件檔案
-&lt;GenerateDocumentationFile&gt;true&lt;/GenerateDocumentationFile&gt; &lt;NoWarn&gt;$(NoWarn);1591&lt;/NoWarn&gt; 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
-builder.Services.AddSwaggerGen(options =&gt; { // using System.Reflection; var xmlFilename = $&#34;{Assembly.GetExecutingAssembly().GetName().Name}.xml&#34;; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 編輯WeatherForecastController檔案 這裡有個重點，如果要增加下一個action時候，預設的範例檔案，需要調整route的設定，才能讀取到，不然會跳錯誤訊息
+&lt;GenerateDocumentationFile>true&lt;/GenerateDocumentationFile> &lt;NoWarn>$(NoWarn);1591&lt;/NoWarn> 加入前 加入後 編輯Program.cs檔案 修改program檔案內容，調整AddSwaggerGen的內容，目的是為了可以讀取我們所寫的註解 program檔案與.net5以前不一樣，保哥的部落格有比較詳細的說明
+builder.Services.AddSwaggerGen(options => { // using System.Reflection; var xmlFilename = $"{Assembly.GetExecutingAssembly().GetName().Name}.xml"; options.IncludeXmlComments(Path.Combine(AppContext.BaseDirectory, xmlFilename)); }); 加入前 加入後 編輯WeatherForecastController檔案 這裡有個重點，如果要增加下一個action時候，預設的範例檔案，需要調整route的設定，才能讀取到，不然會跳錯誤訊息
 加入前 加入後 加入第二個方法 執行結果 就可以成功讀取到兩個方法了 參考 微軟官方
-範例檔 GitHub
-</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-26 00:10:22 +0800 CST'>September 26, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 swagger範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 Telegram.Bot範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 使用telegram做聊天機器人
+範例檔 GitHub</p></div><footer class=entry-footer><span title='2022-09-26 00:10:22 +0800 CST'>September 26, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 swagger範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-swagger%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 Telegram.Bot範例</h2></header><div class=entry-content><p>目的 使用telegram做聊天機器人
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Telegram.Bot 編輯WeatherForecastController檔案 將預設的API註解 寫新的對外API
-[HttpGet(&#34;Test&#34;)]public async Task&lt;string&gt; Test() {var botClient = new TelegramBotClient(&#34;前置作業給的機器人ID&#34;);//取得機器人基本資訊var me = await botClient.GetMeAsync();//發送訊息到指定頻道Message message = await botClient.SendTextMessageAsync(chatId: &#34;前置作業給的頻道ID&#34;,text: &#34;Trying *all the parameters* of `sendMessage` method&#34;);//回傳取得的機器人基本資訊return $&#34;Hello, World! I am user {me.Id} and my name is {me.FirstName}.&#34;;} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 Telegram.Bot範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 Telegram.Bot前置作業
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 在使用telegram機器人時，需要先在telegram新增要使用的機器人。
+[HttpGet("Test")]
+public async Task&lt;string> Test() {
+var botClient = new TelegramBotClient("前置作業給的機器人ID");
+//取得機器人基本資訊
+var me = await botClient.GetMeAsync();
+//發送訊息到指定頻道
+Message message = await botClient.SendTextMessageAsync(
+chatId: "前置作業給的頻道ID",
+text: "Trying *all the parameters* of `sendMessage` method");
+//回傳取得的機器人基本資訊
+return $"Hello, World! I am user {me.Id} and my name is {me.FirstName}.";
+} 執行結果 F5執行後，依照下列步驟操作，並確認結果 就可以看到telegram的機器人有發送一個訊息 參考 官方文件 holey’s Blog
+...</p></div><footer class=entry-footer><span title='2022-09-25 09:38:35 +0800 CST'>September 25, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 Telegram.Bot範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 Telegram.Bot前置作業</h2></header><div class=entry-content><p>目的 在使用telegram機器人時，需要先在telegram新增要使用的機器人。
 搜尋 搜尋@botfather 開始 點擊start 輸入/newbot指令 輸入/newbot指令後，對話欄會請你輸入你的名稱。 設定聊天機器人的顯示名稱 這邊所輸入的名稱，並沒有限制要Bot或_bot當結尾。 設定機器人帳號 其他人可以透過查詢帳號找到我們所建立的機器人。
 當要輸入機器人帳號時，會限制要Bot或_bot結尾，需要特別注意。
-取得token 如馬賽克處，是使用機器人時所要提供給api的token。 參考 官方文件
-</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-24 09:38:35 +0800 CST'>September 24, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 Telegram.Bot前置作業" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 Bogus範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 快速且簡單的製造假資料
+取得token 如馬賽克處，是使用機器人時所要提供給api的token。 參考 官方文件</p></div><footer class=entry-footer><span title='2022-09-24 09:38:35 +0800 CST'>September 24, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 Telegram.Bot前置作業" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-telegram.bot%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 Bogus範例</h2></header><div class=entry-content><p>目的 快速且簡單的製造假資料
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝
-Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet(&#34;Test&#34;)] public List&lt;User&gt; Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { &#34;apple&#34;, &#34;banana&#34;, &#34;orange&#34;, &#34;strawberry&#34;, &#34;kiwi&#34; }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order&gt;() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o =&gt; o.OrderId, f =&gt; orderIds&#43;&#43;) //從自訂陣列隨機取值 .RuleFor(o =&gt; o.Item, f =&gt; f.PickRandom(fruit)) //從1-10隨機取值 .RuleFor(o =&gt; o.Quantity, f =&gt; f.Random.Number(1, 10)) //從1-100隨機取值，並有20%機會為NULL .RuleFor(o =&gt; o.LotNumber, f =&gt; f.Random.Int(0, 100).OrNull(f, .2f)); //預設使用者編號為0 var userIds = 0; var testUsers = new Faker&lt;User&gt;() //使用需要初始化的類別 .CustomInstantiator(f =&gt; new User(userIds&#43;&#43;, f.Random.Replace(&#34;(##)###-####&#34;))) //從列舉中隨機取值(Gender為Bogus內建) .RuleFor(u =&gt; u.Gender, f =&gt; f.PickRandom&lt;Gender&gt;()) //使用內建的生成器 .RuleFor(u =&gt; u.FirstName, (f, u) =&gt; f.Name.FirstName(u.Gender)) .RuleFor(u =&gt; u.LastName, (f, u) =&gt; f.Name.LastName(u.Gender)) .RuleFor(u =&gt; u.Avatar, f =&gt; f.Internet.Avatar()) .RuleFor(u =&gt; u.UserName, (f, u) =&gt; f.Internet.UserName(u.FirstName, u.LastName)) .RuleFor(u =&gt; u.Email, (f, u) =&gt; f.Internet.Email(u.FirstName, u.LastName)) .RuleFor(u =&gt; u.SomethingUnique, f =&gt; $&#34;Value {f.UniqueIndex}&#34;) //可使用非Bogus的方法，建立一個新的GUID .RuleFor(u =&gt; u.CartId, f =&gt; Guid.NewGuid()) //可使用複合屬性 .RuleFor(u =&gt; u.FullName, (f, u) =&gt; $&#34;{u.FirstName} {u.LastName}&#34;) //複雜的集合也可以使用，並重複產生5個訂單的陣列 .RuleFor(u =&gt; u.Orders, f =&gt; testOrders.Generate(5).ToList()) //最後結束後可以執行特定動作 .FinishWith((f, u) =&gt; { Console.WriteLine(&#34;User Created! Id={0}&#34;, u.Id); }); //產生3個使用者 var user = testUsers.Generate(3); return user; } public class User { public User(int v1, string v2) { Id = v1; SSN = v2; } public int Id { get; set; } public Gender Gender { get; set; } public string SSN { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Avatar { get; set; } public string UserName { get; set; } public string Email { get; set; } public string SomethingUnique { get; set; } public Guid CartId { get; set; } public string FullName { get; set; } public List&lt;Order&gt; Orders { get; set; } } public class Order { public int OrderId { get; set; } public string Item { get; set; } public int Quantity { get; set; } public int? LotNumber { get; set; } } ...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-23 09:00:13 +0800 CST'>September 23, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 Bogus範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 Autofac範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 批次註冊
+Bogus 編輯WeatherForecastController檔案 將預設的API註解 //除了using Bogus外，需注意需要using static Bogus.DataSets.Name，為了取得Gender using static Bogus.DataSets.Name; [HttpGet("Test")] public List&lt;User> Test() { //可限制隨機值為定值 //Randomizer.Seed = new Random(8675307); //建立一個假的貨品陣列 var fruit = new[] { "apple", "banana", "orange", "strawberry", "kiwi" }; //預設訂單編號為0 var orderIds = 0; //預設取得英文資料 var testOrders = new Faker&lt;Order>() //強制所有屬性都要有規則存在，預設為false .StrictMode(true) //OrderId is deterministic .RuleFor(o => o.OrderId, f => orderIds++) //從自訂陣列隨機取值 .RuleFor(o => o.Item, f => f.PickRandom(fruit)) //從1-10隨機取值 .RuleFor(o => o.Quantity, f => f.Random.Number(1, 10)) //從1-100隨機取值，並有20%機會為NULL .RuleFor(o => o.LotNumber, f => f.Random.Int(0, 100).OrNull(f, .2f)); //預設使用者編號為0 var userIds = 0; var testUsers = new Faker&lt;User>() //使用需要初始化的類別 .CustomInstantiator(f => new User(userIds++, f.Random.Replace("(##)###-####"))) //從列舉中隨機取值(Gender為Bogus內建) .RuleFor(u => u.Gender, f => f.PickRandom&lt;Gender>()) //使用內建的生成器 .RuleFor(u => u.FirstName, (f, u) => f.Name.FirstName(u.Gender)) .RuleFor(u => u.LastName, (f, u) => f.Name.LastName(u.Gender)) .RuleFor(u => u.Avatar, f => f.Internet.Avatar()) .RuleFor(u => u.UserName, (f, u) => f.Internet.UserName(u.FirstName, u.LastName)) .RuleFor(u => u.Email, (f, u) => f.Internet.Email(u.FirstName, u.LastName)) .RuleFor(u => u.SomethingUnique, f => $"Value {f.UniqueIndex}") //可使用非Bogus的方法，建立一個新的GUID .RuleFor(u => u.CartId, f => Guid.NewGuid()) //可使用複合屬性 .RuleFor(u => u.FullName, (f, u) => $"{u.FirstName} {u.LastName}") //複雜的集合也可以使用，並重複產生5個訂單的陣列 .RuleFor(u => u.Orders, f => testOrders.Generate(5).ToList()) //最後結束後可以執行特定動作 .FinishWith((f, u) => { Console.WriteLine("User Created! Id={0}", u.Id); }); //產生3個使用者 var user = testUsers.Generate(3); return user; } public class User { public User(int v1, string v2) { Id = v1; SSN = v2; } public int Id { get; set; } public Gender Gender { get; set; } public string SSN { get; set; } public string FirstName { get; set; } public string LastName { get; set; } public string Avatar { get; set; } public string UserName { get; set; } public string Email { get; set; } public string SomethingUnique { get; set; } public Guid CartId { get; set; } public string FullName { get; set; } public List&lt;Order> Orders { get; set; } } public class Order { public int OrderId { get; set; } public string Item { get; set; } public int Quantity { get; set; } public int? LotNumber { get; set; } } ...</p></div><footer class=entry-footer><span title='2022-09-23 09:00:13 +0800 CST'>September 23, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 Bogus範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-bogus%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 Autofac範例</h2></header><div class=entry-content><p>目的 批次註冊
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 新增類別檔 新增之後需要來描述要批次注入的規則
-加入前 加入後 並且繼承autofac的類別Module 編輯Program.cs檔案 //初始化並建立一個實例 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); //註冊autofac這個容器 builder.Host.ConfigureContainer&lt;ContainerBuilder&gt;(builder =&gt; builder.RegisterModule(new AutofacModuleRegister())); 有繼承autofac的類別Module 新增資料夾 新增下圖兩個資料夾 新增類別檔 此次的目的是要可以進行批次注入，所以檔名結尾都需要包含Service，做批次注入時可以辨識
-在Services資料夾底下加入類別檔案，名稱為TestService 在Interface資料夾底下加入介面檔案，名稱為ITest ITest.cs寫入程式 namespace AutoFacExample.Services.Interface { public interface ITest { public string GetName(string id); } } TestService.cs寫入程式 繼承介面後寫上與介面相同的方法 using AutoFacExample.Services.Interface; namespace AutoFacExample.Services { public class TestService : ITest { public string GetName(string id) { return $&#34;{id}:Bill&#34;; } } } ...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-22 00:48:20 +0800 CST'>September 22, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 Autofac範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-autofac%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 BenchmarkDotNet範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 快速測試不同寫法的效能差異。
+加入前 加入後 並且繼承autofac的類別Module 編輯Program.cs檔案 //初始化並建立一個實例 builder.Host.UseServiceProviderFactory(new AutofacServiceProviderFactory()); //註冊autofac這個容器 builder.Host.ConfigureContainer&lt;ContainerBuilder>(builder => builder.RegisterModule(new AutofacModuleRegister())); 有繼承autofac的類別Module 新增資料夾 新增下圖兩個資料夾 新增類別檔 此次的目的是要可以進行批次注入，所以檔名結尾都需要包含Service，做批次注入時可以辨識
+在Services資料夾底下加入類別檔案，名稱為TestService 在Interface資料夾底下加入介面檔案，名稱為ITest ITest.cs寫入程式 namespace AutoFacExample.Services.Interface { public interface ITest { public string GetName(string id); } } TestService.cs寫入程式 繼承介面後寫上與介面相同的方法 using AutoFacExample.Services.Interface; namespace AutoFacExample.Services { public class TestService : ITest { public string GetName(string id) { return $"{id}:Bill"; } } } ...</p></div><footer class=entry-footer><span title='2022-09-22 00:48:20 +0800 CST'>September 22, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 Autofac範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-autofac%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 BenchmarkDotNet範例</h2></header><div class=entry-content><p>目的 快速測試不同寫法的效能差異。
 建立新專案 選擇主控台應用程式專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步
 NuGet加入套件 下載BenchmarkDotNet套件與automapper套件，automapper為這次要測試效能的套件 Program寫入程式 此次要測試的項目為三種類別轉換的效能差異
-using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Running; //指定要測試的class var summary = BenchmarkRunner.Run&lt;BenchmarkSampleAuto&gt;(); //加入記憶體使用量測試 [MemoryDiagnoser] public class BenchmarkSampleAuto { private readonly List&lt;DbModel&gt; _data = new List&lt;DbModel&gt;(); private readonly IMapper _mapper; public BenchmarkSampleAuto() { //automapper設定 var config = new MapperConfiguration(cfg =&gt; { cfg.CreateMap&lt;DbModel, ViewModel&gt;(); }); _mapper = new Mapper(config); //準備一份List資料 PrepareTestObjects(); } private void PrepareTestObjects() { _data.Add(new DbModel() { Id = 1, Name = &#34;Bill&#34;, Age = 18, CreatedDate = DateTime.Now }); _data.Add(new DbModel() { Id = 1, Name = &#34;CI-YU&#34;, Age = 20, CreatedDate = DateTime.Now }); _data.Add(new DbModel() { Id = 1, Name = &#34;Bill Huang&#34;, Age = 22, CreatedDate = DateTime.Now }); } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel&gt; first() { return _mapper.Map&lt;List&lt;ViewModel&gt;&gt;(_data); } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel&gt; second() { var listModel = new List&lt;ViewModel&gt;(); foreach (var c in _data) { listModel.Add(new ViewModel() { Id = c.Id, Name = c.Name, Age = c.Age }); } return listModel; } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel&gt; third() { var listModel = new List&lt;ViewModel&gt;(); listModel = _data.Select(c =&gt; new ViewModel() { Id = c.Id, Name = c.Name, Age = c.Age }).ToList(); return listModel; } } public class DbModel { public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } } public class ViewModel { public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } } 執行測試 執行測試前需要將組態改為Release才可以進行測試
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-21 00:58:10 +0800 CST'>September 21, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 BenchmarkDotNet範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 Automapper範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
+using AutoMapper; using BenchmarkDotNet.Attributes; using BenchmarkDotNet.Running; //指定要測試的class var summary = BenchmarkRunner.Run&lt;BenchmarkSampleAuto>(); //加入記憶體使用量測試 [MemoryDiagnoser] public class BenchmarkSampleAuto { private readonly List&lt;DbModel> _data = new List&lt;DbModel>(); private readonly IMapper _mapper; public BenchmarkSampleAuto() { //automapper設定 var config = new MapperConfiguration(cfg => { cfg.CreateMap&lt;DbModel, ViewModel>(); }); _mapper = new Mapper(config); //準備一份List資料 PrepareTestObjects(); } private void PrepareTestObjects() { _data.Add(new DbModel() { Id = 1, Name = "Bill", Age = 18, CreatedDate = DateTime.Now }); _data.Add(new DbModel() { Id = 1, Name = "CI-YU", Age = 20, CreatedDate = DateTime.Now }); _data.Add(new DbModel() { Id = 1, Name = "Bill Huang", Age = 22, CreatedDate = DateTime.Now }); } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel> first() { return _mapper.Map&lt;List&lt;ViewModel>>(_data); } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel> second() { var listModel = new List&lt;ViewModel>(); foreach (var c in _data) { listModel.Add(new ViewModel() { Id = c.Id, Name = c.Name, Age = c.Age }); } return listModel; } //待測方法需要加上Benchmark屬性 [Benchmark] public List&lt;ViewModel> third() { var listModel = new List&lt;ViewModel>(); listModel = _data.Select(c => new ViewModel() { Id = c.Id, Name = c.Name, Age = c.Age }).ToList(); return listModel; } } public class DbModel { public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } } public class ViewModel { public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } } 執行測試 執行測試前需要將組態改為Release才可以進行測試
+...</p></div><footer class=entry-footer><span title='2022-09-21 00:58:10 +0800 CST'>September 21, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 BenchmarkDotNet範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-benchmarkdotnet%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 Automapper範例</h2></header><div class=entry-content><p>目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
 ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。
-...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-20 00:39:29 +0800 CST'>September 20, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 Automapper範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 MailKit範例
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 使用gmail寄信
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet(&#34;SendEmail&#34;)] public async Task&lt;IActionResult&gt; Get() { #region OAuth驗證 const string GMailAccount = &#34;前置作業文章打上去的測試帳號&#34;; var clientSecrets = new ClientSecrets { ClientId = &#34;前置作業文章最後給的用戶ID&#34;, ClientSecret = &#34;前置作業文章最後給的用戶端密碼&#34; }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore(&#34;CredentialCacheFolder&#34;, false), Scopes = new[] { &#34;https://mail.google.com/&#34; }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.AuthorizeAsync(GMailAccount, CancellationToken.None); if (credential.Token.IsExpired(SystemClock.Default)) await credential.RefreshTokenAsync(CancellationToken.None); var oauth2 = new SaslMechanismOAuth2(credential.UserId, credential.Token.AccessToken); #endregion #region 信件內容 var message = new MimeMessage(); //寄件者名稱及信箱(信箱是測試帳號) message.From.Add(new MailboxAddress(&#34;bill&#34;, &#34;xxxx@gmail.com&#34;)); //收件者名稱，收件者信箱 message.To.Add(new MailboxAddress(&#34;billhuang&#34;, &#34;xxxx@gmail.com&#34;)); //信件標題 message.Subject = &#34;How you doing&#39;?&#34;; //信件內容 message.Body = new TextPart(&#34;plain&#34;) { Text = @&#34;This is test&#34; }; using (var client = new SmtpClient()) { await client.ConnectAsync(&#34;smtp.gmail.com&#34;, 587); await client.AuthenticateAsync(oauth2); await client.SendAsync(message); await client.DisconnectAsync(true); } #endregion return Ok(&#34;OK&#34;); } ...</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-19 15:38:35 +0800 CST'>September 19, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 MailKit範例" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/"></a>
-</article>
-
-<article class="post-entry"> 
-  <header class="entry-header">
-    <h2 class="entry-hint-parent">dotnet6 MailKit前置作業
-    </h2>
-  </header>
-  <div class="entry-content">
-    <p>目的 前往google帳號設定OAuth，才能使用google帳號寄信
+...</p></div><footer class=entry-footer><span title='2022-09-20 00:39:29 +0800 CST'>September 20, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 Automapper範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 MailKit範例</h2></header><div class=entry-content><p>目的 使用gmail寄信
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Google.Apis.Auth(使用google信箱時需要做oauth驗證才可以使用) MailKit(寄信) 編輯WeatherForecastController檔案 將預設的API註解 [HttpGet("SendEmail")] public async Task&lt;IActionResult> Get() { #region OAuth驗證 const string GMailAccount = "前置作業文章打上去的測試帳號"; var clientSecrets = new ClientSecrets { ClientId = "前置作業文章最後給的用戶ID", ClientSecret = "前置作業文章最後給的用戶端密碼" }; var codeFlow = new GoogleAuthorizationCodeFlow(new GoogleAuthorizationCodeFlow.Initializer { DataStore = new FileDataStore("CredentialCacheFolder", false), Scopes = new[] { "https://mail.google.com/" }, ClientSecrets = clientSecrets }); var codeReceiver = new LocalServerCodeReceiver(); var authCode = new AuthorizationCodeInstalledApp(codeFlow, codeReceiver); var credential = await authCode.AuthorizeAsync(GMailAccount, CancellationToken.None); if (credential.Token.IsExpired(SystemClock.Default)) await credential.RefreshTokenAsync(CancellationToken.None); var oauth2 = new SaslMechanismOAuth2(credential.UserId, credential.Token.AccessToken); #endregion #region 信件內容 var message = new MimeMessage(); //寄件者名稱及信箱(信箱是測試帳號) message.From.Add(new MailboxAddress("bill", "xxxx@gmail.com")); //收件者名稱，收件者信箱 message.To.Add(new MailboxAddress("billhuang", "xxxx@gmail.com")); //信件標題 message.Subject = "How you doing'?"; //信件內容 message.Body = new TextPart("plain") { Text = @"This is test" }; using (var client = new SmtpClient()) { await client.ConnectAsync("smtp.gmail.com", 587); await client.AuthenticateAsync(oauth2); await client.SendAsync(message); await client.DisconnectAsync(true); } #endregion return Ok("OK"); } ...</p></div><footer class=entry-footer><span title='2022-09-19 15:38:35 +0800 CST'>September 19, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 MailKit範例" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E7%AF%84%E4%BE%8B/></a></article><article class=post-entry><header class=entry-header><h2 class=entry-hint-parent>dotnet6 MailKit前置作業</h2></header><div class=entry-content><p>目的 前往google帳號設定OAuth，才能使用google帳號寄信
 點擊連結 到 google帳號管理
-新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit
-</p>
-  </div>
-  <footer class="entry-footer">
-
-<span title='2022-09-18 15:39:15 +0800 CST'>September 18, 2022</span></footer>
-  <a class="entry-link" aria-label="post link to dotnet6 MailKit前置作業" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/"></a>
-</article>
-<footer class="page-footer">
-  <nav class="pagination">
-    <a class="prev" href="https://ci-yu.top/dotnet/page/2/">
-      «&nbsp;Prev&nbsp;
-    </a>
-    <a class="next" href="https://ci-yu.top/dotnet/page/4/">Next&nbsp;&nbsp;»
-    </a>
-  </nav>
-</footer>
-    </main>
-    
-<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
-        <polyline points="17 11 12 6 7 11"></polyline>
-        <polyline points="17 18 12 13 7 18"></polyline>
-    </svg>
-</a>
-
-<script>
-    let menu = document.getElementById('menu');
-    if (menu) {
-        
-        const scrollPosition = localStorage.getItem("menu-scroll-position");
-        if (scrollPosition) {
-            menu.scrollLeft = parseInt(scrollPosition, 10);
-        }
-        
-        menu.onscroll = function () {
-            localStorage.setItem("menu-scroll-position", menu.scrollLeft);
-        }
-    }
-
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            var id = this.getAttribute("href").substr(1);
-            if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView({
-                    behavior: "smooth"
-                });
-            } else {
-                document.querySelector(`[id='${decodeURIComponent(id)}']`).scrollIntoView();
-            }
-            if (id === "top") {
-                history.replaceState(null, null, " ");
-            } else {
-                history.pushState(null, null, `#${id}`);
-            }
-        });
-    });
-
-</script>
-<script>
-    var toplink = document.getElementById("top-link");
-    window.onscroll = function () {
-        const scrollThreshold = window.innerHeight;
-        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
-            toplink.classList.remove("hidden");
-        } else {
-            toplink.classList.add("hidden");
-        }
-    };
-
-</script>
-<script>
-    document.getElementById("theme-toggle").addEventListener("click", () => {
-        const html = document.querySelector("html");
-        if (html.dataset.theme === "dark") {
-            html.dataset.theme = 'light';
-            localStorage.setItem("pref-theme", 'light');
-        } else {
-            html.dataset.theme = 'dark';
-            localStorage.setItem("pref-theme", 'dark');
-        }
-    })
-
-</script>
-</body>
-
-</html>
+新增專案 點擊如圖按鈕建立新專案 命名你的專案名稱，並點擊建立 設定OAuth 跟著紅框處點擊到OAuth同意畫面 點擊剛剛建立的專案 選擇外部，並點擊建立 編輯應用程式註冊申請畫面 將所有必填欄位填完 第二步直接下一步 新增使用者，要建立你要使用的帳號 摘要直接下一步 憑證 點建立憑證 點擊OAuth用戶端ID 應用程式類型選擇電腦版應用程式，填入名稱後點擊建立 最後會取得用戶端ID與用戶端密碼 結論 最後就可以進行MailKit的使用了，下一篇就可以使用ＭailKit</p></div><footer class=entry-footer><span title='2022-09-18 15:39:15 +0800 CST'>September 18, 2022</span></footer><a class=entry-link aria-label="post link to dotnet6 MailKit前置作業" href=https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-mailkit%E5%89%8D%E7%BD%AE%E4%BD%9C%E6%A5%AD/></a></article><footer class=page-footer><nav class=pagination><a class=prev href=https://ci-yu.top/dotnet/page/2/>«&nbsp;Prev&nbsp;
+</a><a class=next href=https://ci-yu.top/dotnet/page/4/>Next&nbsp;&nbsp;»</a></nav></footer></main><a href=#top id=top-link class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey=g><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up"><polyline points="17 11 12 6 7 11"/><polyline points="17 18 12 13 7 18"/></svg>
+</a><script>let menu=document.getElementById("menu");if(menu){const e=localStorage.getItem("menu-scroll-position");e&&(menu.scrollLeft=parseInt(e,10)),menu.onscroll=function(){localStorage.setItem("menu-scroll-position",menu.scrollLeft)}}document.querySelectorAll('a[href^="#"]').forEach(e=>{e.addEventListener("click",function(e){e.preventDefault();var t=this.getAttribute("href").substr(1);window.matchMedia("(prefers-reduced-motion: reduce)").matches?document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView():document.querySelector(`[id='${decodeURIComponent(t)}']`).scrollIntoView({behavior:"smooth"}),t==="top"?history.replaceState(null,null," "):history.pushState(null,null,`#${t}`)})})</script><script>var toplink=document.getElementById("top-link");window.onscroll=function(){const e=window.innerHeight;document.body.scrollTop>e||document.documentElement.scrollTop>e?toplink.classList.remove("hidden"):toplink.classList.add("hidden")}</script><script>document.getElementById("theme-toggle").addEventListener("click",()=>{const e=document.querySelector("html");e.dataset.theme==="dark"?(e.dataset.theme="light",localStorage.setItem("pref-theme","light")):(e.dataset.theme="dark",localStorage.setItem("pref-theme","dark"))})</script></body></html>

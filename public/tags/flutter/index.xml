@@ -1,45 +1,16 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/">
-  <channel>
-    <title>Flutter on CI-YU Blog</title>
-    <link>https://ci-yu.top/tags/flutter/</link>
-    <description>Recent content in Flutter on CI-YU Blog</description>
-    <generator>Hugo</generator>
-    <language>en-us</language>
-    <lastBuildDate>Sat, 27 Jan 2024 01:40:26 +0800</lastBuildDate>
-    <atom:link href="https://ci-yu.top/tags/flutter/index.xml" rel="self" type="application/rss+xml" />
-    <item>
-      <title>安裝到手機</title>
-      <link>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</link>
-      <pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate>
-      <guid>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</guid>
-      <description>&lt;h2 id=&#34;如何直接安裝到ios裝置&#34;&gt;如何直接安裝到ios裝置&lt;/h2&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:content="http://purl.org/rss/1.0/modules/content/"><channel><title>Flutter on CI-YU Blog</title><link>https://ci-yu.top/tags/flutter/</link><description>Recent content in Flutter on CI-YU Blog</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sat, 27 Jan 2024 01:40:26 +0800</lastBuildDate><atom:link href="https://ci-yu.top/tags/flutter/index.xml" rel="self" type="application/rss+xml"/><item><title>安裝到手機</title><link>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</link><pubDate>Sat, 27 Jan 2024 01:40:26 +0800</pubDate><guid>https://ci-yu.top/flutter/%E5%AE%89%E8%A3%9D%E5%88%B0%E6%89%8B%E6%A9%9F/</guid><description>&lt;h2 id="如何直接安裝到ios裝置"&gt;如何直接安裝到ios裝置&lt;/h2&gt;
 &lt;ol&gt;
 &lt;li&gt;flutter build ios&lt;/li&gt;
 &lt;li&gt;flutter install&lt;/li&gt;
 &lt;li&gt;選擇要安裝到哪個裝置&lt;/li&gt;
-&lt;/ol&gt;</description>
-    </item>
-    <item>
-      <title>Three Tree</title>
-      <link>https://ci-yu.top/flutter/three-tree/</link>
-      <pubDate>Thu, 20 Jul 2023 23:22:34 +0800</pubDate>
-      <guid>https://ci-yu.top/flutter/three-tree/</guid>
-      <description>&lt;h1 id=&#34;三棵樹&#34;&gt;三棵樹&lt;/h1&gt;
+&lt;/ol&gt;</description></item><item><title>Three Tree</title><link>https://ci-yu.top/flutter/three-tree/</link><pubDate>Thu, 20 Jul 2023 23:22:34 +0800</pubDate><guid>https://ci-yu.top/flutter/three-tree/</guid><description>&lt;h1 id="三棵樹"&gt;三棵樹&lt;/h1&gt;
 &lt;p&gt;flutter共有三個核心&lt;/p&gt;
-&lt;h2 id=&#34;widget-tree&#34;&gt;widget tree&lt;/h2&gt;
+&lt;h2 id="widget-tree"&gt;widget tree&lt;/h2&gt;
 &lt;p&gt;在flutter很常看到一層包一層，MaterialApp、Scaffold這類組件都是widget tree，我們通常只會對到這層。&lt;/p&gt;
-&lt;h2 id=&#34;element-tree&#34;&gt;element tree&lt;/h2&gt;
+&lt;h2 id="element-tree"&gt;element tree&lt;/h2&gt;
 &lt;p&gt;會將資料儲存在記憶體，並決定要不要重新繪製UI&lt;/p&gt;
-&lt;h2 id=&#34;render-tree&#34;&gt;render tree&lt;/h2&gt;
-&lt;p&gt;是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>如何固定設備方向</title>
-      <link>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</link>
-      <pubDate>Sun, 04 Jun 2023 20:28:02 +0800</pubDate>
-      <guid>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</guid>
-      <description>&lt;h1 id=&#34;如何鎖定裝置的方向&#34;&gt;如何鎖定裝置的方向&lt;/h1&gt;
+&lt;h2 id="render-tree"&gt;render tree&lt;/h2&gt;
+&lt;p&gt;是由element tree控制，當element tree決定有必要修改，就會透過render tree進行UI修改&lt;/p&gt;</description></item><item><title>如何固定設備方向</title><link>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</link><pubDate>Sun, 04 Jun 2023 20:28:02 +0800</pubDate><guid>https://ci-yu.top/flutter/%E5%A6%82%E4%BD%95%E5%9B%BA%E5%AE%9A%E8%A8%AD%E5%82%99%E6%96%B9%E5%90%91/</guid><description>&lt;h1 id="如何鎖定裝置的方向"&gt;如何鎖定裝置的方向&lt;/h1&gt;
 &lt;p&gt;先到main.dart檔案找到最初的進入點main()要執行runApp時，先執行&lt;/p&gt;
 &lt;ul&gt;
 &lt;li&gt;WidgetsFlutterBinding.ensureInitialized();
@@ -48,136 +19,128 @@
 選擇我們接受的方向&lt;/li&gt;
 &lt;/ul&gt;
 &lt;blockquote&gt;
-&lt;p&gt;所在的函示庫記得引入 import &amp;lsquo;package:flutter/services.dart&amp;rsquo;;&lt;/p&gt;&lt;/blockquote&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-js&#34; data-lang=&#34;js&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;main&lt;/span&gt;() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;WidgetsFlutterBinding&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;ensureInitialized&lt;/span&gt;();
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#a6e22e&#34;&gt;SystemChrome&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;setPreferredOrientations&lt;/span&gt;([
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    &lt;span style=&#34;color:#a6e22e&#34;&gt;DeviceOrientation&lt;/span&gt;.&lt;span style=&#34;color:#a6e22e&#34;&gt;portraitUp&lt;/span&gt;,
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ]).&lt;span style=&#34;color:#a6e22e&#34;&gt;then&lt;/span&gt;((&lt;span style=&#34;color:#a6e22e&#34;&gt;value&lt;/span&gt;) =&amp;gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        &lt;span style=&#34;color:#a6e22e&#34;&gt;runApp&lt;/span&gt;(&lt;span style=&#34;color:#a6e22e&#34;&gt;MaterialApp&lt;/span&gt;(
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;          &lt;span style=&#34;color:#a6e22e&#34;&gt;home&lt;/span&gt;&lt;span style=&#34;color:#f92672&#34;&gt;:&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; &lt;span style=&#34;color:#a6e22e&#34;&gt;Expenses&lt;/span&gt;(),
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;        ))
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;      });
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
-    </item>
-    <item>
-      <title>Pub</title>
-      <link>https://ci-yu.top/flutter/pub/</link>
-      <pubDate>Sun, 28 May 2023 14:30:29 +0800</pubDate>
-      <guid>https://ci-yu.top/flutter/pub/</guid>
-      <description>&lt;h1 id=&#34;快速介紹flutter安裝的函式庫&#34;&gt;快速介紹flutter安裝的函式庫&lt;/h1&gt;
-&lt;h3 id=&#34;intl&#34;&gt;intl&lt;/h3&gt;
+&lt;p&gt;所在的函示庫記得引入 import &amp;lsquo;package:flutter/services.dart&amp;rsquo;;&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;main&lt;/span&gt;() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;WidgetsFlutterBinding&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;ensureInitialized&lt;/span&gt;();
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;SystemChrome&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;setPreferredOrientations&lt;/span&gt;([
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;DeviceOrientation&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;portraitUp&lt;/span&gt;,
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ]).&lt;span style="color:#a6e22e"&gt;then&lt;/span&gt;((&lt;span style="color:#a6e22e"&gt;value&lt;/span&gt;) =&amp;gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;runApp&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;MaterialApp&lt;/span&gt;(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;home&lt;/span&gt;&lt;span style="color:#f92672"&gt;:&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Expenses&lt;/span&gt;(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ))
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; });
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Pub</title><link>https://ci-yu.top/flutter/pub/</link><pubDate>Sun, 28 May 2023 14:30:29 +0800</pubDate><guid>https://ci-yu.top/flutter/pub/</guid><description>&lt;h1 id="快速介紹flutter安裝的函式庫"&gt;快速介紹flutter安裝的函式庫&lt;/h1&gt;
+&lt;h3 id="intl"&gt;intl&lt;/h3&gt;
 &lt;p&gt;轉成指定地區的日期格式&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flutter pub add intl&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;uuid&#34;&gt;uuid&lt;/h3&gt;
+&lt;p&gt;flutter pub add intl&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="uuid"&gt;uuid&lt;/h3&gt;
 &lt;p&gt;建立guid&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flutter pub add uuid&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;transparent_image&#34;&gt;transparent_image&lt;/h3&gt;
+&lt;p&gt;flutter pub add uuid&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="transparent_image"&gt;transparent_image&lt;/h3&gt;
 &lt;p&gt;當圖還沒有載入時可以有透明背景圖使用&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flutter pub add transparent_image&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;riverpod&#34;&gt;riverpod&lt;/h3&gt;
+&lt;p&gt;flutter pub add transparent_image&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="riverpod"&gt;riverpod&lt;/h3&gt;
 &lt;p&gt;是一個狀態管理的工具，當開始寫flutter就會遇到跟現在流行的框架vue/react一樣的問題，當我要傳遞資料時要一直往子層傳參數，才能將資料傳進去，這時&lt;code&gt;riverpod&lt;/code&gt;就是來解決這個問題的
-另一個社群討論度高的是&lt;a href=&#34;https://pub.dev/packages/get&#34;&gt;Getx&lt;/a&gt;。&lt;/p&gt;
+另一個社群討論度高的是&lt;a href="https://pub.dev/packages/get"&gt;Getx&lt;/a&gt;。&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flutter pub add riverpod&lt;/p&gt;&lt;/blockquote&gt;
+&lt;p&gt;flutter pub add riverpod&lt;/p&gt;
+&lt;/blockquote&gt;
 &lt;ol&gt;
 &lt;li&gt;要在需要的區塊上加上&lt;code&gt;ProviderScope&lt;/code&gt;，下列範例就是所有區塊都要可以使用&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dart&#34; data-lang=&#34;dart&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;void&lt;/span&gt; main() {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  runApp(&lt;span style=&#34;color:#66d9ef&#34;&gt;const&lt;/span&gt; ProviderScope(
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;    child: MyApp(),
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  ));
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;2&#34;&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;void&lt;/span&gt; main() {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; runApp(&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; ProviderScope(
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; child: MyApp(),
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; ));
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="2"&gt;
 &lt;li&gt;新增一個檔案並建立供應方&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dart&#34; data-lang=&#34;dart&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;import&lt;/span&gt; &lt;span style=&#34;color:#e6db74&#34;&gt;&amp;#39;package:flutter_riverpod/flutter_riverpod.dart&amp;#39;&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; demoProvider &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; Provider((ref) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;  &lt;span style=&#34;color:#66d9ef&#34;&gt;return&lt;/span&gt; &lt;span style=&#34;color:#66d9ef&#34;&gt;false&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;});
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start=&#34;3&#34;&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;import&lt;/span&gt; &lt;span style="color:#e6db74"&gt;&amp;#39;package:flutter_riverpod/flutter_riverpod.dart&amp;#39;&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; demoProvider &lt;span style="color:#f92672"&gt;=&lt;/span&gt; Provider((ref) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;return&lt;/span&gt; &lt;span style="color:#66d9ef"&gt;false&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;});
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;ol start="3"&gt;
 &lt;li&gt;= &amp;amp; ConsumerWidget&lt;/li&gt;
 &lt;/ol&gt;
 &lt;p&gt;StatelessWidget改成ConsumerWidget&lt;/p&gt;
 &lt;p&gt;StatefulWidget改成ConsumerStatefulWidget&lt;/p&gt;
-&lt;ol start=&#34;4&#34;&gt;
+&lt;ol start="4"&gt;
 &lt;li&gt;建立接收方&lt;/li&gt;
 &lt;/ol&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre tabindex=&#34;0&#34; style=&#34;color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;&#34;&gt;&lt;code class=&#34;language-dart&#34; data-lang=&#34;dart&#34;&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//在要使用資料的地方使用下列
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;&lt;/span&gt;&lt;span style=&#34;color:#66d9ef&#34;&gt;final&lt;/span&gt; demo &lt;span style=&#34;color:#f92672&#34;&gt;=&lt;/span&gt; ref.watch(demoProvider);
-&lt;/span&gt;&lt;/span&gt;&lt;span style=&#34;display:flex;&#34;&gt;&lt;span&gt;&lt;span style=&#34;color:#75715e&#34;&gt;//接下來即可使用demo來做後續事情
-&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id=&#34;http&#34;&gt;http&lt;/h3&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-dart" data-lang="dart"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//在要使用資料的地方使用下列
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//當資料不會改變時可以使用read來取代watch，但官方建議一律使用watch，以免當資料異動時，沒有修改到
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;final&lt;/span&gt; demo &lt;span style="color:#f92672"&gt;=&lt;/span&gt; ref.watch(demoProvider);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#75715e"&gt;//接下來即可使用demo來做後續事情
+&lt;/span&gt;&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;h3 id="http"&gt;http&lt;/h3&gt;
 &lt;p&gt;進行restful api，透過這個套件可以發送請求到api並接收回傳&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;flutter pub add http&lt;/p&gt;</description>
-    </item>
-    <item>
-      <title>Widget</title>
-      <link>https://ci-yu.top/flutter/widget/</link>
-      <pubDate>Sun, 28 May 2023 13:26:51 +0800</pubDate>
-      <guid>https://ci-yu.top/flutter/widget/</guid>
-      <description>&lt;h2 id=&#34;佈局的屬性&#34;&gt;佈局的屬性&lt;/h2&gt;
-&lt;h3 id=&#34;column&#34;&gt;Column&lt;/h3&gt;
+&lt;p&gt;flutter pub add http&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="image_picker"&gt;image_picker&lt;/h3&gt;
+&lt;p&gt;使用系統得相機功能，在ios中記得查看文件檔，將key放入文件所說明的plist檔案中&lt;/p&gt;</description></item><item><title>Widget</title><link>https://ci-yu.top/flutter/widget/</link><pubDate>Sun, 28 May 2023 13:26:51 +0800</pubDate><guid>https://ci-yu.top/flutter/widget/</guid><description>&lt;h2 id="佈局的屬性"&gt;佈局的屬性&lt;/h2&gt;
+&lt;h3 id="column"&gt;Column&lt;/h3&gt;
 &lt;p&gt;由上至下的排序&lt;/p&gt;
-&lt;h3 id=&#34;row&#34;&gt;Row&lt;/h3&gt;
+&lt;h3 id="row"&gt;Row&lt;/h3&gt;
 &lt;p&gt;由左至右的排序&lt;/p&gt;
-&lt;h3 id=&#34;expanded&#34;&gt;Expanded&lt;/h3&gt;
+&lt;h3 id="expanded"&gt;Expanded&lt;/h3&gt;
 &lt;p&gt;只能使用在繼承Flex以下的Widget，常使用在&lt;code&gt;Cloumn&lt;/code&gt;或&lt;code&gt;row&lt;/code&gt;的子項&lt;/p&gt;
 &lt;p&gt;因為有些widget不會限制長寬，要有expanded來將最大值限制在手機區塊內&lt;/p&gt;
-&lt;h3 id=&#34;listview&#34;&gt;ListView&lt;/h3&gt;
+&lt;h3 id="listview"&gt;ListView&lt;/h3&gt;
 &lt;p&gt;使用ListView是可以有滾動效果
 可以透過builder提升效能
 使用方法為&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-flutter&#34; data-lang=&#34;flutter&#34;&gt;ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title})
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;spacer&#34;&gt;Spacer&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-flutter" data-lang="flutter"&gt;ListView.builder(item: list.length, itemBuilder: (ctx,index){list[index].title})
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="spacer"&gt;Spacer&lt;/h3&gt;
 &lt;p&gt;可以在任何row,colume使用
 佔用剩餘所有空間的意思&lt;/p&gt;
-&lt;h3 id=&#34;textfield&#34;&gt;TextField&lt;/h3&gt;
+&lt;h3 id="textfield"&gt;TextField&lt;/h3&gt;
 &lt;p&gt;輸入框&lt;/p&gt;
 &lt;p&gt;要記得關閉&lt;/p&gt;
-&lt;h3 id=&#34;dropdownbutton&#34;&gt;DropdownButton&lt;/h3&gt;
+&lt;h3 id="dropdownbutton"&gt;DropdownButton&lt;/h3&gt;
 &lt;p&gt;下拉式選單&lt;/p&gt;
-&lt;h3 id=&#34;dismissable&#34;&gt;Dismissable&lt;/h3&gt;
+&lt;h3 id="dismissable"&gt;Dismissable&lt;/h3&gt;
 &lt;p&gt;key參數必要，才能確定要滑動刪除哪筆資料
 也可以分為向左滑動與向右滑動，執行不同功能
 滑動刪除效果&lt;/p&gt;
-&lt;h3 id=&#34;snackbar&#34;&gt;Snackbar&lt;/h3&gt;
+&lt;h3 id="snackbar"&gt;Snackbar&lt;/h3&gt;
 &lt;p&gt;會在螢幕下面調出一個訊息框
 在Scaffold階層底下可以使用&lt;/p&gt;
-&lt;pre tabindex=&#34;0&#34;&gt;&lt;code class=&#34;language-flutter&#34; data-lang=&#34;flutter&#34;&gt;    ScaffoldMessenger.of(context).showSnackBar(
-      const SnackBar(
-        duration: Duration(seconds: 3),
-        content: Text(&amp;#39;Expense deleted&amp;#39;),
-      ),
-    );
-&lt;/code&gt;&lt;/pre&gt;&lt;h3 id=&#34;inkwell&#34;&gt;InkWell&lt;/h3&gt;
+&lt;pre tabindex="0"&gt;&lt;code class="language-flutter" data-lang="flutter"&gt; ScaffoldMessenger.of(context).showSnackBar(
+const SnackBar(
+duration: Duration(seconds: 3),
+content: Text(&amp;#39;Expense deleted&amp;#39;),
+),
+);
+&lt;/code&gt;&lt;/pre&gt;&lt;h3 id="inkwell"&gt;InkWell&lt;/h3&gt;
 &lt;p&gt;可以讓沒有事件的元件增加點擊事件之類的功能
 與GestureDetector的差別在於
 &lt;code&gt;GestureDetector&lt;/code&gt;提供更多的點擊事件，&lt;code&gt;InkWell&lt;/code&gt;提供點擊特效&lt;/p&gt;
-&lt;p&gt;&lt;a href=&#34;https://stackoverflow.com/questions/56725308/flutter-inkwell-vs-gesturedetector-what-is-the-difference&#34;&gt;兩者差異出處&lt;/a&gt;&lt;/p&gt;
-&lt;h3 id=&#34;stack&#34;&gt;Stack&lt;/h3&gt;
+&lt;p&gt;&lt;a href="https://stackoverflow.com/questions/56725308/flutter-inkwell-vs-gesturedetector-what-is-the-difference"&gt;兩者差異出處&lt;/a&gt;&lt;/p&gt;
+&lt;h3 id="stack"&gt;Stack&lt;/h3&gt;
 &lt;p&gt;類似&lt;code&gt;Column&lt;/code&gt;與&lt;code&gt;Row&lt;/code&gt;，但是可以讓所有子元件重疊在一起&lt;/p&gt;
-&lt;h3 id=&#34;switchlisttile&#34;&gt;SwitchListTile&lt;/h3&gt;
+&lt;h3 id="switchlisttile"&gt;SwitchListTile&lt;/h3&gt;
 &lt;p&gt;有大標題與子標題的開關&lt;/p&gt;
-&lt;h3 id=&#34;drawer&#34;&gt;Drawer&lt;/h3&gt;
+&lt;h3 id="drawer"&gt;Drawer&lt;/h3&gt;
 &lt;p&gt;側邊欄，可以在裡面放&lt;code&gt;Column&lt;/code&gt;就可以實現側邊欄的菜單&lt;/p&gt;
-&lt;h3 id=&#34;willpopscope&#34;&gt;WillPopScope&lt;/h3&gt;
+&lt;h3 id="willpopscope"&gt;WillPopScope&lt;/h3&gt;
 &lt;p&gt;當用戶離開用任何方式離開當下頁面就會觸發，不管是&lt;code&gt;實體按鈕&lt;/code&gt;或是&lt;code&gt;虛擬按鈕&lt;/code&gt;
 onWillPop:true 允許返回false不允許返回&lt;/p&gt;
-&lt;h3 id=&#34;form&#34;&gt;Form&lt;/h3&gt;
+&lt;h3 id="form"&gt;Form&lt;/h3&gt;
 &lt;p&gt;有額外的驗證功能，並顯示在畫面&lt;/p&gt;
 &lt;p&gt;在form裡面要輸入框時要用&lt;code&gt;TextFormField&lt;/code&gt;取代&lt;code&gt;TextField&lt;/code&gt;&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;只要在Form裏面，要使用的組件基本上都會有form關鍵字&lt;/p&gt;&lt;/blockquote&gt;
-&lt;h3 id=&#34;dismissible&#34;&gt;Dismissible&lt;/h3&gt;
+&lt;p&gt;只要在Form裏面，要使用的組件基本上都會有form關鍵字&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id="dismissible"&gt;Dismissible&lt;/h3&gt;
 &lt;p&gt;新增滑動移除的功能，需要增加key值才能知道要動作的是哪一個項目&lt;/p&gt;
-&lt;p&gt;後續慢慢補上&lt;/p&gt;</description>
-    </item>
-  </channel>
-</rss>
+&lt;p&gt;後續慢慢補上&lt;/p&gt;</description></item></channel></rss>
