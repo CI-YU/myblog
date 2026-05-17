@@ -80,7 +80,4 @@ searchHidden: true
 
 ### 十、聯絡我們
 
-如您對本隱私權政策有任何疑問，歡迎透過以下方式聯絡：
-
-- Email：[a5678bill@gmail.com](mailto:a5678bill@gmail.com)
-- GitHub：[CI-YU](https://github.com/CI-YU)
+如您對本隱私權政策有任何疑問，歡迎透過 App Store 的評價或回報功能與我們聯絡。
