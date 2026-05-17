@@ -1,5 +1,5 @@
 ---
-title: "My Ledger - Privacy Policy"
+title: "Privacy Policy"
 date: 2026-05-17
 searchHidden: true
 ---
