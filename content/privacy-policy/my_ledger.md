@@ -1,5 +1,5 @@
 ---
-title: "記帳手冊 隱私權政策"
+title: "隱私權政策"
 date: 2026-05-17
 searchHidden: true
 ---
