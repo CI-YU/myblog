@@ -80,4 +80,6 @@ If this policy changes, the content and date on this page will be updated. We re
 
 ### 10. Contact Us
 
-If you have any questions about this Privacy Policy, please contact us through the App Store review or feedback feature.
+If you have any questions about this Privacy Policy, please contact us:
+
+- Email: [a5678bill@gmail.com](mailto:a5678bill@gmail.com)
