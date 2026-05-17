@@ -1,25 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>dotnet6 EFCore語法說明 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
-<meta name="description" content="目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.">
+<meta name="description" content="目的
+說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
+建立新專案
+選擇ASP.NET Core Web API專案範本，並執行下一步
+
+設定新的專案
+命名你的專案名稱，並選擇專案要存放的位置。
+
+其他資訊
+直接進行下一步
+
+NuGet加入套件
+
+Microsoft.EntityFrameworkCore.Sqlite
+Microsoft.EntityFrameworkCore.Design
+
+
+新增Student.cs類別檔
+新增Models資料夾，並在裡面新增Student.cs類別檔
+
+編輯Student.cs類別檔
+  public class Student {
+    public int Id { get; set; }
+    public string Name { get; set; } = &#34;BillHuang&#34;;
+    public int Age { get; set; }
+  }
+
+新增EFCoreContext.cs類別檔
+新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔
+
+編輯EFCoreContext.cs類別檔
+//別忘了using
+using Microsoft.EntityFrameworkCore;
+using EFCoreExample_Advanced.Models;
+
+namespace EFCoreExample_Advanced.DBContext {
+  //繼承DbContext
+  public class EFCoreContext : DbContext {
+    //複寫OnConfiguring
+    protected override void OnConfiguring(DbContextOptionsBuilder options) {
+      //指定連線字串，連到SQLite
+      options.UseSqlite(&#34;Data Source=Student.sqlite&#34;);
+    }
+    //設定student資料表
+    public DbSet&lt;Student&gt; Students { get; set; }
+  }
+}
+">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="mask-icon" href="http://localhost:1313/assets/favicon.png">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="mask-icon" href="https://ci-yu.top/assets/favicon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/">
 <noscript>
     <style>
         #theme-toggle,
@@ -37,28 +83,35 @@
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
-</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
-  
-    
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
       <script>
         var doNotTrack = false;
@@ -72,22 +125,22 @@
           gtag('js', new Date());
           gtag('config', 'G-S4X5YV8EB6');
         }
-      </script>
-    
-  
+      </script><meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/">
+  <meta property="og:site_name" content="CI-YU Blog">
+  <meta property="og:title" content="dotnet6 EFCore語法說明">
+  <meta property="og:description" content="目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.UseSqlite(&#34;Data Source=Student.sqlite&#34;); } //設定student資料表 public DbSet&lt;Student&gt; Students { get; set; } } }">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dotnet">
+    <meta property="article:published_time" content="2022-10-05T01:39:15+08:00">
+    <meta property="article:modified_time" content="2022-10-05T01:39:15+08:00">
+    <meta property="article:tag" content="2022鐵人賽">
 
-<meta property="og:title" content="dotnet6 EFCore語法說明" />
-<meta property="og:description" content="目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/" /><meta property="article:section" content="dotnet" />
-<meta property="article:published_time" content="2022-10-05T01:39:15+08:00" />
-<meta property="article:modified_time" content="2022-10-05T01:39:15+08:00" />
-
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="dotnet6 EFCore語法說明"/>
-<meta name="twitter:description" content="目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options."/>
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="dotnet6 EFCore語法說明">
+  <meta name="twitter:description" content="目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。
+建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = &#34;BillHuang&#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.UseSqlite(&#34;Data Source=Student.sqlite&#34;); } //設定student資料表 public DbSet&lt;Student&gt; Students { get; set; } } }">
 
 
 <script type="application/ld+json">
@@ -99,13 +152,13 @@
       "@type": "ListItem",
       "position":  1 ,
       "name": "Dotnets",
-      "item": "http://localhost:1313/dotnet/"
+      "item": "https://ci-yu.top/dotnet/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "dotnet6 EFCore語法說明",
-      "item": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"
     }
   ]
 }
@@ -116,7 +169,7 @@
   "@type": "BlogPosting",
   "headline": "dotnet6 EFCore語法說明",
   "name": "dotnet6 EFCore語法說明",
-  "description": "目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = \u0026#34;BillHuang\u0026#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.",
+  "description": "目的 說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 Microsoft.EntityFrameworkCore.Sqlite Microsoft.EntityFrameworkCore.Design 新增Student.cs類別檔 新增Models資料夾，並在裡面新增Student.cs類別檔 編輯Student.cs類別檔 public class Student { public int Id { get; set; } public string Name { get; set; } = \u0026#34;BillHuang\u0026#34;; public int Age { get; set; } } 新增EFCoreContext.cs類別檔 新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔 編輯EFCoreContext.cs類別檔 //別忘了using using Microsoft.EntityFrameworkCore; using EFCoreExample_Advanced.Models; namespace EFCoreExample_Advanced.DBContext { //繼承DbContext public class EFCoreContext : DbContext { //複寫OnConfiguring protected override void OnConfiguring(DbContextOptionsBuilder options) { //指定連線字串，連到SQLite options.UseSqlite(\u0026#34;Data Source=Student.sqlite\u0026#34;); } //設定student資料表 public DbSet\u0026lt;Student\u0026gt; Students { get; set; } } } ",
   "keywords": [
     "2022鐵人賽"
   ],
@@ -127,44 +180,32 @@
   "dateModified": "2022-10-05T01:39:15+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-efcore%E8%AA%9E%E6%B3%95%E8%AA%AA%E6%98%8E/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CI-YU Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/assets/favicon.png"
+      "url": "https://ci-yu.top/assets/favicon.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -178,38 +219,36 @@
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
-                <a href="http://localhost:1313/dotnet/" title="Dotnet">
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
                     <span>Dotnet</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/flutter/" title="Flutter">
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/softskills/" title="SoftSkills">
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
                     <span>SoftSkills</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://ci-yu.top/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://ci-yu.top/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
@@ -220,51 +259,57 @@
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/dotnet/">Dotnets</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
       dotnet6 EFCore語法說明
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2022-10-05 01:39:15 &#43;0800 CST&#39;&gt;October 5, 2022&lt;/span&gt;
+    <div class="post-meta">
+
+<span title='2022-10-05 01:39:15 +0800 CST'>October 5, 2022</span>
 
 </div>
   </header> 
-  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+  <div class="post-content md-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
 <p>說明EFCore基本語法，EFCore的基礎為Linq，所以使用上與Linq邏輯一模一樣，只是語法有些微差異。</p>
 <h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
 <p>選擇ASP.NET Core Web API專案範本，並執行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟1"  />
-</p>
+<img alt="步驟1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png"></p>
 <h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
 <p>命名你的專案名稱，並選擇專案要存放的位置。
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193629639-9162edb8-82dc-45d1-a257-b2815846e908.png" alt="步驟2"  />
-</p>
+<img alt="步驟2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193629639-9162edb8-82dc-45d1-a257-b2815846e908.png"></p>
 <h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
 <p>直接進行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟3"  />
-</p>
+<img alt="步驟3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png"></p>
 <h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
 <ul>
 <li>Microsoft.EntityFrameworkCore.Sqlite</li>
 <li>Microsoft.EntityFrameworkCore.Design</li>
 </ul>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192144108-34319964-4189-4a43-bee1-90e81b90c2a7.png" alt="步驟4"  />
-</p>
+<p><img alt="步驟4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192144108-34319964-4189-4a43-bee1-90e81b90c2a7.png"></p>
 <h3 id="新增studentcs類別檔">新增Student.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#新增studentcs類別檔">#</a></h3>
 <p>新增Models資料夾，並在裡面新增Student.cs類別檔
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193629859-38197b6e-06c7-472c-ae76-2e1e7aeb92dc.png" alt="範例5-1"  />
-</p>
+<img alt="範例5-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193629859-38197b6e-06c7-472c-ae76-2e1e7aeb92dc.png"></p>
 <h3 id="編輯studentcs類別檔">編輯Student.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#編輯studentcs類別檔">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span>  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Student</span> {
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Id { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">string</span> Name { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; } = <span style="color:#e6db74">&#34;BillHuang&#34;</span>;
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">int</span> Age { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 </span></span><span style="display:flex;"><span>  }
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630104-ef3ac38e-0892-4aae-a106-366f773a05f7.png" alt="範例6-1"  />
-</p>
+</span></span></code></pre></div><p><img alt="範例6-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630104-ef3ac38e-0892-4aae-a106-366f773a05f7.png"></p>
 <h3 id="新增efcorecontextcs類別檔">新增EFCoreContext.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#新增efcorecontextcs類別檔">#</a></h3>
 <p>新增DBContext資料夾，並在裡面新增EFCoreContext.cs類別檔
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630327-131beeb3-1717-4b8a-8d11-d21efc177739.png" alt="範例7-1"  />
-</p>
+<img alt="範例7-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630327-131beeb3-1717-4b8a-8d11-d21efc177739.png"></p>
 <h3 id="編輯efcorecontextcs類別檔">編輯EFCoreContext.cs類別檔<a hidden class="anchor" aria-hidden="true" href="#編輯efcorecontextcs類別檔">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">//別忘了using</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> Microsoft.EntityFrameworkCore;
@@ -282,8 +327,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#66d9ef">public</span> DbSet&lt;Student&gt; Students { <span style="color:#66d9ef">get</span>; <span style="color:#66d9ef">set</span>; }
 </span></span><span style="display:flex;"><span>  }
 </span></span><span style="display:flex;"><span>}
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630503-ec3c9a5b-82c6-4237-82c4-a4bac166b61e.png" alt="範例8-1"  />
-</p>
+</span></span></code></pre></div><p><img alt="範例8-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630503-ec3c9a5b-82c6-4237-82c4-a4bac166b61e.png"></p>
 <h3 id="編輯programcs檔">編輯Program.cs檔<a hidden class="anchor" aria-hidden="true" href="#編輯programcs檔">#</a></h3>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-C#" data-lang="C#"><span style="display:flex;"><span><span style="color:#75715e">//別忘了using</span>
 </span></span><span style="display:flex;"><span><span style="color:#66d9ef">using</span> EFCoreExample_Advanced.DBContext;
@@ -299,33 +343,24 @@
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//註冊EFCoreContext</span>
 </span></span><span style="display:flex;"><span>builder.Services.AddDbContext&lt;EFCoreContext&gt;();
 </span></span><span style="display:flex;"><span><span style="color:#75715e">//下面省略</span>
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630503-ec3c9a5b-82c6-4237-82c4-a4bac166b61e.png" alt="範例9-1"  />
-</p>
+</span></span></code></pre></div><p><img alt="範例9-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193630503-ec3c9a5b-82c6-4237-82c4-a4bac166b61e.png"></p>
 <h3 id="到套件管理器主控台下terminal指令">到套件管理器主控台下Terminal指令<a hidden class="anchor" aria-hidden="true" href="#到套件管理器主控台下terminal指令">#</a></h3>
 <p>檢視&gt;其他視窗&gt;套件管理器主控台
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193631711-6f9c077f-9af1-42d4-8db5-35122e4914fa.jpg" alt="範例10-1"  />
-
+<img alt="範例10-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193631711-6f9c077f-9af1-42d4-8db5-35122e4914fa.jpg">
 下方會出現命令列
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146003-e32e32c5-7f9d-405d-9374-13a6aeea86d3.png" alt="範例10-2"  />
-
+<img alt="範例10-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146003-e32e32c5-7f9d-405d-9374-13a6aeea86d3.png">
 輸入<code>dir</code>會顯示目錄檔案及子目錄清單
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193631871-37a966a9-0713-4d21-a3f5-04d93c08559b.png" alt="範例10-3"  />
-
+<img alt="範例10-3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193631871-37a966a9-0713-4d21-a3f5-04d93c08559b.png">
 輸入<code>cd EFCoreExample_Advanced</code>移動到專案檔底下後再輸入<code>dir</code>確認是否到正確路徑
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146188-4c0946b3-58bb-4fa4-a0af-b2fa8314acb9.png" alt="範例10-4"  />
-
+<img alt="範例10-4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146188-4c0946b3-58bb-4fa4-a0af-b2fa8314acb9.png">
 輸入<code>dotnet tool install --global dotnet-ef</code>在全域安裝EFCore CLI工具(如果已經安裝，會出現下圖訊息，即可忽略此步驟)
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146323-4bfd1b6b-a367-4eba-be7b-11850c755106.png" alt="範例10-5"  />
-
+<img alt="範例10-5" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146323-4bfd1b6b-a367-4eba-be7b-11850c755106.png">
 輸入<code>dotnet ef migrations add CreateInitial</code>初始化SQLite
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146700-7375bbfb-d678-456c-b4f4-2f72ddb9afba.png" alt="範例10-6"  />
-
+<img alt="範例10-6" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192146700-7375bbfb-d678-456c-b4f4-2f72ddb9afba.png">
 輸入<code>dotnet ef database update</code>更新SQLite資料表
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192147220-21ed77a4-1bd6-4db3-a52f-6c794ca9d922.png" alt="範例10-7"  />
-
+<img alt="範例10-7" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192147220-21ed77a4-1bd6-4db3-a52f-6c794ca9d922.png">
 成功就會自動產生Migrations資料夾
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/193632147-f524d84b-fe04-44f3-8e6d-da6af6d9214a.png" alt="範例10-8"  />
-</p>
+<img alt="範例10-8" loading="lazy" src="https://user-images.githubusercontent.com/19286751/193632147-f524d84b-fe04-44f3-8e6d-da6af6d9214a.png"></p>
 <h3 id="編輯weatherforecastcontroller檔案編輯">編輯WeatherForecastController檔案編輯<a hidden class="anchor" aria-hidden="true" href="#編輯weatherforecastcontroller檔案編輯">#</a></h3>
 <ul>
 <li>寫新的對外API：QueryAsync</li>
@@ -336,8 +371,7 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> Result = <span style="color:#66d9ef">await</span> _context.Students.ToListAsync();
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> Ok(Result);
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151372-c0f2c266-703f-4d83-b238-48f0969676af.png" alt="步驟11-1"  />
-</p>
+</span></span></code></pre></div><p><img alt="步驟11-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151372-c0f2c266-703f-4d83-b238-48f0969676af.png"></p>
 <ul>
 <li>寫新的對外API：QueryFirstOrDefaultAsync</li>
 </ul>
@@ -347,8 +381,7 @@
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">var</span> Result = <span style="color:#66d9ef">await</span> _context.Students.FirstOrDefaultAsync();
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> Ok(Result);
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151404-c390296b-1474-4aa7-abe1-6c4c1d08551f.png" alt="步驟11-2"  />
-</p>
+</span></span></code></pre></div><p><img alt="步驟11-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151404-c390296b-1474-4aa7-abe1-6c4c1d08551f.png"></p>
 <ul>
 <li>交易機制
 當有多張表需要異動時，為了確認資料的一致性，會需要透過交易機制做保護，只有全部成功或全部失敗。</li>
@@ -369,8 +402,7 @@
 </span></span><span style="display:flex;"><span>      trans.Commit();
 </span></span><span style="display:flex;"><span>      <span style="color:#66d9ef">return</span> Ok(Result);
 </span></span><span style="display:flex;"><span>    }
-</span></span></code></pre></div><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151427-e16d7151-50bb-4e87-8640-8ec58190e915.png" alt="步驟11-3"  />
-</p>
+</span></span></code></pre></div><p><img alt="步驟11-3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/192151427-e16d7151-50bb-4e87-8640-8ec58190e915.png"></p>
 <h3 id="參考">參考<a hidden class="anchor" aria-hidden="true" href="#參考">#</a></h3>
 <p><a href="https://stackoverflow.com/questions/97197/what-is-the-n1-selects-problem-in-orm-object-relational-mapping">N+1</a>
 <a href="https://learn.microsoft.com/zh-tw/ef/core/saving/transactions">交易</a></p>
@@ -382,22 +414,29 @@
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -424,25 +463,25 @@
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

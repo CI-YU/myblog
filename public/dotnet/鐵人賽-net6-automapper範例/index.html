@@ -1,27 +1,70 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>dotnet6 Automapper範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
-<meta name="description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
-//找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
-ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。">
+<meta name="description" content="目的
+快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
+建立新專案
+選擇ASP.NET Core Web API專案範本，並執行下一步
+
+設定新的專案
+命名你的專案名稱，並選擇專案要存放的位置。
+
+其他資訊
+直接進行下一步
+
+NuGet加入套件
+透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection
+
+編輯Program.cs檔案
+註冊AutoMapper
+//找到所有繼承profile
+builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
+
+新增Mappings資料夾與Models資料夾
+
+在Models資料夾內加入DbModel資料夾與ViewModel資料夾
+
+加入類別檔
+在兩個資料夾內加入同名稱的類別檔案
+
+
+DbModel.cs寫入程式碼
+
+    public int Id { get; set; }
+    public string? Name { get; set; }
+    public int Age { get; set; }
+    public DateTime CreatedDate { get; set; }
+
+可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
+
+
+ViewModel.cs寫入程式
+
+    public ViewModel() { 
+    Name = string.Empty;
+    }
+    public int Id { get; set; }
+    public string Name { get; set; }
+    public int Age { get; set; }
+
+在建構子提供預設值後，來避免對null做處理。">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="mask-icon" href="http://localhost:1313/assets/favicon.png">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="mask-icon" href="https://ci-yu.top/assets/favicon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -39,28 +82,35 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
-</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
-  
-    
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
       <script>
         var doNotTrack = false;
@@ -74,26 +124,26 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
           gtag('js', new Date());
           gtag('config', 'G-S4X5YV8EB6');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="dotnet6 Automapper範例" />
-<meta property="og:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
+      </script><meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/">
+  <meta property="og:site_name" content="CI-YU Blog">
+  <meta property="og:title" content="dotnet6 Automapper範例">
+  <meta property="og:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
-ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
-<meta property="article:published_time" content="2022-09-20T00:39:29+08:00" />
-<meta property="article:modified_time" content="2022-09-20T00:39:29+08:00" />
+ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dotnet">
+    <meta property="article:published_time" content="2022-09-20T00:39:29+08:00">
+    <meta property="article:modified_time" content="2022-09-20T00:39:29+08:00">
+    <meta property="article:tag" content="2022鐵人賽">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="dotnet6 Automapper範例"/>
-<meta name="twitter:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="dotnet6 Automapper範例">
+  <meta name="twitter:description" content="目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper
 //找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。
-ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。"/>
+ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。">
 
 
 <script type="application/ld+json">
@@ -105,13 +155,13 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
       "@type": "ListItem",
       "position":  1 ,
       "name": "Dotnets",
-      "item": "http://localhost:1313/dotnet/"
+      "item": "https://ci-yu.top/dotnet/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "dotnet6 Automapper範例",
-      "item": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"
     }
   ]
 }
@@ -122,7 +172,7 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
   "@type": "BlogPosting",
   "headline": "dotnet6 Automapper範例",
   "name": "dotnet6 Automapper範例",
-  "description": "目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper\n//找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。\nViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。",
+  "description": "目的 快速對應，不需要寫linq來將資料庫端的model對應到view要用的model\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 NuGet加入套件 透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection 編輯Program.cs檔案 註冊AutoMapper\n//找到所有繼承profile builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies()); 新增Mappings資料夾與Models資料夾 在Models資料夾內加入DbModel資料夾與ViewModel資料夾 加入類別檔 在兩個資料夾內加入同名稱的類別檔案 DbModel.cs寫入程式碼 public int Id { get; set; } public string? Name { get; set; } public int Age { get; set; } public DateTime CreatedDate { get; set; } 可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。\nViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int Id { get; set; } public string Name { get; set; } public int Age { get; set; } 在建構子提供預設值後，來避免對null做處理。\n",
   "keywords": [
     "2022鐵人賽"
   ],
@@ -133,44 +183,32 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
   "dateModified": "2022-09-20T00:39:29+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-automapper%E7%AF%84%E4%BE%8B/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CI-YU Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/assets/favicon.png"
+      "url": "https://ci-yu.top/assets/favicon.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -184,38 +222,36 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
-                <a href="http://localhost:1313/dotnet/" title="Dotnet">
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
                     <span>Dotnet</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/flutter/" title="Flutter">
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/softskills/" title="SoftSkills">
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
                     <span>SoftSkills</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://ci-yu.top/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://ci-yu.top/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
@@ -226,48 +262,53 @@ ViewModel.cs寫入程式 public ViewModel() { Name = string.Empty; } public int 
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/dotnet/">Dotnets</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
       dotnet6 Automapper範例
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2022-09-20 00:39:29 &#43;0800 CST&#39;&gt;September 20, 2022&lt;/span&gt;
+    <div class="post-meta">
+
+<span title='2022-09-20 00:39:29 +0800 CST'>September 20, 2022</span>
 
 </div>
   </header> 
-  <div class="post-content"><h2 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h2>
+  <div class="post-content md-content"><h2 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h2>
 <p>快速對應，不需要寫linq來將資料庫端的model對應到view要用的model</p>
 <h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
 <p>選擇ASP.NET Core Web API專案範本，並執行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟一"  />
-</p>
+<img alt="步驟一" loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png"></p>
 <h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
 <p>命名你的專案名稱，並選擇專案要存放的位置。
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150151645-46df6dfe-a981-4a46-8f2e-7143ada3f503.png" alt="步驟二"  />
-</p>
+<img alt="步驟二" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150151645-46df6dfe-a981-4a46-8f2e-7143ada3f503.png"></p>
 <h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
 <p>直接進行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟三"  />
-</p>
+<img alt="步驟三" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png"></p>
 <h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
 <p>透過NuGet安裝AutoMapper.Extensions.Microsoft.DependencyInjection
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150152375-7e9590a3-155b-45c4-8f97-040c4feca36c.png" alt="步驟4"  />
-</p>
+<img alt="步驟4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150152375-7e9590a3-155b-45c4-8f97-040c4feca36c.png"></p>
 <h3 id="編輯programcs檔案">編輯Program.cs檔案<a hidden class="anchor" aria-hidden="true" href="#編輯programcs檔案">#</a></h3>
 <p>註冊AutoMapper</p>
 <pre tabindex="0"><code>//找到所有繼承profile
 builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
-</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150171450-fc1077d4-e27e-42a9-815f-e508f9c44186.png" alt="步驟5"  />
-</p>
+</code></pre><p><img alt="步驟5" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150171450-fc1077d4-e27e-42a9-815f-e508f9c44186.png"></p>
 <h3 id="新增mappings資料夾與models資料夾">新增Mappings資料夾與Models資料夾<a hidden class="anchor" aria-hidden="true" href="#新增mappings資料夾與models資料夾">#</a></h3>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150153595-fbf8e4a9-57b8-44e5-82a6-f1a7c439248d.png" alt="步驟6"  />
-</p>
+<p><img alt="步驟6" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150153595-fbf8e4a9-57b8-44e5-82a6-f1a7c439248d.png"></p>
 <h3 id="在models資料夾內加入dbmodel資料夾與viewmodel資料夾">在Models資料夾內加入DbModel資料夾與ViewModel資料夾<a hidden class="anchor" aria-hidden="true" href="#在models資料夾內加入dbmodel資料夾與viewmodel資料夾">#</a></h3>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150154151-14c8f746-5550-4172-9580-ae3b0b7bc71b.png" alt="步驟7"  />
-</p>
+<p><img alt="步驟7" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150154151-14c8f746-5550-4172-9580-ae3b0b7bc71b.png"></p>
 <h3 id="加入類別檔">加入類別檔<a hidden class="anchor" aria-hidden="true" href="#加入類別檔">#</a></h3>
 <p>在兩個資料夾內加入同名稱的類別檔案
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150154607-ff7ab43f-b2cc-47dd-beae-d00ba29c9117.png" alt="步驟8"  />
-</p>
+<img alt="步驟8" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150154607-ff7ab43f-b2cc-47dd-beae-d00ba29c9117.png"></p>
 <ul>
 <li>DbModel.cs寫入程式碼</li>
 </ul>
@@ -276,10 +317,8 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     public int Age { get; set; }
     public DateTime CreatedDate { get; set; }
 </code></pre><blockquote>
-<p>可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。</p>
-</blockquote>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150158192-aafbf5cc-876d-4876-9806-c3a9bc32bddd.png" alt="步驟8-1"  />
-</p>
+<p>可能會有些人問?是什麼，這是因為建立.net6專案預設會開啟判斷值可能為null的警告訊息，可以加上?代表允許此屬性為null，會建議在建構子時提供預設值，來避免嘗試對null值做處理的exception。</p></blockquote>
+<p><img alt="步驟8-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150158192-aafbf5cc-876d-4876-9806-c3a9bc32bddd.png"></p>
 <ul>
 <li>ViewModel.cs寫入程式</li>
 </ul>
@@ -290,14 +329,11 @@ builder.Services.AddAutoMapper(AppDomain.CurrentDomain.GetAssemblies());
     public string Name { get; set; }
     public int Age { get; set; }
 </code></pre><blockquote>
-<p>在建構子提供預設值後，來避免對null做處理。</p>
-</blockquote>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150158960-eb7dc043-77e0-413a-bb74-f5abe1f7b8a4.png" alt="步驟8-2"  />
-</p>
+<p>在建構子提供預設值後，來避免對null做處理。</p></blockquote>
+<p><img alt="步驟8-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150158960-eb7dc043-77e0-413a-bb74-f5abe1f7b8a4.png"></p>
 <h3 id="加入類別檔-1">加入類別檔<a hidden class="anchor" aria-hidden="true" href="#加入類別檔-1">#</a></h3>
 <p>在Mappings資料夾內加入名稱為ExampleMapping的類別檔
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150160741-668aa223-ce75-4079-96c8-e2cadb4ed921.png" alt="步驟9-1"  />
-</p>
+<img alt="步驟9-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150160741-668aa223-ce75-4079-96c8-e2cadb4ed921.png"></p>
 <ul>
 <li>寫入程式
 在新增的ExampleMapping.cs檔案內寫入程式碼</li>
@@ -315,14 +351,11 @@ namespace AutoMapperExample.Mappings {
     }
   }
 }
-</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150163037-48cec3e2-d3ff-4a7f-b3ba-98ebbc0fc8e0.png" alt="步驟9-2"  />
-</p>
+</code></pre><p><img alt="步驟9-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150163037-48cec3e2-d3ff-4a7f-b3ba-98ebbc0fc8e0.png"></p>
 <h3 id="加入檔案">加入檔案<a hidden class="anchor" aria-hidden="true" href="#加入檔案">#</a></h3>
 <p>在Controllers加入一個空白的API控制器，並命名為ExampleController.cs
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150167913-85b03450-b173-4ea4-82b0-9725d027c045.png" alt="步驟10-1"  />
-
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150168059-90a3f2e4-b18b-4b88-a009-f6e2b40916f7.png" alt="步驟10-2"  />
-</p>
+<img alt="步驟10-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150167913-85b03450-b173-4ea4-82b0-9725d027c045.png">
+<img alt="步驟10-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150168059-90a3f2e4-b18b-4b88-a009-f6e2b40916f7.png"></p>
 <ul>
 <li>寫入程式</li>
 </ul>
@@ -354,12 +387,10 @@ namespace AutoMapperExample.Controllers {
     }
   }
 }
-</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150169646-ab71d0b2-5b68-4f22-9836-98a7d6c3f3c6.png" alt="步驟10-3"  />
-</p>
+</code></pre><p><img alt="步驟10-3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150169646-ab71d0b2-5b68-4f22-9836-98a7d6c3f3c6.png"></p>
 <h3 id="執行結果">執行結果<a hidden class="anchor" aria-hidden="true" href="#執行結果">#</a></h3>
 <p>可以自動對應到結果了。
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/191064600-da8ad592-99df-40d4-9c76-6a1bda469ccb.png" alt="範例11-1"  />
-</p>
+<img alt="範例11-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/191064600-da8ad592-99df-40d4-9c76-6a1bda469ccb.png"></p>
 <h3 id="範例檔">範例檔<a hidden class="anchor" aria-hidden="true" href="#範例檔">#</a></h3>
 <p><a href="https://github.com/CI-YU/2022-ITHelp/tree/main/AutoMapperExample">GitHub</a></p>
 
@@ -368,22 +399,29 @@ namespace AutoMapperExample.Controllers {
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -410,25 +448,25 @@ namespace AutoMapperExample.Controllers {
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })

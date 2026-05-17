@@ -1,29 +1,75 @@
 <!DOCTYPE html>
-<html lang="en" dir="auto">
+<html lang="en" dir="auto" data-theme="auto">
 
-<head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script><meta charset="utf-8">
+<head><meta charset="utf-8">
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="robots" content="index, follow">
 <title>dotnet6 HttpClient單元測試範例 | CI-YU Blog</title>
 <meta name="keywords" content="2022鐵人賽">
-<meta name="description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
-建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
-builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
-readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
-設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案">
+<meta name="description" content="目的
+面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢?
+主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
+建立新專案
+選擇ASP.NET Core Web API專案範本，並執行下一步
+
+設定新的專案
+命名你的專案名稱，並選擇專案要存放的位置。
+
+其他資訊
+直接進行下一步
+
+建立資料夾
+
+編輯Program.cs檔案
+註冊AddHttpClient。
+builder.Services.AddHttpClient();
+
+新增一個類別檔
+
+加入前
+
+加入後
+
+
+建構子注入
+將註冊的httpclient透過建構子注入
+    readonly IHttpClientFactory _httpClientFactory;
+    public CallAPIServices(IHttpClientFactory httpClientFactory) {
+      _httpClientFactory = httpClientFactory;
+    }
+
+加入前
+
+加入後
+
+
+新增方法
+新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
+    public async Task&lt;string&gt; Get() {
+      var client = _httpClientFactory.CreateClient();
+      var response = await client.GetAsync(&#34;https://example.com&#34;);
+      if (response.IsSuccessStatusCode) {
+        var responseString = await response.Content.ReadAsStringAsync();
+        return responseString;
+      }
+      return &#34;&#34;;
+    }
+
+新增測試專案
+
+對方案點選右鍵&gt;加入&gt;新增專案">
 <meta name="author" content="">
-<link rel="canonical" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
-<link crossorigin="anonymous" href="/assets/css/stylesheet.dc96e9e0118e5e264a03d68b104df6ae869cfb73c61f5f89dd91aeb16b0d8c03.css" integrity="sha256-3Jbp4BGOXiZKA9aLEE32roac&#43;3PGH1&#43;J3ZGusWsNjAM=" rel="preload stylesheet" as="style">
-<link rel="icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="16x16" href="http://localhost:1313/assets/favicon.png">
-<link rel="icon" type="image/png" sizes="32x32" href="http://localhost:1313/assets/favicon.png">
-<link rel="apple-touch-icon" href="http://localhost:1313/assets/favicon.png">
-<link rel="mask-icon" href="http://localhost:1313/assets/favicon.png">
+<link rel="canonical" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
+<link crossorigin="anonymous" href="/assets/css/stylesheet.6ff46447b1fa3f8a5cc0bcae48088decc3ae37f5fbc99406a3aefc3bf0e6044a.css" integrity="sha256-b/RkR7H6P4pcwLyuSAiN7MOuN/X7yZQGo678O/DmBEo=" rel="preload stylesheet" as="style">
+<link rel="icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="16x16" href="https://ci-yu.top/assets/favicon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="https://ci-yu.top/assets/favicon.png">
+<link rel="apple-touch-icon" href="https://ci-yu.top/assets/favicon.png">
+<link rel="mask-icon" href="https://ci-yu.top/assets/favicon.png">
 <meta name="theme-color" content="#2e2e33">
 <meta name="msapplication-TileColor" content="#2e2e33">
-<link rel="alternate" hreflang="en" href="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
+<link rel="alternate" hreflang="en" href="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
 <noscript>
     <style>
         #theme-toggle,
@@ -41,28 +87,35 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
                 --secondary: rgb(155, 156, 157);
                 --tertiary: rgb(65, 66, 68);
                 --content: rgb(196, 196, 197);
-                --hljs-bg: rgb(46, 46, 51);
+                --code-block-bg: rgb(46, 46, 51);
                 --code-bg: rgb(55, 56, 62);
                 --border: rgb(51, 51, 51);
+                color-scheme: dark;
             }
 
             .list {
                 background: var(--theme);
             }
 
-            .list:not(.dark)::-webkit-scrollbar-track {
-                background: 0 0;
-            }
-
-            .list:not(.dark)::-webkit-scrollbar-thumb {
-                border-color: var(--theme);
+            .toc {
+                background: var(--entry);
             }
         }
 
     </style>
-</noscript><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
-  
-    
+</noscript>
+<script>
+    if (localStorage.getItem("pref-theme") === "dark") {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else if (localStorage.getItem("pref-theme") === "light") {
+       document.querySelector("html").dataset.theme = 'light';
+    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        document.querySelector("html").dataset.theme = 'dark';
+    } else {
+        document.querySelector("html").dataset.theme = 'light';
+    }
+
+</script><script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "a4c4f32ac0d042ba8846c116e504bbf8"}'></script>
       <script async src="https://www.googletagmanager.com/gtag/js?id=G-S4X5YV8EB6"></script>
       <script>
         var doNotTrack = false;
@@ -76,30 +129,28 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
           gtag('js', new Date());
           gtag('config', 'G-S4X5YV8EB6');
         }
-      </script>
-    
-  
-
-<meta property="og:title" content="dotnet6 HttpClient單元測試範例" />
-<meta property="og:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
+      </script><meta property="og:url" content="https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/">
+  <meta property="og:site_name" content="CI-YU Blog">
+  <meta property="og:title" content="dotnet6 HttpClient單元測試範例">
+  <meta property="og:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
 readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
-設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/" /><meta property="article:section" content="dotnet" />
-<meta property="article:published_time" content="2022-10-10T02:39:15+08:00" />
-<meta property="article:modified_time" content="2022-10-10T02:39:15+08:00" />
+public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案">
+  <meta property="og:locale" content="en_us">
+  <meta property="og:type" content="article">
+    <meta property="article:section" content="dotnet">
+    <meta property="article:published_time" content="2022-10-10T02:39:15+08:00">
+    <meta property="article:modified_time" content="2022-10-10T02:39:15+08:00">
+    <meta property="article:tag" content="2022鐵人賽">
 
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="dotnet6 HttpClient單元測試範例"/>
-<meta name="twitter:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
+  <meta name="twitter:card" content="summary">
+  <meta name="twitter:title" content="dotnet6 HttpClient單元測試範例">
+  <meta name="twitter:description" content="目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。
 建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。
 builder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入
 readonly IHttpClientFactory _httpClientFactory;public CallAPIServices(IHttpClientFactory httpClientFactory) {_httpClientFactory = httpClientFactory;} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試
-public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案
-設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案"/>
+public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateClient();var response = await client.GetAsync(&#34;https://example.com&#34;);if (response.IsSuccessStatusCode) {var responseString = await response.Content.ReadAsStringAsync();return responseString;}return &#34;&#34;;} 新增測試專案 對方案點選右鍵&gt;加入&gt;新增專案">
 
 
 <script type="application/ld+json">
@@ -111,13 +162,13 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
       "@type": "ListItem",
       "position":  1 ,
       "name": "Dotnets",
-      "item": "http://localhost:1313/dotnet/"
+      "item": "https://ci-yu.top/dotnet/"
     }, 
     {
       "@type": "ListItem",
       "position":  2 ,
       "name": "dotnet6 HttpClient單元測試範例",
-      "item": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"
+      "item": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"
     }
   ]
 }
@@ -128,7 +179,7 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
   "@type": "BlogPosting",
   "headline": "dotnet6 HttpClient單元測試範例",
   "name": "dotnet6 HttpClient單元測試範例",
-  "description": "目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。\nbuilder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入\nreadonly IHttpClientFactory _httpClientFactory;\rpublic CallAPIServices(IHttpClientFactory httpClientFactory) {\r_httpClientFactory = httpClientFactory;\r} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試\npublic async Task\u0026lt;string\u0026gt; Get() {\rvar client = _httpClientFactory.CreateClient();\rvar response = await client.GetAsync(\u0026#34;https://example.com\u0026#34;);\rif (response.IsSuccessStatusCode) {\rvar responseString = await response.Content.ReadAsStringAsync();\rreturn responseString;\r}\rreturn \u0026#34;\u0026#34;;\r} 新增測試專案 對方案點選右鍵\u0026gt;加入\u0026gt;新增專案\n設定新的專案 替測試專案命名，建議命名規則以.Tests做結尾 其他資訊 專案架構需要與要測試的專案相同 加入參考 將要測試的專案加入測試專案",
+  "description": "目的 面試的時候被問到要如何做包含外部api的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢? 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。\n建立新專案 選擇ASP.NET Core Web API專案範本，並執行下一步 設定新的專案 命名你的專案名稱，並選擇專案要存放的位置。 其他資訊 直接進行下一步 建立資料夾 編輯Program.cs檔案 註冊AddHttpClient。\nbuilder.Services.AddHttpClient(); 新增一個類別檔 加入前 加入後 建構子注入 將註冊的httpclient透過建構子注入\nreadonly IHttpClientFactory _httpClientFactory;\rpublic CallAPIServices(IHttpClientFactory httpClientFactory) {\r_httpClientFactory = httpClientFactory;\r} 加入前 加入後 新增方法 新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試\npublic async Task\u0026lt;string\u0026gt; Get() {\rvar client = _httpClientFactory.CreateClient();\rvar response = await client.GetAsync(\u0026#34;https://example.com\u0026#34;);\rif (response.IsSuccessStatusCode) {\rvar responseString = await response.Content.ReadAsStringAsync();\rreturn responseString;\r}\rreturn \u0026#34;\u0026#34;;\r} 新增測試專案 對方案點選右鍵\u0026gt;加入\u0026gt;新增專案\n",
   "keywords": [
     "2022鐵人賽"
   ],
@@ -139,44 +190,32 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
   "dateModified": "2022-10-10T02:39:15+08:00",
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "http://localhost:1313/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"
+    "@id": "https://ci-yu.top/dotnet/%E9%90%B5%E4%BA%BA%E8%B3%BD-net6-httpclient%E5%96%AE%E5%85%83%E6%B8%AC%E8%A9%A6%E7%AF%84%E4%BE%8B/"
   },
   "publisher": {
     "@type": "Organization",
     "name": "CI-YU Blog",
     "logo": {
       "@type": "ImageObject",
-      "url": "http://localhost:1313/assets/favicon.png"
+      "url": "https://ci-yu.top/assets/favicon.png"
     }
   }
 }
 </script>
 </head>
-
-<body class="" id="top">
-<script>
-    if (localStorage.getItem("pref-theme") === "dark") {
-        document.body.classList.add('dark');
-    } else if (localStorage.getItem("pref-theme") === "light") {
-        document.body.classList.remove('dark')
-    } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        document.body.classList.add('dark');
-    }
-
-</script>
-
-<header class="header">
-    <nav class="nav">
+<body id="top">
+    <header class="header">
+    <nav class="header-nav">
         <div class="logo">
-            <a href="http://localhost:1313/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
+            <a href="https://ci-yu.top/" accesskey="h" title="CI-YU Blog (Alt + H)">CI-YU Blog</a>
             <div class="logo-switches">
-                <button id="theme-toggle" accesskey="t" title="(Alt + T)">
-                    <svg id="moon" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                <button id="theme-toggle" class="theme-toggle" accesskey="t" title="(Alt + T)" aria-label="Toggle theme">
+                    <svg class="moon" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
                     </svg>
-                    <svg id="sun" xmlns="http://www.w3.org/2000/svg" width="24" height="18" viewBox="0 0 24 24"
+                    <svg class="sun" xmlns="http://www.w3.org/2000/svg" width="17" height="17" viewBox="0 0 24 24"
                         fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"
                         stroke-linejoin="round">
                         <circle cx="12" cy="12" r="5"></circle>
@@ -190,38 +229,36 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
                         <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
                     </svg>
                 </button>
-                <ul class="lang-switch"><li>|</li>
-                </ul>
             </div>
         </div>
-        <ul id="menu">
+        <ul id="menu" class="menu">
             <li>
-                <a href="http://localhost:1313/dotnet/" title="Dotnet">
+                <a href="https://ci-yu.top/dotnet/" title="Dotnet">
                     <span>Dotnet</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/flutter/" title="Flutter">
+                <a href="https://ci-yu.top/flutter/" title="Flutter">
                     <span>Flutter</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/softskills/" title="SoftSkills">
+                <a href="https://ci-yu.top/softskills/" title="SoftSkills">
                     <span>SoftSkills</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/search/" title="Search (Alt &#43; /)" accesskey=/>
+                <a href="https://ci-yu.top/search/" title="Search (Alt &#43; /)" accesskey=/>
                     <span>Search</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/tags/" title="Tags">
+                <a href="https://ci-yu.top/tags/" title="Tags">
                     <span>Tags</span>
                 </a>
             </li>
             <li>
-                <a href="http://localhost:1313/archives/" title="Archives">
+                <a href="https://ci-yu.top/archives/" title="Archives">
                     <span>Archives</span>
                 </a>
             </li>
@@ -232,45 +269,51 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
 
 <article class="post-single">
   <header class="post-header">
-    <div class="breadcrumbs"><a href="http://localhost:1313/">Home</a>&nbsp;»&nbsp;<a href="http://localhost:1313/dotnet/">Dotnets</a></div>
-    <h1 class="post-title">
+    <nav class="breadcrumbs" role="navigation" aria-label="Breadcrumb">
+            <a href="/">Home</a>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+                <polyline points="9 18 15 12 9 6"></polyline>
+            </svg>
+            <a href="/dotnet/">Dotnets</a>
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevron-right">
+        <polyline points="9 18 15 12 9 6"></polyline>
+    </svg>
+</nav>
+    <h1 class="post-title entry-hint-parent">
       dotnet6 HttpClient單元測試範例
     </h1>
-    <div class="post-meta">&lt;span title=&#39;2022-10-10 02:39:15 &#43;0800 CST&#39;&gt;October 10, 2022&lt;/span&gt;
+    <div class="post-meta">
+
+<span title='2022-10-10 02:39:15 +0800 CST'>October 10, 2022</span>
 
 </div>
   </header> 
-  <div class="post-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
+  <div class="post-content md-content"><h3 id="目的">目的<a hidden class="anchor" aria-hidden="true" href="#目的">#</a></h3>
 <p>面試的時候被問到要如何做包含<strong>外部api</strong>的單元測試問題，稍微查一下其實很簡單，怎麼當下答不出來呢?
 主要有兩種方式，一種為.net core 2.1以後有提供IHttpClientFactory的介面可以使用。</p>
 <h3 id="建立新專案">建立新專案<a hidden class="anchor" aria-hidden="true" href="#建立新專案">#</a></h3>
 <p>選擇ASP.NET Core Web API專案範本，並執行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png" alt="步驟一"  />
-</p>
+<img alt="步驟一" loading="lazy" src="https://user-images.githubusercontent.com/19286751/143255617-9964a993-becd-414b-aba2-632e99dd985d.png"></p>
 <h3 id="設定新的專案">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案">#</a></h3>
 <p>命名你的專案名稱，並選擇專案要存放的位置。
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767290-44bc0e8d-22eb-4b98-a727-af5b2f4677a7.png" alt="步驟二"  />
-</p>
+<img alt="步驟二" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767290-44bc0e8d-22eb-4b98-a727-af5b2f4677a7.png"></p>
 <h3 id="其他資訊">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊">#</a></h3>
 <p>直接進行下一步
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png" alt="步驟三"  />
-</p>
+<img alt="步驟三" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767425-ef0c8469-3d95-4f86-87ca-1c47c5cd0791.png"></p>
 <h3 id="建立資料夾">建立資料夾<a hidden class="anchor" aria-hidden="true" href="#建立資料夾">#</a></h3>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767905-501f97a0-fd59-4e38-a21c-6155097b4689.png" alt="步驟四"  />
-</p>
+<p><img alt="步驟四" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148767905-501f97a0-fd59-4e38-a21c-6155097b4689.png"></p>
 <h3 id="編輯programcs檔案">編輯Program.cs檔案<a hidden class="anchor" aria-hidden="true" href="#編輯programcs檔案">#</a></h3>
 <p>註冊AddHttpClient。</p>
 <pre tabindex="0"><code>builder.Services.AddHttpClient();
-</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148769889-2a36dbbe-1402-4dea-8235-036bfdd609ff.png" alt="步驟五"  />
-</p>
+</code></pre><p><img alt="步驟五" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148769889-2a36dbbe-1402-4dea-8235-036bfdd609ff.png"></p>
 <h3 id="新增一個類別檔">新增一個類別檔<a hidden class="anchor" aria-hidden="true" href="#新增一個類別檔">#</a></h3>
 <ul>
 <li>加入前
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148770868-0f177281-56b2-455e-9d8d-89b98d8b4a6f.png" alt="步驟6-1"  />
-</li>
+<img alt="步驟6-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148770868-0f177281-56b2-455e-9d8d-89b98d8b4a6f.png"></li>
 <li>加入後
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771237-33e27b6e-4525-4ab7-98b2-c9b954d23aef.png" alt="步驟6-2"  />
-</li>
+<img alt="步驟6-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771237-33e27b6e-4525-4ab7-98b2-c9b954d23aef.png"></li>
 </ul>
 <h3 id="建構子注入">建構子注入<a hidden class="anchor" aria-hidden="true" href="#建構子注入">#</a></h3>
 <p>將註冊的httpclient透過建構子注入</p>
@@ -280,11 +323,9 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
     }
 </code></pre><ul>
 <li>加入前
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771846-62cc6b87-ec0d-41ab-9331-e39e67b0573f.png" alt="步驟7-1"  />
-</li>
+<img alt="步驟7-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771846-62cc6b87-ec0d-41ab-9331-e39e67b0573f.png"></li>
 <li>加入後
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771643-b0764e60-b561-468c-85ed-445a99f4b987.png" alt="步驟7-2"  />
-</li>
+<img alt="步驟7-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148771643-b0764e60-b561-468c-85ed-445a99f4b987.png"></li>
 </ul>
 <h3 id="新增方法">新增方法<a hidden class="anchor" aria-hidden="true" href="#新增方法">#</a></h3>
 <p>新增一個會去發外部請求的方法，模擬當有包含第三方api時如何測試</p>
@@ -297,37 +338,28 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
       }
       return &#34;&#34;;
     }
-</code></pre><p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148773941-4afa7cfc-d592-46c4-9496-30729de428f3.png" alt="步驟8"  />
-</p>
+</code></pre><p><img alt="步驟8" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148773941-4afa7cfc-d592-46c4-9496-30729de428f3.png"></p>
 <h3 id="新增測試專案">新增測試專案<a hidden class="anchor" aria-hidden="true" href="#新增測試專案">#</a></h3>
 <blockquote>
-<p>對方案點選右鍵&gt;加入&gt;新增專案</p>
-</blockquote>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776104-c14be0ec-ce3a-4a9e-b0d3-ed060ec566eb.png" alt="步驟9"  />
-</p>
+<p>對方案點選右鍵&gt;加入&gt;新增專案</p></blockquote>
+<p><img alt="步驟9" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776104-c14be0ec-ce3a-4a9e-b0d3-ed060ec566eb.png"></p>
 <h3 id="設定新的專案-1">設定新的專案<a hidden class="anchor" aria-hidden="true" href="#設定新的專案-1">#</a></h3>
 <p>替測試專案命名，建議命名規則以.Tests做結尾
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776565-502dd4f9-b959-4d2e-8535-07a2ab59c301.png" alt="步驟10"  />
-</p>
+<img alt="步驟10" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776565-502dd4f9-b959-4d2e-8535-07a2ab59c301.png"></p>
 <h3 id="其他資訊-1">其他資訊<a hidden class="anchor" aria-hidden="true" href="#其他資訊-1">#</a></h3>
 <p>專案架構需要與要測試的專案相同
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776689-bb62c741-fe5a-4e01-bbb1-39e51ecff11b.png" alt="步驟11"  />
-</p>
+<img alt="步驟11" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148776689-bb62c741-fe5a-4e01-bbb1-39e51ecff11b.png"></p>
 <h3 id="加入參考">加入參考<a hidden class="anchor" aria-hidden="true" href="#加入參考">#</a></h3>
 <p>將要測試的專案加入測試專案</p>
 <blockquote>
-<p>對CallAPIServices.Tests點選右鍵&gt;加入&gt;專案參考</p>
-</blockquote>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/148793680-d99d41f2-f650-406f-bbb7-8002ffdc0778.png" alt="步驟12"  />
-</p>
+<p>對CallAPIServices.Tests點選右鍵&gt;加入&gt;專案參考</p></blockquote>
+<p><img alt="步驟12" loading="lazy" src="https://user-images.githubusercontent.com/19286751/148793680-d99d41f2-f650-406f-bbb7-8002ffdc0778.png"></p>
 <h3 id="nuget加入套件">NuGet加入套件<a hidden class="anchor" aria-hidden="true" href="#nuget加入套件">#</a></h3>
 <p>透過NuGet安裝Moq套件至測試專案
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149161402-7e7eae0b-406d-47d6-8171-ac7a8aa46111.png" alt="步驟13"  />
-</p>
+<img alt="步驟13" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149161402-7e7eae0b-406d-47d6-8171-ac7a8aa46111.png"></p>
 <h3 id="新增對應資料夾與測試檔案">新增對應資料夾與測試檔案<a hidden class="anchor" aria-hidden="true" href="#新增對應資料夾與測試檔案">#</a></h3>
 <p>新增檔案，檔名需要與要測試的檔案一致，並加上<strong>Tests</strong>
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149358298-e6998a2b-5154-40ff-b669-67333e3ca93d.png" alt="步驟14"  />
-</p>
+<img alt="步驟14" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149358298-e6998a2b-5154-40ff-b669-67333e3ca93d.png"></p>
 <h3 id="新增程式碼">新增程式碼<a hidden class="anchor" aria-hidden="true" href="#新增程式碼">#</a></h3>
 <p>在新增的檔案內新增一個方法並寫入程式碼，一開始會看到許多紅色波浪，是因為沒有加入參考</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-csharp" data-lang="csharp"><span style="display:flex;"><span>    <span style="color:#75715e">//定義這個方法是不需要傳入參數的單元測試，另一種為[Theory]，詳細說明可看相關參考5</span>
@@ -366,22 +398,17 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
 </span></span><span style="display:flex;"><span>    }
 </span></span></code></pre></div><ul>
 <li>加入前
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377202-03626eb3-943b-4831-a7c9-3aea7a757009.png" alt="步驟15-1"  />
-</li>
+<img alt="步驟15-1" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377202-03626eb3-943b-4831-a7c9-3aea7a757009.png"></li>
 </ul>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377567-b8de78fb-0171-4ae3-a2e6-2df3bfb5a5de.png" alt="步驟15-2"  />
-</p>
+<p><img alt="步驟15-2" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377567-b8de78fb-0171-4ae3-a2e6-2df3bfb5a5de.png"></p>
 <ul>
 <li>加入後
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149376875-ab644b74-a755-4b0c-8939-3dedbd356e4f.png" alt="步驟15-3"  />
-</li>
+<img alt="步驟15-3" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149376875-ab644b74-a755-4b0c-8939-3dedbd356e4f.png"></li>
 </ul>
-<p><img loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377496-2b27d806-8b4f-4c3e-9e72-ea6b640c9167.png" alt="步驟15-4"  />
-</p>
+<p><img alt="步驟15-4" loading="lazy" src="https://user-images.githubusercontent.com/19286751/149377496-2b27d806-8b4f-4c3e-9e72-ea6b640c9167.png"></p>
 <h3 id="執行測試">執行測試<a hidden class="anchor" aria-hidden="true" href="#執行測試">#</a></h3>
 <p>點右鍵執行測試，最後結果會如左下角顯示成功
-<img loading="lazy" src="https://user-images.githubusercontent.com/19286751/150145582-3c5792d0-6939-4a9a-a6dd-7a702b7ae3f1.jpg" alt="步驟16"  />
-</p>
+<img alt="步驟16" loading="lazy" src="https://user-images.githubusercontent.com/19286751/150145582-3c5792d0-6939-4a9a-a6dd-7a702b7ae3f1.jpg"></p>
 <h2 id="相關參考">相關參考<a hidden class="anchor" aria-hidden="true" href="#相關參考">#</a></h2>
 <p><a href="https://docs.microsoft.com/zh-tw/dotnet/core/testing/unit-testing-best-practices">單元測試好的做法</a>
 <a href="https://docs.microsoft.com/zh-tw/dotnet/architecture/microservices/implement-resilient-applications/use-httpclientfactory-to-implement-resilient-http-requests#benefits-of-using-ihttpclientfactory">為什麼要使用IHttpClientFactory</a>
@@ -397,22 +424,29 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
 
   <footer class="post-footer">
     <ul class="post-tags">
-      <li><a href="http://localhost:1313/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
+      <li><a href="https://ci-yu.top/tags/2022%E9%90%B5%E4%BA%BA%E8%B3%BD/">2022鐵人賽</a></li>
     </ul>
   </footer>
 </article>
     </main>
     
-<a href="#top" aria-label="go to top" title="Go to Top (Alt + G)" class="top-link" id="top-link" accesskey="g">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 12 6" fill="currentColor">
-        <path d="M12 6H0l6-6z" />
+<a href="#top" id="top-link" class="top-link hidden" aria-label="go to top" title="Go to Top (Alt + G)" accesskey="g">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+        stroke-linecap="round" stroke-linejoin="round" class="feather feather-chevrons-up">
+        <polyline points="17 11 12 6 7 11"></polyline>
+        <polyline points="17 18 12 13 7 18"></polyline>
     </svg>
 </a>
 
 <script>
-    let menu = document.getElementById('menu')
+    let menu = document.getElementById('menu');
     if (menu) {
-        menu.scrollLeft = localStorage.getItem("menu-scroll-position");
+        
+        const scrollPosition = localStorage.getItem("menu-scroll-position");
+        if (scrollPosition) {
+            menu.scrollLeft = parseInt(scrollPosition, 10);
+        }
+        
         menu.onscroll = function () {
             localStorage.setItem("menu-scroll-position", menu.scrollLeft);
         }
@@ -439,25 +473,25 @@ public async Task&lt;string&gt; Get() {var client = _httpClientFactory.CreateCl
 
 </script>
 <script>
-    var mybutton = document.getElementById("top-link");
+    var toplink = document.getElementById("top-link");
     window.onscroll = function () {
-        if (document.body.scrollTop > 800 || document.documentElement.scrollTop > 800) {
-            mybutton.style.visibility = "visible";
-            mybutton.style.opacity = "1";
+        const scrollThreshold = window.innerHeight;
+        if (document.body.scrollTop > scrollThreshold || document.documentElement.scrollTop > scrollThreshold) {
+            toplink.classList.remove("hidden");
         } else {
-            mybutton.style.visibility = "hidden";
-            mybutton.style.opacity = "0";
+            toplink.classList.add("hidden");
         }
     };
 
 </script>
 <script>
     document.getElementById("theme-toggle").addEventListener("click", () => {
-        if (document.body.className.includes("dark")) {
-            document.body.classList.remove('dark');
+        const html = document.querySelector("html");
+        if (html.dataset.theme === "dark") {
+            html.dataset.theme = 'light';
             localStorage.setItem("pref-theme", 'light');
         } else {
-            document.body.classList.add('dark');
+            html.dataset.theme = 'dark';
             localStorage.setItem("pref-theme", 'dark');
         }
     })
