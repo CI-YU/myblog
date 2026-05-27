@@ -12,16 +12,18 @@ searchHidden: true
 
 「記帳手冊」不會要求您提供姓名、電子郵件、電話號碼或其他可直接識別您身分的資料。
 
-本應用程式使用 Google Analytics for Firebase / Firebase Analytics 進行使用情形分析，可能會收集下列分析資料：
+本應用程式使用 Google Analytics for Firebase / Firebase Analytics（Google Analytics 4，GA4）進行匿名或彙總的使用情形分析，可能會收集下列分析資料：
 
-- App 開啟、工作階段、畫面瀏覽等預設事件與畫面使用事件
-- 裝置型號、作業系統版本、App 版本、語言與地區等裝置與 App 資訊
-- 粗略位置資訊，例如國家或城市層級資訊
+- App 開啟、工作階段、功能操作、頁面瀏覽等預設事件與畫面使用事件
+- App 版本、裝置型號、作業系統版本、語言等裝置與 App 資訊
+- 概略地區或粗略位置資訊，例如國家或城市層級資訊
 - App instance ID 等用於分析的識別碼
 
-這些資料僅用於了解 App 使用狀況、改善穩定性與優化功能體驗。
+這些資料僅用於匿名使用分析、改善 App、改善穩定性、優化功能體驗，以及排查使用流程問題。
 
-「記帳手冊」**不會**將您輸入的實際記帳內容傳送到 Google Analytics 或 Firebase Analytics，包括但不限於金額、類別、備註、帳本名稱、匯入檔案內容或其他交易明細。
+您可以在 App 設定中關閉分析資料收集。
+
+「記帳手冊」**不會**將您輸入的實際記帳內容傳送到 Google Analytics、Firebase Analytics 或 GA4，包括但不限於交易金額、類別、備註、自訂名稱、帳本名稱、交易 ID、匯入檔案內容或其他交易明細。
 
 ---
 
@@ -47,7 +49,7 @@ searchHidden: true
 
 ### 四、網路存取
 
-「記帳手冊」會為傳送 Google Analytics for Firebase / Firebase Analytics 分析資料使用網路連線。您的實際記帳資料仍只儲存在裝置本機，不會因分析功能而上傳至任何伺服器。
+「記帳手冊」會為傳送 Google Analytics for Firebase / Firebase Analytics（GA4）分析資料使用網路連線。您的實際記帳資料仍只儲存在裝置本機，不會因分析功能而上傳至任何伺服器。
 
 ---
 
@@ -60,7 +62,7 @@ searchHidden: true
 
 解除安裝後，所有本機記帳資料將一併永久刪除。
 
-Google Analytics for Firebase / Firebase Analytics 的分析資料會依 Google Analytics 與 Firebase 的設定及保留期間處理。如您希望提出與分析資料相關的查詢或刪除請求，請透過本政策下方的聯絡信箱與我們聯絡。
+Google Analytics for Firebase / Firebase Analytics（GA4）的分析資料會依 Google Analytics 與 Firebase 的設定及保留期間處理。如您希望提出與分析資料相關的查詢或刪除請求，請透過本政策下方的聯絡信箱與我們聯絡。
 
 ---
 
@@ -68,14 +70,14 @@ Google Analytics for Firebase / Firebase Analytics 的分析資料會依 Google 
 
 本應用程式採取以下措施保護您的資料：
 
-- 實際記帳資料僅存於本機，不會傳送到 Google Analytics 或 Firebase Analytics
+- 實際記帳資料僅存於本機，不會傳送到 Google Analytics、Firebase Analytics 或 GA4
 - 資料庫存取受作業系統沙盒機制保護，其他應用程式無法存取
 
 ---
 
 ### 七、第三方服務
 
-本應用程式使用 **Google Analytics for Firebase / Firebase Analytics** 作為第三方分析服務，用於統計使用情形、評估功能使用狀況並改善 App 體驗。
+本應用程式使用 **Google / Firebase** 提供的 **Google Analytics for Firebase / Firebase Analytics（Google Analytics 4，GA4）** 作為第三方分析服務，用於匿名使用分析、統計使用情形、評估功能使用狀況、改善 App 體驗，以及排查使用流程問題。
 
 本應用程式目前不使用 Google Analytics 或 Firebase Analytics 進行個人化廣告、再行銷或跨 App 追蹤，也未整合廣告服務。
 

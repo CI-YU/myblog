@@ -12,16 +12,18 @@ Thank you for using "My Ledger". This Privacy Policy explains how this applicati
 
 "My Ledger" does not ask for your name, email address, phone number, or other information that directly identifies you.
 
-This application uses Google Analytics for Firebase / Firebase Analytics for usage analytics. The analytics service may collect the following analytics data:
+This application uses Google Analytics for Firebase / Firebase Analytics (Google Analytics 4, GA4) for anonymous or aggregated usage analytics. The analytics service may collect the following analytics data:
 
-- Default events and screen usage events, such as app opens, sessions, and screen views
-- Device and app information, such as device model, operating system version, app version, language, and region
-- Approximate location information, such as country- or city-level information
+- Default events and screen usage events, such as app opens, sessions, feature interactions, and page or screen views
+- Device and app information, such as app version, device model, operating system version, and language
+- Approximate region or location information, such as country- or city-level information
 - Analytics identifiers, such as an app instance ID
 
-This data is used only to understand app usage, improve stability, and improve the user experience.
+This data is used only for anonymous usage analytics, improving the app, improving stability, improving the user experience, and troubleshooting user flow issues.
 
-"My Ledger" **does not** send your actual accounting content to Google Analytics or Firebase Analytics, including but not limited to amounts, categories, notes, ledger names, imported file content, or other transaction details.
+You can disable analytics data collection in the app settings.
+
+"My Ledger" **does not** send your actual accounting content to Google Analytics, Firebase Analytics, or GA4, including but not limited to transaction amounts, categories, notes, custom names, ledger names, transaction IDs, imported file content, or other transaction details.
 
 ---
 
@@ -47,7 +49,7 @@ This application provides a file import feature that allows you to import extern
 
 ### 4. Network Access
 
-"My Ledger" uses an internet connection to transmit Google Analytics for Firebase / Firebase Analytics data. Your actual accounting data remains stored only on your local device and is not uploaded to any server because of the analytics feature.
+"My Ledger" uses an internet connection to transmit Google Analytics for Firebase / Firebase Analytics (GA4) data. Your actual accounting data remains stored only on your local device and is not uploaded to any server because of the analytics feature.
 
 ---
 
@@ -60,7 +62,7 @@ Your actual accounting data is stored locally on your device. You can delete it 
 
 Upon uninstallation, all local accounting data will be permanently deleted.
 
-Analytics data from Google Analytics for Firebase / Firebase Analytics is handled according to the Google Analytics and Firebase settings and retention periods. If you would like to make an inquiry or deletion request related to analytics data, please contact us using the email address below.
+Analytics data from Google Analytics for Firebase / Firebase Analytics (GA4) is handled according to the Google Analytics and Firebase settings and retention periods. If you would like to make an inquiry or deletion request related to analytics data, please contact us using the email address below.
 
 ---
 
@@ -68,14 +70,14 @@ Analytics data from Google Analytics for Firebase / Firebase Analytics is handle
 
 This application takes the following measures to protect your data:
 
-- Actual accounting data is stored locally and is not sent to Google Analytics or Firebase Analytics
+- Actual accounting data is stored locally and is not sent to Google Analytics, Firebase Analytics, or GA4
 - Database access is protected by the operating system's sandbox mechanism, preventing other applications from accessing your data
 
 ---
 
 ### 7. Third-Party Services
 
-This application uses **Google Analytics for Firebase / Firebase Analytics** as a third-party analytics service to measure usage, evaluate feature usage, and improve the app experience.
+This application uses **Google / Firebase** as the third-party service provider for **Google Analytics for Firebase / Firebase Analytics (Google Analytics 4, GA4)** to perform anonymous usage analytics, measure usage, evaluate feature usage, improve the app experience, and troubleshoot user flow issues.
 
 This application does not currently use Google Analytics or Firebase Analytics for personalized advertising, remarketing, or cross-app tracking, and it does not integrate advertising services.
 
